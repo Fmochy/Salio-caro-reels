@@ -1,0 +1,26 @@
+[
+ {
+  "fecha": "2026-10",
+  "empresa": "Netflix",
+  "caso": "Qwikster (2011)",
+  "formato": "carrusel+reel (manual)"
+ },
+ {
+  "fecha": "2026-10",
+  "empresa": "Amazon",
+  "caso": "Fire Phone (2014)",
+  "formato": "carrusel+reel (manual)"
+ },
+ {
+  "fecha": "2026-10",
+  "empresa": "Google",
+  "caso": "Google Glass (2013-2023)",
+  "formato": "carrusel+reel (manual)"
+ },
+ {
+  "fecha": "2026-10",
+  "empresa": "Microsoft",
+  "caso": "Xbox One (2013)",
+  "formato": "carrusel+reel (manual)"
+ }
+]
