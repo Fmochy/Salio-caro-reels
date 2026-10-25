@@ -1,0 +1,26 @@
+{
+ "slug": "blockbuster-netflix",
+ "company": "Blockbuster",
+ "tag": "Blockbuster × Netflix",
+ "caption": "En el año 2000, Blockbuster pudo quedarse Netflix por 50 millones de dólares. Dijo que no.\n\nNetflix enviaba DVD por correo y perdía dinero. Blockbuster tenía miles de tiendas y lo vio como un negocio de nicho. En 2010 quebró. Hoy Netflix vale unos 300.000 millones.\n\n¿Tú la habrías comprado? 👇\n\n#negocios #marketing #emprendimiento #netflix #blockbuster",
+ "sources": ["https://www.cnbc.com/2020/09/22/how-netflix-almost-lost-the-movie-rental-wars-to-blockbuster.html"],
+ "lines": [
+  {"say": "Blockbuster pudo comprar Netflix por cincuenta millones de dólares.", "show": "Blockbuster pudo comprar Netflix por 50 millones de dólares.", "red": ["50", "millones"],
+   "card": {"type": "money", "value": 50000000, "prefix": "$", "label": "Oferta · año 2000", "unit": "dólares"}},
+  {"say": "Y dijo que no.", "show": "Y dijo que no.", "red": ["no."], "card": "same", "stamp": "Rechazado"},
+  {"say": "Año dos mil. Netflix era una empresa pequeña que mandaba DVDs por correo, y perdía dinero.", "show": "Año 2000. Netflix era una empresa pequeña que mandaba DVDs por correo, y perdía dinero.", "red": ["perdía", "dinero."],
+   "card": {"type": "year", "year": 2000, "pills": [{"text": "DVD por correo"}, {"text": "Pierde dinero", "color": "red"}]}},
+  {"say": "Sus fundadores viajaron a Dallas para ofrecerle la empresa a Blockbuster.", "show": "Sus fundadores viajaron a Dallas para ofrecerle la empresa a Blockbuster.", "red": ["Dallas"],
+   "card": {"type": "place", "title": "Dallas, Texas", "subtitle": "Sede de Blockbuster"}},
+  {"say": "Blockbuster tenía miles de tiendas. Lo vio como un negocio de nicho, y les dijo que no.", "show": "Blockbuster tenía miles de tiendas. Lo vio como un negocio de nicho, y les dijo que no.", "red": ["nicho,", "no."],
+   "card": {"type": "versus", "a_name": "Blockbuster", "a_label": "Miles de tiendas", "b_name": "Netflix", "b_label": "Una web y sobres", "b_ratio": 0.12}, "stamp": "“Nicho”"},
+  {"say": "Diez años después, en dos mil diez, Blockbuster se declaró en quiebra.", "show": "Diez años después, en 2010, Blockbuster se declaró en quiebra.", "red": ["quiebra."],
+   "card": {"type": "year", "year": 2010}, "stamp": "Quiebra"},
+  {"say": "¿Y Netflix? Hoy vale unos trescientos mil millones de dólares.", "show": "¿Y Netflix? Hoy vale unos 300.000 millones de dólares.", "red": ["300.000", "millones"],
+   "card": {"type": "money", "value": 300000000000, "prefix": "$", "label": "Valor de Netflix hoy · aprox.", "unit": "dólares", "color": "white"}},
+  {"say": "Seis mil veces lo que pedía.", "show": "6.000 veces lo que pedía.", "red": ["6.000"], "card": "same", "badge": "×6.000"},
+  {"say": "A Blockbuster, decir que no le salió muy caro.", "show": "A Blockbuster, decir que no le salió muy caro.", "red": ["caro."],
+   "card": {"type": "text", "lines": ["Salió", "caro."]}},
+  {"say": "Sígueme, y cada día te cuento un caso nuevo.", "show": "Sígueme, y cada día te cuento un caso nuevo.", "red": ["Sígueme,"], "card": {"type": "follow"}}
+ ]
+}

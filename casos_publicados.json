@@ -22,5 +22,12 @@
   "empresa": "Microsoft",
   "caso": "Xbox One (2013)",
   "formato": "carrusel+reel (manual)"
+ },
+ {
+  "fecha": "2026-10-25",
+  "empresa": "Blockbuster",
+  "caso": "Rechazar comprar Netflix por 50 millones (2000)",
+  "formato": "reel",
+  "slug": "2026-10-25-blockbuster-netflix"
  }
 ]
