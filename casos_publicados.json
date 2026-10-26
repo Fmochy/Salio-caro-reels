@@ -29,5 +29,14 @@
   "caso": "Rechazar comprar Netflix por 50 millones (2000)",
   "formato": "reel",
   "slug": "2026-10-25-blockbuster-netflix"
+ },
+ {
+  "fecha": "2026-10-26",
+  "empresa": "Spanair",
+  "caso": "Quiebra tras 135 millones de la Generalitat y la retirada de Qatar Airways (2012)",
+  "formato": "reel",
+  "slug": "2026-10-26-spanair",
+  "gancho": "La Generalitat puso unos 135 millones en Spanair, y cerró en una noche.",
+  "formula": "1 Confesión de coste"
  }
 ]

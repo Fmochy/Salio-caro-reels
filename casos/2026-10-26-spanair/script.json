@@ -1,0 +1,249 @@
+{
+ "slug": "spanair-quiebra",
+ "company": "Spanair",
+ "tag": "Spanair · 2012",
+ "hook_formula": "1 Confesión de coste",
+ "caption": "¿Crees que la Generalitat debió poner más dinero para salvar Spanair? Sí o no 👇\n\nLa quiebra de Spanair es uno de los mayores fracasos empresariales de la aviación española. La Generalitat llegó a poner unos 135 millones de euros según sus propias cifras, pero el 27 de enero de 2012 la aerolínea cesó sus operaciones, dejó en tierra a unos 23.000 pasajeros y más de 2.000 trabajadores perdieron su empleo.\n\nCuando Qatar Airways se retiró de las negociaciones y el Govern no quiso poner más dinero, no quedó nada que hacer. Una historia de empresas y errores empresariales que muchos recuerdan.\n\n#negocios #historiaempresarial #spanair #aerolineas #quiebra",
+ "alt": "Reel sobre la quiebra de Spanair: cómo la aerolínea cerró en una noche en enero de 2012 tras recibir unos 135 millones de la Generalitat. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://www.hosteltur.com/170500_generalitat-busca-recolocar-trabajadores-spanair-28-aerolineas.html",
+  "https://www.sasgroup.net/en/profit-warning-spanair-applies-for-bankruptcy/",
+  "https://en.wikipedia.org/wiki/Spanair",
+  "https://www.aviationpros.com/home/news/10620245/spanair-files-for-bankruptcy-after-leaving-over-20000-stranded",
+  "https://travelweekly.com.au/Passengers-stranded-as-Spanair-folds/",
+  "https://www.menorca.info/actualidad/nacional/2012/01/29/1419170/crisis-spanair-deja-tierra-000-pasajeros.html"
+ ],
+ "lines": [
+  {
+   "say": "La Generalitat puso unos ciento treinta y cinco millones en Spanair, y cerró en una noche.",
+   "show": "La Generalitat puso unos 135 millones en Spanair, y cerró en una noche.",
+   "red": [
+    "135",
+    "millones",
+    "noche."
+   ],
+   "visuals": [
+    {
+     "type": "title",
+     "src": "img/a320c.jpg",
+     "text1": "Spanair cerró",
+     "text2": "en una noche"
+    },
+    {
+     "type": "number",
+     "src": "img/palau.jpg",
+     "value": 135000000,
+     "suffix": " €",
+     "label": "puso la Generalitat",
+     "color": "yellow",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Spanair llevaba más de veinte años volando, con casi treinta aviones.",
+   "show": "Spanair llevaba más de 20 años volando, con casi 30 aviones.",
+   "red": [
+    "20",
+    "30"
+   ],
+   "visuals": [
+    {
+     "type": "img",
+     "src": "img/prat.jpg",
+     "kicker": "Base en Barcelona",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "type": "img",
+     "src": "img/md83b.jpg",
+     "kicker": "Más de 20 años",
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "zoom": "out"
+    },
+    {
+     "type": "img",
+     "src": "img/a320b.jpg",
+     "kicker": "Casi 30 aviones",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ]
+  },
+  {
+   "say": "En dos mil nueve SAS se la quita de encima, y la compran inversores catalanes.",
+   "show": "En 2009 SAS se la quita de encima, y la compran inversores catalanes.",
+   "red": [
+    "2009",
+    "catalanes."
+   ],
+   "visuals": [
+    {
+     "type": "img",
+     "src": "img/md83a.jpg",
+     "kicker": "Año 2009",
+     "focus": [
+      0.4,
+      0.55
+     ],
+     "zoom": "out"
+    },
+    {
+     "type": "img",
+     "src": "img/a320a.jpg",
+     "kicker": "SAS se va",
+     "focus": [
+      0.55,
+      0.4
+     ]
+    },
+    {
+     "type": "img",
+     "src": "img/palau.jpg",
+     "kicker": "Entran inversores catalanes",
+     "focus": [
+      0.5,
+      0.5
+     ],
+     "zoom": "out"
+    }
+   ]
+  },
+  {
+   "say": "En dos mil doce Qatar Airways se echa atrás, y el Govern no pone más.",
+   "show": "En 2012 Qatar Airways se echa atrás, y el Govern no pone más.",
+   "red": [
+    "atrás,",
+    "más."
+   ],
+   "visuals": [
+    {
+     "type": "img",
+     "src": "img/qatar.jpg",
+     "kicker": "Año 2012",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    },
+    {
+     "type": "doc",
+     "src": "img/palau.jpg",
+     "kicker": "Sin más dinero",
+     "lines": [
+      "Qatar se retira",
+      "El Govern dice no"
+     ]
+    }
+   ]
+  },
+  {
+   "say": "¿Sabes qué pasa esa noche? Spanair cancela todos sus vuelos y deja en tierra a veintitrés mil pasajeros.",
+   "show": "¿Sabes qué pasa esa noche? Spanair cancela todos sus vuelos y deja en tierra a 23.000 pasajeros.",
+   "red": [
+    "noche?",
+    "23.000"
+   ],
+   "visuals": [
+    {
+     "type": "img",
+     "src": "img/a320c.jpg",
+     "kicker": "27 de enero de 2012",
+     "stamp": "Cierre",
+     "focus": [
+      0.6,
+      0.45
+     ]
+    },
+    {
+     "type": "img",
+     "src": "img/prat.jpg",
+     "kicker": "Todos los vuelos cancelados",
+     "focus": [
+      0.3,
+      0.4
+     ],
+     "zoom": "out"
+    },
+    {
+     "type": "number",
+     "src": "img/prat.jpg",
+     "value": 23000,
+     "label": "pasajeros en tierra",
+     "color": "red",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ]
+  },
+  {
+   "say": "Más de dos mil trabajadores pierden su empleo, y el Govern ve muy difícil recuperar su dinero.",
+   "show": "Más de 2.000 trabajadores pierden su empleo, y el Govern ve muy difícil recuperar su dinero.",
+   "red": [
+    "2.000",
+    "difícil"
+   ],
+   "visuals": [
+    {
+     "type": "number",
+     "src": "img/md83b.jpg",
+     "value": 2000,
+     "prefix": "+",
+     "label": "trabajadores sin empleo",
+     "color": "red",
+     "zoom": "out"
+    },
+    {
+     "type": "img",
+     "src": "img/palau.jpg",
+     "kicker": "¿Y el dinero público?",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   ]
+  },
+  {
+   "say": "A Spanair, quedarse sin inversor a última hora le salió muy caro.",
+   "show": "A Spanair, quedarse sin inversor a última hora le salió muy caro.",
+   "red": [
+    "caro."
+   ],
+   "visuals": [
+    {
+     "type": "end",
+     "src": "img/a320b.jpg"
+    }
+   ]
+  },
+  {
+   "say": "Sígueme, y cada día te cuento un caso nuevo.",
+   "show": "Sígueme, y cada día te cuento un caso nuevo.",
+   "red": [
+    "Sígueme,"
+   ],
+   "visuals": [
+    {
+     "type": "title",
+     "src": "img/a320c.jpg",
+     "text1": "Spanair cerró",
+     "text2": "en una noche"
+    }
+   ]
+  }
+ ]
+}
