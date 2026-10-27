@@ -1,0 +1,44 @@
+[
+ {
+  "file": "File:Lycos logo.png",
+  "dest": "lycos.png",
+  "author": "Lycos",
+  "license": "Public domain"
+ },
+ {
+  "file": "File:Terra Logo.png",
+  "dest": "terra.png",
+  "author": "Terra",
+  "license": "Public domain"
+ },
+ {
+  "file": "File:Edificio Telefónica (Gran Vía 28, Madrid) 02.jpg",
+  "dest": "gv2.jpg",
+  "author": "Luis García (Zaqarbal)",
+  "license": "CC BY-SA 3.0"
+ },
+ {
+  "file": "File:Edificio Telefónica - Gran Vía 28 (5185975426).jpg",
+  "dest": "gv1.jpg",
+  "author": "Ricardo Ricote Rodríguez",
+  "license": "CC BY 2.0"
+ },
+ {
+  "file": "File:Madrid - Distrito Telefónica 08.JPG",
+  "dest": "dc8.jpg",
+  "author": "Zarateman",
+  "license": "CC0"
+ },
+ {
+  "file": "File:Madrid - Distrito Telefónica 16.jpg",
+  "dest": "dc16.jpg",
+  "author": "Zarateman",
+  "license": "CC0"
+ },
+ {
+  "file": "File:NASDAQ IXIC - dot-com bubble.png",
+  "dest": "nasdaq.png",
+  "author": "ed g2s",
+  "license": "Public domain"
+ }
+]

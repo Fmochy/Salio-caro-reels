@@ -1,0 +1,228 @@
+{
+ "formato": "hibrido",
+ "slug": "terra-lycos",
+ "company": "Terra (Telefónica)",
+ "tag": "Terra · Lycos",
+ "hook_formula": "1 Confesión de coste",
+ "caption": "¿Habrías comprado Lycos en plena burbuja de internet? Sí o no 👇\n\nEn el año 2000, Terra, la filial de internet de Telefónica, pagó unos 12.500 millones de dólares por Lycos, uno de los buscadores más famosos de Estados Unidos. Cuatro años después, en 2004, la vendió a la empresa coreana Daum por unos 100 millones: menos del 1% de lo que había costado.\n\nUna de las historias de empresas y errores empresariales más caros de la burbuja de internet, y de la historia de Telefónica en internet.\n\n#negocios #historiaempresarial #telefonica #lycos #internet",
+ "alt": "Reel sobre Terra y Lycos: cómo la filial de Telefónica pagó unos 12.500 millones de dólares por Lycos en 2000 y la vendió por unos 100 millones en 2004. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://www.nbcnews.com/id/wbna5593446",
+  "https://en.wikipedia.org/wiki/Lycos",
+  "https://www.kakaocorp.com/page/detail/6950",
+  "https://www.sec.gov/Archives/edgar/data/0000814052/000095010305001238/form20f.txt"
+ ],
+ "lines": [
+  {
+   "say": "Terra, la filial de Telefónica, pagó doce mil quinientos millones de dólares por Lycos, y la vendió por unos cien.",
+   "show": "Terra, la filial de Telefónica, pagó 12.500 millones de dólares por Lycos, y la vendió por unos 100.",
+   "layout": "dos",
+   "photos": [
+    {
+     "src": "img/lycos.jpg",
+     "label": "Lycos"
+    },
+    {
+     "src": "img/gv2.jpg",
+     "label": "Telefónica"
+    }
+   ],
+   "notes": [
+    {
+     "type": "flecha",
+     "at": 0.3
+    },
+    {
+     "type": "texto",
+     "text": "12.500 M$",
+     "color": "red",
+     "highlight": true,
+     "at": 0.45
+    },
+    {
+     "type": "texto",
+     "text": "luego, 100 M$",
+     "font": "mano",
+     "color": "red",
+     "at": 0.8
+    }
+   ],
+   "red": [
+    "12.500",
+    "100."
+   ]
+  },
+  {
+   "say": "Año dos mil, en plena burbuja de internet, Terra se lanza a comprar Lycos, uno de los buscadores más famosos de Estados Unidos.",
+   "show": "Año 2000, en plena burbuja de internet, Terra se lanza a comprar Lycos, uno de los buscadores más famosos de Estados Unidos.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/nasdaq.png"
+    }
+   ],
+   "notes": [
+    {
+     "type": "rodear",
+     "text": "2000",
+     "at": 0.05
+    },
+    {
+     "type": "texto",
+     "text": "burbuja de internet",
+     "font": "mano",
+     "color": "red",
+     "at": 0.35
+    }
+   ],
+   "red": [
+    "burbuja",
+    "Lycos,"
+   ]
+  },
+  {
+   "say": "¿Sabes cuánto pagó? Doce mil quinientos millones de dólares, justo cuando las empresas de internet valían más que nunca.",
+   "show": "¿Sabes cuánto pagó? 12.500 millones de dólares, justo cuando las empresas de internet valían más que nunca.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/lycos.jpg"
+    }
+   ],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 12500,
+     "suffix": " M$",
+     "label": "lo que pagó Terra",
+     "at": 0.3
+    }
+   ],
+   "red": [
+    "12.500"
+   ]
+  },
+  {
+   "say": "Pero la burbuja estalla, y Lycos pierde casi todo su valor en solo cuatro años.",
+   "show": "Pero la burbuja estalla, y Lycos pierde casi todo su valor en solo 4 años.",
+   "layout": "foto_lado",
+   "photos": [
+    {
+     "src": "img/gv2.jpg",
+     "label": "Telefónica",
+     "focus": [
+      0.5,
+      0.45
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "texto",
+     "text": "2000",
+     "color": "gray",
+     "at": 0.05
+    },
+    {
+     "type": "texto",
+     "text": "2004",
+     "color": "red",
+     "at": 0.5
+    },
+    {
+     "type": "tachar",
+     "foto": 0,
+     "at": 0.8
+    }
+   ],
+   "red": [
+    "estalla,",
+    "casi"
+   ]
+  },
+  {
+   "say": "En dos mil cuatro la pone a la venta, y la empresa coreana Daum se la queda por unos cien millones de dólares.",
+   "show": "En 2004 la pone a la venta, y la empresa coreana Daum se la queda por unos 100 millones de dólares.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/dc16.jpg",
+     "label": "Telefónica"
+    }
+   ],
+   "notes": [
+    {
+     "type": "rodear",
+     "text": "2004",
+     "at": 0.1
+    },
+    {
+     "type": "precio",
+     "text": "100 M$",
+     "at": 0.7
+    }
+   ],
+   "red": [
+    "100"
+   ]
+  },
+  {
+   "say": "Eso es menos del uno por ciento de lo que había pagado. Se esfumó casi todo.",
+   "show": "Eso es menos del 1 % de lo que había pagado. Se esfumó casi todo.",
+   "layout": "sin_foto",
+   "photos": [],
+   "notes": [
+    {
+     "type": "grafica",
+     "values": [
+      100,
+      0.8
+     ],
+     "labels": [
+      "2000",
+      "2004"
+     ],
+     "values_text": [
+      "12.500 M$",
+      "100 M$"
+     ],
+     "colors": [
+      "blue",
+      "red"
+     ],
+     "at": 0.3
+    }
+   ],
+   "red": [
+    "1",
+    "todo."
+   ]
+  },
+  {
+   "say": "A Terra, comprar Lycos en plena burbuja le salió muy caro.",
+   "show": "A Terra, comprar Lycos en plena burbuja le salió muy caro.",
+   "layout": "dos",
+   "photos": [
+    {
+     "src": "img/lycos.jpg"
+    },
+    {
+     "src": "img/gv2.jpg"
+    }
+   ],
+   "notes": [
+    {
+     "type": "texto",
+     "text": "SALIÓ CARO",
+     "size": "l",
+     "color": "red",
+     "highlight": true,
+     "at": 0.55
+    }
+   ],
+   "red": [
+    "caro."
+   ]
+  }
+ ]
+}
