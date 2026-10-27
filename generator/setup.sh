@@ -17,11 +17,13 @@ get_font @fontsource/inter@5.0.20 inter-latin-700-normal.woff Inter-Bold.woff
 get_font @fontsource/inter@5.0.20 inter-latin-500-normal.woff Inter-Medium.woff
 get_font @fontsource/montserrat@5.0.19 montserrat-latin-900-normal.woff MontBlack.woff
 get_font @fontsource/montserrat@5.0.19 montserrat-latin-800-normal.woff MontXB.woff
+get_font @fontsource/caveat@5.0.20 caveat-latin-700-normal.woff Caveat.woff
+get_font @fontsource/permanent-marker@5.0.12 permanent-marker-latin-400-normal.woff Marker.woff
 python3 - <<'EOF'
 import os
 from PIL import ImageFont
 C = os.path.expanduser("~/.cache/saliocaro")
-for f in ["fonts/MontBlack.woff", "fonts/MontXB.woff", "fonts/Anton.woff", "fonts/Inter-Bold.woff", "fonts/Inter-Medium.woff", "kokoro-v1.0.onnx", "voices-v1.0.bin"]:
+for f in ["fonts/MontBlack.woff", "fonts/MontXB.woff", "fonts/Caveat.woff", "fonts/Marker.woff", "fonts/Anton.woff", "fonts/Inter-Bold.woff", "fonts/Inter-Medium.woff", "kokoro-v1.0.onnx", "voices-v1.0.bin"]:
     p = os.path.join(C, f); assert os.path.getsize(p) > 1000, p
 ImageFont.truetype(os.path.join(C, "fonts/Anton.woff"), 40)
 print("setup OK")

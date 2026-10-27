@@ -449,6 +449,9 @@ class V2:
     # ---------- visuales
     def draw_beat(self, b, t):
         typ = b.get("type", "img"); lt = t - b["s"]
+        if typ == "follow":
+            im = self.bg(b, b["s"]).filter(ImageFilter.GaussianBlur(int(4 + 18 * ease(lt / 0.35))))
+            return ImageEnhance.Brightness(im).enhance(1 - 0.55 * ease(lt / 0.35)).convert("RGBA")
         im = self.bg(b, t, dark=0.35 if typ in ("title", "number", "doc", "end") else 0.0)
         # degradado para legibilidad arriba y en la banda de subtítulos
         lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
@@ -493,6 +496,77 @@ class V2:
             self.comp(im, l2, ease(lt / 0.15), 0.7 + 0.3 * p, (CX2, 470))
         if b.get("stamp"):
             M.Reel.stamp(self, im, b["stamp"].upper(), 0.25, lt, CX2, 760, 150, -9)
+        return im
+
+
+    # ---------- cierre: tarjeta de perfil + "Seguir" que se pulsa solo
+    def draw_follow(self, im, b, t):
+        lt = t - b["s"]; IGB = (0, 149, 246)
+        X0, X1, Y0, Y1 = CX2 - 380, CX2 + 380, 680, 1170
+        # titular
+        p = back(lt / 0.35)
+        if p > 0:
+            l2 = self.layer(); d2 = ImageDraw.Draw(l2)
+            d2.text((CX2, 540), "¿TE HA GUSTADO?", font=self.fit(d2, "¿TE HA GUSTADO?", FB, 84, 820), fill=WHITE2, anchor="mm", stroke_width=8, stroke_fill=BLACK)
+            self.comp(im, l2, ease(lt / 0.15), 0.7 + 0.3 * p, (CX2, 540))
+        # tarjeta de perfil
+        pc = back((lt - 0.15) / 0.4)
+        if pc > 0:
+            card = self.layer(); d = ImageDraw.Draw(card)
+            d.rounded_rectangle((X0 + 8, Y0 + 14, X1 + 8, Y1 + 14), radius=44, fill=(0, 0, 0, 90))
+            d.rounded_rectangle((X0, Y0, X1, Y1), radius=44, fill=(255, 255, 255, 255))
+            ax, ay, ar = X0 + 130, Y0 + 140, 86
+            for k in range(14):        # aro de historia (degradado naranja-rosa)
+                a0 = k * 360 / 14
+                c = tuple(int(u + (v - u) * k / 13) for u, v in zip((254, 196, 21), (216, 26, 136)))
+                d.arc((ax - ar - 14, ay - ar - 14, ax + ar + 14, ay + ar + 14), a0 - 90, a0 - 90 + 360 / 14 + 2, fill=c, width=9)
+            d.ellipse((ax - ar, ay - ar, ax + ar, ay + ar), fill=RED2)
+            d.text((ax, ay - 20), "SALIÓ", font=F(FB, 38), fill=WHITE2, anchor="mm")
+            d.text((ax, ay + 22), "CARO", font=F(FB, 38), fill=YEL, anchor="mm")
+            d.text((X0 + 260, Y0 + 100), self.d.get("handle", "salio.caro"), font=F(FB, 50), fill=BLACK, anchor="lm")
+            d.text((X0 + 260, Y0 + 160), "Errores de marcas", font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
+            d.text((X0 + 260, Y0 + 205), "que costaron millones", font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
+            d.text((CX2, Y0 + 300), "Un caso nuevo cada día", font=F(FX, 40), fill=BLACK, anchor="mm")
+            # botón: azul "Seguir" -> gris "Siguiendo" con check
+            tap = 1.55; bx0, by0, bx1, by1 = X0 + 50, Y0 + 360, X1 - 50, Y0 + 452
+            if lt < tap:
+                d.rounded_rectangle((bx0, by0, bx1, by1), radius=22, fill=IGB)
+                d.text((CX2, (by0 + by1) // 2), "Seguir", font=F(FB, 46), fill=WHITE2, anchor="mm")
+            else:
+                d.rounded_rectangle((bx0, by0, bx1, by1), radius=22, fill=(239, 239, 239))
+                f = F(FB, 46); tw = d.textlength("Siguiendo", font=f); cx = CX2 + 30; cy = (by0 + by1) // 2
+                d.text((cx, cy), "Siguiendo", font=f, fill=BLACK, anchor="mm")
+                q = ease((lt - tap) / 0.25); x = cx - tw / 2 - 64
+                pts = [(x, cy), (x + 16, cy + 17), (x + 46, cy - 18)]
+                if q > 0: d.line(pts[:2] if q < 0.4 else pts, fill=(30, 170, 80), width=9, joint="curve")
+            s = 1.0 - 0.06 * max(0, 1 - abs(lt - tap) / 0.12)      # el botón "se hunde" al pulsar
+            self.comp(im, card, ease((lt - 0.15) / 0.15), (0.75 + 0.25 * pc) * s, (CX2, (Y0 + Y1) // 2))
+            # dedo que entra y pulsa
+            if 0.9 < lt < tap + 0.7:
+                u = ease((lt - 0.9) / (tap - 0.9 - 0.05))
+                fx = int(X1 + 60 + (bx1 - 70 - X1 - 60) * u); fy = int(1500 + (by0 + 46 - 1500) * u)
+                l3 = self.layer(); d3 = ImageDraw.Draw(l3)
+                if lt >= tap:
+                    rr = 40 + 120 * ease((lt - tap) / 0.45); al = int(220 * (1 - (lt - tap) / 0.7))
+                    d3.ellipse((fx - rr, fy - rr, fx + rr, fy + rr), outline=(255, 255, 255, max(0, al)), width=8)
+                al = int(255 * min(1, (tap + 0.7 - lt) / 0.25))
+                d3.ellipse((fx - 38, fy - 38, fx + 38, fy + 38), fill=(255, 255, 255, int(al * 0.85)), outline=(20, 20, 20, al), width=5)
+                im.alpha_composite(l3)
+            # chispas al seguir
+            if tap < lt < tap + 0.6:
+                q = (lt - tap) / 0.6; l4 = self.layer(); d4 = ImageDraw.Draw(l4)
+                for k in range(10):
+                    a = k * 6.283 / 10; r0, r1 = 90 + 160 * q, 120 + 200 * q
+                    cx, cy = CX2, (by0 + by1) // 2
+                    d4.line((cx + r0 * math.cos(a) * 2.2, cy + r0 * math.sin(a), cx + r1 * math.cos(a) * 2.2, cy + r1 * math.sin(a)),
+                            fill=(YEL if k % 2 else RED2) + (int(255 * (1 - q)),), width=9)
+                im.alpha_composite(l4)
+        # pie
+        pf = back((lt - 2.0) / 0.35)
+        if pf > 0:
+            l5 = self.layer(); d5 = ImageDraw.Draw(l5)
+            d5.text((CX2, 1300), "MAÑANA, OTRO CASO", font=self.fit(d5, "MAÑANA, OTRO CASO", FB, 70, 820), fill=YEL, anchor="mm", stroke_width=8, stroke_fill=BLACK)
+            self.comp(im, l5, ease((lt - 2.0) / 0.15), 0.7 + 0.3 * pf, (CX2, 1300))
         return im
 
     def layer(self): return Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -543,25 +617,37 @@ class V2:
         for x in self.beats:
             if x["s"] <= t: b = x
         im = self.draw_beat(b, t)
+        if b.get("type") == "follow": return self.draw_follow(im, b, t).convert("RGB")
         d = ImageDraw.Draw(im)   # marca discreta
         d.rounded_rectangle((60, 250, 262, 304), radius=27, fill=(230, 40, 40, 230))
         d.text((161, 277), "SALIÓ CARO", font=F(FX, 30), fill=WHITE2, anchor="mm")
-        if self.lines[b["line"]].get("visuals") and b.get("type") == "follow" or (b["line"] == len(self.lines) - 1):
-            lt = t - self.lines[-1]["start"]; p = back(lt / 0.4)
-            if p > 0:
-                l2 = self.layer(); d2 = ImageDraw.Draw(l2)
-                d2.rounded_rectangle((CX2 - 230, 1140, CX2 + 230, 1240), radius=50, fill=RED2)
-                d2.text((CX2, 1190), "SEGUIR", font=F(FB, 54), fill=WHITE2, anchor="mm")
-                self.comp(im, l2, ease(lt / 0.2), 0.6 + 0.4 * p, (CX2, 1190))
-        self.captions(im, t)
+        if b.get("type") != "follow": self.captions(im, t)
         if os.environ.get("LABEL"):
             d = ImageDraw.Draw(im); d.rounded_rectangle((CX2 - 300, 1500, CX2 + 300, 1600), radius=20, fill=(0, 0, 0, 200))
             d.text((CX2, 1550), os.environ["LABEL"], font=F(FB, 52), fill=YEL, anchor="mm")
         return im.convert("RGB")
 
 
+FOLLOW_SAY = ["Si te ha gustado, sígueme. Cada día te traigo un caso nuevo.",
+              "Sígueme, que mañana te cuento otro que salió todavía más caro.",
+              "Y si quieres más historias así, sígueme. Hay una nueva cada día."]
+
+def prepare_follow(data):
+    """El cierre siempre es la tarjeta de perfil: reutiliza la frase 'Sígueme' del guion o la añade."""
+    L = data["lines"]
+    src = None
+    for l in L:
+        for v in l.get("visuals") or []: src = v.get("src") or src
+    say = FOLLOW_SAY[sum(map(ord, data.get("slug", "x"))) % len(FOLLOW_SAY)]
+    if "ígueme" in L[-1].get("say", "") and len(L) > 1: L.pop()
+    L.append({"say": say, "show": say, "visuals": [{"type": "follow", "src": src}]})
+
 def main_v2(folder, data):
+    import soundfile as sf
+    prepare_follow(data)
     total = make_voice(folder, data["lines"])
+    a, sr = sf.read(os.path.join(folder, "voice.wav"))       # 1,2 s más para que se vea el "Siguiendo"
+    sf.write(os.path.join(folder, "voice.wav"), np.concatenate([a, np.zeros(int(1.2 * sr))]), sr); total += 1.2
     r = V2(data, total, folder); print(f"duración {total:.1f}s, {len(r.beats)} planos ({total / len(r.beats):.1f} s/plano)")
     if "--stills" in sys.argv:
         os.makedirs(os.path.join(folder, "stills"), exist_ok=True)
@@ -583,6 +669,378 @@ def main_v2(folder, data):
     p.stdin.close(); p.wait(); print("OK", out)
 
 
+# ================================================================== FORMATO 3 · HÍBRIDO (por defecto)
+# Fotos reales impresas como polaroids sobre papel cuadriculado + anotaciones dibujadas a mano que se trazan mientras habla la voz.
+# script.json: {"formato": "hibrido", "slug", "caption", "alt", "lines": [{"say", "show", "layout", "photos": [...], "notes": [...]}]}
+from functools import lru_cache as _lru
+CAV3 = os.path.join(CACHE, "fonts/Caveat.woff"); MK3 = os.path.join(CACHE, "fonts/Marker.woff")
+PAPER3 = (251, 248, 241); GRID3 = (226, 233, 244); INK3 = (33, 35, 45); BLUE3 = (38, 92, 210); GREEN3 = (22, 150, 84)
+RED3 = (222, 52, 42); GRAY3 = (125, 122, 118); HL3 = (255, 224, 90); COIN3 = (255, 205, 60); IGB3 = (0, 149, 246)
+COL3 = {"ink": INK3, "red": RED3, "green": GREEN3, "blue": BLUE3, "gray": GRAY3}
+CAPY3 = 1590
+
+@_lru(None)
+def F3(p, s):
+    return ImageFont.truetype(p, int(s * 1.22) if (p == CAV3 and s >= 45) else int(s))
+def cl3(x): return max(0.0, min(1.0, x))
+def P3(fr, a, b): return ease((fr - a) / max(1e-6, b - a))
+
+@_lru(None)
+def _wob(pts, seed, amp=2.6, step=6):
+    rnd = np.random.default_rng(seed); ph = rnd.random(3) * 6.28; out = []; acc = 0.0
+    for (x0, y0), (x1, y1) in zip(pts[:-1], pts[1:]):
+        L = math.hypot(x1 - x0, y1 - y0); n = max(1, int(L / step)); nx, ny = -(y1 - y0) / (L or 1), (x1 - x0) / (L or 1)
+        for i in range(n):
+            u = i / n; s = acc + u * L
+            o = amp * (math.sin(s / 37 + ph[0]) * .6 + math.sin(s / 13 + ph[1]) * .3 + math.sin(s / 71 + ph[2]) * .5)
+            out.append((x0 + (x1 - x0) * u + nx * o, y0 + (y1 - y0) * u + ny * o))
+        acc += L
+    out.append(pts[-1]); return tuple(out)
+
+def stroke3(d, pts, p, w=7, col=INK3, seed=1, amp=2.6):
+    if p <= 0 or len(pts) < 2: return None
+    q = _wob(tuple((float(a), float(b)) for a, b in pts), seed, amp); q = q[:max(2, int(len(q) * cl3(p)))]
+    d.line(q, fill=col, width=int(w), joint="curve")
+    for x, y in (q[0], q[-1]): d.ellipse((x - w / 2, y - w / 2, x + w / 2, y + w / 2), fill=col)
+    return q[-1]
+
+def circ3(cx, cy, rx, ry=None, turns=1.06, n=48):
+    ry = ry or rx
+    return [(cx + rx * math.cos(math.radians(-100 + 360 * turns * i / n)), cy + ry * math.sin(math.radians(-100 + 360 * turns * i / n))) for i in range(n + 1)]
+
+def arrow3(d, x0, y0, x1, y1, p, w=8, col=INK3, seed=3, head=28):
+    stroke3(d, [(x0, y0), (x1, y1)], p / 0.8 if p < 0.8 else 1, w, col, seed)
+    if p > 0.8:
+        a = math.atan2(y1 - y0, x1 - x0); h = head * cl3((p - 0.8) / 0.2)
+        for s in (1, -1): stroke3(d, [(x1, y1), (x1 - h * math.cos(a + s * .5), y1 - h * math.sin(a + s * .5))], 1, w, col, seed + 5 + s)
+
+def text3(im, x, y, s, font, col, p, anchor="mm"):
+    if p <= 0 or not s: return
+    x, y = int(round(x)), int(round(y)); d = ImageDraw.Draw(im); b = d.textbbox((x, y), s, font=font, anchor=anchor)
+    w, h = b[2] - b[0] + 4, b[3] - b[1] + 4
+    m = Image.new("L", (w, h), 0); ImageDraw.Draw(m).text((x - b[0], y - b[1]), s, font=font, fill=255, anchor=anchor)
+    if p < 1: ImageDraw.Draw(m).rectangle((int(w * cl3(p)), 0, w, h), fill=0)
+    im.paste(col + (255,) if im.mode == "RGBA" else col, (b[0], b[1]), m)
+
+def hl3(im, x, y, s, font, p, col=HL3, anchor="mm"):
+    if p <= 0 or not s: return
+    d = ImageDraw.Draw(im); b = d.textbbox((int(x), int(y)), s, font=font, anchor=anchor); x1 = b[0] - 14 + (b[2] - b[0] + 28) * cl3(p)
+    d.polygon([(b[0] - 14, b[1] + 4), (x1, b[1] - 2), (x1, b[3] + 8), (b[0] - 14, b[3] + 12)], fill=col)
+
+def fitf3(path, size, s, maxw):
+    d = ImageDraw.Draw(Image.new("L", (1, 1))); s0 = size; f = F3(path, s0)
+    while d.textlength(s, font=f) > maxw and s0 > 22: s0 *= 0.92; f = F3(path, s0)
+    return f
+
+def coin3(im, cx, cy, r, label, p, seed=4):
+    if p <= 0: return
+    s = max(0.01, back(p)); rr = r * s; d = ImageDraw.Draw(im)
+    d.ellipse((cx - rr + 5, cy - rr + 7, cx + rr + 5, cy + rr + 7), fill=(225, 220, 208)); d.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), fill=COIN3)
+    stroke3(d, circ3(cx, cy, rr), 1, max(3, int(6 * s)), INK3, seed, 1.2)
+    if label and s > .3: text3(im, cx, cy + 2, label, F3(MK3, max(10, int(r * .7 * s))), INK3, 1)
+
+def stick3(d, cx, cy, sc, p, col=INK3, seed=7):
+    stroke3(d, circ3(cx, cy - 150 * sc, 48 * sc), P3(p, 0, .3), 7, col, seed, 1.2)
+    stroke3(d, [(cx, cy - 102 * sc), (cx, cy + 20 * sc)], P3(p, .3, .5), 7, col, seed + 1)
+    stroke3(d, [(cx - 70 * sc, cy - 40 * sc), (cx, cy - 70 * sc), (cx + 70 * sc, cy - 40 * sc)], P3(p, .5, .7), 7, col, seed + 2)
+    stroke3(d, [(cx - 55 * sc, cy + 120 * sc), (cx, cy + 20 * sc), (cx + 55 * sc, cy + 120 * sc)], P3(p, .7, 1), 7, col, seed + 3)
+    if p > .3:
+        for dx in (-16, 16): d.ellipse((cx + dx * sc - 5, cy - 160 * sc - 5, cx + dx * sc + 5, cy - 160 * sc + 5), fill=col)
+
+# ---------- fotos tipo polaroid
+LAYOUTS3 = {   # fotos: (cx, cy, w, h, rot) · zona de notas: (cx, y0, y1, ancho)
+    "uno":       {"photos": [(540, 600, 700, 500, -3)], "notes": (540, 960, 1340, 880)},
+    "dos":       {"photos": [(330, 560, 450, 340, -5), (770, 960, 380, 300, 6)], "notes": (300, 900, 1330, 420)},
+    "foto_lado": {"photos": [(320, 700, 420, 560, -4)], "notes": (790, 380, 1330, 430)},
+    "sin_foto":  {"photos": [], "notes": (540, 330, 1340, 880)},
+}
+
+class Hibrido:
+    def __init__(self, data, total, folder):
+        self.d, self.total, self.folder, self.L = data, total, folder, data["lines"]
+        self.cache = {}
+        bg = Image.new("RGB", (W, H), PAPER3); d = ImageDraw.Draw(bg)
+        for x in range(0, W, 54): d.line((x, 0, x, H), fill=GRID3, width=2)
+        for y in range(0, H, 54): d.line((0, y, W, y), fill=GRID3, width=2)
+        d.line((92, 0, 92, H), fill=(240, 180, 175), width=3)
+        self.bg = bg
+        last = []
+        for l in self.L:                       # líneas sin fotos heredan las de la anterior
+            if l.get("layout") != "sin_foto" and not l.get("photos") and l.get("type") != "follow": l["photos"] = last
+            last = l.get("photos") or last
+            if not l.get("layout"): l["layout"] = "dos" if len(l.get("photos") or []) >= 2 else ("uno" if l.get("photos") else "sin_foto")
+        self._words()
+
+    def _words(self):
+        self.ws = []
+        for li, l in enumerate(self.L):
+            ws = l["show"].split(); wts = [len(re.sub(r"\W", "", w)) + 2 for w in ws]; tot, acc = sum(wts), l["start"]
+            for w, wt in zip(ws, wts):
+                dd = (l["end"] - l["start"]) * wt / tot; self.ws.append({"w": w, "s": acc, "e": acc + dd, "line": li}); acc += dd
+        self.chunks, cur = [], []
+        for w in self.ws:
+            if cur and (cur[-1]["line"] != w["line"] or len(cur) >= 3 or re.search(r"[.,?!:]$", cur[-1]["w"])):
+                self.chunks.append(cur); cur = []
+            cur.append(w)
+        self.chunks.append(cur)
+
+    def src_img(self, src, w, h):
+        k = (src, w, h)
+        if k not in self.cache:
+            im = Image.open(os.path.join(self.folder, src)).convert("RGB"); s = max(w * 1.12 / im.width, h * 1.12 / im.height)
+            im = im.resize((int(im.width * s) + 1, int(im.height * s) + 1), Image.LANCZOS)
+            self.cache[k] = ImageEnhance.Contrast(ImageEnhance.Color(im).enhance(1.1)).enhance(1.05)
+        return self.cache[k]
+
+    def polaroid(self, im, ph, slot, p, kb, seed):
+        if p <= 0: return
+        cx, cy, w, h, rot = slot; big = self.src_img(ph["src"], w, h); z = 1 + 0.08 * kb
+        cw, ch = int(w * 1.12 / z), int(h * 1.12 / z); fx, fy = ph.get("focus", [0.5, 0.45])
+        x = min(max(cw / 2, fx * big.width), big.width - cw / 2); y = min(max(ch / 2, fy * big.height), big.height - ch / 2)
+        pic = big.crop((int(x - cw / 2), int(y - ch / 2), int(x + cw / 2), int(y + ch / 2))).resize((w, h), Image.BILINEAR)
+        m = 22; lab = 64 if ph.get("label") else 26
+        card = Image.new("RGBA", (w + 2 * m, h + 2 * m + lab), (255, 255, 255, 255)); card.paste(pic, (m, m))
+        if ph.get("label"): text3(card, (w + 2 * m) // 2, h + m + 10 + lab // 2, ph["label"], fitf3(MK3, 44, ph["label"], w), INK3, 1)
+        card.alpha_composite(Image.new("RGBA", (190, 54), (240, 226, 160, 200)), ((w + 2 * m) // 2 - 95, 0))
+        s = back(p); c = card.rotate(rot + (1 - ease(p)) * 8, expand=True, resample=Image.BICUBIC)
+        c = c.resize((max(2, int(c.width * s)), max(2, int(c.height * s))), Image.BICUBIC)
+        sh = Image.new("RGBA", c.size, (0, 0, 0, 0)); sh.putalpha(c.getchannel("A").point(lambda v: int(v * 0.3)))
+        X, Y = int(cx - c.width / 2), int(cy - c.height / 2 + (1 - ease(p)) * -120)
+        im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12)), (X + 10, Y + 16)); im.alpha_composite(c, (X, Y))
+
+    # ---------- anotaciones
+    HEIGHTS = {"texto": {"s": 80, "m": 100, "l": 150}, "numero": 190, "rodear": 230, "check": 100, "contrato": 380, "bola": 320,
+               "monedas": 280, "munecos": 270, "web": 240, "grafica": 380, "precio": 150}
+
+    def note_h(self, n):
+        h = self.HEIGHTS.get(n.get("type"), 0)
+        return h.get(n.get("size", "m"), 100) if isinstance(h, dict) else h
+
+    def draw_notes(self, im, d, li, fr):
+        l = self.L[li]; lay = LAYOUTS3[l["layout"]]; ncx, y0, y1, nw = lay["notes"]
+        notes = l.get("notes") or []; flow = [n for n in notes if self.note_h(n)]
+        tot = sum(self.note_h(n) for n in flow); k = min(1.0, (y1 - y0) / tot) if tot else 1
+        gap = ((y1 - y0) - tot * k) / (len(flow) + 1) if flow else 0; gap = min(gap, 60)
+        y = y0 + max(0, ((y1 - y0) - tot * k - gap * (len(flow) - 1)) / 2) if flow else y0
+        slots = lay["photos"]; n_ph = len(l.get("photos") or [])
+        for i, n in enumerate(notes):
+            at = float(n.get("at", 0.15 + 0.6 * i / max(1, len(notes)))); p = P3(fr, at, min(1.0, at + 0.22))
+            col = COL3.get(n.get("color", "ink"), INK3); typ = n.get("type"); seed = 1000 + li * 50 + i * 7
+            h = self.note_h(n) * k
+            cy = y + h / 2
+            if typ == "texto":
+                size = {"s": 54, "m": 70, "l": 104}.get(n.get("size", "m"), 70) * k
+                font = MK3 if n.get("font", "marker") == "marker" else CAV3
+                f = fitf3(font, size, n["text"], nw)
+                if n.get("highlight"): hl3(im, ncx, cy, n["text"], f, p)
+                text3(im, ncx, cy, n["text"], f, col, p)
+                if n.get("underline"):
+                    tw = ImageDraw.Draw(im).textlength(n["text"], font=f); stroke3(d, [(ncx - tw / 2, cy + f.size * .55), (ncx + tw / 2, cy + f.size * .55 - 4)], P3(fr, at + .15, at + .3), 6, col, seed)
+            elif typ == "numero":
+                if p > 0:
+                    v = float(n["value"]) * ease(min(1, (fr - at) / 0.3)); s = n.get("prefix", "") + fmt_num(v) + n.get("suffix", "")
+                    text3(im, ncx, cy - 20 * k, s, fitf3(MK3, 130 * k, n.get("prefix", "") + fmt_num(n["value"]) + n.get("suffix", ""), nw), COL3.get(n.get("color", "red")), 1)
+                if n.get("label"): text3(im, ncx, cy + 72 * k, n["label"], fitf3(CAV3, 58 * k, n["label"], nw), INK3, P3(fr, at + .1, at + .25))
+            elif typ == "rodear":
+                f = fitf3(MK3, 84 * k, n["text"], nw - 60); text3(im, ncx, cy, n["text"], f, INK3, p)
+                tw = ImageDraw.Draw(im).textlength(n["text"], font=f)
+                stroke3(d, circ3(ncx, cy, tw / 2 + 45, 70 * k), P3(fr, at + .08, at + .25), 8, COL3.get(n.get("color", "red")), seed, 1.5)
+            elif typ == "check":
+                f = fitf3(MK3, 70 * k, n["text"], nw - 90); tw = ImageDraw.Draw(im).textlength(n["text"], font=f)
+                text3(im, ncx - 40, cy, n["text"], f, col if n.get("color") else GREEN3, p)
+                x = ncx - 40 + tw / 2 + 25; ok = n.get("ok", True)
+                if ok: stroke3(d, [(x, cy), (x + 24, cy + 28), (x + 70, cy - 30)], P3(fr, at + .12, at + .25), 10, GREEN3, seed)
+                else: stroke3(d, [(x, cy - 25), (x + 50, cy + 25)], P3(fr, at + .12, at + .2), 10, RED3, seed); stroke3(d, [(x + 50, cy - 25), (x, cy + 25)], P3(fr, at + .2, at + .28), 10, RED3, seed + 1)
+            elif typ == "contrato":
+                w2, h2 = 240 * k, 280 * k; x0, yy = ncx - w2 / 2, cy - h / 2 + 10
+                stroke3(d, [(x0, yy), (x0 + w2, yy), (x0 + w2, yy + h2), (x0, yy + h2), (x0, yy)], p, 7, INK3, seed, 1.6)
+                for j in range(5): stroke3(d, [(x0 + 28, yy + 45 * k + j * 38 * k), (x0 + w2 - 28 - (j % 2) * 40, yy + 45 * k + j * 38 * k)], P3(fr, at + .05 + j * .02, at + .12 + j * .02), 5, GRAY3, seed + j + 1)
+                stroke3(d, [(x0 + 30 + u * (w2 - 60), yy + h2 - 40 * k + 16 * math.sin(u * 14)) for u in np.linspace(0, 1, 30)], P3(fr, at + .2, at + .3), 6, BLUE3, seed + 9)
+                if n.get("text"): text3(im, ncx, yy + h2 + 45 * k, n["text"], fitf3(MK3, 54 * k, n["text"], nw), INK3, P3(fr, at + .25, at + .35))
+            elif typ == "bola":
+                r = 135 * k; pb = p
+                if pb > 0:
+                    rr = r * back(pb); d.ellipse((ncx - rr, cy - rr, ncx + rr, cy + rr), fill=(40, 40, 48)); stroke3(d, circ3(ncx, cy, rr), 1, 8, INK3, seed, 1.2)
+                if fr > at + .1:
+                    text3(im, ncx, cy - 18 * k, n.get("text", ""), fitf3(MK3, 54 * k, n.get("text", ""), r * 1.7), (255, 255, 255), P3(fr, at + .1, at + .2))
+                    text3(im, ncx, cy + 48 * k, n.get("label", "DEUDA"), F3(MK3, 44 * k), RED3, P3(fr, at + .15, at + .25))
+                for j in range(4): stroke3(d, [(ncx - r - 120 + j * 30, cy - 60 + j * 18), (ncx - r - 95 + j * 30, cy - 32 + j * 18)], P3(fr, at + .2 + j * .03, at + .25 + j * .03), 8, GRAY3, seed + 3 + j)
+            elif typ == "monedas":
+                bw, bh = 300 * k, 170 * k; bx0, by0 = ncx - bw / 2, cy - bh / 2 + 40 * k
+                stroke3(d, [(bx0, by0), (bx0 + bw, by0), (bx0 + bw, by0 + bh), (bx0, by0 + bh), (bx0, by0)], p, 8, INK3, seed, 1.6)
+                text3(im, ncx, by0 + bh / 2, n.get("text", ""), fitf3(MK3, 58 * k, n.get("text", ""), bw - 30), COL3.get(n.get("color", "red")), P3(fr, at + .08, at + .18))
+                sx, sy = (slots[0][0], slots[0][1]) if slots and n_ph else (ncx, y0 - 100)
+                for j in range(5):
+                    q = cl3((fr - at - .12 - j * .07) / .2)
+                    if 0 < q < 1: coin3(im, sx + (ncx - sx) * q, sy + (by0 - sy) * q - 120 * math.sin(q * math.pi), 30 * k, n.get("symbol", "$"), 1, seed + 10 + j)
+            elif typ == "munecos":
+                cnt = int(n.get("n", 3)); sp = min(130, nw / max(1, cnt))
+                for j in range(cnt): stick3(d, ncx - sp * (cnt - 1) / 2 + j * sp, cy - 10 * k, 0.55 * k, P3(fr, at + j * .05, at + .12 + j * .05), col if n.get("color") else BLUE3, seed + j * 7)
+                if n.get("text"): text3(im, ncx, cy + 105 * k, n["text"], fitf3(CAV3, 56 * k, n["text"], nw), col if n.get("color") else BLUE3, P3(fr, at + .1, at + .25))
+            elif typ == "web":
+                bw, bh = min(nw, 380) * k, 190 * k; bx0, by0 = ncx - bw / 2, cy - bh / 2
+                stroke3(d, [(bx0, by0), (bx0 + bw, by0), (bx0 + bw, by0 + bh), (bx0, by0 + bh), (bx0, by0)], p, 7, INK3, seed, 1.6)
+                stroke3(d, [(bx0, by0 + 40 * k), (bx0 + bw, by0 + 40 * k)], p, 5, INK3, seed + 1)
+                if p > .5:
+                    for j in range(3): d.ellipse((bx0 + 16 + j * 24, by0 + 12 * k, bx0 + 30 + j * 24, by0 + 26 * k), fill=GRAY3)
+                text3(im, ncx, by0 + bh * .6, n.get("text", ""), fitf3(CAV3, 52 * k, n.get("text", ""), bw - 30), GRAY3, P3(fr, at + .08, at + .18))
+                if n.get("tachar", True):
+                    stroke3(d, [(ncx - 90 * k, cy - 70 * k), (ncx + 90 * k, cy + 80 * k)], P3(fr, at + .2, at + .28), 13, RED3, seed + 2)
+                    stroke3(d, [(ncx + 90 * k, cy - 70 * k), (ncx - 90 * k, cy + 80 * k)], P3(fr, at + .28, at + .36), 13, RED3, seed + 3)
+            elif typ == "grafica":
+                vals = [float(v) for v in n["values"]]; labs = n.get("labels", [""] * len(vals)); vm = max(vals) or 1
+                gw, gh = min(nw, 640), 250 * k; gx0, gy1 = ncx - gw / 2, cy + gh / 2 - 30 * k
+                stroke3(d, [(gx0, gy1 - gh), (gx0, gy1), (gx0 + gw, gy1)], p, 7, INK3, seed)
+                bw = gw / len(vals) * 0.55
+                for j, (v, lb) in enumerate(zip(vals, labs)):
+                    q = P3(fr, at + .1 + j * .08, at + .3 + j * .08); bx = gx0 + gw * (j + .5) / len(vals); bh = (gh - 40) * v / vm * q
+                    c = COL3.get((n.get("colors") or [None] * len(vals))[j] or n.get("color", "blue"), BLUE3)
+                    if bh > 2: d.rectangle((bx - bw / 2, gy1 - bh, bx + bw / 2, gy1 - 4), fill=c + (255,) if im.mode == "RGBA" else c)
+                    stroke3(d, [(bx - bw / 2, gy1), (bx - bw / 2, gy1 - bh), (bx + bw / 2, gy1 - bh), (bx + bw / 2, gy1)], 1 if bh > 2 else 0, 5, INK3, seed + 3 + j, 1.2)
+                    text3(im, bx, gy1 + 40 * k, str(lb), fitf3(CAV3, 46 * k, str(lb), gw / len(vals)), INK3, P3(fr, at + .1, at + .2))
+                    if q > .9 and n.get("values_text"): text3(im, bx, gy1 - bh - 30 * k, str(n["values_text"][j]), fitf3(MK3, 42 * k, str(n["values_text"][j]), gw / len(vals)), c, 1)
+            elif typ == "precio":
+                tx, ty, tw2 = ncx, cy, 170 * k
+                stroke3(d, [(tx - tw2, ty - 50 * k), (tx + tw2 - 40, ty - 50 * k), (tx + tw2, ty), (tx + tw2 - 40, ty + 50 * k), (tx - tw2, ty + 50 * k), (tx - tw2, ty - 50 * k)], p, 7, INK3, seed, 1.6)
+                text3(im, tx - 15, ty, n.get("text", "$$$"), fitf3(MK3, 56 * k, n.get("text", "$$$"), tw2 * 1.6), GREEN3, P3(fr, at + .1, at + .2))
+            # superpuestas a las fotos (no ocupan sitio)
+            elif typ == "tachar" and n_ph:
+                cx, cyp, w, hh, _ = slots[min(int(n.get("foto", 0)), len(slots) - 1)]; r = min(w, hh) * .42
+                stroke3(d, [(cx - r, cyp - r), (cx + r, cyp + r)], P3(fr, at, at + .1), 15, RED3, seed); stroke3(d, [(cx + r, cyp - r), (cx - r, cyp + r)], P3(fr, at + .1, at + .2), 15, RED3, seed + 1)
+            elif typ == "sello" and n_ph:
+                cx, cyp, w, hh, _ = slots[min(int(n.get("foto", 0)), len(slots) - 1)]
+                Reel.stamp(self, im, n["text"].upper(), at * self._dur, fr * self._dur, cx, cyp, 120, -9)
+            elif typ == "flecha" and n_ph >= 2:
+                a, b = slots[0], slots[1]
+                arrow3(d, a[0] + a[2] * .3, a[1] + a[3] * .55, b[0] - b[2] * .35, b[1] - b[3] * .45, p, 9, COL3.get(n.get("color", "green")), seed, 30)
+                if n.get("text"):
+                    mx = (a[0] + b[0]) / 2 + 150; my = (a[1] + a[3] * .5 + b[1] - b[3] * .5) / 2
+                    text3(im, mx, my, n["text"], fitf3(CAV3, 56, n["text"], 300), COL3.get(n.get("color", "green")), P3(fr, at + .15, at + .3))
+            elif typ == "rodear_foto" and n_ph:
+                cx, cyp, w, hh, _ = slots[min(int(n.get("foto", 0)), len(slots) - 1)]
+                fx, fy = n.get("donde", [0.5, 0.5]); px, py = cx - w / 2 + fx * w, cyp - hh / 2 + fy * hh
+                stroke3(d, circ3(px, py, w * .18, hh * .16), p, 9, RED3, seed, 1.5)
+            if self.note_h(n): y += h + gap
+            # (layout comment) notas de flujo se apilan de arriba abajo en la zona de notas
+
+    def stamp(self, im, text, t_in, lt, cx, cy, size=120, rot=-9): return Reel.stamp(self, im, text, t_in, lt, cx, cy, size, rot)
+    def layer(self): return Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    def comp(self, im, lay, alpha=1.0, scale=1.0, center=(540, 700)): Reel.comp(self, im, lay, alpha, scale, center)
+
+    # ---------- cierre
+    def follow(self, im, d, fr, dur):
+        t = fr * dur
+        text3(im, 540, 360, "¿TE HA GUSTADO?", F3(MK3, 76), INK3, cl3(t / 0.35))
+        X0, X1, Y0, Y1 = 150, 930, 480, 960; pc = cl3((t - 0.15) / 0.3)
+        if pc > 0:
+            s = back(pc); card = self.layer(); cd = ImageDraw.Draw(card)
+            cd.rounded_rectangle((X0, Y0, X1, Y1), radius=40, fill=(255, 255, 255, 255))
+            ax, ay, ar = X0 + 130, Y0 + 135, 85
+            for j in range(14):
+                c = tuple(int(u + (v - u) * j / 13) for u, v in zip((254, 196, 21), (216, 26, 136)))
+                cd.arc((ax - ar - 14, ay - ar - 14, ax + ar + 14, ay + ar + 14), j * 360 / 14 - 90, (j + 1) * 360 / 14 - 88, fill=c, width=9)
+            cd.ellipse((ax - ar, ay - ar, ax + ar, ay + ar), fill=RED2)
+            cd.text((ax, ay - 20), "SALIÓ", font=F(FB, 38), fill=(255, 255, 255), anchor="mm"); cd.text((ax, ay + 22), "CARO", font=F(FB, 38), fill=YEL, anchor="mm")
+            cd.text((X0 + 260, Y0 + 95), self.d.get("handle", "salio.caro"), font=F(FB, 50), fill=INK3, anchor="lm")
+            cd.text((X0 + 260, Y0 + 155), "Errores de marcas", font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
+            cd.text((X0 + 260, Y0 + 200), "que costaron millones", font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
+            tap = 1.6; bx0, by0, bx1, by1 = X0 + 50, Y0 + 330, X1 - 50, Y0 + 430
+            if t < tap:
+                cd.rounded_rectangle((bx0, by0, bx1, by1), radius=22, fill=IGB3); cd.text(((bx0 + bx1) // 2, (by0 + by1) // 2), "Seguir", font=F(FB, 48), fill=(255, 255, 255), anchor="mm")
+            else:
+                cd.rounded_rectangle((bx0, by0, bx1, by1), radius=22, fill=(239, 239, 239)); cx, cy = (bx0 + bx1) // 2 + 30, (by0 + by1) // 2
+                cd.text((cx, cy), "Siguiendo", font=F(FB, 48), fill=INK3, anchor="mm"); x = cx - 190; q = ease((t - tap) / 0.25)
+                if q > 0: cd.line([(x, cy), (x + 16, cy + 17), (x + 46, cy - 18)][:2 if q < .4 else 3], fill=GREEN3, width=9, joint="curve")
+            sc = s * (1 - 0.06 * max(0, 1 - abs(t - tap) / 0.12)); card = card.resize((int(W * sc), int(H * sc)), Image.BICUBIC)
+            ox, oy = int((X0 + X1) / 2 * (1 - sc)), int((Y0 + Y1) / 2 * (1 - sc))
+            lay = self.layer(); lay.alpha_composite(card, (ox, oy))
+            shd = self.layer(); shd.putalpha(lay.getchannel("A").point(lambda v: int(v * .25)))
+            im.alpha_composite(shd.filter(ImageFilter.GaussianBlur(14)), (8, 14)); im.alpha_composite(lay)
+            stroke3(d, [(X0 - 12, Y0 - 12), (X1 + 12, Y0 - 12), (X1 + 12, Y1 + 12), (X0 - 12, Y1 + 12), (X0 - 12, Y0 - 12)], cl3((t - .4) / .5), 6, INK3, 700, 1.6)
+            curve = [((1 - u) ** 2 * 960 + 2 * (1 - u) * u * 1010 + u * u * 860, (1 - u) ** 2 * 1260 + 2 * (1 - u) * u * 1060 + u * u * (by1 + 20)) for u in np.linspace(0, 1, 30)]
+            stroke3(d, curve, cl3((t - .6) / .5), 8, INK3, 701)
+            text3(im, 900, 1310, "¡pulsa aquí!", F3(CAV3, 66), BLUE3, cl3((t - .8) / .4))
+            if 1.0 < t < tap + 0.7:
+                u = ease((t - 1.0) / (tap - 1.05)); fx = int(1000 + (bx1 - 80 - 1000) * u); fy = int(1500 + ((by0 + by1) // 2 - 1500) * u)
+                l3 = self.layer(); d3 = ImageDraw.Draw(l3); al = int(255 * min(1, (tap + 0.7 - t) / 0.25))
+                if t >= tap:
+                    rr = 40 + 120 * ease((t - tap) / .45); d3.ellipse((fx - rr, fy - rr, fx + rr, fy + rr), outline=(38, 92, 210, max(0, int(220 * (1 - (t - tap) / .7)))), width=8)
+                d3.ellipse((fx - 38, fy - 38, fx + 38, fy + 38), fill=(255, 255, 255, int(al * .85)), outline=(20, 20, 20, al), width=5)
+                im.alpha_composite(l3)
+        hl3(im, 540, 1150, "MAÑANA, OTRO CASO", F3(MK3, 70), cl3((t - 2.1) / .4)); text3(im, 540, 1150, "MAÑANA, OTRO CASO", F3(MK3, 70), RED3, cl3((t - 2.1) / .4))
+
+    def end_of(self, i): return self.L[i + 1]["start"] if i + 1 < len(self.L) else self.total
+
+    def page(self, i, t):
+        im = self.bg.copy().convert("RGBA"); d = ImageDraw.Draw(im); l = self.L[i]
+        dur = max(0.3, self.end_of(i) - l["start"]); fr = (t - l["start"]) / dur; self._dur = dur
+        if l.get("type") == "follow":
+            self.follow(im, d, fr, dur); return im
+        slots = LAYOUTS3[l["layout"]]["photos"]
+        for j, (ph, slot) in enumerate(zip(l.get("photos") or [], slots)):
+            self.polaroid(im, ph, slot, P3(fr, j * .18, j * .18 + .15), fr, 900 + j)
+        self.draw_notes(im, d, i, fr)
+        d.rounded_rectangle((W // 2 - 120, 110, W // 2 + 120, 166), radius=28, fill=RED2)
+        d.text((W // 2, 138), "SALIÓ CARO", font=F(FX, 32), fill=(255, 255, 255), anchor="mm")
+        return im
+
+    def captions(self, im, t):
+        ch = None
+        for c in self.chunks:
+            if c[0]["s"] - 0.03 <= t: ch = c
+        if ch is None or t > ch[-1]["e"] + 0.35 or self.L[ch[0]["line"]].get("type") == "follow": return
+        d = ImageDraw.Draw(im); txts = [w["w"].upper() for w in ch]; f = F(FB, 84)
+        while d.textlength(" ".join(txts), font=f) > 820 and f.size > 40: f = F(FB, f.size - 4)
+        x = 540 - d.textlength(" ".join(txts), font=f) / 2
+        for w, s in zip(ch, txts):
+            on = w["s"] <= t < w["e"] + 0.05
+            d.text((x, CAPY3), s, font=f, fill=YEL if on else (255, 255, 255), anchor="lm", stroke_width=9, stroke_fill=(15, 15, 15))
+            x += d.textlength(s + " ", font=f)
+
+    def render(self, t):
+        i = max(k for k, l in enumerate(self.L) if l["start"] - 0.28 <= t or k == 0)
+        q = (t - (self.L[i]["start"] - 0.28)) / 0.3
+        if i > 0 and q < 1:
+            e = ease(q); a = self.page(i - 1, self.L[i]["start"] - 0.29); b = self.page(i, max(t, self.L[i]["start"]))
+            im = Image.new("RGBA", (W, H)); im.alpha_composite(a, (int(-W * e), 0)); im.alpha_composite(b, (int(W * (1 - e)), 0))
+        else:
+            im = self.page(i, t)
+        d = ImageDraw.Draw(im); d.rectangle((0, H - 14, int(W * t / self.total), H), fill=RED2)
+        self.captions(im, t)
+        return im.convert("RGB")
+
+def main_v3(folder, data):
+    import soundfile as sf
+    L = data["lines"]
+    if L and "ígueme" in L[-1].get("say", "") and len(L) > 1: L.pop()
+    say = FOLLOW_SAY[sum(map(ord, data.get("slug", "x"))) % len(FOLLOW_SAY)]
+    L.append({"say": say, "show": say, "type": "follow", "layout": "sin_foto"})
+    for l in L: assert l.get("say") and l.get("show"), f"línea sin say/show: {l}"
+    for l in L:
+        for ph in l.get("photos") or []: assert os.path.exists(os.path.join(folder, ph["src"])), f"falta la foto {ph['src']}"
+    total = make_voice(folder, L)
+    a, sr = sf.read(os.path.join(folder, "voice.wav")); sf.write(os.path.join(folder, "voice.wav"), np.concatenate([a, np.zeros(int(1.4 * sr))]), sr); total += 1.4
+    v = Hibrido(data, total, folder); print(f"duración {total:.1f}s")
+    if total > 52: print("AVISO: dura más de 50 s, acorta el guion")
+    if "--stills" in sys.argv:
+        os.makedirs(os.path.join(folder, "stills"), exist_ok=True)
+        for i in range(len(L)): v.render(v.end_of(i) - 0.4).save(os.path.join(folder, "stills", f"{i:02d}.png"))
+        print("stills en", os.path.join(folder, "stills")); return
+    make_music(folder, total, [{"start": l["start"], "card": {"i": i}} for i, l in enumerate(L)], seed=sum(map(ord, data.get("slug", "x"))))
+    out = os.path.join(folder, "reel.mp4")
+    fc = ("[1:a]highpass=f=80,acompressor=threshold=-18dB:ratio=3,aresample=44100,asplit=2[v][key];"
+          "[2:a]volume=0.24,lowpass=f=9000[m];[m][key]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=300[md];"
+          "[v][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5[a]")
+    p = subprocess.Popen([ffmpeg_bin(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                          "-i", os.path.join(folder, "voice.wav"), "-i", os.path.join(folder, "music.wav"), "-filter_complex", fc,
+                          "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
+                          "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
+    for fr in range(int(total * FPS)): p.stdin.write(v.render(fr / FPS).tobytes())
+    p.stdin.close(); p.wait()
+    assert p.returncode == 0 and os.path.getsize(out) > 100_000, "falló ffmpeg"
+    print("OK", out, os.path.getsize(out) // 1024, "KB")
+
+
 def main():
     if sys.argv[1] == "buscar":          # python3 make_reel.py buscar "texto"
         for r in commons_search(" ".join(sys.argv[2:])): print(json.dumps(r, ensure_ascii=False))
@@ -593,6 +1051,8 @@ def main():
         print("OK" if ok else "FALLO"); return
     folder = sys.argv[1]; stills = "--stills" in sys.argv
     data = json.load(open(os.path.join(folder, "script.json")))
+    if data.get("formato") == "hibrido" or any(l.get("notes") or l.get("layout") or l.get("photos") for l in data["lines"]):
+        return main_v3(folder, data)
     if any(l.get("visuals") for l in data["lines"]):
         return main_v2(folder, data)
     for l in data["lines"]:
