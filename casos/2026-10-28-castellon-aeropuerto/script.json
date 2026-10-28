@@ -1,0 +1,145 @@
+{
+ "formato": "hibrido",
+ "slug": "2026-10-28-castellon-aeropuerto",
+ "company": "Aeropuerto de Castellón",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Castellón se gastó",
+  "big": "150 MILLONES",
+  "bottom": "en un aeropuerto sin aviones",
+  "color": "red"
+ },
+ "caption": "¿Crees que se pueden construir más aeropuertos sin pasajeros? Sí o no 👇\n\nEl aeropuerto de Castellón es uno de los mayores fracasos de la obra pública en España. Costó unos 150 millones de euros y se inauguró en marzo de 2011, pero no tuvo vuelos regulares hasta que Ryanair empezó a operar en 2015.\n\nDurante más de cuatro años, una terminal y una pista nuevas esperaron vacías. Una historia de empresas y errores empresariales que explica por qué se habla tanto de aeropuertos fantasma.\n\n#negocios #historiaempresarial #aeropuerto #castellon #españa",
+ "alt": "Reel sobre el aeropuerto de Castellón: cómo costó unos 150 millones de euros, se inauguró en 2011 y no tuvo vuelos regulares hasta 2015. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://www.reasonwhy.es/actualidad/empresa/ryanair-operara-en-el-aeropuerto-fantasma-de-castellon-2015-03-11",
+  "https://www.publico.es/fotogalerias/retoques-19-9-2015.html",
+  "https://globalvoices.org/2013/01/24/spain-proposals-on-twitter-for-an-airport-without-planes/",
+  "https://euroweeklynews.com/2011/03/30/no-planesno-problem/",
+  "https://www.travel-news-photos-stories.com/2015/04/first-flight-for-empty-200m-airport.html"
+ ],
+ "lines": [
+  {
+   "say": "Castellón se gastó unos ciento cincuenta millones en un aeropuerto, y no tuvo ni un vuelo regular.",
+   "show": "Castellón se gastó unos 150 millones en un aeropuerto, y no tuvo ni un vuelo regular.",
+   "red": [
+    "150",
+    "regular."
+   ],
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/terminal.jpg",
+     "label": "Castellón"
+    }
+   ],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 150,
+     "suffix": " millones",
+     "label": "de euros",
+     "color": "red",
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "say": "Lo inauguraron en dos mil once, con terminal, pista y toda la fanfarria, pero sin ningún avión que aterrizara.",
+   "show": "Lo inauguraron en 2011, con terminal, pista y toda la fanfarria, pero sin ningún avión que aterrizara.",
+   "red": [
+    "2011,",
+    "ningún"
+   ],
+   "layout": "sin_foto",
+   "photos": [],
+   "notes": [
+    {
+     "type": "rodear",
+     "text": "2011",
+     "color": "red",
+     "at": 0.25
+    },
+    {
+     "type": "texto",
+     "text": "sin vuelos",
+     "size": "l",
+     "color": "red",
+     "highlight": true,
+     "at": 0.7
+    }
+   ]
+  },
+  {
+   "say": "¿Sabes cuánto tardó en llegar un vuelo regular? Más de cuatro años, hasta que Ryanair apareció en dos mil quince.",
+   "show": "¿Sabes cuánto tardó en llegar un vuelo regular? Más de 4 años, hasta que Ryanair apareció en 2015.",
+   "red": [
+    "4",
+    "2015."
+   ],
+   "layout": "dos",
+   "photos": [
+    {
+     "src": "img/terminal.jpg",
+     "label": "2011"
+    },
+    {
+     "src": "img/ryanair.jpg",
+     "label": "2015"
+    }
+   ],
+   "notes": [
+    {
+     "type": "flecha",
+     "color": "ink",
+     "at": 0.35
+    },
+    {
+     "type": "texto",
+     "text": "4 años",
+     "color": "red",
+     "at": 0.55
+    }
+   ]
+  },
+  {
+   "say": "Mientras tanto, todo ese dinero se quedó parado delante de una pista vacía.",
+   "show": "Mientras tanto, todo ese dinero se quedó parado delante de una pista vacía.",
+   "red": [
+    "parado",
+    "vacía."
+   ],
+   "layout": "sin_foto",
+   "photos": [],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 150,
+     "suffix": " millones",
+     "label": "parados",
+     "color": "red",
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "say": "A Castellón, aquel aeropuerto sin aviones le salió muy caro.",
+   "show": "A Castellón, aquel aeropuerto sin aviones le salió muy caro.",
+   "red": [
+    "caro."
+   ],
+   "layout": "sin_foto",
+   "photos": [],
+   "notes": [
+    {
+     "type": "texto",
+     "text": "SALIÓ CARO",
+     "size": "l",
+     "color": "red",
+     "highlight": true,
+     "at": 0.5
+    }
+   ]
+  }
+ ]
+}

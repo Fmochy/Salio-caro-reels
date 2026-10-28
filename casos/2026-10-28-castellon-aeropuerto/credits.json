@@ -1,0 +1,32 @@
+[
+ {
+  "file": "File:Aeropuerto Castellón-Costa Azahar.JPG",
+  "dest": "terminal.jpg",
+  "author": "Juan Emilio Prades Bel",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Aeropuerto de Castellón-Costa Azahar (Vilanova D'Alcolea).JPG",
+  "dest": "vilanova.jpg",
+  "author": "Juan Emilio Prades Bel",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Aeropuerto de Castellón-Costa Azahar, aeronaves de Ryanair y Blue Air.jpg",
+  "dest": "ryanair.jpg",
+  "author": "Juan Emilio Prades Bel",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Aeropuerto de Castellón.JPG",
+  "dest": "castellon.jpg",
+  "author": "Juan Emilio Prades Bel",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Aeropuerto de Castellón-Costa Azahar (España).JPG",
+  "dest": "espana.jpg",
+  "author": "Juan Emilio Prades Bel",
+  "license": "CC BY-SA 4.0"
+ }
+]
