@@ -1,0 +1,26 @@
+[
+ {
+  "file": "File:Logroño - Sede de Bankia 1.jpg",
+  "dest": "logrono.jpg",
+  "author": "Zarateman",
+  "license": "CC BY-SA 3.0"
+ },
+ {
+  "file": "File:Bankia es un banco español con sede en Valencia y Madrid.jpg",
+  "dest": "banco.jpg",
+  "author": "Simbiosc",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Bankia logo.svg",
+  "dest": "logo.png",
+  "author": "Galifardeu",
+  "license": "Public domain"
+ },
+ {
+  "file": "File:Pintada \"Quién roba, ladrón\", en la antigua sede de Bankia .jpg",
+  "dest": "pintada.jpg",
+  "author": "Garabata",
+  "license": "CC BY 4.0"
+ }
+]

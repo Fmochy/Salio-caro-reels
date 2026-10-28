@@ -1,0 +1,162 @@
+{
+ "formato": "hibrido",
+ "slug": "manana-bankia-opv",
+ "company": "Bankia",
+ "tag": "Bankia · 2011",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Bankia salió a bolsa",
+  "big": "22.000 MILL.",
+  "bottom": "y hubo que rescatarla",
+  "color": "red"
+ },
+ "caption": "¿Tú habrías comprado acciones de Bankia en su salida a bolsa? Sí o no 👇\n\nLa historia de Bankia es uno de los fracasos empresariales más conocidos de España. Salió a bolsa en julio de 2011 a 3,75 euros por acción y recaudó unos 3.000 millones de euros, con muchos pequeños ahorradores entre los compradores.\n\nMenos de un año después, en 2012, el grupo BFA-Bankia tuvo que ser rescatado: recibió unos 22.400 millones de euros de ayuda pública. Años más tarde, tras varias sentencias del Tribunal Supremo, Bankia devolvió a los minoristas lo que invirtieron en la salida a bolsa. Una de las historias de empresas y errores empresariales más caros de la banca española.\n\n#negocios #historiaempresarial #bankia #banca #salioenbolsa",
+ "alt": "Reel sobre la salida a bolsa de Bankia: cómo la entidad cotizó en 2011 a 3,75 euros por acción y en 2012 su grupo necesitó unos 22.400 millones de ayuda pública. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://economipedia.com/definiciones/caso-bankia.html",
+  "https://www.bolsamania.com/noticias_amp/mercados/economiafinanzas--ampl-segura-defiende-que-la-cnmv-contribuyo-a-rebajar-el-precio-de-salida-a-bolsa-de-bankia--3065325.html",
+  "https://www.bankinter.com/blog/lo-ultimo/el-frob-da-por-perdidos-10-000-millones-del-rescate-de-bfa-bankia",
+  "https://www.publico.es/economia/frob-considera-recuperado-2-ayudas-publicas-bankia-bmn.html",
+  "https://es.finance.yahoo.com/noticias/bankia-devolver-los-minoristas-su-080858071.html",
+  "https://www.foxnews.com/world/spains-bailed-out-bankia-to-pay-back-small-shareholders"
+ ],
+ "lines": [
+  {
+   "say": "Bankia salió a bolsa en dos mil once, y menos de un año después hubo que rescatarla.",
+   "show": "Bankia salió a bolsa en 2011, y menos de un año después hubo que rescatarla.",
+   "layout": "dos",
+   "photos": [
+    {
+     "src": "img/banco.jpg",
+     "label": "Bankia",
+     "focus": [
+      0.5,
+      0.33
+     ]
+    },
+    {
+     "src": "img/logo.png",
+     "label": "2011"
+    }
+   ],
+   "notes": [
+    {
+     "type": "flecha",
+     "at": 0.5
+    },
+    {
+     "type": "texto",
+     "text": "RESCATE",
+     "color": "red",
+     "highlight": true,
+     "at": 0.75
+    }
+   ],
+   "red": [
+    "rescatarla."
+   ]
+  },
+  {
+   "say": "Vendió acciones a tres euros con setenta y cinco, y compraron muchos pequeños ahorradores.",
+   "show": "Vendió acciones a 3,75 euros, y compraron muchos pequeños ahorradores.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/logo.png",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "precio",
+     "text": "3,75 €",
+     "at": 0.35
+    },
+    {
+     "type": "munecos",
+     "n": 5,
+     "text": "ahorradores",
+     "at": 0.8
+    }
+   ],
+   "red": [
+    "3,75",
+    "ahorradores"
+   ]
+  },
+  {
+   "say": "¿Sabes cuánto costó el rescate? Unos veintidós mil millones de euros de dinero público.",
+   "show": "¿Sabes cuánto costó el rescate? Unos 22.000 millones de euros de dinero público.",
+   "layout": "sin_foto",
+   "photos": [],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 22000,
+     "suffix": " M",
+     "label": "millones de euros públicos",
+     "color": "red",
+     "at": 0.45
+    }
+   ],
+   "red": [
+    "22.000",
+    "público."
+   ]
+  },
+  {
+   "say": "Muchos ahorradores perdieron casi todo, y el Supremo acabó obligando a devolverles lo invertido.",
+   "show": "Muchos ahorradores perdieron casi todo, y el Supremo acabó obligando a devolverles lo invertido.",
+   "layout": "foto_lado",
+   "photos": [
+    {
+     "src": "img/banco.jpg",
+     "focus": [
+      0.5,
+      0.33
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "munecos",
+     "n": 3,
+     "text": "ahorradores",
+     "at": 0.15
+    },
+    {
+     "type": "texto",
+     "text": "Supremo",
+     "color": "red",
+     "at": 0.7
+    }
+   ],
+   "red": [
+    "casi",
+    "Supremo"
+   ]
+  },
+  {
+   "say": "A Bankia, salir a bolsa así le salió muy caro.",
+   "show": "A Bankia, salir a bolsa así le salió muy caro.",
+   "layout": "sin_foto",
+   "photos": [],
+   "notes": [
+    {
+     "type": "texto",
+     "text": "SALIÓ CARO",
+     "size": "l",
+     "color": "red",
+     "highlight": true,
+     "at": 0.55
+    }
+   ],
+   "red": [
+    "caro."
+   ]
+  }
+ ]
+}

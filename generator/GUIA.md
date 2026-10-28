@@ -1,6 +1,6 @@
 # Salió caro — guía del reel diario
 
-Cuenta de Instagram **@salio.caro** ("Salió caro | Errores de marcas"): cada día un reel de ~30–40 s
+Cuenta de Instagram **@salio.caro** ("Salió caro | Errores de marcas"): dos reels al día de **20–30 s** (cambio del 28-oct: los de 40 s no se veían enteros)
 sobre una decisión de una empresa conocida que le salió cara. Público: España, curiosos de negocios.
 Voz en off sintética (Kokoro, voz `em_alex`). **FORMATO POR DEFECTO DESDE EL 27-OCT: HÍBRIDO (sección 3c)**: fotos reales como polaroids
 sobre cuaderno + anotaciones dibujadas a mano. Lo eligió el dueño de la cuenta; úsalo SIEMPRE. (Antes: fotos a pantalla completa, sección 3b, como los
@@ -17,6 +17,14 @@ shorts virales del nicho. Solo si no se consiguen fotos se usa el formato antigu
   reels ya programados o publicados, y no repitas ninguna empresa + decisión que aparezca ahí. El de la tarde nunca puede repetir el de la mañana.
 - Duplicados: cada tarea solo mira SU franja. Si ya hay un reel PENDING a esa hora (11:30 o 19:30) hoy, no dupliques; un reel de
   la otra franja, o ya PUBLISHED, no cuenta.
+- **PRIORIDAD ESPAÑA (cambio del 28-oct, los datos lo apoyan: Spanair fue el mejor reel):** al menos 5 de cada 7 casos deben ser de
+  **marcas españolas** o de marcas que cualquier español conoce y usa (Zara, Mercadona, El Corte Inglés, Telefónica, Seat, Telepizza,
+  Coca-Cola, Apple…). Casos lejanos para el público español (Xbox, Google Glass, Zune…) solo de forma excepcional.
+  Ideas españolas (si no están publicadas; verifica todo con fuentes y cuenta solo hechos documentados): Pescanova, la salida a bolsa
+  de Bankia, Martinsa-Fadesa, Nueva Rumasa, Air Madrid, Galerías Preciados, Pryca y la fusión con Continente, Fórum Filatélico
+  y Afinsa, Seat y el Ibiza/Volkswagen, Chupa Chups, Nocilla, Fotoprix, Terra (publicado 27-oct), Spanair (publicado), Kodak (publicado 27-oct),
+  Real Madrid-Florentino y los galácticos (solo cifras), la Ciudad de la Justicia de Madrid, el aeropuerto de Castellón, el Castor, la Expo
+  y los Juegos del 92 (costes), Mercadona dejando a marcas fuera de sus lineales.
 - Elige casos **famosos y bien documentados**, con una cifra clara de coste (dinero perdido, cuota, valor, clientes).
 - Varía sector y país semana a semana (tecnología, consumo, automoción, moda, aerolíneas, banca, comida, España/Europa/EEUU/Asia).
 - Ideas de partida (si no están ya publicadas): New Coke, Kodak y la cámara digital, Nokia y el iPhone, BlackBerry,
@@ -44,7 +52,7 @@ no solo la empresa. Reparte la semana entre estos ángulos y no repitas el mismo
    ("Vivió en secreto dentro de un Toys R Us": 27 M). Busca el ejecutivo, empleado o cliente que protagoniza el giro.
 6. **"¿Por qué…?" de algo cotidiano** — por qué una marca hace algo que todos vemos ("Por qué los logos son todos iguales": 21 M).
 
-Duración: los más vistos del nicho duran 30–60 s; apunta a **30–40 s**. Si el guion pasa de 105 palabras, recorta.
+Duración: **20–30 s** (cuenta nueva: hay que conseguir que se vean enteros). Máximo 70 palabras en total.
 El título/gancho lleva un verbo fuerte (destrozó, hundió, rechazó, perdió, prohibió) o una pregunta directa.
 Nunca afirmes delitos ni atribuyas frases inventadas a personas reales; los casos judiciales, solo con condena firme
 y citando la fuente, y mejor evitarlos.
@@ -93,7 +101,7 @@ Reglas de guion:
 
 - **Ritmo fluido, como alguien contándolo de corrido**: une ideas con comas, "y", "pero", "así que"; evita frases telegráficas de 3–4 palabras seguidas. El generador ya lee los puntos internos como comas.
 - **Tono de conversación**, como alguien contándoselo a un amigo: expresiones naturales ("y la gente se vuelve loca", "ojo, que aquí viene lo bueno") y **una pregunta al espectador a mitad del vídeo** ("¿Sabes por cuánto lo vendió?") para retenerlo.
-- **8–11 frases, 85–110 palabras en total** (≈30–40 s). Frases cortas, castellano de España, tono directo de contar una historia.
+- **4–6 frases, 50–70 palabras en total** (≈20–30 s), cada frase de 15 palabras como mucho. Cuenta solo lo esencial: gancho, giro, cifra, remate. Castellano de España, tono directo.
 - **Frase 1 = gancho**: elígelo con el proceso de la sección 5 (3 candidatos con fórmulas distintas, puntuados). Sin introducción.
 - Contexto → decisión → consecuencia con cifra → dato final que impacte.
 - Penúltima frase: "A {empresa}, {la decisión} le salió muy caro." con tarjeta `text` ["Salió","caro."].
@@ -148,6 +156,11 @@ automático con la tarjeta de perfil "Seguir" (no escribas la línea de "Síguem
 **Imágenes:** igual que en 3b, paso 1 (Wikimedia Commons con `buscar`/`bajar`, revisa cada una con Read). Bastan 5–8.
 Elige fotos que se entiendan en pequeño: fachada con logo, producto, fundador/CEO, tienda cerrada, sede.
 
+**Gancho en el fotograma 0 (OBLIGATORIO):** campo `hook` = {"top": "contexto corto (≤ 5 palabras)", "big": "la cifra o frase
+más llamativa (≤ 14 letras: \"12.500 M$\", \"800 TIENDAS\")", "bottom": "la duda o el giro (≤ 6 palabras)", "color": red/green/blue}.
+Se ve entero desde el primer fotograma 1,3 s (también es la portada) y luego sube y destapa la primera página. Debe decir lo mismo que la
+primera frase, que ha de ser corta (≤ 15 palabras). Revisa `stills/gancho.png`.
+
 **script.json:** pon `"formato": "hibrido"` y en cada línea `layout`, `photos` y `notes` (además de say/show/red):
 
 | layout | fotos | dónde van las notas |
@@ -185,16 +198,22 @@ Las cifras importantes van en `numero` o `rodear`. Textos de las notas cortos (�
 No uses los caracteres → ≈ ≠ (no están en las fuentes). La penúltima frase (remate "…le salió muy caro.") lleva un `texto`
 "SALIÓ CARO" grande en rojo con highlight. Revisa los stills: nada cortado ni encima de otra cosa; si se amontona, quita notas.
 
-Ejemplo completo (Toys R Us, el modelo a imitar):
+Ejemplo completo (Toys R Us en 21 s, el modelo a imitar: fíjate en lo cortas que son las frases):
 
 ```json
 {
  "formato": "hibrido",
  "slug": "toysrus-amazon",
+ "company": "Toys R Us",
+ "hook": {
+  "top": "Toys R Us pagaba a Amazon",
+  "big": "50 M$ al año",
+  "bottom": "y Amazon la hundió"
+ },
  "lines": [
   {
-   "say": "Toys R Us le pagaba a Amazon cincuenta millones al año, y Amazon acabó hundiéndola.",
-   "show": "Toys R Us le pagaba a Amazon 50 millones al año, y Amazon acabó hundiéndola.",
+   "say": "Toys R Us le pagaba a Amazon cincuenta millones al año, y Amazon la hundió.",
+   "show": "Toys R Us le pagaba a Amazon 50 millones al año, y Amazon la hundió.",
    "layout": "dos",
    "photos": [
     {
@@ -213,28 +232,20 @@ Ejemplo completo (Toys R Us, el modelo a imitar):
    "notes": [
     {
      "type": "flecha",
-     "at": 0.3
+     "at": 0.25
     },
     {
      "type": "texto",
      "text": "50 M$ al año",
      "color": "green",
      "highlight": true,
-     "at": 0.35
-    },
-    {
-     "type": "texto",
-     "text": "...y la hundió",
-     "font": "mano",
-     "color": "red",
-     "underline": true,
-     "at": 0.7
+     "at": 0.3
     }
    ]
   },
   {
-   "say": "Año dos mil, Toys R Us no quiere complicarse con internet, así que firma un trato: diez años vendiendo sus juguetes solo en Amazon.",
-   "show": "Año 2000, Toys R Us no quiere complicarse con internet, así que firma un trato: 10 años vendiendo sus juguetes solo en Amazon.",
+   "say": "En dos mil firma diez años vendiendo solo en Amazon, en vez de crear su propia web.",
+   "show": "En 2000 firma 10 años vendiendo solo en Amazon, en vez de crear su propia web.",
    "layout": "foto_lado",
    "photos": [
     {
@@ -243,20 +254,20 @@ Ejemplo completo (Toys R Us, el modelo a imitar):
    ],
    "notes": [
     {
-     "type": "rodear",
-     "text": "2000",
-     "at": 0.05
+     "type": "contrato",
+     "text": "10 años",
+     "at": 0.25
     },
     {
-     "type": "contrato",
-     "text": "10 años, solo Amazon",
-     "at": 0.45
+     "type": "web",
+     "text": "toysrus.com",
+     "at": 0.7
     }
    ]
   },
   {
-   "say": "Pero ojo, Amazon empieza a dejar que otros vendan juguetes en su web. Toys R Us la denuncia y gana, pero ya había perdido años sin tienda online propia.",
-   "show": "Pero ojo, Amazon empieza a dejar que otros vendan juguetes en su web. Toys R Us la denuncia y gana, pero ya había perdido años sin tienda online propia.",
+   "say": "Amazon deja vender juguetes a otros, y Toys R Us pierde años clave.",
+   "show": "Amazon deja vender juguetes a otros, y Toys R Us pierde años clave.",
    "layout": "foto_lado",
    "photos": [
     {
@@ -273,71 +284,19 @@ Ejemplo completo (Toys R Us, el modelo a imitar):
      "type": "munecos",
      "n": 3,
      "text": "otros vendedores",
-     "at": 0.1
+     "at": 0.15
     },
     {
-     "type": "check",
-     "text": "Denuncia: gana",
-     "at": 0.45
-    },
-    {
-     "type": "web",
-     "text": "toysrus.com",
+     "type": "texto",
+     "text": "años perdidos",
+     "color": "red",
      "at": 0.65
     }
    ]
   },
   {
-   "say": "Y encima, en dos mil cinco unos fondos la compran cargándola con más de cinco mil millones de deuda.",
-   "show": "Y encima, en 2005 unos fondos la compran cargándola con más de 5.000 millones de deuda.",
-   "layout": "uno",
-   "photos": [
-    {
-     "src": "img/kingstowne.jpg"
-    }
-   ],
-   "notes": [
-    {
-     "type": "texto",
-     "text": "2005: la compran unos fondos",
-     "font": "mano",
-     "at": 0.15
-    },
-    {
-     "type": "bola",
-     "text": "5.000 M$",
-     "label": "DEUDA",
-     "at": 0.55
-    }
-   ]
-  },
-  {
-   "say": "¿Sabes qué hacía esa deuda? Se comía cientos de millones cada año, dinero que no llegaba a las tiendas.",
-   "show": "¿Sabes qué hacía esa deuda? Se comía cientos de millones cada año, dinero que no llegaba a las tiendas.",
-   "layout": "uno",
-   "photos": [
-    {
-     "src": "img/closing7.jpg"
-    }
-   ],
-   "notes": [
-    {
-     "type": "monedas",
-     "text": "DEUDA",
-     "at": 0.3
-    },
-    {
-     "type": "texto",
-     "text": "cientos de millones al año",
-     "font": "mano",
-     "color": "red",
-     "at": 0.6
-    }
-   ]
-  },
-  {
-   "say": "En dos mil diecisiete quiebra, y al año siguiente cierra unas ochocientas tiendas en Estados Unidos.",
-   "show": "En 2017 quiebra, y al año siguiente cierra unas 800 tiendas en Estados Unidos.",
+   "say": "En dos mil diecisiete quiebra y cierra ochocientas tiendas.",
+   "show": "En 2017 quiebra y cierra 800 tiendas.",
    "layout": "uno",
    "photos": [
     {
@@ -353,14 +312,14 @@ Ejemplo completo (Toys R Us, el modelo a imitar):
     {
      "type": "numero",
      "value": 800,
-     "label": "tiendas cerradas en EE. UU.",
-     "at": 0.5
+     "label": "tiendas cerradas",
+     "at": 0.45
     }
    ]
   },
   {
-   "say": "A Toys R Us, regalarle internet a Amazon le salió muy caro.",
-   "show": "A Toys R Us, regalarle internet a Amazon le salió muy caro.",
+   "say": "Regalarle internet a Amazon le salió muy caro.",
+   "show": "Regalarle internet a Amazon le salió muy caro.",
    "layout": "dos",
    "photos": [
     {
@@ -383,7 +342,7 @@ Ejemplo completo (Toys R Us, el modelo a imitar):
      "size": "l",
      "color": "red",
      "highlight": true,
-     "at": 0.55
+     "at": 0.5
     }
    ]
   }
@@ -402,7 +361,7 @@ python3 generator/make_reel.py casos/AAAA-MM-DD-slug            # genera reel.mp
 ```
 
 Revisa los stills: texto cortado, solapes, cifras mal formateadas. Corrige el script.json y repite.
-Duración ideal 28–42 s; si pasa de 45 s, recorta frases.
+Duración ideal 20–30 s. **Si el generador avisa de que pasa de 33 s, recorta frases y vuelve a generar** (no publiques un reel de más de 33 s).
 
 ## 5. El gancho (método /ig-reel)
 
@@ -493,7 +452,7 @@ Auditoría 26-10-2026 · 6 reels (20–25 oct; 5 con más de 48 h). Muestra pequ
 - Rellena SIEMPRE gancho y formula en casos_publicados.json: sin ellos la auditoría no puede comparar fórmulas.
 <!-- APRENDIZAJES:FIN -->
 
-## 9. Ejemplo de referencia (modelo a imitar)
+## 9. Ejemplo antiguo de tarjetas (NO lo imites en longitud ni formato: manda la sección 3c)
 
 Inspirado en el short "How Amazon DESTROYED Toys R Us" (1,4 M de visualizaciones, 560 veces la media de su canal).
 Fíjate en: gancho paradójico con cifra en la primera frase, rivalidad con un "malo", tono de conversación
@@ -631,7 +590,7 @@ y cierre "le salió muy caro". Copia la estructura y el ritmo, nunca los datos.
 }
 ```
 
-## 10. Ejemplo v2 con fotos (modelo de `visuals`)
+## 10. Ejemplo antiguo v2 con fotos (NO lo imites: manda la sección 3c)
 
 Mismo caso Toys R Us en formato con fotos. Fíjate en: portada al principio y al final, 2–4 planos por frase, kickers cortos,
 cifras gigantes en planos `number`.

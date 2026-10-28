@@ -628,9 +628,9 @@ class V2:
         return im.convert("RGB")
 
 
-FOLLOW_SAY = ["Si te ha gustado, sígueme. Cada día te traigo un caso nuevo.",
-              "Sígueme, que mañana te cuento otro que salió todavía más caro.",
-              "Y si quieres más historias así, sígueme. Hay una nueva cada día."]
+FOLLOW_SAY = ["Sígueme, que mañana hay otro.",
+              "Sígueme para más casos así.",
+              "Si te ha gustado, sígueme."]
 
 def prepare_follow(data):
     """El cierre siempre es la tarjeta de perfil: reutiliza la frase 'Sígueme' del guion o la añade."""
@@ -750,8 +750,8 @@ def stick3(d, cx, cy, sc, p, col=INK3, seed=7):
 # ---------- fotos tipo polaroid
 LAYOUTS3 = {   # fotos: (cx, cy, w, h, rot) · zona de notas: (cx, y0, y1, ancho)
     "uno":       {"photos": [(540, 600, 700, 500, -3)], "notes": (540, 960, 1340, 880)},
-    "dos":       {"photos": [(330, 560, 450, 340, -5), (770, 960, 380, 300, 6)], "notes": (300, 900, 1330, 420)},
-    "foto_lado": {"photos": [(320, 700, 420, 560, -4)], "notes": (790, 380, 1330, 430)},
+    "dos":       {"photos": [(330, 560, 450, 340, -5), (770, 960, 380, 300, 6)], "notes": (295, 880, 1340, 450)},
+    "foto_lado": {"photos": [(320, 700, 420, 560, -4)], "notes": (785, 360, 1340, 450)},
     "sin_foto":  {"photos": [], "notes": (540, 330, 1340, 880)},
 }
 
@@ -770,6 +770,12 @@ class Hibrido:
             last = l.get("photos") or last
             if not l.get("layout"): l["layout"] = "dos" if len(l.get("photos") or []) >= 2 else ("uno" if l.get("photos") else "sin_foto")
         self._words()
+        self.hook = data.get("hook")
+        if not self.hook:                  # sin gancho explícito: usa la cifra o el texto más destacado de la 1.ª frase
+            ns = self.L[0].get("notes") or []
+            big = next((n.get("prefix", "") + fmt_num(n["value"]) + n.get("suffix", "") for n in ns if n.get("type") == "numero"), None) \
+                or next((n["text"] for n in ns if n.get("type") in ("texto", "rodear") and n.get("text")), None)
+            if big: self.hook = {"top": data.get("company", ""), "big": big, "bottom": "¿Cómo pudo pasar?"}
 
     def _words(self):
         self.ws = []
@@ -809,8 +815,8 @@ class Hibrido:
         im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12)), (X + 10, Y + 16)); im.alpha_composite(c, (X, Y))
 
     # ---------- anotaciones
-    HEIGHTS = {"texto": {"s": 80, "m": 100, "l": 150}, "numero": 190, "rodear": 230, "check": 100, "contrato": 380, "bola": 320,
-               "monedas": 280, "munecos": 270, "web": 240, "grafica": 380, "precio": 150}
+    HEIGHTS = {"texto": {"s": 90, "m": 115, "l": 165}, "numero": 220, "rodear": 240, "check": 110, "contrato": 400, "bola": 340,
+               "monedas": 290, "munecos": 290, "web": 250, "grafica": 460, "precio": 160}
 
     def note_h(self, n):
         h = self.HEIGHTS.get(n.get("type"), 0)
@@ -829,7 +835,7 @@ class Hibrido:
             h = self.note_h(n) * k
             cy = y + h / 2
             if typ == "texto":
-                size = {"s": 54, "m": 70, "l": 104}.get(n.get("size", "m"), 70) * k
+                size = {"s": 64, "m": 86, "l": 124}.get(n.get("size", "m"), 86) * k
                 font = MK3 if n.get("font", "marker") == "marker" else CAV3
                 f = fitf3(font, size, n["text"], nw)
                 if n.get("highlight"): hl3(im, ncx, cy, n["text"], f, p)
@@ -839,10 +845,10 @@ class Hibrido:
             elif typ == "numero":
                 if p > 0:
                     v = float(n["value"]) * ease(min(1, (fr - at) / 0.3)); s = n.get("prefix", "") + fmt_num(v) + n.get("suffix", "")
-                    text3(im, ncx, cy - 20 * k, s, fitf3(MK3, 130 * k, n.get("prefix", "") + fmt_num(n["value"]) + n.get("suffix", ""), nw), COL3.get(n.get("color", "red")), 1)
+                    text3(im, ncx, cy - 20 * k, s, fitf3(MK3, 160 * k, n.get("prefix", "") + fmt_num(n["value"]) + n.get("suffix", ""), nw), COL3.get(n.get("color", "red")), 1)
                 if n.get("label"): text3(im, ncx, cy + 72 * k, n["label"], fitf3(CAV3, 58 * k, n["label"], nw), INK3, P3(fr, at + .1, at + .25))
             elif typ == "rodear":
-                f = fitf3(MK3, 84 * k, n["text"], nw - 60); text3(im, ncx, cy, n["text"], f, INK3, p)
+                f = fitf3(MK3, 96 * k, n["text"], nw - 60); text3(im, ncx, cy, n["text"], f, INK3, p)
                 tw = ImageDraw.Draw(im).textlength(n["text"], font=f)
                 stroke3(d, circ3(ncx, cy, tw / 2 + 45, 70 * k), P3(fr, at + .08, at + .25), 8, COL3.get(n.get("color", "red")), seed, 1.5)
             elif typ == "check":
@@ -889,13 +895,14 @@ class Hibrido:
                     stroke3(d, [(ncx + 90 * k, cy - 70 * k), (ncx - 90 * k, cy + 80 * k)], P3(fr, at + .28, at + .36), 13, RED3, seed + 3)
             elif typ == "grafica":
                 vals = [float(v) for v in n["values"]]; labs = n.get("labels", [""] * len(vals)); vm = max(vals) or 1
-                gw, gh = min(nw, 640), 250 * k; gx0, gy1 = ncx - gw / 2, cy + gh / 2 - 30 * k
+                gw, gh = min(nw, 760), 330 * k; gx0, gy1 = ncx - gw / 2, cy + gh / 2 - 30 * k
                 stroke3(d, [(gx0, gy1 - gh), (gx0, gy1), (gx0 + gw, gy1)], p, 7, INK3, seed)
                 bw = gw / len(vals) * 0.55
                 for j, (v, lb) in enumerate(zip(vals, labs)):
                     q = P3(fr, at + .1 + j * .08, at + .3 + j * .08); bx = gx0 + gw * (j + .5) / len(vals); bh = (gh - 40) * v / vm * q
                     c = COL3.get((n.get("colors") or [None] * len(vals))[j] or n.get("color", "blue"), BLUE3)
-                    if bh > 2: d.rectangle((bx - bw / 2, gy1 - bh, bx + bw / 2, gy1 - 4), fill=c + (255,) if im.mode == "RGBA" else c)
+                    if bh > 8: d.rectangle((bx - bw / 2, gy1 - bh, bx + bw / 2, gy1 - 4), fill=c + (255,) if im.mode == "RGBA" else c)
+                    bh = max(bh, 6 * q)
                     stroke3(d, [(bx - bw / 2, gy1), (bx - bw / 2, gy1 - bh), (bx + bw / 2, gy1 - bh), (bx + bw / 2, gy1)], 1 if bh > 2 else 0, 5, INK3, seed + 3 + j, 1.2)
                     text3(im, bx, gy1 + 40 * k, str(lb), fitf3(CAV3, 46 * k, str(lb), gw / len(vals)), INK3, P3(fr, at + .1, at + .2))
                     if q > .9 and n.get("values_text"): text3(im, bx, gy1 - bh - 30 * k, str(n["values_text"][j]), fitf3(MK3, 42 * k, str(n["values_text"][j]), gw / len(vals)), c, 1)
@@ -929,7 +936,7 @@ class Hibrido:
 
     # ---------- cierre
     def follow(self, im, d, fr, dur):
-        t = fr * dur
+        t = fr * dur * 1.45            # animación comprimida: el cierre dura ~2,5 s
         text3(im, 540, 360, "¿TE HA GUSTADO?", F3(MK3, 76), INK3, cl3(t / 0.35))
         X0, X1, Y0, Y1 = 150, 930, 480, 960; pc = cl3((t - 0.15) / 0.3)
         if pc > 0:
@@ -1006,8 +1013,41 @@ class Hibrido:
         else:
             im = self.page(i, t)
         d = ImageDraw.Draw(im); d.rectangle((0, H - 14, int(W * t / self.total), H), fill=RED2)
-        self.captions(im, t)
+        u = 0.0 if t < 1.3 else ease((t - 1.3) / 0.32)       # la portada-gancho sube y destapa la primera página
+        if u < 1 and self.hook:
+            im = im.copy(); im.alpha_composite(self.hook_img(), (0, int(-H * u)))
+        if u > 0.5 or not self.hook: self.captions(im, t)
         return im.convert("RGB")
+
+    # ---------- gancho: portada que se lee entera desde el fotograma 0
+    def hook_img(self):
+        if getattr(self, "_hook", None) is not None: return self._hook
+        h = self.hook; im = self.bg.copy().convert("RGBA"); d = ImageDraw.Draw(im)
+        d.rounded_rectangle((W // 2 - 120, 110, W // 2 + 120, 166), radius=28, fill=RED2)
+        d.text((W // 2, 138), "SALIÓ CARO", font=F(FX, 32), fill=(255, 255, 255), anchor="mm")
+        ph = (self.L[0].get("photos") or [None])[0]
+        if ph: self.polaroid(im, ph, (540, 1250, 500, 350, -4), 1.0, 0.0, 950)
+        def lines2(txt, path, size, maxw):
+            f = F3(path, size); words = txt.split()
+            if ImageDraw.Draw(im).textlength(txt, font=f) <= maxw or len(words) < 2: return [txt], fitf3(path, size, txt, maxw)
+            best = min(range(1, len(words)), key=lambda k: abs(len(" ".join(words[:k])) - len(" ".join(words[k:]))))
+            a, b = " ".join(words[:best]), " ".join(words[best:])
+            return [a, b], fitf3(path, size, max(a, b, key=len), maxw)
+        y = 450
+        if h.get("top"):
+            ls, f = lines2(h["top"], MK3, 66, 900)
+            for k, x in enumerate(ls): text3(im, 540, y + k * (f.size + 10), x, f, INK3, 1)
+            y += len(ls) * (f.size + 10) + 40
+        big = h.get("big", ""); fb = fitf3(MK3, 200, big, 940); yb = y + fb.size * 0.6
+        col = COL3.get(h.get("color", "red"), RED3)
+        hl3(im, 540, yb, big, fb, 1); text3(im, 540, yb, big, fb, col, 1)
+        y = yb + fb.size * 0.7 + 30
+        if h.get("bottom"):
+            ls, f = lines2(h["bottom"], CAV3, 74, 900)
+            for k, x in enumerate(ls): text3(im, 540, y + k * (f.size + 6), x, f, BLUE3, 1)
+            yy = y + len(ls) * (f.size + 6) - 10
+            stroke3(d, [(250, yy), (830, yy - 6)], 1, 6, BLUE3, 960)
+        self._hook = im; return im
 
 def main_v3(folder, data):
     import soundfile as sf
@@ -1019,12 +1059,13 @@ def main_v3(folder, data):
     for l in L:
         for ph in l.get("photos") or []: assert os.path.exists(os.path.join(folder, ph["src"])), f"falta la foto {ph['src']}"
     total = make_voice(folder, L)
-    a, sr = sf.read(os.path.join(folder, "voice.wav")); sf.write(os.path.join(folder, "voice.wav"), np.concatenate([a, np.zeros(int(1.4 * sr))]), sr); total += 1.4
+    a, sr = sf.read(os.path.join(folder, "voice.wav")); sf.write(os.path.join(folder, "voice.wav"), np.concatenate([a, np.zeros(int(0.8 * sr))]), sr); total += 0.8
     v = Hibrido(data, total, folder); print(f"duración {total:.1f}s")
-    if total > 52: print("AVISO: dura más de 50 s, acorta el guion")
+    if total > 33: print(f"AVISO: dura {total:.1f} s; el objetivo es 20-30 s: ACORTA EL GUION y vuelve a generar")
     if "--stills" in sys.argv:
         os.makedirs(os.path.join(folder, "stills"), exist_ok=True)
-        for i in range(len(L)): v.render(v.end_of(i) - 0.4).save(os.path.join(folder, "stills", f"{i:02d}.png"))
+        v.render(0).save(os.path.join(folder, "stills", "gancho.png"))
+        for i in range(len(L)): v.render(max(2.0, v.end_of(i) - 0.4)).save(os.path.join(folder, "stills", f"{i:02d}.png"))
         print("stills en", os.path.join(folder, "stills")); return
     make_music(folder, total, [{"start": l["start"], "card": {"i": i}} for i, l in enumerate(L)], seed=sum(map(ord, data.get("slug", "x"))))
     out = os.path.join(folder, "reel.mp4")
