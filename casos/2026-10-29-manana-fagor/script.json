@@ -1,0 +1,167 @@
+{
+ "formato": "hibrido",
+ "slug": "manana-fagor",
+ "company": "Fagor Electrodomésticos",
+ "tag": "Fagor · 2013",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Fagor, la de tu lavadora",
+  "big": "800 MILLONES",
+  "bottom": "de deuda, y quebró en 2013",
+  "color": "red"
+ },
+ "caption": "¿Tuviste alguna vez un electrodoméstico Fagor en casa? Sí o no 👇\n\nLa quiebra de Fagor Electrodomésticos es uno de los mayores fracasos empresariales de la industria española. Era una cooperativa del grupo Mondragón, con unos 5.600 empleados, y llegó al preconcurso en octubre de 2013 con más de 800 millones de euros de deuda, según la prensa de la época.\n\nA finales de octubre, Mondragón dijo que no veía viable el plan de la empresa y no puso más dinero. El 13 de noviembre de 2013 Fagor pidió el concurso de acreedores. Una historia de empresas y errores empresariales que muchos hogares españoles recuerdan.\n\n#negocios #historiaempresarial #fagor #mondragon #quiebra",
+ "alt": "Reel sobre la quiebra de Fagor Electrodomésticos: cómo la cooperativa de Mondragón, con más de 800 millones de deuda, pidió el concurso de acreedores en noviembre de 2013. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://valenciaplaza.com/valenciaplaza/diez-anos-caida-fagor-electrodomesticos-cronologia-quiebra",
+  "https://orain.eus/es/actualidad/economia/2014/01/17/cierre-de-fagor-electrodomesticos--cronologia-de-hechos/",
+  "https://www.libertaddigital.com/libremercado/2013-10-16/fagor-entra-en-preconcurso-de-acreedores-1276501924/",
+  "https://www.legaltoday.com/rincon-de-reuters/fagor-pedira-concurso-acreedores-dice-el-ministro-de-industria-2013-11-07/"
+ ],
+ "lines": [
+  {
+   "say": "Fagor, la marca de media cocina española, quebró debiendo más de ochocientos millones.",
+   "show": "Fagor, la marca de media cocina española, quebró debiendo más de 800 millones.",
+   "layout": "dos",
+   "photos": [
+    {
+     "src": "img/lavadora.jpg",
+     "label": "Fagor",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    {
+     "src": "img/sede.jpg",
+     "label": "2013",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "flecha",
+     "at": 0.3
+    }
+   ],
+   "red": [
+    "800"
+   ]
+  },
+  {
+   "say": "Era una cooperativa del grupo Mondragón, con unos cinco mil seiscientos empleados.",
+   "show": "Era una cooperativa del grupo Mondragón, con unos 5.600 empleados.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/planta.jpg",
+     "focus": [
+      0.4,
+      0.5
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 5600,
+     "label": "empleados",
+     "at": 0.55
+    }
+   ],
+   "red": [
+    "5.600"
+   ]
+  },
+  {
+   "say": "¿Sabes qué pasó? A finales de octubre de dos mil trece, Mondragón dijo que no veía viable el plan y no puso más dinero.",
+   "show": "¿Sabes qué pasó? A finales de octubre de 2013, Mondragón dijo que no veía viable el plan y no puso más dinero.",
+   "layout": "foto_lado",
+   "photos": [
+    {
+     "src": "img/sede.jpg",
+     "label": "Mondragón",
+     "focus": [
+      0.4,
+      0.5
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "rodear",
+     "text": "OCT 2013",
+     "color": "red",
+     "at": 0.4
+    },
+    {
+     "type": "texto",
+     "text": "sin dinero",
+     "color": "red",
+     "at": 0.8
+    }
+   ],
+   "red": [
+    "no",
+    "dinero."
+   ]
+  },
+  {
+   "say": "El trece de noviembre, Fagor pidió el concurso de acreedores.",
+   "show": "El 13 de noviembre, Fagor pidió el concurso de acreedores.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/planta.jpg",
+     "focus": [
+      0.2,
+      0.5
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "sello",
+     "text": "CONCURSO 2013",
+     "at": 0.5
+    }
+   ],
+   "red": [
+    "concurso"
+   ]
+  },
+  {
+   "say": "A Fagor, deber tanto le salió muy caro.",
+   "show": "A Fagor, deber tanto le salió muy caro.",
+   "layout": "dos",
+   "photos": [
+    {
+     "src": "img/lavadora.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    {
+     "src": "img/planta.jpg"
+    }
+   ],
+   "notes": [
+    {
+     "type": "texto",
+     "text": "SALIÓ CARO",
+     "size": "l",
+     "color": "red",
+     "highlight": true,
+     "at": 0.4
+    }
+   ],
+   "red": [
+    "caro."
+   ]
+  }
+ ]
+}
