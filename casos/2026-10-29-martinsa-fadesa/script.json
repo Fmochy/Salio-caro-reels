@@ -1,0 +1,43 @@
+{
+ "formato": "hibrido",
+ "slug": "martinsa-fadesa",
+ "company": "Martinsa-Fadesa",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {"top": "Martinsa-Fadesa debía", "big": "5.000 MILLONES", "bottom": "y quebró en un año", "color": "red"},
+ "caption": "¿Crees que la burbuja del ladrillo se podía haber frenado a tiempo? Sí o no 👇\n\nLa quiebra de Martinsa-Fadesa es uno de los mayores fracasos empresariales de España. En 2007 Fernando Martín compró la inmobiliaria Fadesa por unos 4.000 millones de euros, pidiendo prestado a los bancos, y la fusionó con Martinsa.\n\nEn julio de 2008 el ladrillo se frenó y el grupo pidió el concurso de acreedores con más de 5.000 millones de deuda, el mayor de la historia empresarial española. Una historia de empresas y errores empresariales que explica la burbuja inmobiliaria.\n\n#negocios #historiaempresarial #martinsafadesa #burbujainmobiliaria #quiebra",
+ "alt": "Reel sobre la quiebra de Martinsa-Fadesa: cómo la inmobiliaria compró Fadesa en 2007 con deuda y en julio de 2008 entró en el mayor concurso de acreedores de España. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://www.vozpopuli.com/economia/empresas/fernando_martin-martinsa-fadesa-vallehermoso-sacyr-caja_madrid-bancaja-ico-real_madrid-liquidacion-pisos-auge-caida_0_784121655.html",
+  "https://asest.es/story/fernando-martin-empresario/",
+  "https://valenciaplaza.com/adios-martinsa-fadesa-adios",
+  "https://creditwritedowns.com/2008/07/largest-default-in-spanish-history.html",
+  "https://www.legaltoday.com/practica-juridica/derecho-mercantil/concursal/martinsa-fadesa-emerge-de-la-suspension-de-pagos-2011-03-21/"
+ ],
+ "lines": [
+  {"say": "Martinsa-Fadesa debía más de cinco mil millones, y quebró al año de nacer.",
+   "show": "Martinsa-Fadesa debía más de 5.000 millones, y quebró al año de nacer.",
+   "red": ["5.000", "quebró"], "layout": "uno",
+   "photos": [{"src": "img/mf_plaza.jpg"}],
+   "notes": [{"type": "numero", "value": 5000, "suffix": " M€", "label": "de deuda", "color": "red", "at": 0.3}]},
+  {"say": "En dos mil siete compró Fadesa por unos cuatro mil millones, pidiendo prestado a los bancos.",
+   "show": "En 2007 compró Fadesa por unos 4.000 millones, pidiendo prestado a los bancos.",
+   "red": ["4.000", "prestado"], "layout": "foto_lado",
+   "photos": [{"src": "img/fadesa_of.jpg", "label": "Fadesa"}],
+   "notes": [{"type": "rodear", "text": "2007", "at": 0.1}, {"type": "bola", "text": "4.000 M€", "label": "DEUDA", "at": 0.5}]},
+  {"say": "Pero en dos mil ocho el ladrillo se paró, ¿y quién paga tanta deuda?",
+   "show": "Pero en 2008 el ladrillo se paró, ¿y quién paga tanta deuda?",
+   "red": ["2008", "deuda?"], "layout": "uno",
+   "photos": [{"src": "img/torres.jpg"}],
+   "notes": [{"type": "texto", "text": "el ladrillo se paró", "color": "red", "highlight": true, "at": 0.3}]},
+  {"say": "En julio de dos mil ocho entró en concurso de acreedores, el mayor de la historia de España.",
+   "show": "En julio de 2008 entró en concurso de acreedores, el mayor de la historia de España.",
+   "red": ["concurso", "mayor"], "layout": "uno",
+   "photos": [{"src": "img/mf_plaza.jpg"}],
+   "notes": [{"type": "sello", "text": "Concurso 2008", "at": 0.15}, {"type": "texto", "text": "el mayor de España", "color": "red", "at": 0.7}]},
+  {"say": "A Martinsa-Fadesa, comprar con deuda en plena burbuja le salió muy caro.",
+   "show": "A Martinsa-Fadesa, comprar con deuda en plena burbuja le salió muy caro.",
+   "red": ["caro."], "layout": "uno",
+   "photos": [{"src": "img/fadesa_of.jpg"}],
+   "notes": [{"type": "texto", "text": "SALIÓ CARO", "size": "l", "color": "red", "highlight": true, "at": 0.5}]}
+ ]
+}
