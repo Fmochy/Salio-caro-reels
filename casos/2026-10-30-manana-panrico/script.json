@@ -1,0 +1,103 @@
+{
+ "formato": "hibrido",
+ "slug": "manana-panrico",
+ "company": "Panrico",
+ "tag": "Panrico · 2013",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Panrico, la de los Donuts",
+  "big": "35 MILLONES",
+  "bottom": "en un envoltorio que fracasó",
+  "color": "red"
+ },
+ "caption": "¿Recuerdas cuando los Donuts cambiaron de envoltorio? Sí o no 👇\n\nLa historia de Panrico es uno de los fracasos empresariales más conocidos de la alimentación en España. En 2005 el fondo Apax compró la empresa de los Donuts por unos 900 millones de euros, en buena parte con deuda. En 2009 se invirtieron más de 35 millones en un envoltorio nuevo que no convenció y que en 2012 se retiró.\n\nEn octubre de 2013 Panrico presentó el preconcurso de acreedores con más de 600 millones de deuda, según la prensa de la época. Después, Bimbo la compró por unos 190 millones. Una historia de empresas y errores empresariales que muchos recordamos con una merienda en la mano.\n\n#negocios #historiaempresarial #panrico #donuts #bimbo",
+ "alt": "Reel sobre la crisis de Panrico, la empresa de los Donuts: 35 millones en un envoltorio nuevo que fracasó, preconcurso en 2013 y venta a Bimbo. Historia de empresas y errores empresariales.",
+ "sources": [
+  "https://www.libertaddigital.com/libremercado/2013-10-03/asi-se-torcio-el-imperio-espanol-del-donuts-1276500823/",
+  "https://www.upf.edu/documents/2963149/3508563/66ca.pdf",
+  "https://www.reasonwhy.es/actualidad/sector/panrico-no-le-va-bien-por-los-donuts-y-el-pan-de-molde_2013-10-01",
+  "https://www.bakeryandsnacks.com/Article/2005/08/11/Spanish-bakery-Panrico-to-be-sold-to-private-equity/",
+  "https://www.unquote.com/southern-europe/official-record/86919/oaktree-reaches-agreement-to-sell-panrico-for-eur190m",
+  "https://www.just-food.com/news/spain-bakery-group-panrico-files-for-creditor-protection/"
+ ],
+ "lines": [
+  {
+   "say": "Panrico gastó treinta y cinco millones en cambiar el envoltorio de los Donuts.",
+   "show": "Panrico gastó 35 millones en cambiar el envoltorio de los Donuts.",
+   "red": ["35"],
+   "layout": "dos",
+   "photos": [
+    {"src": "img/fabrica.jpg", "label": "Panrico", "focus": [0.65, 0.2]},
+    {"src": "img/donuts.jpg", "label": "Donuts"}
+   ],
+   "notes": [
+    {"type": "flecha", "at": 0.3},
+    {"type": "texto", "text": "35 millones", "color": "red", "highlight": true, "at": 0.4}
+   ]
+  },
+  {
+   "say": "En dos mil cinco, Apax la compró por unos novecientos millones, con mucha deuda.",
+   "show": "En 2005, Apax la compró por unos 900 millones, con mucha deuda.",
+   "red": ["900", "deuda."],
+   "layout": "foto_lado",
+   "photos": [
+    {"src": "img/donettes.jpg", "label": "Donettes", "focus": [0.5, 0.5]}
+   ],
+   "notes": [
+    {"type": "rodear", "text": "2005", "at": 0.2},
+    {"type": "bola", "text": "900 M", "label": "COMPRA", "at": 0.7}
+   ]
+  },
+  {
+   "say": "Fue un fracaso, y en dos mil doce volvieron al envoltorio de siempre.",
+   "show": "Fue un fracaso, y en 2012 volvieron al envoltorio de siempre.",
+   "red": ["fracaso,"],
+   "layout": "uno",
+   "photos": [
+    {"src": "img/donuts.jpg", "focus": [0.5, 0.5]}
+   ],
+   "notes": [
+    {"type": "tachar", "foto": 0, "at": 0.25},
+    {"type": "texto", "text": "vuelta atrás", "color": "red", "size": "m", "at": 0.75}
+   ]
+  },
+  {
+   "say": "¿Sabes cómo acabó? En dos mil trece, preconcurso con más de seiscientos millones de deuda.",
+   "show": "¿Sabes cómo acabó? En 2013, preconcurso con más de 600 millones de deuda.",
+   "red": ["600", "deuda."],
+   "layout": "uno",
+   "photos": [
+    {"src": "img/huelga2.jpg", "focus": [0.6, 0.35]}
+   ],
+   "notes": [
+    {"type": "sello", "text": "Preconcurso 2013", "at": 0.45},
+    {"type": "numero", "value": 600, "suffix": " M", "label": "de deuda", "color": "red", "at": 0.7}
+   ]
+  },
+  {
+   "say": "Bimbo la compró por unos ciento noventa millones, menos de un cuarto de lo que pagó Apax.",
+   "show": "Bimbo la compró por unos 190 millones, menos de un cuarto de lo que pagó Apax.",
+   "red": ["190"],
+   "layout": "uno",
+   "photos": [
+    {"src": "img/fabrica.jpg", "focus": [0.65, 0.25]}
+   ],
+   "notes": [
+    {"type": "numero", "value": 190, "suffix": " M", "label": "precio de venta", "at": 0.45}
+   ]
+  },
+  {
+   "say": "A Panrico, el envoltorio nuevo y la deuda le salieron muy caros.",
+   "show": "A Panrico, el envoltorio nuevo y la deuda le salieron muy caros.",
+   "red": ["caros."],
+   "layout": "dos",
+   "photos": [
+    {"src": "img/donettes.jpg"},
+    {"src": "img/fabrica.jpg", "focus": [0.65, 0.2]}
+   ],
+   "notes": [
+    {"type": "texto", "text": "SALIÓ CARO", "size": "l", "color": "red", "highlight": true, "at": 0.5}
+   ]
+  }
+ ]
+}
