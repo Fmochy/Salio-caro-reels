@@ -97,5 +97,14 @@
   "slug": "2026-10-30-manana-panrico",
   "gancho": "Panrico gastó treinta y cinco millones en cambiar el envoltorio de los Donuts.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-10-30",
+  "empresa": "Intel",
+  "caso": "Se hunde más de un 25 % en bolsa tras resultados del 3T 2026 y previsión del 4T más floja (actualidad, 19:30)",
+  "formato": "reel",
+  "slug": "2026-10-30-intel-terminal",
+  "gancho": "Intel se hunde hoy -25 % tras sus resultados",
+  "formula": "actualidad terminal"
  }
 ]

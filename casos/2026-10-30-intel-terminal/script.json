@@ -1,0 +1,292 @@
+{
+ "formato": "terminal",
+ "slug": "intel-terminal",
+ "company": "Intel",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Intel se hunde hoy",
+  "big": "-25 %",
+  "bottom": "tras sus resultados",
+  "color": "red",
+  "photo": "img/intel_hq.jpg"
+ },
+ "ticker": [
+  [
+   "INTC",
+   -29.6
+  ],
+  [
+   "NASDAQ",
+   -2.6
+  ],
+  [
+   "S&P 500",
+   -1.6
+  ],
+  [
+   "DOW",
+   -0.7
+  ],
+  [
+   "AMZN",
+   -1.4
+  ],
+  [
+   "CPRI",
+   16.8
+  ],
+  [
+   "GPN",
+   13.2
+  ]
+ ],
+ "series": {
+  "intc": {
+   "name": "Intel (INTC)",
+   "sub": "6 meses",
+   "pre": "$",
+   "close": [
+    94.48,
+    99.62,
+    95.78,
+    108.15,
+    113.01,
+    109.62,
+    124.92,
+    129.44,
+    120.61,
+    120.29,
+    115.93,
+    108.77,
+    108.17,
+    110.8,
+    118.96,
+    118.5,
+    119.84,
+    123.52,
+    121.77,
+    120.89,
+    114.68,
+    109.33,
+    107.93,
+    112.71,
+    111.78,
+    99.17,
+    110.27,
+    107.92,
+    107.04,
+    116.96,
+    124.57,
+    127.86,
+    117.05,
+    121.1,
+    133.99,
+    140.94,
+    132.28,
+    131.65,
+    132.87,
+    128.32,
+    131.72,
+    139.63,
+    127.02,
+    120.35,
+    122.2,
+    110.39,
+    110.24,
+    112.54,
+    109.84,
+    103.12,
+    107.76,
+    102.99,
+    96.98,
+    95.04,
+    97.06,
+    105.45,
+    102.62,
+    100.23,
+    92.32,
+    91.67,
+    86.3,
+    81.88,
+    91.13,
+    90.2,
+    91.0,
+    100.86,
+    101.06,
+    99.81,
+    101.65,
+    97.52,
+    97.71,
+    100.95,
+    104.56,
+    102.5,
+    103.49,
+    96.69,
+    92.8,
+    92.13,
+    90.07,
+    87.26,
+    87.48,
+    88.24,
+    92.09,
+    89.47,
+    89.51,
+    88.97,
+    90.05,
+    91.67,
+    95.8,
+    104.47,
+    106.24,
+    100.32,
+    102.94,
+    97.19,
+    97.14,
+    101.05,
+    108.8,
+    108.6,
+    121.78,
+    123.86,
+    122.6,
+    127.39,
+    123.0,
+    116.03,
+    115.93,
+    120.23,
+    120.0,
+    119.33,
+    116.19,
+    112.5,
+    113.12,
+    107.08,
+    104.7,
+    101.35,
+    102.81,
+    98.12,
+    95.37,
+    89.85,
+    92.03,
+    91.69,
+    92.96,
+    85.49,
+    86.96,
+    90.47,
+    93.74,
+    95.53,
+    92.07,
+    64.92
+   ],
+   "labels": [
+    [
+     0,
+     "abr"
+    ],
+    [
+     21,
+     "jun"
+    ],
+    [
+     42,
+     "jul"
+    ],
+    [
+     84,
+     "ago"
+    ],
+    [
+     105,
+     "sep"
+    ],
+    [
+     126,
+     "oct"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Intel se hunde en bolsa: a media sesión de hoy pierde más de un veinticinco por ciento, después de presentar sus resultados.",
+   "show": "Intel se hunde en bolsa: a media sesión de hoy pierde más de un 25 %, después de presentar sus resultados.",
+   "v": {
+    "type": "titular",
+    "photo": "img/intel_hq.jpg",
+    "heads": [
+     {
+      "tag": "EN DIRECTO",
+      "text": "Intel se hunde en bolsa"
+     },
+     {
+      "text": "Cae más de un 25 % hoy"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía de unos noventa y dos dólares, y hoy se ha desplomado de golpe.",
+   "show": "Mira la gráfica: venía de unos 92 dólares, y hoy se ha desplomado de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "intc",
+    "titulo": "INTC",
+    "draw": 0.6
+   }
+  },
+  {
+   "say": "Y eso que ganó más de lo previsto: ingresó dieciséis mil quinientos millones de dólares, un veintiuno por ciento más.",
+   "show": "Y eso que ganó más de lo previsto: ingresó 16.500 millones de dólares, un 21 % más.",
+   "v": {
+    "type": "cifra",
+    "value": 16.5,
+    "dec": 1,
+    "suffix": " mil M$",
+    "label": "ingresos del 3T · +21 %",
+    "color": "green",
+    "photo": "img/intel_hq2.jpg"
+   }
+  },
+  {
+   "say": "El problema es lo que viene: prevé ganar veinticinco céntimos por acción, y el mercado esperaba cuarenta y tres.",
+   "show": "El problema es lo que viene: prevé ganar 25 céntimos por acción, y el mercado esperaba 43.",
+   "v": {
+    "type": "barras",
+    "titulo": "Beneficio por acción previsto · 4T",
+    "items": [
+     [
+      "Mercado esperaba",
+      43,
+      "43 cént.",
+      "dim"
+     ],
+     [
+      "Intel prevé",
+      25,
+      "25 cént.",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La empresa habla de un mercado de ordenadores más flojo y de memorias más caras. La gran pregunta: ¿será pasajero?",
+   "show": "La empresa habla de un mercado de PC más flojo y de memorias más caras. La gran pregunta: ¿será pasajero?",
+   "v": {
+    "type": "titular",
+    "photo": "img/intel_hq.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Será pasajero el frenazo del PC?"
+     }
+    ]
+   }
+  }
+ ],
+ "sources": [
+  "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+  "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results",
+  "https://www.benzinga.com/markets/tech/26/10/62731810/why-is-intel-stock-sinking-friday",
+  "https://stocktwits.com/news-articles/markets/equity/us-stock-futures-fall-as-amzn-intc-earnings-trigger-tech-sell-off-nvda-rddt-rivn-sfm-in-focus/cZUhYKdR9TI"
+ ],
+ "caption": "Intel se hunde en bolsa hoy: pierde más de un 25 % tras presentar resultados 📉\n\n👉 Intel ingresó 16.500 millones de dólares en el tercer trimestre, un 21 % más que hace un año\n👉 Pero prevé entre 15.000 y 16.000 millones para el último trimestre, y un beneficio por acción de 25 céntimos frente a los 43 que esperaba el mercado\n👉 La empresa habla de un mercado de PC más flojo y de memorias más caras\n\n¿Crees que el frenazo del PC será pasajero? Cuéntamelo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nCifras de Intel a media sesión de hoy, 30 de octubre, y provisionales. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #intel #nasdaq #wallstreet",
+ "alt": "Reel sobre la caída de Intel en bolsa hoy: pierde más de un 25 % tras sus resultados del tercer trimestre y una previsión más floja. Bolsa explicada en 30 segundos."
+}
