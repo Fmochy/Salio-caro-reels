@@ -107,6 +107,36 @@ def make_voice(folder, lines):
     sf.write(os.path.join(folder, "voice.wav"), full, sr)
     return len(full) / sr
 
+def make_voice_edge(folder, lines, voice="es-ES-AlvaroNeural", rate="+10%"):
+    """Voz neuronal (edge-tts). Mismas marcas de tiempo que make_voice: rellena l["start"]/l["end"] y escribe voice.wav."""
+    import asyncio, soundfile as sf
+    try:
+        import edge_tts
+    except ImportError:
+        subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "edge-tts"], check=False); import edge_tts
+    if os.path.exists("/root/.ccr/ca-bundle.crt"): os.environ.setdefault("SSL_CERT_FILE", "/root/.ccr/ca-bundle.crt")
+    proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    sr, GAP, t = 24000, 0.08, 0.15
+    pieces = [np.zeros(int(0.15 * sr), np.float32)]
+    for i, l in enumerate(lines):
+        say = re.sub(r"(?<=[^\d])\.\s+(\S)", lambda m: ", " + m.group(1).lower(), l["say"].strip())
+        mp3 = os.path.join(folder, f"_v{i}.mp3"); wav = os.path.join(folder, f"_v{i}.wav")
+        for intento in range(4):
+            try:
+                asyncio.run(edge_tts.Communicate(say, voice, rate=rate, proxy=proxy).save(mp3)); break
+            except Exception as e:
+                if intento == 3: raise
+        subprocess.run([ffmpeg_bin(), "-y", "-loglevel", "error", "-i", mp3, "-ac", "1", "-ar", str(sr), wav], check=True)
+        a, _ = sf.read(wav, dtype="float32"); os.remove(mp3); os.remove(wav)
+        idx = np.where(np.abs(a) > 0.01)[0]
+        a = a[max(0, idx[0] - 240): idx[-1] + 480]
+        l["start"], l["end"] = t, t + len(a) / sr
+        pieces += [a, np.zeros(int(GAP * sr), np.float32)]; t += len(a) / sr + GAP
+    pieces.append(np.zeros(int(0.6 * sr), np.float32))
+    full = np.concatenate(pieces); full = full / np.abs(full).max() * 0.9
+    sf.write(os.path.join(folder, "voice.wav"), full, sr)
+    return len(full) / sr
+
 # ------------------------------------------------------------------ música de fondo (generada, sin derechos)
 def make_music(folder, total, lines, bpm=96, seed=0):
     """Base sintética de tensión: bombo, hi-hat, bajo en La menor y pad; 'whoosh' en cada cambio de tarjeta."""
@@ -628,6 +658,7 @@ class V2:
         return im.convert("RGB")
 
 
+FOLLOW_SAY_BOLSA = ["Sígueme para entender la bolsa cada día.", "Sígueme, que mañana hay más bolsa.", "Si te ha servido, sígueme."]
 FOLLOW_SAY = ["Sígueme, que mañana hay otro.",
               "Sígueme para más casos así.",
               "Si te ha gustado, sígueme."]
@@ -947,10 +978,22 @@ class Hibrido:
                 c = tuple(int(u + (v - u) * j / 13) for u, v in zip((254, 196, 21), (216, 26, 136)))
                 cd.arc((ax - ar - 14, ay - ar - 14, ax + ar + 14, ay + ar + 14), j * 360 / 14 - 90, (j + 1) * 360 / 14 - 88, fill=c, width=9)
             cd.ellipse((ax - ar, ay - ar, ax + ar, ay + ar), fill=RED2)
-            cd.text((ax, ay - 20), "SALIÓ", font=F(FB, 38), fill=(255, 255, 255), anchor="mm"); cd.text((ax, ay + 22), "CARO", font=F(FB, 38), fill=YEL, anchor="mm")
-            cd.text((X0 + 260, Y0 + 95), self.d.get("handle", "salio.caro"), font=F(FB, 50), fill=INK3, anchor="lm")
-            cd.text((X0 + 260, Y0 + 155), "Errores de marcas", font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
-            cd.text((X0 + 260, Y0 + 200), "que costaron millones", font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
+            if self.d.get("avatar", "texto") == "texto":       # logo de @cerro.en.rojo: "CERRÓ" con fosforito + "EN ROJO" en rojo, sobre papel
+                cd.ellipse((ax - ar, ay - ar, ax + ar, ay + ar), fill=PAPER3 + (255,))
+                f1, f2 = F3(MK3, 34), F3(MK3, 36)
+                w1 = cd.textlength("CERRÓ", font=f1); cd.rectangle((ax - w1 / 2 - 6, ay - 42, ax + w1 / 2 + 6, ay - 8), fill=HL3 + (255,))
+                cd.text((ax, ay - 25), "CERRÓ", font=f1, fill=INK3 + (255,), anchor="mm")
+                cd.text((ax, ay + 18), "EN ROJO", font=f2, fill=RED3 + (255,), anchor="mm")
+                cd.line([(ax - 50, ay + 48), (ax - 15, ay + 54), (ax + 15, ay + 50), (ax + 52, ay + 62)], fill=RED3 + (255,), width=5)
+            elif self.d.get("avatar") == "velas":
+                for j, (dx, dy, hh) in enumerate([(-50, -40, 36), (-17, -16, 30), (17, 10, 36), (50, 34, 30)]):
+                    cx, cy = ax + dx, ay + dy; cd.line((cx, cy - hh / 2 - 16, cx, cy + hh / 2 + 16), fill=(255, 255, 255), width=4)
+                    cd.rectangle((cx - 11, cy - hh / 2, cx + 11, cy + hh / 2), fill=(255, 255, 255))
+            else:
+                cd.text((ax, ay - 20), self.d["avatar"][0], font=F(FB, 38), fill=(255, 255, 255), anchor="mm"); cd.text((ax, ay + 22), self.d["avatar"][1], font=F(FB, 38), fill=YEL, anchor="mm")
+            cd.text((X0 + 260, Y0 + 95), self.d.get("handle", "cerro.en.rojo"), font=F(FB, 50), fill=INK3, anchor="lm")
+            cd.text((X0 + 260, Y0 + 155), self.d.get("tagline", ["La bolsa mundial", "explicada en 30 segundos"])[0], font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
+            cd.text((X0 + 260, Y0 + 200), self.d.get("tagline", ["La bolsa mundial", "explicada en 30 segundos"])[1], font=F(FX, 36), fill=(110, 110, 110), anchor="lm")
             tap = 1.6; bx0, by0, bx1, by1 = X0 + 50, Y0 + 330, X1 - 50, Y0 + 430
             if t < tap:
                 cd.rounded_rectangle((bx0, by0, bx1, by1), radius=22, fill=IGB3); cd.text(((bx0 + bx1) // 2, (by0 + by1) // 2), "Seguir", font=F(FB, 48), fill=(255, 255, 255), anchor="mm")
@@ -974,7 +1017,7 @@ class Hibrido:
                     rr = 40 + 120 * ease((t - tap) / .45); d3.ellipse((fx - rr, fy - rr, fx + rr, fy + rr), outline=(38, 92, 210, max(0, int(220 * (1 - (t - tap) / .7)))), width=8)
                 d3.ellipse((fx - 38, fy - 38, fx + 38, fy + 38), fill=(255, 255, 255, int(al * .85)), outline=(20, 20, 20, al), width=5)
                 im.alpha_composite(l3)
-        hl3(im, 540, 1150, "MAÑANA, OTRO CASO", F3(MK3, 70), cl3((t - 2.1) / .4)); text3(im, 540, 1150, "MAÑANA, OTRO CASO", F3(MK3, 70), RED3, cl3((t - 2.1) / .4))
+        _fin = self.d.get("cierre", "MAÑANA, MÁS BOLSA"); hl3(im, 540, 1150, _fin, F3(MK3, 70), cl3((t - 2.1) / .4)); text3(im, 540, 1150, _fin, F3(MK3, 70), RED3, cl3((t - 2.1) / .4))
 
     def end_of(self, i): return self.L[i + 1]["start"] if i + 1 < len(self.L) else self.total
 
@@ -987,8 +1030,8 @@ class Hibrido:
         for j, (ph, slot) in enumerate(zip(l.get("photos") or [], slots)):
             self.polaroid(im, ph, slot, P3(fr, j * .18, j * .18 + .15), fr, 900 + j)
         self.draw_notes(im, d, i, fr)
-        d.rounded_rectangle((W // 2 - 120, 110, W // 2 + 120, 166), radius=28, fill=RED2)
-        d.text((W // 2, 138), "SALIÓ CARO", font=F(FX, 32), fill=(255, 255, 255), anchor="mm")
+        _bw = max(120, int(d.textlength(self.d.get("brand", "CERRÓ EN ROJO"), font=F(FX, 32)) / 2) + 28); d.rounded_rectangle((W // 2 - _bw, 110, W // 2 + _bw, 166), radius=28, fill=RED2)
+        d.text((W // 2, 138), self.d.get("brand", "CERRÓ EN ROJO"), font=F(FX, 32), fill=(255, 255, 255), anchor="mm")
         return im
 
     def captions(self, im, t):
@@ -1023,8 +1066,8 @@ class Hibrido:
     def hook_img(self):
         if getattr(self, "_hook", None) is not None: return self._hook
         h = self.hook; im = self.bg.copy().convert("RGBA"); d = ImageDraw.Draw(im)
-        d.rounded_rectangle((W // 2 - 120, 110, W // 2 + 120, 166), radius=28, fill=RED2)
-        d.text((W // 2, 138), "SALIÓ CARO", font=F(FX, 32), fill=(255, 255, 255), anchor="mm")
+        _bw = max(120, int(d.textlength(self.d.get("brand", "CERRÓ EN ROJO"), font=F(FX, 32)) / 2) + 28); d.rounded_rectangle((W // 2 - _bw, 110, W // 2 + _bw, 166), radius=28, fill=RED2)
+        d.text((W // 2, 138), self.d.get("brand", "CERRÓ EN ROJO"), font=F(FX, 32), fill=(255, 255, 255), anchor="mm")
         ph = (self.L[0].get("photos") or [None])[0]
         if ph: self.polaroid(im, ph, (540, 1250, 500, 350, -4), 1.0, 0.0, 950)
         def lines2(txt, path, size, maxw):
@@ -1053,12 +1096,16 @@ def main_v3(folder, data):
     import soundfile as sf
     L = data["lines"]
     if L and "ígueme" in L[-1].get("say", "") and len(L) > 1: L.pop()
-    say = FOLLOW_SAY[sum(map(ord, data.get("slug", "x"))) % len(FOLLOW_SAY)]
+    fs = data.get("follow_say") or FOLLOW_SAY_BOLSA; say = fs[sum(map(ord, data.get("slug", "x"))) % len(fs)]
     L.append({"say": say, "show": say, "type": "follow", "layout": "sin_foto"})
     for l in L: assert l.get("say") and l.get("show"), f"línea sin say/show: {l}"
     for l in L:
         for ph in l.get("photos") or []: assert os.path.exists(os.path.join(folder, ph["src"])), f"falta la foto {ph['src']}"
-    total = make_voice(folder, L)
+    voz = data.get("voz", "es-ES-AlvaroNeural")          # voz por defecto de @cerro.en.rojo: Álvaro (neuronal)
+    try:
+        total = make_voice_edge(folder, L, voz, data.get("voz_rate", "+10%")) if voz != "kokoro" else make_voice(folder, L)
+    except Exception as e:
+        print("AVISO: falló la voz neuronal, uso Kokoro:", e); total = make_voice(folder, L)
     a, sr = sf.read(os.path.join(folder, "voice.wav")); sf.write(os.path.join(folder, "voice.wav"), np.concatenate([a, np.zeros(int(0.8 * sr))]), sr); total += 0.8
     v = Hibrido(data, total, folder); print(f"duración {total:.1f}s")
     if total > 33: print(f"AVISO: dura {total:.1f} s; el objetivo es 20-30 s: ACORTA EL GUION y vuelve a generar")
@@ -1082,6 +1129,316 @@ def main_v3(folder, data):
     print("OK", out, os.path.getsize(out) // 1024, "KB")
 
 
+# ================================================================== FORMATO 4 · TERMINAL (POR DEFECTO de @cerro.en.rojo)
+# Pantalla de trading: cinta de cotizaciones, titulares de última hora, gráfica de precios REALES que se dibuja en directo,
+# cifras tipo marcador, barras comparativas y cierre "Sígueme, dale a like y guarda el vídeo". El código va incrustado y se
+# ejecuta como módulo aparte para no mezclar nombres con los formatos antiguos.
+TERMINAL_SRC = r'''"""Formato TERMINAL de @cerro.en.rojo: estética de pantalla de trading (fondo oscuro, cinta de cotizaciones, gráfica de precios
+REALES que se dibuja en directo, titulares de última hora, cifras tipo marcador) + voz neuronal + subtítulos.
+   python3 terminal.py <carpeta con script.json> [--stills]"""
+import json, math, os, re, subprocess, sys
+_st = "--stills" in sys.argv
+import make_reel as M
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
+
+W, H, FPS = 1080, 1920, 30
+BG = (9, 12, 18); PANEL = (17, 22, 32); GRIDC = (28, 36, 50); TXT = (235, 240, 248); DIM = (120, 132, 150)
+GRN = (33, 208, 122); RED = (255, 64, 64); AMB = (255, 196, 0); WHITE = (255, 255, 255)
+MONO = os.path.join(M.CACHE, "fonts/Mono.woff"); FB, FX = M.FB, M.FX
+F = M.F
+def cl(x): return max(0.0, min(1.0, x))
+E, B = M.ease, M.back
+def P(fr, a, b): return E((fr - a) / max(1e-6, b - a))
+
+def fit(text, path, size, maxw):
+    d = ImageDraw.Draw(Image.new("L", (1, 1))); s = size
+    while d.textlength(text, font=F(path, int(s))) > maxw and s > 20: s *= 0.93
+    return F(path, int(s))
+
+def glow(im, draw_fn, col, r=18, alpha=0.7):
+    lay = Image.new("RGBA", im.size, (0, 0, 0, 0)); draw_fn(ImageDraw.Draw(lay), col + (255,))
+    g = lay.filter(ImageFilter.GaussianBlur(r)); g.putalpha(g.getchannel("A").point(lambda v: int(v * alpha)))
+    im.alpha_composite(g); im.alpha_composite(lay)
+
+class Terminal:
+    def __init__(self, data, total, folder):
+        self.d, self.L, self.total, self.folder = data, data["lines"], total, folder
+        self.cache = {}
+        bg = Image.new("RGBA", (W, H), BG + (255,)); d = ImageDraw.Draw(bg)
+        for x in range(0, W, 60): d.line((x, 0, x, H), fill=GRIDC, width=1)
+        for y in range(0, H, 60): d.line((0, y, W, y), fill=GRIDC, width=1)
+        v = Image.new("L", (W, H), 0); ImageDraw.Draw(v).ellipse((-300, -200, W + 300, H + 200), fill=255)
+        dark = Image.new("RGBA", (W, H), (0, 0, 0, 170)); dark.putalpha(v.point(lambda p: 170 - int(p * 0.66)).filter(ImageFilter.GaussianBlur(120)))
+        bg.alpha_composite(dark); self.bg = bg
+        self.series = {k: v for k, v in data.get("series", {}).items()}
+        self._words()
+
+    def _words(self):
+        self.ws = []
+        for li, l in enumerate(self.L):
+            ws = l["show"].split(); wts = [len(re.sub(r"\W", "", w)) + 2 for w in ws]; tot, acc = sum(wts), l["start"]
+            for w, wt in zip(ws, wts):
+                dd = (l["end"] - l["start"]) * wt / tot; self.ws.append({"w": w, "s": acc, "e": acc + dd, "line": li}); acc += dd
+        self.chunks, cur = [], []
+        for w in self.ws:
+            if cur and (cur[-1]["line"] != w["line"] or len(cur) >= 3 or re.search(r"[.,?!:]$", cur[-1]["w"])):
+                self.chunks.append(cur); cur = []
+            cur.append(w)
+        self.chunks.append(cur)
+
+    # ---------- piezas fijas
+    def ticker(self, im, t):
+        d = ImageDraw.Draw(im); d.rectangle((0, 0, W, 92), fill=(5, 7, 11, 255)); d.line((0, 92, W, 92), fill=GRIDC, width=2)
+        items = self.d.get("ticker", []); f = F(MONO, 34)
+        if items:
+            segs = []
+            for name, chg in items:
+                s1 = f"{name} "; s2 = f"{'+' if chg >= 0 else ''}{chg:.1f}%".replace(".", ",")
+                w1, w2 = d.textlength(s1, font=f), d.textlength(s2, font=f); segs.append((s1, s2, chg, w1, w2, w1 + 30 + w2 + 80))
+            Lc = sum(sg[5] for sg in segs); x = 30 - (t * 140) % Lc
+            while x < W + 50:
+                for s1, s2, chg, w1, w2, ww in segs:
+                    if x + ww > -10 and x < W + 50:
+                        col = GRN if chg >= 0 else RED
+                        d.text((x, 46), s1, font=f, fill=TXT, anchor="lm"); x2 = x + w1
+                        d.polygon([(x2, 58), (x2 + 22, 58), (x2 + 11, 36)] if chg >= 0 else [(x2, 36), (x2 + 22, 36), (x2 + 11, 58)], fill=col)
+                        d.text((x2 + 30, 46), s2, font=f, fill=col, anchor="lm")
+                    x += ww
+        d.rounded_rectangle((W - 270, 116, W - 30, 166), radius=25, fill=(255, 40, 40, 255))
+        d.ellipse((W - 250, 133, W - 234, 149), fill=WHITE if int(t * 2) % 2 == 0 else (255, 160, 160))
+        d.text((W - 132, 141), "EN DIRECTO" if self.d.get("tipo", "actualidad") == "actualidad" else "HISTORIA", font=F(FX, 28), fill=WHITE, anchor="mm")
+        d.text((40, 141), self.d.get("brand", "CERRÓ EN ROJO"), font=F(FB, 34), fill=TXT, anchor="lm")
+        d.rectangle((40, 166, 40 + d.textlength(self.d.get("brand", "CERRÓ EN ROJO"), font=F(FB, 34)), 171), fill=RED)
+
+    def captions(self, im, t):
+        ch = None
+        for c in self.chunks:
+            if c[0]["s"] - 0.03 <= t: ch = c
+        if ch is None or t > ch[-1]["e"] + 0.35 or self.L[ch[0]["line"]].get("type") == "follow": return
+        d = ImageDraw.Draw(im); txts = [w["w"].upper() for w in ch]; f = F(FB, 80)
+        while d.textlength(" ".join(txts), font=f) > 860 and f.size > 40: f = F(FB, f.size - 4)
+        x = 540 - d.textlength(" ".join(txts), font=f) / 2
+        for w, s in zip(ch, txts):
+            on = w["s"] <= t < w["e"] + 0.05
+            d.text((x, 1590), s, font=f, fill=AMB if on else WHITE, anchor="lm", stroke_width=8, stroke_fill=(0, 0, 0))
+            x += d.textlength(s + " ", font=f)
+
+    def photo(self, src, size):
+        k = (src, size)
+        if k not in self.cache:
+            im = Image.open(os.path.join(self.folder, src)).convert("RGB"); s = max(size[0] / im.width, size[1] / im.height)
+            im = im.resize((int(im.width * s) + 1, int(im.height * s) + 1), Image.LANCZOS)
+            x0, y0 = (im.width - size[0]) // 2, (im.height - size[1]) // 3
+            self.cache[k] = im.crop((x0, y0, x0 + size[0], y0 + size[1]))
+        return self.cache[k]
+
+    # ---------- escenas
+    def s_titular(self, im, v, lt, dur):
+        """Tarjetas de 'última hora' que entran apiladas."""
+        heads = v["heads"]; y = 470
+        if v.get("photo"):
+            ph = self.photo(v["photo"], (900, 420)).copy(); ph = ImageEnhance.Brightness(ph).enhance(0.55)
+            a = cl(lt / 0.3); ph.putalpha(int(255 * a)); im.alpha_composite(ph.convert("RGBA") if ph.mode != "RGBA" else ph, (90, 230))
+        for i, h in enumerate(heads):
+            at = i * dur / max(1, len(heads)) * 0.8; p = B((lt - at) / 0.35)
+            if p <= 0: continue
+            card = Image.new("RGBA", (920, 230), (0, 0, 0, 0)); d = ImageDraw.Draw(card)
+            d.rounded_rectangle((0, 0, 920, 230), radius=22, fill=(244, 246, 250, 255))
+            d.rectangle((0, 0, 14, 230), fill=RED)
+            d.text((44, 46), h.get("tag", "ÚLTIMA HORA"), font=F(FX, 30), fill=RED, anchor="lm")
+            f = fit(h["text"], FB, 64, 840)
+            words = h["text"].split(); lines = [h["text"]]
+            if d.textlength(h["text"], font=F(FB, 60)) > 840 and len(words) > 2:
+                k = len(words) // 2; lines = [" ".join(words[:k]), " ".join(words[k:])]; f = fit(max(lines, key=len), FB, 60, 840)
+            for j, ln in enumerate(lines): d.text((44, 120 + j * (f.size + 8) - (len(lines) - 1) * f.size / 2), ln, font=f, fill=(15, 18, 26), anchor="lm")
+            rot = (-2.5, 1.8, -1.2)[i % 3]; c = card.rotate(rot, expand=True, resample=Image.BICUBIC)
+            s = 0.8 + 0.2 * p; c = c.resize((int(c.width * s), int(c.height * s)), Image.BICUBIC)
+            sh = Image.new("RGBA", c.size, (0, 0, 0, 0)); sh.putalpha(c.getchannel("A").point(lambda q: int(q * 0.5)))
+            X = int(540 - c.width / 2 + (1 - E((lt - at) / 0.3)) * 700); Y = int(y + i * 250 - c.height / 2 + 115)
+            im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(16)), (X + 10, Y + 18)); im.alpha_composite(c, (X, Y))
+
+    def s_grafica(self, im, v, lt, dur):
+        """Gráfica de precios reales que se dibuja en directo; la cabeza lleva el precio; el tramo final se marca."""
+        ser = self.series[v["serie"]]; ys = np.array(ser["close"], float); n = len(ys)
+        x0, x1, y0, y1 = 110, 970, 360, 1240
+        lo, hi = ys.min(), ys.max(); pad = (hi - lo) * 0.12; lo -= pad; hi += pad
+        gx = lambda i: x0 + (x1 - x0) * i / (n - 1); gy = lambda val: y1 - (y1 - y0) * (val - lo) / (hi - lo)
+        d = ImageDraw.Draw(im)
+        d.rounded_rectangle((60, 230, 1020, 1330), radius=26, fill=PANEL + (235,), outline=GRIDC, width=2)
+        d.text((100, 290), v.get("titulo", ser.get("name", "")), font=F(FB, 46), fill=TXT, anchor="lm")
+        d.text((980, 290), ser.get("sub", ""), font=F(FX, 28), fill=DIM, anchor="rm")
+        for k in range(5):
+            yy = y0 + (y1 - y0) * k / 4; val = hi - (hi - lo) * k / 4
+            d.line((x0, yy, x1, yy), fill=GRIDC, width=1); d.text((x1 + 6, yy), f"{val:,.0f}".replace(",", "."), font=F(MONO, 22), fill=DIM, anchor="lm")
+        labs = ser.get("labels", [])
+        for i, lab in labs: d.text((gx(i), y1 + 36), lab, font=F(MONO, 24), fill=DIM, anchor="mm")
+        p = cl((lt - 0.15) / max(0.5, dur * v.get("draw", 0.7)))
+        k = max(2, int(p * (n - 1)) + 1); pts = [(gx(i), gy(ys[i])) for i in range(k)]
+        if p < 1 and k < n:   # interpolar la cabeza
+            fpart = p * (n - 1) - (k - 1); xi = gx(k - 1) + (gx(k) - gx(k - 1)) * fpart; yi = ys[k - 1] + (ys[k] - ys[k - 1]) * fpart
+            pts.append((xi, gy(yi))); cur = yi
+        else: cur = ys[k - 1]
+        up = cur >= ys[0]; col = GRN if up else RED
+        poly = pts + [(pts[-1][0], y1), (pts[0][0], y1)]
+        area = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ImageDraw.Draw(area).polygon(poly, fill=col + (60,)); im.alpha_composite(area)
+        glow(im, lambda dd, c: dd.line(pts, fill=c, width=7, joint="curve"), col, 14, 0.8)
+        hx, hy = pts[-1]
+        d = ImageDraw.Draw(im); r = 13 + 4 * math.sin(lt * 8); d.ellipse((hx - r, hy - r, hx + r, hy + r), fill=col)
+        lab = f"{ser.get('pre', '')}{cur:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        f = F(MONO, 36); tw = d.textlength(lab, font=f)
+        bx = min(max(hx - tw / 2 - 14, 70), 1010 - tw - 28); by = hy - 82 if hy > 470 else hy + 30
+        d.rounded_rectangle((bx, by, bx + tw + 28, by + 54), radius=10, fill=col); d.text((bx + 14, by + 27), lab, font=f, fill=(5, 8, 12), anchor="lm")
+        mk = v.get("marca")    # resalta el último tramo (la caída)
+        if mk and p >= 1:
+            q = E((lt - 0.15 - dur * v.get("draw", 0.7)) / 0.4); i0 = n - 1 - mk.get("dias", 1)
+            ax, ay = gx(i0), gy(ys[i0]); bx2, by2 = gx(n - 1), gy(ys[-1])
+            d.rounded_rectangle((ax - 26, min(ay, by2) - 30, bx2 + 26, max(ay, by2) + 30), radius=14, outline=RED + (int(255 * q),), width=5)
+            t2 = mk["texto"]; f2 = F(FB, int(96 * (0.6 + 0.4 * B(q)))) if q > 0 else None
+            if f2: glow(im, lambda dd, c: dd.text((540, 1180 if by2 < 900 else 460), t2, font=f2, fill=c, anchor="mm"), RED, 22, 0.6)
+
+    def s_cifra(self, im, v, lt, dur):
+        val = float(v["value"]); p = E((lt - 0.1) / 0.9); cur = val * p
+        dec = v.get("dec", 0); s = f"{cur:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        txt = v.get("prefix", "") + s + v.get("suffix", ""); col = {"red": RED, "green": GRN, "amber": AMB}.get(v.get("color", "red"), RED)
+        if v.get("photo"):
+            ph = self.photo(v["photo"], (520, 520)); m = Image.new("L", (520, 520), 0); ImageDraw.Draw(m).ellipse((0, 0, 519, 519), fill=255)
+            a = B(lt / 0.4); sz = max(2, int(520 * a)); im.paste(ph.resize((sz, sz)), (540 - sz // 2, 520 - sz // 2), m.resize((sz, sz)))
+            d = ImageDraw.Draw(im); d.ellipse((540 - sz // 2 - 8, 520 - sz // 2 - 8, 540 + sz // 2 + 8, 520 + sz // 2 + 8), outline=col, width=8)
+            if v.get("name"): d.rounded_rectangle((540 - 230, 760, 540 + 230, 820), radius=30, fill=PANEL); d.text((540, 790), v["name"], font=fit(v["name"], FX, 34, 430), fill=TXT, anchor="mm")
+            cy = 1010
+        else: cy = 760
+        f = fit(v.get("prefix", "") + f"{val:,.{dec}f}".replace(",", ".") + v.get("suffix", ""), MONO, 190, 960)
+        glow(im, lambda dd, c: dd.text((540, cy), txt, font=f, fill=c, anchor="mm"), col, 26, 0.65)
+        if v.get("label"):
+            d = ImageDraw.Draw(im); d.text((540, cy + f.size * 0.75), v["label"], font=fit(v["label"], FX, 52, 900), fill=TXT, anchor="mm")
+
+    def s_barras(self, im, v, lt, dur):
+        items = v["items"]; mx = max(it[1] for it in items); d = ImageDraw.Draw(im)
+        d.text((540, 330), v.get("titulo", ""), font=fit(v.get("titulo", ""), FB, 56, 940), fill=TXT, anchor="mm")
+        for i, (name, val, txt, colk) in enumerate(items):
+            y = 520 + i * 260; q = E((lt - 0.15 - i * 0.25) / 0.7); col = {"red": RED, "green": GRN, "dim": DIM, "amber": AMB}[colk]
+            d.text((90, y - 60), name, font=F(FX, 44), fill=TXT, anchor="lm")
+            d.rounded_rectangle((90, y, 990, y + 90), radius=16, fill=PANEL)
+            wbar = 900 * val / mx * q
+            if wbar > 20: d.rounded_rectangle((90, y, 90 + wbar, y + 90), radius=16, fill=col)
+            if q > 0.3: d.text((990, y - 60), txt, font=F(MONO, 50), fill=col if colk != "dim" else TXT, anchor="rm")
+
+    def s_follow(self, im, v, lt, dur):
+        t = lt * 1.3; d = ImageDraw.Draw(im)
+        d.text((540, 400), "¿TE HA SERVIDO?", font=F(FB, 78), fill=TXT, anchor="mm")
+        acts = [("like", "DALE A LIKE", RED), ("save", "GUÁRDALO", AMB), ("follow", "SÍGUEME", GRN)]
+        for i, (k, label, col) in enumerate(acts):
+            at = 0.25 + i * 0.55; p = B((t - at) / 0.35)
+            if p <= 0: continue
+            cy = 640 + i * 250; cx = 300; on = t > at + 0.35
+            r = 85 * p; d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=PANEL, outline=col, width=6)
+            if k == "like":
+                s = 1.3 * p; pts = [(cx + 46 * s * math.sin(a) ** 3 * 1.0, cy - (37 * s * math.cos(a) - 14 * s * math.cos(2 * a) - 6 * s * math.cos(3 * a) - 2 * s * math.cos(4 * a)) * 1.0 - 6) for a in np.linspace(0, 2 * math.pi, 60)]
+                d.polygon(pts, fill=col if on else None, outline=col); d.line(pts + [pts[0]], fill=col, width=6)
+            elif k == "save":
+                s = p; bw, bh = 52 * s, 70 * s; poly = [(cx - bw / 2, cy - bh / 2), (cx + bw / 2, cy - bh / 2), (cx + bw / 2, cy + bh / 2), (cx, cy + bh / 4), (cx - bw / 2, cy + bh / 2)]
+                d.polygon(poly, fill=col if on else None, outline=col); d.line(poly + [poly[0]], fill=col, width=6)
+            else:
+                s = p; d.ellipse((cx - 22 * s, cy - 44 * s, cx + 22 * s, cy), outline=col, width=6, fill=col if on else None)
+                d.arc((cx - 44 * s, cy + 2, cx + 44 * s, cy + 80 * s), 180, 360, fill=col, width=6)
+            d.text((cx + 130, cy), label, font=F(FB, 66), fill=col if on else TXT, anchor="lm")
+            if on and t < at + 0.8:
+                q = (t - at - 0.35) / 0.45
+                for j in range(8):
+                    a = j * math.pi / 4; r0, r1 = 100 + 40 * q, 130 + 60 * q
+                    d.line((cx + r0 * math.cos(a), cy + r0 * math.sin(a), cx + r1 * math.cos(a), cy + r1 * math.sin(a)), fill=col, width=6)
+        d.text((540, 1530), "Información divulgativa. No es recomendación de inversión.", font=F(FX, 28), fill=DIM, anchor="mm")
+        f = F(FB, 54); h = "@" + self.d.get("handle", "cerro.en.rojo"); p = B((t - 2.0) / 0.4)
+        if p > 0:
+            tw = d.textlength(h, font=f); d.rounded_rectangle((540 - tw / 2 - 40, 1360, 540 + tw / 2 + 40, 1450), radius=45, fill=RED)
+            d.text((540, 1405), h, font=f, fill=WHITE, anchor="mm")
+
+    # ---------- gancho (fotograma 0)
+    def hook(self, im, t):
+        h = self.d["hook"]; lay = self.bg.copy(); self.ticker(lay, t); d = ImageDraw.Draw(lay)
+        d.text((540, 470), h["top"].upper(), font=fit(h["top"].upper(), FB, 70, 940), fill=TXT, anchor="mm")
+        f = fit(h["big"], MONO, 230, 980); col = RED if h.get("color", "red") == "red" else GRN
+        glow(lay, lambda dd, c: dd.text((540, 760), h["big"], font=f, fill=c, anchor="mm"), col, 30, 0.75)
+        d = ImageDraw.Draw(lay); d.text((540, 1010), h["bottom"], font=fit(h["bottom"], FX, 64, 940), fill=AMB, anchor="mm")
+        if h.get("photo"):
+            ph = self.photo(h["photo"], (300, 300)); m = Image.new("L", (300, 300), 0); ImageDraw.Draw(m).ellipse((0, 0, 299, 299), fill=255)
+            lay.paste(ph, (390, 1100), m); d.ellipse((382, 1092, 698, 1408), outline=col, width=8)
+        return lay
+
+    def render(self, t):
+        i = max(k for k, l in enumerate(self.L) if l["start"] - 0.15 <= t or k == 0); l = self.L[i]
+        end = self.L[i + 1]["start"] if i + 1 < len(self.L) else self.total; dur = max(0.4, end - l["start"]); lt = max(0.0, t - l["start"])
+        im = self.bg.copy(); v = l.get("v", {"type": "follow"}) if l.get("type") != "follow" else {"type": "follow"}
+        getattr(self, "s_" + v["type"])(im, v, lt, dur)
+        k = (t - (l["start"] - 0.15)) / 0.15
+        if i > 0 and k < 1:   # flash de corte
+            fl = Image.new("RGBA", (W, H), (255, 255, 255, int(120 * (1 - k)))); im.alpha_composite(fl)
+        self.ticker(im, t)
+        u = 0.0 if t < 1.3 else E((t - 1.3) / 0.25)
+        if u < 1 and self.d.get("hook"):
+            hk = self.hook(im, t); hk.putalpha(int(255 * (1 - u))); im.alpha_composite(hk)
+        if u > 0.5: self.captions(im, t)
+        d = ImageDraw.Draw(im); d.rectangle((0, H - 12, int(W * t / self.total), H), fill=RED)
+        return im.convert("RGB")
+
+def main():
+    folder = sys.argv[1]; data = json.load(open(os.path.join(folder, "script.json")))
+    L = data["lines"]; say = data.get("follow_say", "Sígueme, dale a like y guarda el vídeo.")
+    L.append({"say": say, "show": say, "type": "follow"})
+    import soundfile as sf
+    total = M.make_voice_edge(folder, L, data.get("voz", "es-ES-AlvaroNeural"), data.get("voz_rate", "+12%"))
+    a, sr = sf.read(os.path.join(folder, "voice.wav")); sf.write(os.path.join(folder, "voice.wav"), np.concatenate([a, np.zeros(int(1.0 * sr))]), sr); total += 1.0
+    v = Terminal(data, total, folder); print(f"duración {total:.1f}s")
+    if _st:
+        os.makedirs(os.path.join(folder, "stills"), exist_ok=True); v.render(0).save(os.path.join(folder, "stills", "gancho.png"))
+        for i, l in enumerate(L):
+            end = L[i + 1]["start"] if i + 1 < len(L) else total
+            v.render(max(1.8, end - 0.3)).save(os.path.join(folder, "stills", f"{i:02d}.png"))
+        return
+    M.make_music(folder, total, [{"start": l["start"], "card": {"i": i}} for i, l in enumerate(L)], bpm=110, seed=11)
+    out = os.path.join(folder, "reel.mp4")
+    fc = ("[1:a]highpass=f=80,acompressor=threshold=-18dB:ratio=3,aresample=44100,asplit=2[v][key];"
+          "[2:a]volume=0.22,lowpass=f=9000[m];[m][key]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=300[md];"
+          "[v][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5[a]")
+    p = subprocess.Popen([M.ffmpeg_bin(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                          "-i", os.path.join(folder, "voice.wav"), "-i", os.path.join(folder, "music.wav"), "-filter_complex", fc,
+                          "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
+                          "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
+    for fr in range(int(total * FPS)): p.stdin.write(v.render(fr / FPS).tobytes())
+    p.stdin.close(); p.wait(); print("OK", out)
+
+'''
+
+def main_v4(folder, data):
+    import types
+    sys.modules.setdefault("make_reel", sys.modules[__name__])
+    mod = types.ModuleType("terminal_fmt"); exec(compile(TERMINAL_SRC, "terminal_fmt", "exec"), mod.__dict__)
+    mod.main()
+
+def precios(symbol, desde=None, hasta=None, intervalo="1d", rango=None):
+    """Descarga cierres reales de Yahoo Finance y devuelve una serie lista para script.json["series"]."""
+    import urllib.request, datetime as dt
+    q = f"interval={intervalo}"
+    if rango: q += f"&range={rango}"
+    else:
+        p1 = int(dt.datetime.fromisoformat(desde).replace(tzinfo=dt.timezone.utc).timestamp())
+        p2 = int(dt.datetime.fromisoformat(hasta).replace(tzinfo=dt.timezone.utc).timestamp()) if hasta else int(dt.datetime.now(dt.timezone.utc).timestamp())
+        q += f"&period1={p1}&period2={p2}"
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.request.quote(symbol)}?{q}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    r = json.load(urllib.request.urlopen(req, timeout=40))["chart"]["result"][0]
+    pairs = [(dt.datetime.fromtimestamp(t, dt.timezone.utc).date(), c) for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]) if c]
+    mes = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+    n = len(pairs); labels = []
+    years = pairs[-1][0].year - pairs[0][0].year
+    step = max(1, n // 6)
+    for i in range(0, n, step):
+        d0 = pairs[i][0]; labels.append([i, str(d0.year) if years >= 3 else f"{mes[d0.month - 1]}" + (f" {str(d0.year)[2:]}" if years >= 1 else "")])
+    return {"name": symbol, "sub": "", "pre": "", "close": [round(c, 2) for _, c in pairs], "labels": labels,
+            "desde": str(pairs[0][0]), "hasta": str(pairs[-1][0]), "ultimo": round(pairs[-1][1], 2),
+            "penultimo": round(pairs[-2][1], 2) if n > 1 else None, "max": round(max(c for _, c in pairs), 2), "min": round(min(c for _, c in pairs), 2)}
+
 def main():
     if sys.argv[1] == "buscar":          # python3 make_reel.py buscar "texto"
         for r in commons_search(" ".join(sys.argv[2:])): print(json.dumps(r, ensure_ascii=False))
@@ -1090,8 +1447,14 @@ def main():
         ok = commons_download(sys.argv[2], sys.argv[3], os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[3]))), "credits.json"),
                               {"author": sys.argv[4] if len(sys.argv) > 4 else "", "license": sys.argv[5] if len(sys.argv) > 5 else ""})
         print("OK" if ok else "FALLO"); return
+    if sys.argv[1] == "precios":         # python3 make_reel.py precios GOOGL [--rango 6mo | --desde 1928-01-01 --hasta 1932-12-31] [--intervalo 1d|1wk|1mo]
+        a = sys.argv[2:]; sym = a[0]; opt = {a[i].lstrip("-"): a[i + 1] for i in range(1, len(a) - 1, 2)}
+        print(json.dumps(precios(sym, opt.get("desde"), opt.get("hasta"), opt.get("intervalo", "1d"), opt.get("rango") if "desde" not in opt else None), ensure_ascii=False))
+        return
     folder = sys.argv[1]; stills = "--stills" in sys.argv
     data = json.load(open(os.path.join(folder, "script.json")))
+    if data.get("formato") == "terminal":
+        return main_v4(folder, data)
     if data.get("formato") == "hibrido" or any(l.get("notes") or l.get("layout") or l.get("photos") for l in data["lines"]):
         return main_v3(folder, data)
     if any(l.get("visuals") for l in data["lines"]):

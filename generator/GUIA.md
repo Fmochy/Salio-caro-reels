@@ -1,4 +1,450 @@
-# Salió caro — guía del reel diario
+# Cerró en Rojo (antes Salió caro) — guía de los reels diarios
+
+# 🖥️ FORMATO "TERMINAL" (desde el 30-oct-2026, OBLIGATORIO para todos los reels de @cerro.en.rojo)
+
+Sustituye al formato híbrido/cuaderno (secciones 3, 3b y 3c ya NO se usan). Estética de pantalla de trading: fondo oscuro con
+rejilla, cinta de cotizaciones arriba, sello CERRÓ EN ROJO + pastilla "EN DIRECTO" (actualidad) o "HISTORIA", titulares de
+última hora, **gráfica de precios REALES que se dibuja en directo**, cifras tipo marcador, barras comparativas, voz de Álvaro,
+subtítulos karaoke amarillos, y cierre automático "Sígueme, dale a like y guarda el vídeo" con iconos animados + aviso legal
+(no escribas tú esa línea).
+
+**script.json** (`"formato": "terminal"`):
+- `tipo`: "historia" (11:30) o "actualidad" (19:30, noticias de hoy).
+- `hook`: {"top": quién/qué (≤ 5 palabras), "big": cifra brutal (≤ 11 caracteres: "-482.000 M$", "-22,6 %", "-89 %"),
+  "bottom": el giro (≤ 6 palabras), "color": "red"|"green", "photo": "img/x.jpg" (opcional, sale en círculo)}.
+- `ticker`: 5–8 pares [nombre, %] REALES (actualidad: los % de hoy a la hora de hacer el vídeo, de fuentes fiables: la empresa, Nasdaq,
+  S&P 500, Dow, Ibex/DAX ya cerrados y 2–4 valores que se mueven hoy). En historia: los índices/valores de aquel día histórico.
+- `series`: {"clave": serie} con datos REALES de `python3 generator/make_reel.py precios SIMBOLO --rango 6mo` (actualidad) o
+  `--desde AAAA-MM-DD --hasta AAAA-MM-DD --intervalo 1wk|1mo` (historia: "^GSPC" S&P 500 desde 1927, "^DJI", "^IXIC" Nasdaq,
+  "^N225" Nikkei, "^GDAXI" DAX, "^IBEX", acciones "AAPL", "NVDA", "BTC-USD"…). Pega el JSON que devuelve y rellena "name"
+  ("Alphabet (GOOGL)"), "sub" ("6 meses · cierre diario") y "pre" ("$", "" para índices). NUNCA inventes cifras de la gráfica.
+- `lines`: 4–6 frases (20–30 s) con `say`, `show` y `v` (la escena):
+
+| v.type | campos | uso |
+|---|---|---|
+| `titular` | `heads`: [{"tag": "ÚLTIMA HORA", "text": "≤ 7 palabras"}] (1–3), `photo` opcional (arriba, oscurecida) | 1.ª frase (la noticia) y última (la pregunta: tag "LA GRAN PREGUNTA") |
+| `grafica` | `serie`, `titulo`, `draw` (0.5–0.8: parte de la frase en que se dibuja), `marca` {"dias": N, "texto": "-12,6 %"} | la escena estrella: siempre una por reel |
+| `cifra` | `value`, `dec`, `prefix`, `suffix`, `label`, `color` red/green/amber, `photo` + `name` (cara del CEO/personaje) | cifras clave con contador |
+| `barras` | `titulo`, `items`: [[nombre, valor, "texto", "red"/"green"/"dim"/"amber"], …] (2–3) | comparaciones (récords, antes/después) |
+
+Reglas: la `marca` de la gráfica debe coincidir con los datos (calcula el % con los cierres de la serie). Los titulares son
+genéricos ("Alphabet se desploma en bolsa"), nunca atribuidos a un medio. Fotos: caras de CEOs/personajes y sedes (Commons).
+Revisa los stills (incluido gancho.png): nada cortado ni solapado.
+
+**Caption (SEO):** 1.ª línea palabras clave + gancho + 📉/📈; 3 líneas 👉 con las cifras; pregunta para comentar;
+"Síguenos para entender la bolsa cada día, dale a like y guárdalo 📌"; "Información divulgativa. No es recomendación de inversión.";
+5 hashtags (#bolsa + #wallstreet o #inversion + 3 del tema).
+
+**Ejemplo real (actualidad, 25 s):**
+
+```json
+{
+ "formato": "terminal",
+ "slug": "google-terminal",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Google perdió ayer",
+  "big": "-482.000 M$",
+  "bottom": "en un solo día",
+  "color": "red",
+  "photo": "img/googleplex.jpg"
+ },
+ "ticker": [
+  [
+   "GOOGL",
+   -12.6
+  ],
+  [
+   "NASDAQ",
+   -1.4
+  ],
+  [
+   "S&P 500",
+   -0.3
+  ],
+  [
+   "DOW",
+   -0.3
+  ],
+  [
+   "LLY",
+   6.0
+  ],
+  [
+   "DASH",
+   5.6
+  ]
+ ],
+ "series": {
+  "googl": {
+   "name": "Alphabet (GOOGL)",
+   "sub": "6 meses · cierre diario",
+   "pre": "$",
+   "close": [
+    "...127 cierres diarios reales, salidos de: python3 generator/make_reel.py precios GOOGL --rango 6mo ..."
+   ],
+   "labels": [
+    [
+     1,
+     "may"
+    ],
+    [
+     21,
+     "jun"
+    ],
+    [
+     42,
+     "jul"
+    ],
+    [
+     64,
+     "ago"
+    ],
+    [
+     85,
+     "sep"
+    ],
+    [
+     106,
+     "oct"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Google acaba de vivir su peor día en bolsa: perdió cuatrocientos ochenta y dos mil millones de dólares en una sola sesión.",
+   "show": "Google acaba de vivir su peor día en bolsa: perdió 482.000 millones de dólares en una sola sesión.",
+   "v": {
+    "type": "titular",
+    "photo": "img/googleplex.jpg",
+    "heads": [
+     {
+      "text": "Alphabet se desploma en bolsa"
+     },
+     {
+      "text": "Pierde 482.000 millones en un día"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía aguantando, y ayer se hundió casi un trece por ciento de golpe.",
+   "show": "Mira la gráfica: venía aguantando, y ayer se hundió casi un 13 % de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "googl",
+    "titulo": "Alphabet (GOOGL)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 1,
+     "texto": "-12,6 %"
+    }
+   }
+  },
+  {
+   "say": "¿El motivo? Un gasto récord en inteligencia artificial: más de cincuenta y un mil millones en tres meses.",
+   "show": "¿El motivo? Un gasto récord en inteligencia artificial: más de 51.000 millones en 3 meses.",
+   "v": {
+    "type": "cifra",
+    "value": 51.4,
+    "dec": 1,
+    "suffix": " mil M$",
+    "label": "invertidos en IA en un trimestre",
+    "color": "amber",
+    "photo": "img/pichai.jpg",
+    "name": "Sundar Pichai · CEO"
+   }
+  },
+  {
+   "say": "Solo Nvidia ha perdido más dinero en un solo día.",
+   "show": "Solo Nvidia ha perdido más dinero en un solo día.",
+   "v": {
+    "type": "barras",
+    "titulo": "Mayores caídas en un día (EE. UU.)",
+    "items": [
+     [
+      "Nvidia · ene 2025",
+      593,
+      "593.000 M$",
+      "dim"
+     ],
+     [
+      "Google · ayer",
+      482,
+      "482.000 M$",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿le saldrá a cuenta tanta inteligencia artificial?",
+   "show": "La gran pregunta: ¿le saldrá a cuenta tanta inteligencia artificial?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Le saldrá a cuenta la IA?"
+     }
+    ],
+    "photo": "img/pichai.jpg"
+   }
+  }
+ ],
+ "caption": "(caption con SEO, ver abajo)",
+ "alt": "(texto alternativo)"
+}
+```
+
+---
+
+# ⚠️ CAMBIO DE CANAL (30-oct-2026): LA CUENTA AHORA ES @cerro.en.rojo — ESTA SECCIÓN Y LA DE FORMATO TERMINAL MANDAN SOBRE TODO LO DEMÁS
+
+La cuenta de Instagram se llama ahora **@cerro.en.rojo** ("Cerró en Rojo | Bolsa explicada"): **la bolsa mundial explicada en
+30 segundos**: actualidad de los mercados + historia de la bolsa. Metricool sigue siendo la misma marca (blogId 7438016).
+Todo lo de "Salió caro / errores de marcas" de las secciones 1, 1b y 9-10 queda OBSOLETO; el formato visual (sección 3c),
+la duración (20–30 s), el gancho en el fotograma 0, el SEO y las reglas de créditos siguen igual (el formato visual ahora es TERMINAL, ver arriba).
+
+**Qué toca en cada franja (cambio del 30-oct, decisión del dueño):**
+- **Reel de las 11:30 (tarea de la mañana, 9:24) = HISTORIA DE LA BOLSA**, de cualquier país: cracs y burbujas (Crac del 29,
+  Lunes Negro de 1987, burbuja puntocom, Lehman 2008, Flash Crash 2010, burbuja de Japón 1989, tulipanes, Mares del Sur, Covid 2020),
+  quiebras y fraudes que movieron el mercado (Enron, LTCM, Wirecard, FTX), OPV legendarias (Facebook, Saudi Aramco, Alibaba),
+  récords (GameStop, Nvidia, Apple 3 billones), personajes (Buffett, Soros y la libra, Livermore). Ya publicados: Terra/Lycos,
+  Bankia OPV, Martinsa-Fadesa: no repetir. Pastilla "HISTORIA" (`"tipo": "historia"`).
+- **Reel de las 19:30 (tarea de la tarde, 17:00) = LO MÁS CANDENTE DE LA BOLSA DE HOY.** Busca noticias del MISMO DÍA
+  (búsquedas web con la fecha de hoy) y elige el tema más llamativo o curioso: el valor que más sube o se hunde, resultados
+  sorprendentes, récords, bancos centrales, petróleo/oro, cripto, una OPV, una cifra rara. Enfoque MUNDIAL. Pastilla "EN DIRECTO"
+  (`"tipo": "actualidad"`). **Ojo con la hora:** a las 17:00 de Madrid Europa está a punto de cerrar (17:30) y Wall Street sigue
+  abierta hasta las 22:00, así que las cifras de EE. UU. son PROVISIONALES: dilo en la voz y en pantalla ("en lo que va de sesión",
+  "a media sesión", "a esta hora") y usa como serie la de los últimos meses (cierres) con `marca` solo si el movimiento de hoy está
+  confirmado por 2 fuentes. Nunca presentes como cierre un dato intradía.
+- **Si hoy no hay bolsa** (sábado, domingo o festivo en Wall Street), la tarea de la tarde hace "lo más curioso de la semana en
+  bolsa" (con datos de cierre del viernes) o, si no hay nada potente, otro reel de historia distinto al de la mañana.
+
+**Rigor (obligatorio):** cada cifra con 2 fuentes fiables (Reuters, Bloomberg, CNBC, Yahoo Finance, FT, WSJ, Expansión, Cinco Días,
+web oficial de la empresa). En actualidad di que es de hoy y, si el dato es intradía, dilo ("en lo que va de sesión"); los cierres de Europa ya valen a partir de las 17:30.
+**Nunca recomiendes**: nada de "compra", "vende", "oportunidad", "va a subir". Cuenta qué pasó y por qué. La última frase puede ser
+una pregunta abierta ("¿Le saldrá a cuenta la IA?"), nunca un consejo. En la última línea añade una nota `texto` pequeña gris
+"No es recomendación de inversión" y el caption termina con "Información divulgativa. No es recomendación de inversión."
+
+**Voz:** el generador usa ya por defecto la voz neuronal de **Álvaro** (es-ES-AlvaroNeural); no pongas `voz` en el script.
+Sigue escribiendo en `say` las cifras con letras. **Cierre:** no escribas tú la frase de "sígueme"; el generador añade
+"Sígueme para entender la bolsa cada día" (o similar) y la tarjeta con @cerro.en.rojo y "MAÑANA, MÁS BOLSA".
+**Remate:** ya no hace falta "le salió muy caro": termina con la idea clave o una pregunta abierta.
+
+**Gancho (`hook`):** la cifra más brutal en `big` (≤ 14 letras: "-12 %", "482.000 M$", "-22,6 %"), `top` con quién/qué, `bottom` con
+el giro ("en un solo día", "y nadie lo vio venir").
+
+**Fotos (Wikimedia Commons, como siempre):** sede o logo de la empresa, su CEO, la Bolsa de Nueva York (NYSE), Wall Street,
+el toro de Wall Street, parqués de bolsa, billetes/lingotes/petróleo; las cifras y curvas mejor con `grafica`, `numero` y `rodear`.
+Si no hay fotos útiles, usa `layout` "sin_foto" con gráficas.
+
+**SEO del caption:** primera línea = palabras clave que la gente busca + gancho ("Google se hunde en bolsa: Alphabet pierde
+482.000 millones en un día 📉"); 3–4 líneas con 👉 explicando las cifras; una pregunta para comentar; el aviso legal; 5 hashtags
+(#bolsa #inversion + 3 del tema: empresa, índice, sector). `alt` con lo mismo en una frase.
+
+**Ejemplo ANTIGUO en formato híbrido (NO lo copies: el formato es TERMINAL, ver el ejemplo de arriba):**
+
+```json
+{
+ "formato": "hibrido",
+ "slug": "google-cae-bolsa",
+ "company": "Alphabet",
+ "hook": {
+  "top": "Google perdió ayer",
+  "big": "482.000 M$",
+  "bottom": "en un solo día",
+  "color": "red"
+ },
+ "lines": [
+  {
+   "say": "Ayer Google perdió cuatrocientos ochenta y dos mil millones de dólares en bolsa. En un solo día.",
+   "show": "Ayer Google perdió 482.000 millones de dólares en bolsa. En un solo día.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/googleplex.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 12,
+     "prefix": "-",
+     "suffix": " %",
+     "label": "su acción, en un día",
+     "color": "red",
+     "at": 0.35
+    }
+   ]
+  },
+  {
+   "say": "Es su peor caída desde que salió a bolsa en dos mil cuatro.",
+   "show": "Es su peor caída desde que salió a bolsa en 2004.",
+   "layout": "foto_lado",
+   "photos": [
+    {
+     "src": "img/pichai.jpg",
+     "label": "Sundar Pichai, CEO",
+     "focus": [
+      0.5,
+      0.3
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "rodear",
+     "text": "2004",
+     "at": 0.6
+    },
+    {
+     "type": "texto",
+     "text": "peor día",
+     "color": "red",
+     "highlight": true,
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "say": "Y eso que su negocio en la nube se duplicó, hasta los treinta mil millones.",
+   "show": "Y eso que su negocio en la nube se duplicó, hasta los 30.000 millones.",
+   "layout": "sin_foto",
+   "notes": [
+    {
+     "type": "grafica",
+     "values": [
+      15.2,
+      30.7
+     ],
+     "labels": [
+      "3T 2025",
+      "3T 2026"
+     ],
+     "values_text": [
+      "15.200 M$",
+      "30.700 M$"
+     ],
+     "colors": [
+      "gray",
+      "green"
+     ],
+     "at": 0.1
+    },
+    {
+     "type": "texto",
+     "text": "Google Cloud +103 %",
+     "color": "green",
+     "highlight": true,
+     "at": 0.55
+    }
+   ]
+  },
+  {
+   "say": "El problema: gastó un récord de más de cincuenta y un mil millones en inteligencia artificial en tres meses.",
+   "show": "El problema: gastó un récord de más de 51.000 millones en inteligencia artificial en 3 meses.",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/campus.jpg",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "numero",
+     "value": 51400,
+     "suffix": " M$",
+     "label": "invertidos en IA en 3 meses",
+     "color": "red",
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "say": "Arrastró al Nasdaq, y solo Nvidia ha perdido más en un día.",
+   "show": "Arrastró al Nasdaq, y solo Nvidia ha perdido más en un día.",
+   "layout": "sin_foto",
+   "notes": [
+    {
+     "type": "texto",
+     "text": "Nasdaq -1,4 %",
+     "color": "red",
+     "highlight": true,
+     "at": 0.05
+    },
+    {
+     "type": "grafica",
+     "values": [
+      593,
+      482
+     ],
+     "labels": [
+      "Nvidia 2025",
+      "Google ayer"
+     ],
+     "values_text": [
+      "593.000 M$",
+      "482.000 M$"
+     ],
+     "colors": [
+      "gray",
+      "red"
+     ],
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "say": "La gran pregunta: ¿le saldrá a cuenta tanta inteligencia artificial?",
+   "show": "La gran pregunta: ¿le saldrá a cuenta tanta inteligencia artificial?",
+   "layout": "uno",
+   "photos": [
+    {
+     "src": "img/googleplex.jpg",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "type": "texto",
+     "text": "¿Le saldrá a cuenta?",
+     "size": "l",
+     "color": "red",
+     "highlight": true,
+     "at": 0.4
+    },
+    {
+     "type": "texto",
+     "text": "No es recomendación de inversión",
+     "size": "s",
+     "font": "mano",
+     "color": "gray",
+     "at": 0.1
+    }
+   ]
+  }
+ ],
+ "caption": "(ver más abajo: caption de bolsa)",
+ "alt": "(texto alternativo)"
+}
+```
+
+---
+
 
 Cuenta de Instagram **@salio.caro** ("Salió caro | Errores de marcas"): dos reels al día de **20–30 s** (cambio del 28-oct: los de 40 s no se veían enteros)
 sobre una decisión de una empresa conocida que le salió cara. Público: España, curiosos de negocios.
