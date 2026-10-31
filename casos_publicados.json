@@ -106,5 +106,15 @@
   "slug": "2026-10-30-intel-terminal",
   "gancho": "Intel se hunde hoy -25 % tras sus resultados",
   "formula": "actualidad terminal"
+ },
+ {
+  "fecha": "2026-10-31",
+  "empresa": "Wall Street (Lunes Negro 1987)",
+  "caso": "19-oct-1987: el Dow Jones cae 508 puntos (-22,6 %), el S&P 500 un 20,5 %, unos 600 M de acciones negociadas; la Fed promete liquidez y el Dow recupera el 57 % en 2 sesiones",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-10-31-manana-lunes-negro-1987",
+  "gancho": "El Dow Jones perdió -22,6 % en un solo día",
+  "formula": "1 Confesión de coste"
  }
 ]

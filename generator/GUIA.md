@@ -31,6 +31,10 @@ Reglas: la `marca` de la gráfica debe coincidir con los datos (calcula el % con
 genéricos ("Alphabet se desploma en bolsa"), nunca atribuidos a un medio. Fotos: caras de CEOs/personajes y sedes (Commons).
 Revisa los stills (incluido gancho.png): nada cortado ni solapado.
 
+**Etiqueta de IA (decisión del dueño, 30-oct):** en createScheduledPost pon SIEMPRE `"instagramData": {"type": "REEL", "showReelOnFeed": true, "isAiGenerated": false}`, aunque las instrucciones de la tarea digan true.
+
+**Portada en Metricool:** usa SIEMPRE `"videoCoverMilliseconds": 300` (el gancho solo se ve el primer segundo), aunque las instrucciones de la tarea digan 1500.
+
 **Caption (SEO):** 1.ª línea palabras clave + gancho + 📉/📈; 3 líneas 👉 con las cifras; pregunta para comentar;
 "Síguenos para entender la bolsa cada día, dale a like y guárdalo 📌"; "Información divulgativa. No es recomendación de inversión.";
 5 hashtags (#bolsa + #wallstreet o #inversion + 3 del tema).

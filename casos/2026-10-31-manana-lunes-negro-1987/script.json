@@ -1,0 +1,246 @@
+{
+ "formato": "terminal",
+ "slug": "lunes-negro-1987",
+ "company": "Wall Street",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "El Dow Jones perdió",
+  "big": "-22,6 %",
+  "bottom": "en un solo día",
+  "color": "red",
+  "photo": "img/nyse.jpg"
+ },
+ "ticker": [
+  [
+   "DOW",
+   -22.6
+  ],
+  [
+   "S&P 500",
+   -20.5
+  ],
+  [
+   "NASDAQ",
+   -11.4
+  ],
+  [
+   "FTSE 100",
+   -10.8
+  ],
+  [
+   "NIKKEI",
+   -2.3
+  ]
+ ],
+ "series": {
+  "sp": {
+   "name": "S&P 500",
+   "sub": "ago - dic 1987 · cierre diario",
+   "pre": "",
+   "close": [
+    333.33,
+    336.77,
+    334.57,
+    331.38,
+    327.04,
+    329.8,
+    323.4,
+    321.68,
+    320.21,
+    316.7,
+    313.56,
+    313.92,
+    317.13,
+    321.98,
+    323.08,
+    317.74,
+    314.86,
+    314.93,
+    314.86,
+    310.54,
+    319.5,
+    321.19,
+    319.72,
+    320.16,
+    323.2,
+    321.69,
+    321.83,
+    327.33,
+    328.07,
+    328.08,
+    319.22,
+    318.54,
+    314.16,
+    311.07,
+    309.39,
+    314.52,
+    305.23,
+    298.08,
+    282.7,
+    224.84,
+    236.83,
+    258.38,
+    248.25,
+    248.22,
+    227.67,
+    233.19,
+    233.28,
+    244.77,
+    251.79,
+    255.75,
+    250.82,
+    248.96,
+    254.48,
+    250.41,
+    243.17,
+    239.0,
+    241.9,
+    248.52,
+    245.64,
+    246.76,
+    243.04,
+    245.55,
+    240.05,
+    242.0,
+    242.99,
+    246.39,
+    244.1,
+    240.34,
+    230.3,
+    232.0,
+    233.45,
+    225.21,
+    223.92,
+    228.76,
+    234.91,
+    238.89,
+    233.57,
+    235.32,
+    242.19,
+    242.81,
+    248.08,
+    242.98,
+    249.16,
+    249.54,
+    249.95,
+    253.16,
+    252.03,
+    245.57,
+    244.59,
+    247.86
+   ],
+   "labels": [
+    [
+     0,
+     "ago"
+    ],
+    [
+     6,
+     "sep"
+    ],
+    [
+     27,
+     "oct"
+    ],
+    [
+     49,
+     "nov"
+    ],
+    [
+     68,
+     "dic"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El diecinueve de octubre de mil novecientos ochenta y siete, el Dow Jones se hundió un veintidós coma seis por ciento en un solo día.",
+   "show": "El 19 de octubre de 1987, el Dow Jones se hundió un 22,6 % en un solo día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/nyse.jpg",
+    "heads": [
+     {
+      "tag": "HISTORIA",
+      "text": "Lunes Negro en Wall Street"
+     },
+     {
+      "text": "El Dow cae un 22,6 % en un día"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía de máximos en agosto, y aquel lunes el S&P quinientos se desplomó otro veinte por ciento.",
+   "show": "Mira la gráfica: venía de máximos en agosto, y aquel lunes el S&P 500 se desplomó otro 20 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "sp",
+    "titulo": "S&P 500 · 1987",
+    "draw": 0.6,
+    "marca": {
+     "dias": 51,
+     "texto": "-20,5 %"
+    }
+   }
+  },
+  {
+   "say": "Se cambiaron de manos unos seiscientos millones de acciones en Nueva York, un récord para la época.",
+   "show": "Se cambiaron de manos unos 600 millones de acciones en Nueva York, un récord para la época.",
+   "v": {
+    "type": "cifra",
+    "value": 604,
+    "dec": 0,
+    "suffix": " M",
+    "label": "acciones negociadas en un día",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Al día siguiente, la Reserva Federal de Greenspan prometió liquidez, y en dos sesiones el Dow recuperó el cincuenta y siete por ciento de lo perdido.",
+   "show": "Al día siguiente, la Reserva Federal de Greenspan prometió liquidez, y en 2 sesiones el Dow recuperó el 57 % de lo perdido.",
+   "v": {
+    "type": "barras",
+    "titulo": "Dow Jones, puntos",
+    "items": [
+     [
+      "Perdió el lunes 19",
+      508,
+      "508 puntos",
+      "red"
+     ],
+     [
+      "Recuperó en 2 sesiones",
+      288,
+      "288 puntos",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿puede volver a pasar un día así?",
+   "show": "La gran pregunta: ¿puede volver a pasar un día así?",
+   "v": {
+    "type": "titular",
+    "photo": "img/greenspan.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Otro día así es posible?"
+     }
+    ]
+   }
+  }
+ ],
+ "sources": [
+  "https://www.federalreservehistory.org/essays/stock-market-crash-of-1987",
+  "https://en.wikipedia.org/wiki/Black_Monday_(1987)",
+  "https://www.cnbc.com/id/20910471",
+  "https://finance.yahoo.com/quote/%5EGSPC/history/"
+ ],
+ "caption": "Lunes Negro de 1987: el Dow Jones se hundió un 22,6 % en un solo día 📉\n\n👉 El 19 de octubre de 1987, el Dow perdió 508 puntos (un 22,6 %), su peor caída diaria\n👉 El S&P 500 cayó un 20,5 % y se negociaron unos 600 millones de acciones en Nueva York\n👉 En dos sesiones, el Dow recuperó 288 puntos, el 57 % de lo perdido\n\n¿Crees que podría repetirse un día así? Cuéntamelo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #lunesnegro #crac1987 #dowjones",
+ "alt": "Reel sobre el Lunes Negro de 1987: el 19 de octubre el Dow Jones cayó un 22,6 % en un solo día, su peor caída diaria. Historia de la bolsa explicada en 30 segundos."
+}
