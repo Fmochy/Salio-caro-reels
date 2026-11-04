@@ -1,0 +1,308 @@
+{
+ "formato": "terminal",
+ "slug": "dow-elecciones",
+ "company": "Wall Street",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "El Dow Jones hoy",
+  "big": "+1.000 pts",
+  "bottom": "tras las elecciones de EE. UU.",
+  "color": "green"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   3.5
+  ],
+  [
+   "DAX",
+   2.5
+  ],
+  [
+   "DOW",
+   2.6
+  ],
+  [
+   "NASDAQ",
+   1.6
+  ],
+  [
+   "S&P 500",
+   1.5
+  ],
+  [
+   "FSLR",
+   11.1
+  ],
+  [
+   "ENPH",
+   11.6
+  ]
+ ],
+ "series": {
+  "dow": {
+   "name": "Dow Jones",
+   "sub": "6 meses · cierre diario (hoy, provisional)",
+   "pre": "",
+   "close": [
+    48941.9,
+    49298.25,
+    49910.59,
+    49596.97,
+    49609.16,
+    49704.47,
+    49760.56,
+    49693.2,
+    50063.46,
+    49526.17,
+    49686.12,
+    49363.88,
+    50009.35,
+    50285.66,
+    50579.7,
+    50461.68,
+    50644.28,
+    50668.97,
+    51032.46,
+    51078.88,
+    51307.79,
+    50687.07,
+    51561.93,
+    50866.78,
+    50786.01,
+    50872.11,
+    49918.78,
+    50848.75,
+    51202.26,
+    51671.03,
+    51999.67,
+    51492.55,
+    51564.7,
+    51712.71,
+    51666.84,
+    51848.9,
+    51920.62,
+    51876.11,
+    52182.74,
+    52319.2,
+    52305.24,
+    52900.07,
+    53055.91,
+    52925.15,
+    52348.39,
+    52487.41,
+    52637.01,
+    52498.64,
+    52508.27,
+    52658.64,
+    52552.97,
+    52146.42,
+    51839.26,
+    52224.64,
+    52218.58,
+    51711.65,
+    51947.25,
+    52210.08,
+    52747.32,
+    51594.14,
+    52208.06,
+    52485.03,
+    53178.41,
+    54085.88,
+    54349.12,
+    53885.1,
+    54036.93,
+    53975.98,
+    53791.85,
+    53770.27,
+    53839.99,
+    53732.41,
+    53459.78,
+    53343.4,
+    53463.05,
+    52759.21,
+    53277.01,
+    53417.16,
+    53577.4,
+    53463.88,
+    53569.44,
+    53559.99,
+    53185.9,
+    52766.88,
+    53061.95,
+    53686.11,
+    53414.25,
+    52786.07,
+    52380.66,
+    52064.1,
+    52573.29,
+    52421.2,
+    52093.11,
+    51461.9,
+    51778.04,
+    51682.64,
+    52048.83,
+    51863.69,
+    51511.59,
+    51349.98,
+    51828.62,
+    51481.51,
+    51349.92,
+    50906.05,
+    50926.56,
+    51176.96,
+    51267.9,
+    51521.28,
+    51179.87,
+    51231.64,
+    51654.95,
+    51850.55,
+    51670.1,
+    51621.48,
+    52177.69,
+    52002.41,
+    51966.03,
+    52495.88,
+    52856.09,
+    52867.98,
+    52215.16,
+    52361.58,
+    52377.57,
+    52475.1,
+    52342.56,
+    51770.31,
+    51983.98,
+    51786.72,
+    53109.55
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     21,
+     "jun"
+    ],
+    [
+     42,
+     "jul"
+    ],
+    [
+     63,
+     "ago"
+    ],
+    [
+     84,
+     "sep"
+    ],
+    [
+     105,
+     "oct"
+    ],
+    [
+     126,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Wall Street se dispara: a media sesión, el Dow Jones sube más de mil puntos tras las elecciones de Estados Unidos.",
+   "show": "Wall Street se dispara: a media sesión, el Dow Jones sube más de 1.000 puntos tras las elecciones de EE. UU.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "EN DIRECTO",
+      "text": "Wall Street se dispara"
+     },
+     {
+      "text": "El Dow sube más de 1.000 puntos"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía de caer a unos cincuenta y un mil setecientos puntos, y hoy salta de golpe más de un dos por ciento.",
+   "show": "Mira la gráfica: venía de caer a unos 51.700 puntos, y hoy salta de golpe más de un 2 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "dow",
+    "titulo": "Dow Jones",
+    "draw": 0.6,
+    "marca": {
+     "dias": 1,
+     "texto": "+2,6 %"
+    }
+   }
+  },
+  {
+   "say": "En Europa, el Ibex treinta y cinco sube más de un tres por ciento, y el DAX alemán, más de un dos.",
+   "show": "En Europa, el Ibex 35 sube más de un 3 %, y el DAX alemán, más de un 2 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Subidas de hoy (provisional)",
+    "items": [
+     [
+      "Ibex 35",
+      3.5,
+      "+3,5 %",
+      "green"
+     ],
+     [
+      "Dow Jones",
+      2.6,
+      "+2,6 %",
+      "green"
+     ],
+     [
+      "DAX",
+      2.5,
+      "+2,5 %",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Los analistas lo achacan a que los demócratas ganan el control del Congreso, y a que Trump acepta el resultado.",
+   "show": "Los analistas lo achacan a que los demócratas ganan el control del Congreso, y a que Trump acepta el resultado.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "ÚLTIMA HORA",
+      "text": "Los mercados reaccionan a las urnas"
+     },
+     {
+      "text": "Bolsas al alza en Europa y EE. UU."
+     }
+    ]
+   }
+  },
+  {
+   "say": "Las renovables se disparan: First Solar y Enphase suben más de un diez por ciento. ¿Aguantará la subida hasta el cierre?",
+   "show": "Las renovables se disparan: First Solar y Enphase suben más de un 10 %. ¿Aguantará la subida hasta el cierre?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Aguantará hasta el cierre?"
+     }
+    ]
+   }
+  }
+ ],
+ "sources": [
+  "https://www.bnnbloomberg.ca/markets/2026/11/04/us-futures-sharply-higher-after-democratic-route-in-midterm-elections/",
+  "https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-nasdaq-midterm-elections-earnings-140752043.html",
+  "https://www.elespanol.com/invertia/mercados/20261104/bolsas-reaccionan-alza-arrasar-democratas-midterms-ibex-sube-wall-st-anticipa-subidas/1003744445362_0.html",
+  "https://www.eleconomista.es/flash/20261104/",
+  "https://investing.com/news/stock-market-news/why-is-amazon-stock-surging-today-93CH-4999934"
+ ],
+ "caption": "Wall Street se dispara hoy: el Dow Jones sube más de 1.000 puntos tras las elecciones de EE. UU. 📈\n\n👉 El Dow Jones sube más de un 2 % a media sesión, y el S&P 500 y el Nasdaq también avanzan\n👉 El Ibex 35 sube más de un 3 % y el DAX alemán, más de un 2 %\n👉 Los analistas lo ligan a que los demócratas ganan el control del Congreso, y las renovables como First Solar y Enphase suben más de un 10 %\n\n¿Crees que la subida aguantará hasta el cierre? Cuéntamelo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nCifras a media sesión de hoy, 4 de noviembre, y provisionales. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #wallstreet #dowjones #ibex35",
+ "alt": "Reel sobre la subida de Wall Street hoy: el Dow Jones sube más de 1.000 puntos y el Ibex 35 más de un 3 % tras las elecciones de EE. UU. Bolsa explicada en 30 segundos."
+}

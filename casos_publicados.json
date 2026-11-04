@@ -126,5 +126,14 @@
   "slug": "2026-11-04-manana-crac-1929",
   "gancho": "Wall Street, 1929: -89 % y tardó 25 años en volver",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-04",
+  "empresa": "Wall Street (Dow Jones / Ibex)",
+  "caso": "Dow +1.000 puntos (+2,6 %) e Ibex +3,5 % a media sesión tras las elecciones legislativas de EE. UU. (actualidad, 19:30)",
+  "formato": "reel",
+  "slug": "2026-11-04-dow-elecciones",
+  "gancho": "El Dow Jones sube más de mil puntos tras las elecciones de EE. UU.",
+  "formula": "23 La estadística"
  }
 ]
