@@ -116,5 +116,15 @@
   "slug": "2026-10-31-manana-lunes-negro-1987",
   "gancho": "El Dow Jones perdió -22,6 % en un solo día",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-04",
+  "empresa": "Wall Street (Crac del 29)",
+  "caso": "29-oct-1929: el Dow cae un 11,7 % (12,8 % el día anterior); de 381 a 41 puntos (-89 %) hasta jul-1932 y no recupera el máximo hasta nov-1954; el S&P 500 cae un 86 %",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-04-manana-crac-1929",
+  "gancho": "Wall Street, 1929: -89 % y tardó 25 años en volver",
+  "formula": "1 Confesión de coste"
  }
 ]
