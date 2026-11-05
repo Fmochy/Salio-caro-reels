@@ -1432,9 +1432,14 @@ def precios(symbol, desde=None, hasta=None, intervalo="1d", rango=None):
     mes = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
     n = len(pairs); labels = []
     years = pairs[-1][0].year - pairs[0][0].year
-    step = max(1, n // 6)
-    for i in range(0, n, step):
-        d0 = pairs[i][0]; labels.append([i, str(d0.year) if years >= 3 else f"{mes[d0.month - 1]}" + (f" {str(d0.year)[2:]}" if years >= 1 else "")])
+    last = None
+    for i, (d0, _) in enumerate(pairs):            # una etiqueta por año (series largas) o por mes (cortas), sin repetir
+        key = d0.year if years >= 3 else (d0.year, d0.month)
+        if key != last:
+            last = key
+            if i > n * 0.02 or i == 0:
+                labels.append([i, str(d0.year) if years >= 3 else f"{mes[d0.month - 1]}" + (f" {str(d0.year)[2:]}" if years >= 1 else "")])
+    if len(labels) > 8: labels = labels[::(len(labels) + 7) // 8]
     return {"name": symbol, "sub": "", "pre": "", "close": [round(c, 2) for _, c in pairs], "labels": labels,
             "desde": str(pairs[0][0]), "hasta": str(pairs[-1][0]), "ultimo": round(pairs[-1][1], 2),
             "penultimo": round(pairs[-2][1], 2) if n > 1 else None, "max": round(max(c for _, c in pairs), 2), "min": round(min(c for _, c in pairs), 2)}
