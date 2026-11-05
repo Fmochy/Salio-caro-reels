@@ -1,0 +1,311 @@
+{
+ "formato": "terminal",
+ "slug": "nasdaq-chips",
+ "company": "Wall Street",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "El Nasdaq hoy",
+  "big": "-4,4 %",
+  "bottom": "los chips de IA arrastran todo",
+  "color": "red"
+ },
+ "ticker": [
+  [
+   "NASDAQ",
+   -4.4
+  ],
+  [
+   "S&P 500",
+   -2.8
+  ],
+  [
+   "DOW",
+   -2.2
+  ],
+  [
+   "AMD",
+   -13.7
+  ],
+  [
+   "MU",
+   -13.3
+  ],
+  [
+   "NVDA",
+   -6.9
+  ],
+  [
+   "TSLA",
+   -9.7
+  ],
+  [
+   "DAX",
+   -0.6
+  ],
+  [
+   "IBEX 35",
+   0.3
+  ]
+ ],
+ "series": {
+  "nasdaq": {
+   "name": "Nasdaq",
+   "sub": "6 meses · hoy provisional",
+   "pre": "",
+   "close": [
+    25326.13,
+    25838.94,
+    25806.2,
+    26247.08,
+    26274.13,
+    26088.2,
+    26402.34,
+    26635.22,
+    26225.14,
+    26090.73,
+    25870.71,
+    26270.36,
+    26293.1,
+    26343.97,
+    26656.18,
+    26674.73,
+    26917.47,
+    26972.62,
+    27086.81,
+    27093.9,
+    26853.98,
+    26830.96,
+    25709.43,
+    25929.66,
+    25678.82,
+    25169.5,
+    25809.66,
+    25888.84,
+    26683.94,
+    26376.34,
+    26021.66,
+    26517.93,
+    26166.6,
+    25587.04,
+    25476.64,
+    25358.6,
+    25297.62,
+    25820.14,
+    26213.72,
+    26040.03,
+    25832.67,
+    26121.16,
+    25818.69,
+    25870.65,
+    26206.89,
+    26281.61,
+    25873.18,
+    26107.01,
+    26269.23,
+    25881.95,
+    25520.24,
+    25508.07,
+    25837.21,
+    25690.9,
+    25137.69,
+    24975.82,
+    24932.08,
+    24876.91,
+    24442.94,
+    25122.18,
+    25373.85,
+    25913.9,
+    26584.99,
+    26363.44,
+    26348.35,
+    26690.62,
+    26605.36,
+    26445.45,
+    26588.49,
+    26803.03,
+    26729.16,
+    26644.91,
+    26289.71,
+    26331.09,
+    26067.17,
+    26180.46,
+    25980.19,
+    26151.3,
+    26130.2,
+    26541.35,
+    26402.42,
+    26370.89,
+    26099.77,
+    26217.83,
+    26584.06,
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57,
+    25978.43,
+    26418.3,
+    26522.54,
+    27122.09,
+    27244.28,
+    26936.04,
+    26939.37,
+    27068.72,
+    26820.38,
+    26797.54,
+    26861.06,
+    26871.6,
+    27190.86,
+    27477.31,
+    27599.79,
+    27538.69,
+    27193.34,
+    27366.17,
+    27245.9,
+    27204.38,
+    26692.87,
+    26713.03,
+    26140.03,
+    26430.89,
+    26424.82,
+    26702.86,
+    26008.86,
+    25955.34,
+    26169.38,
+    26477.81,
+    26549.85,
+    26184.72,
+    25437.0,
+    25164.31,
+    25372.01,
+    25736.51,
+    24599.03
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     18,
+     "jun"
+    ],
+    [
+     39,
+     "jul"
+    ],
+    [
+     61,
+     "ago"
+    ],
+    [
+     82,
+     "sep"
+    ],
+    [
+     103,
+     "oct"
+    ],
+    [
+     125,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Los chips de inteligencia artificial hunden a Wall Street: a media sesión, el Nasdaq cae más de un cuatro por ciento.",
+   "show": "Los chips de inteligencia artificial hunden a Wall Street: a media sesión, el Nasdaq cae más de un 4 %.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "EN DIRECTO",
+      "text": "Los chips de IA se hunden"
+     },
+     {
+      "text": "El Nasdaq borra la subida de ayer"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: ayer subía tras las elecciones, y hoy, en lo que va de sesión, se deja más de un cuatro por ciento de golpe.",
+   "show": "Mira la gráfica: ayer subía tras las elecciones, y hoy, en lo que va de sesión, se deja más de un 4 % de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "nasdaq",
+    "titulo": "Nasdaq",
+    "draw": 0.6,
+    "marca": {
+     "dias": 1,
+     "texto": "-4,4 %"
+    }
+   }
+  },
+  {
+   "say": "AMD y Micron pierden más de un trece por ciento, y Nvidia, casi un siete.",
+   "show": "AMD y Micron pierden más de un 13 %, y Nvidia, casi un 7 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Chips hoy, a media sesión",
+    "items": [
+     [
+      "AMD",
+      13.7,
+      "-13,7 %",
+      "red"
+     ],
+     [
+      "Micron",
+      13.3,
+      "-13,3 %",
+      "red"
+     ],
+     [
+      "Nvidia",
+      6.9,
+      "-6,9 %",
+      "amber"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "El miedo: que los demócratas, tras ganar en las elecciones, frenen los centros de datos que necesita la inteligencia artificial.",
+   "show": "El miedo: que los demócratas, tras ganar en las elecciones, frenen los centros de datos que necesita la IA.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "EL MOTIVO",
+      "text": "Temor a frenar los centros de datos"
+     }
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿cuánto de este susto es solo un día, y cuánto es un cambio de rumbo para la inteligencia artificial?",
+   "show": "La gran pregunta: ¿cuánto de este susto es solo un día, y cuánto es un cambio de rumbo para la IA?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Un susto o un cambio de rumbo?"
+     }
+    ]
+   }
+  }
+ ],
+ "sources": [
+  "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-5-dow-sp-500-nasdaq-oil-rises-chip-stocks-141439950.html",
+  "https://www.bnnbloomberg.ca/markets/2026/11/05/world-shares-mostly-gain-after-us-midterm-elections-as-ai-related-stocks-sink/",
+  "Yahoo Finance (cotizaciones intradía via make_reel precios)"
+ ],
+ "caption": "Nasdaq se hunde hoy: los chips de IA (AMD, Micron, Nvidia) arrastran a Wall Street 📉\n\n👉 El Nasdaq cae más de un 4 % a media sesión y borra la subida de ayer\n👉 AMD y Micron pierden más de un 13 %, Nvidia casi un 7 %\n👉 El motivo: el temor a que se frenen los centros de datos tras las elecciones de EE. UU.\n\n¿Crees que es un susto de un día o un cambio de tendencia? Cuéntanoslo 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #nasdaq #nvidia #inteligenciaartificial",
+ "alt": "Reel sobre la caída del Nasdaq hoy: los chips de inteligencia artificial como AMD, Micron y Nvidia se hunden en bolsa a media sesión, con gráfica del índice."
+}

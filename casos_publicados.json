@@ -135,5 +135,14 @@
   "slug": "2026-11-04-dow-elecciones",
   "gancho": "El Dow Jones sube más de mil puntos tras las elecciones de EE. UU.",
   "formula": "23 La estadística"
+ },
+ {
+  "fecha": "2026-11-05",
+  "empresa": "Wall Street (Nasdaq / chips de IA)",
+  "caso": "Nasdaq -4,4 % a media sesión; AMD -13,7 %, Micron -13,3 %, Nvidia -6,9 %, por temor a frenos a centros de datos tras las elecciones (actualidad, 19:30)",
+  "formato": "reel",
+  "slug": "2026-11-05-nasdaq-chips",
+  "gancho": "Los chips de IA hunden a Wall Street: el Nasdaq cae más de un 4 %.",
+  "formula": "23 La estadística"
  }
 ]
