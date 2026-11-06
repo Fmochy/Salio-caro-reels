@@ -144,5 +144,15 @@
   "slug": "2026-11-05-nasdaq-chips",
   "gancho": "Los chips de IA hunden a Wall Street: el Nasdaq cae más de un 4 %.",
   "formula": "23 La estadística"
+ },
+ {
+  "fecha": "2026-11-06",
+  "empresa": "Bolsa de Japón (Nikkei 1989)",
+  "caso": "29-dic-1989: el Nikkei cierra en 38.915,87 (máximo de la burbuja); mínimo de cierre 7.054,98 el 10-mar-2009 (-81,9 %); no vuelve a cerrar por encima hasta el 22-feb-2024 (39.098,68)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-06-manana-japon-1989",
+  "gancho": "Bolsa de Japón, 1989: -80 % y tardó 34 años en volver",
+  "formula": "1 Confesión de coste"
  }
 ]
