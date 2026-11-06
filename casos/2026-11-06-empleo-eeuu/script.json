@@ -1,0 +1,212 @@
+{
+ "formato": "terminal",
+ "slug": "empleo-eeuu",
+ "company": "Wall Street",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Empleo en EE. UU. hoy",
+  "big": "165.000",
+  "bottom": "el doble de lo previsto",
+  "color": "green"
+ },
+ "ticker": [
+  [
+   "NASDAQ",
+   1.7
+  ],
+  [
+   "S&P 500",
+   0.6
+  ],
+  [
+   "DOW",
+   -0.6
+  ],
+  [
+   "CHIPS (SOX)",
+   3.6
+  ],
+  [
+   "DÓLAR (DXY)",
+   0.7
+  ]
+ ],
+ "series": {
+  "nasdaq": {
+   "name": "Nasdaq",
+   "sub": "3 meses · hoy provisional",
+   "pre": "",
+   "close": [
+    26348.35,
+    26690.62,
+    26605.36,
+    26445.45,
+    26588.49,
+    26803.03,
+    26729.16,
+    26644.91,
+    26289.71,
+    26331.09,
+    26067.17,
+    26180.46,
+    25980.19,
+    26151.3,
+    26130.2,
+    26541.35,
+    26402.42,
+    26370.89,
+    26099.77,
+    26217.83,
+    26584.06,
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57,
+    25978.43,
+    26418.3,
+    26522.54,
+    27122.09,
+    27244.28,
+    26936.04,
+    26939.37,
+    27068.72,
+    26820.38,
+    26797.54,
+    26861.06,
+    26871.6,
+    27190.86,
+    27477.31,
+    27599.79,
+    27538.69,
+    27193.34,
+    27366.17,
+    27245.9,
+    27204.38,
+    26692.87,
+    26713.03,
+    26140.03,
+    26430.89,
+    26424.82,
+    26702.86,
+    26008.86,
+    25955.34,
+    26169.38,
+    26477.81,
+    26549.85,
+    26184.72,
+    25437.0,
+    25164.31,
+    25372.01,
+    25736.51,
+    24315.0,
+    24659.28
+   ],
+   "labels": [
+    [
+     0,
+     "ago"
+    ],
+    [
+     18,
+     "sep"
+    ],
+    [
+     39,
+     "oct"
+    ],
+    [
+     61,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Estados Unidos creó ciento sesenta y cinco mil empleos en octubre, más del doble de lo que se esperaba.",
+   "show": "Estados Unidos creó 165.000 empleos en octubre, más del doble de lo que se esperaba.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "EN DIRECTO",
+      "text": "EE. UU. crea 165.000 empleos"
+     },
+     {
+      "text": "Más del doble de lo previsto"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Los economistas esperaban unos sesenta y cinco mil, y el paro bajó al cuatro coma uno por ciento.",
+   "show": "Los economistas esperaban unos 65.000, y el paro bajó al 4,1 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Empleos creados en octubre (EE. UU.)",
+    "items": [
+     [
+      "Previsión",
+      65,
+      "65.000",
+      "dim"
+     ],
+     [
+      "Real",
+      165,
+      "165.000",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Y la bolsa, a media sesión, rebota: el Nasdaq sube casi un dos por ciento, tras su peor día en diecinueve meses.",
+   "show": "Y la bolsa, a media sesión, rebota: el Nasdaq sube casi un 2 %, tras su peor día en 19 meses.",
+   "v": {
+    "type": "grafica",
+    "serie": "nasdaq",
+    "titulo": "Nasdaq",
+    "draw": 0.6
+   }
+  },
+  {
+   "say": "Pero hay trampa: con tanto empleo, los inversores ven más probable que la Reserva Federal suba los tipos en diciembre, casi un ochenta por ciento.",
+   "show": "Pero hay trampa: con tanto empleo, los inversores ven más probable que la Reserva Federal suba los tipos en diciembre, casi un 80 %.",
+   "v": {
+    "type": "cifra",
+    "value": 78,
+    "dec": 0,
+    "suffix": " %",
+    "label": "probabilidad de subida de tipos en diciembre",
+    "color": "amber"
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿puede una buena noticia para la economía ser mala para la bolsa?",
+   "show": "La gran pregunta: ¿puede una buena noticia para la economía ser mala para la bolsa?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Buena noticia, mala para la bolsa?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://srnnews.com/strong-october-jobs-report-sends-yields-higher/",
+  "https://247wallst.com/cards/xpost-01m6rjnfn7bt828tzkynemtmht",
+  "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-6-dow-sp-500-nasdaq-jobs-report-091927729.html",
+  "https://es.investing.com/news/stock-market-news/la-bolsa-hoy-ibex-35-euro-dolar-informe-de-empleo-en-eeuu-oro-y-wall-street-3914960",
+  "Yahoo Finance (cotizaciones intradía via make_reel precios)"
+ ],
+ "caption": "Empleo en EE. UU. hoy: 165.000 nuevos empleos en octubre, el doble de lo previsto, y Wall Street rebota 📈\n\n👉 La economía de EE. UU. creó 165.000 empleos frente a unos 65.000 esperados, y el paro baja al 4,1 %\n👉 A media sesión, el Nasdaq rebota casi un 2 % tras su peor día en 19 meses\n👉 Pero los inversores ven casi un 80 % de probabilidad de una subida de tipos de la Reserva Federal en diciembre\n\n¿Crees que un buen dato de empleo es buena o mala noticia para la bolsa? Cuéntanoslo 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #nasdaq #empleo #reservafederal",
+ "alt": "Reel sobre el informe de empleo de EE. UU. de octubre: 165.000 empleos frente a 65.000 previstos, con el Nasdaq rebotando a media sesión y la Reserva Federal pudiendo subir tipos."
+}
