@@ -174,5 +174,14 @@
   "slug": "2026-11-07-manana-ibex-2007",
   "gancho": "Ibex 35, noviembre de 2007: -62,6 % y tardó casi 18 años en volver",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-07",
+  "empresa": "Wall Street (semana negra / Nasdaq y chips)",
+  "caso": "Resumen semanal: S&P 500 -2,7 %, Nasdaq -3,4 % y chips -12 % el jueves (semana al 6-nov-2026)",
+  "formato": "reel",
+  "slug": "2026-11-07-semana-wall-street",
+  "gancho": "El Nasdaq cayó un 5,5 % el jueves y los chips un 12 %",
+  "formula": "23 La estadística"
  }
 ]

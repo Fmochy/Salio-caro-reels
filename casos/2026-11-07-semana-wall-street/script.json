@@ -1,0 +1,230 @@
+{
+ "formato": "terminal",
+ "slug": "semana-wall-street",
+ "company": "Wall Street",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Nasdaq, el jueves",
+  "big": "-5,5 %",
+  "bottom": "y los chips, -12 %",
+  "color": "red"
+ },
+ "ticker": [
+  [
+   "NASDAQ",
+   1.09
+  ],
+  [
+   "S&P 500",
+   0.31
+  ],
+  [
+   "DOW",
+   -0.46
+  ],
+  [
+   "CHIPS (SOX)",
+   4.21
+  ],
+  [
+   "NVDA",
+   2.8
+  ],
+  [
+   "AMD",
+   11.04
+  ],
+  [
+   "IBEX 35",
+   -0.6
+  ]
+ ],
+ "series": {
+  "nasdaq": {
+   "name": "Nasdaq",
+   "sub": "3 meses · cierre diario",
+   "pre": "",
+   "close": [
+    26690.62,
+    26605.36,
+    26445.45,
+    26588.49,
+    26803.03,
+    26729.16,
+    26644.91,
+    26289.71,
+    26331.09,
+    26067.17,
+    26180.46,
+    25980.19,
+    26151.3,
+    26130.2,
+    26541.35,
+    26402.42,
+    26370.89,
+    26099.77,
+    26217.83,
+    26584.06,
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57,
+    25978.43,
+    26418.3,
+    26522.54,
+    27122.09,
+    27244.28,
+    26936.04,
+    26939.37,
+    27068.72,
+    26820.38,
+    26797.54,
+    26861.06,
+    26871.6,
+    27190.86,
+    27477.31,
+    27599.79,
+    27538.69,
+    27193.34,
+    27366.17,
+    27245.9,
+    27204.38,
+    26692.87,
+    26713.03,
+    26140.03,
+    26430.89,
+    26424.82,
+    26702.86,
+    26008.86,
+    25955.34,
+    26169.38,
+    26477.81,
+    26549.85,
+    26184.72,
+    25437.0,
+    25164.31,
+    25372.01,
+    25736.51,
+    24315.0,
+    24579.43
+   ],
+   "labels": [
+    [
+     0,
+     "ago"
+    ],
+    [
+     17,
+     "sep"
+    ],
+    [
+     38,
+     "oct"
+    ],
+    [
+     60,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Wall Street cierra una semana negra: el S&P quinientos pierde un dos coma siete por ciento, y el Nasdaq, un tres coma cuatro.",
+   "show": "Wall Street cierra una semana negra: el S&P 500 pierde un 2,7 %, y el Nasdaq, un 3,4 %.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "text": "Semana negra en Wall Street",
+      "tag": "RESUMEN SEMANAL"
+     },
+     {
+      "text": "S&P 500 -2,7 % · Nasdaq -3,4 %"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: casi todo el golpe llegó el jueves, cuando el Nasdaq se hundió un cinco coma cinco por ciento en un solo día.",
+   "show": "Mira la gráfica: casi todo el golpe llegó el jueves, cuando el Nasdaq se hundió un 5,5 % en un solo día.",
+   "v": {
+    "type": "grafica",
+    "serie": "nasdaq",
+    "titulo": "Nasdaq",
+    "draw": 0.6,
+    "marca": {
+     "dias": 5,
+     "texto": "-3,4 %"
+    }
+   }
+  },
+  {
+   "say": "Y los chips fueron lo peor: el índice de semiconductores se desplomó un doce por ciento el jueves.",
+   "show": "Y los chips fueron lo peor: el índice de semiconductores se desplomó un 12 % el jueves.",
+   "v": {
+    "type": "cifra",
+    "value": 12.2,
+    "dec": 1,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "índice de chips (SOX), solo el jueves",
+    "color": "red"
+   }
+  },
+  {
+   "say": "El miedo, según la prensa financiera: que las nuevas reglas tras las elecciones frenen los centros de datos de inteligencia artificial.",
+   "show": "El miedo, según la prensa financiera: que las nuevas reglas tras las elecciones frenen los centros de datos de IA.",
+   "v": {
+    "type": "barras",
+    "titulo": "Caída en la semana (EE. UU.)",
+    "items": [
+     [
+      "Dow Jones",
+      0.9,
+      "-0,9 %",
+      "dim"
+     ],
+     [
+      "S&P 500",
+      2.7,
+      "-2,7 %",
+      "amber"
+     ],
+     [
+      "Nasdaq",
+      3.4,
+      "-3,4 %",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "El viernes los chips rebotaron, pero la gran pregunta es si el susto de la inteligencia artificial ha terminado.",
+   "show": "El viernes los chips rebotaron, pero la gran pregunta es si el susto de la IA ha terminado.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "text": "¿Ha terminado el susto de la IA?",
+      "tag": "LA GRAN PREGUNTA"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://www.theclosingprint.net/2026/11/post-market-and-weekly-summary-2026-11-06/",
+  "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-6-dow-sp-500-nasdaq-jobs-report-earnings-135953863.html",
+  "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-6-144816072.html",
+  "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-06-2026",
+  "Cierres de Yahoo Finance via make_reel precios (^GSPC, ^IXIC, ^DJI, ^SOX, ^IBEX)"
+ ],
+ "caption": "Wall Street cierra una semana negra: el Nasdaq se hundió un 5,5 % en un solo día y los chips un 12 % 📉\n\n👉 En la semana, el S&P 500 pierde un 2,7 %, el Nasdaq un 3,4 % y el Dow Jones un 0,9 %\n👉 El jueves, el Nasdaq cayó un 5,5 % y el índice de semiconductores (SOX) un 12 %\n👉 Según la prensa financiera, el miedo es que las nuevas reglas tras las elecciones frenen los centros de datos de IA\n\n¿Crees que el susto de la inteligencia artificial en bolsa ya ha terminado? Cuéntanoslo 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #nasdaq #inversion #chips",
+ "alt": "Reel resumen de la semana en bolsa: el S&P 500 cae un 2,7 % y el Nasdaq un 3,4 % hasta el viernes 6 de noviembre de 2026, con un desplome del 5,5 % del Nasdaq y del 12 % de los chips el jueves."
+}
