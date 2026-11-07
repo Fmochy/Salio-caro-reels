@@ -164,5 +164,15 @@
   "slug": "2026-11-06-empleo-eeuu",
   "gancho": "Empleo en EE. UU. hoy: 165.000, el doble de lo previsto",
   "formula": "23 La estadística"
+ },
+ {
+  "fecha": "2026-11-07",
+  "empresa": "Bolsa española (Ibex 35 2007)",
+  "caso": "8-nov-2007: el Ibex 35 cierra en 15.945,70 (máximo de cierre); mínimo de cierre 5.956,30 el 24-jul-2012 (-62,6 %); no vuelve a cerrar por encima hasta el 27-oct-2025 (16.000,20)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-07-manana-ibex-2007",
+  "gancho": "Ibex 35, noviembre de 2007: -62,6 % y tardó casi 18 años en volver",
+  "formula": "1 Confesión de coste"
  }
 ]
