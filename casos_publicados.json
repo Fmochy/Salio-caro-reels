@@ -183,5 +183,15 @@
   "slug": "2026-11-07-semana-wall-street",
   "gancho": "El Nasdaq cayó un 5,5 % el jueves y los chips un 12 %",
   "formula": "23 La estadística"
+ },
+ {
+  "fecha": "2026-11-08",
+  "empresa": "Wall Street (crisis financiera 2008 / S&P 500)",
+  "caso": "9-oct-2007: el S&P 500 cierra en 1.565,15 (máximo); 15-sep-2008 quiebra Lehman y el S&P cae un 4,7 %; mínimo de cierre 676,53 el 9-mar-2009 (-56,8 %); no vuelve a cerrar por encima hasta el 28-mar-2013 (1.569,19)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-08-manana-crisis-2008",
+  "gancho": "S&P 500, octubre de 2007: -56,8 % y tardó 5 años en volver",
+  "formula": "1 Confesión de coste"
  }
 ]
