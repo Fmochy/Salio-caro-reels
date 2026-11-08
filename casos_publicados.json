@@ -193,5 +193,14 @@
   "slug": "2026-11-08-manana-crisis-2008",
   "gancho": "S&P 500, octubre de 2007: -56,8 % y tardó 5 años en volver",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-08",
+  "empresa": "Wall Street (burbuja puntocom / Nasdaq)",
+  "caso": "10-mar-2000: el Nasdaq cierra en 5.048,62 (máximo); mínimo de cierre 1.114,11 el 9-oct-2002 (-77,9 %); no vuelve a cerrar por encima hasta el 23-abr-2015 (5.056,06)",
+  "formato": "reel",
+  "slug": "2026-11-08-burbuja-puntocom",
+  "gancho": "Nasdaq, marzo de 2000: -77,9 % y tardó 15 años en volver",
+  "formula": "1 Confesión de coste"
  }
 ]
