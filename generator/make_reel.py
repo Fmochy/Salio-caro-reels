@@ -1295,7 +1295,7 @@ class Terminal:
             ax, ay = gx(i0), gy(ys[i0]); bx2, by2 = gx(n - 1), gy(ys[-1])
             d.rounded_rectangle((ax - 26, min(ay, by2) - 30, bx2 + 26, max(ay, by2) + 30), radius=14, outline=RED + (int(255 * q),), width=5)
             t2 = mk["texto"]; f2 = F(FB, int(96 * (0.6 + 0.4 * B(q)))) if q > 0 else None
-            if f2: glow(im, lambda dd, c: dd.text((540, 1180 if by2 < 900 else 1420), t2, font=f2, fill=c, anchor="mm"), RED, 22, 0.6)
+            if f2: glow(im, lambda dd, c: dd.text((540, 1180 if by2 < 900 else 460), t2, font=f2, fill=c, anchor="mm"), RED, 22, 0.6)
 
     def s_cifra(self, im, v, lt, dur):
         val = float(v["value"]); p = E((lt - 0.1) / 0.9); cur = val * p

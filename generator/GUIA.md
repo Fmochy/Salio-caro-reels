@@ -890,16 +890,17 @@ Antes de generar, repasa `say`, `show` y `caption`:
 ## 8. Aprendizajes de la cuenta (lo actualiza la auditoría semanal; tiene prioridad sobre las reglas generales)
 
 <!-- APRENDIZAJES:INICIO -->
-Auditoría 26-10-2026 · 6 reels (20–25 oct; 5 con más de 48 h). Muestra pequeña (<7): son tendencias, no reglas firmes.
-- Mejores: Nokia 1,7×, Xbox One 1,5× y New Coke 1,0× la mediana (71 visualizaciones), con 5–7 s de visionado medio.
-  Peores: Fire Phone 0,2× y Google Glass 0,06×, con 1–3 s. La gente se va en el gancho, no a mitad del vídeo.
-- Gancho: marca + lo que estaba en juego en la primera mitad de la frase, con cifra de coste (fórmulas 1, 24 o 26).
-  Evita ganchos abstractos sin coste ni tensión ("X no terminó donde empezó", "45 días entre... y una rebaja radical").
-- Prioriza marcas que el público español ha usado o bebido (Coca-Cola, Nokia, consolas) frente a gadgets que casi nadie tuvo.
-- No encadenes dos casos del mismo sector: tres tecnológicos seguidos (22–24 oct) coincidieron con la caída de alcance.
-- Ningún reel tiene compartidos, guardados ni seguidores: termina con un dato final que den ganas de mandar a alguien,
-  y en el caption una sola petición, preferiblemente comentar con una pregunta de sí/no.
-- Rellena SIEMPRE gancho y formula en casos_publicados.json: sin ellos la auditoría no puede comparar fórmulas.
+Auditoría 09-11-2026 · 29 reels (12-oct a 8-nov; mediana 115 visualizaciones). Casi todos se quedan en 100–130: solo 3 rompen el techo.
+- Top: Ibex 35 2007 4,3× (499 vis., 52 % pasa de 3 s), aeropuerto de Castellón 1,9× y Spanair 1,4× (57 %). Los tres son ESPAÑOLES.
+  Prioriza casos y cifras de España (Ibex, bancos, empresas y obras españolas) en las dos franjas; Wall Street/Japón se quedan en ~1×.
+- Fórmula: "1 Confesión de coste" con caída en % y años en recuperarse (Ibex, Nasdaq 2000) es lo que mejor retiene (44–52 %).
+  "23 La estadística" de actualidad (4 reels) da 0,96–1,10× y 27–39 % de retención: úsala solo si el dato es muy fuerte o toca España.
+- Gancho: cifra + lugar conocido en la portada; el top 3 retiene 37–57 % más de 3 s frente a 25–31 % de los flojos. Evita ganchos sin cifra.
+- Peores (0–0,2×): Qwikster, Blockbuster, Google Glass, Fire Phone, Fagor e IVA Brasil. No publiques dos reels con <3 h de
+  diferencia y no dejes reels fuera de la cola de Metricool/registro: canibalizan alcance y la auditoría no puede emparejarlos.
+- Compartidos ≈ 0 (1 en 29 reels) y la cuenta tiene 4 seguidores con ~110 de alcance por reel: el freno es perfil/llamada,
+  no el gancho. Cierra con un dato "para mandar a alguien que invierte" y pide UNA acción (comentar sí/no o seguir), no tres.
+- Sigue rellenando gancho y formula en casos_publicados.json, también en los reels de las 11:30.
 <!-- APRENDIZAJES:FIN -->
 
 ## 9. Ejemplo antiguo de tarjetas (NO lo imites en longitud ni formato: manda la sección 3c)
