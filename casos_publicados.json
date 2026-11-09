@@ -212,5 +212,15 @@
   "slug": "2026-11-09-manana-ibex-covid",
   "gancho": "Ibex 35, 12 de marzo de 2020: -14,06 %, su peor día de la historia",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-09",
+  "empresa": "Bolsa española (Ibex 35 / banca)",
+  "caso": "9-nov-2026 a media tarde: Ibex 35 +2,0 % hasta ~19.748 con Santander +3,4 %, CaixaBank +2,8 %, BBVA +2,6 %; Repsol -1,3 % (datos provisionales)",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-09-ibex-bancos",
+  "gancho": "Ibex 35 hoy: +2 %, lo tiran los bancos",
+  "formula": "23 La estadística"
  }
 ]

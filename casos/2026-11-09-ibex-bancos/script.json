@@ -1,0 +1,306 @@
+{
+ "formato": "terminal",
+ "slug": "ibex-bancos",
+ "company": "Ibex 35",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Ibex 35 hoy",
+  "big": "+2 %",
+  "bottom": "lo tiran los bancos",
+  "color": "green"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   2.0
+  ],
+  [
+   "SANTANDER",
+   3.4
+  ],
+  [
+   "CAIXABANK",
+   2.8
+  ],
+  [
+   "BBVA",
+   2.6
+  ],
+  [
+   "REPSOL",
+   -1.3
+  ],
+  [
+   "EURO STOXX 50",
+   2.0
+  ],
+  [
+   "DAX",
+   1.7
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "6 meses · hoy provisional",
+   "pre": "",
+   "close": [
+    17852.5,
+    17573.6,
+    17654.9,
+    17809.2,
+    17622.7,
+    17755.1,
+    17670.1,
+    18051.7,
+    17975.2,
+    17985.3,
+    18387.4,
+    18290.9,
+    18380.9,
+    18279.3,
+    18362.9,
+    18184.9,
+    18272.0,
+    18176.0,
+    18276.0,
+    18344.9,
+    18223.1,
+    18174.7,
+    18142.7,
+    18290.1,
+    18764.4,
+    19032.0,
+    19163.6,
+    19421.9,
+    19404.1,
+    19347.4,
+    19542.3,
+    19476.5,
+    19389.5,
+    19513.6,
+    19425.3,
+    19387.4,
+    19471.9,
+    19406.6,
+    19671.8,
+    19852.4,
+    19683.8,
+    19640.2,
+    19104.3,
+    19322.8,
+    19384.7,
+    19335.7,
+    19356.6,
+    19275.5,
+    19304.1,
+    19216.9,
+    19206.9,
+    19379.8,
+    19571.3,
+    19267.0,
+    19585.4,
+    19741.3,
+    19727.0,
+    19412.7,
+    19757.7,
+    19782.9,
+    19982.6,
+    20023.6,
+    20057.0,
+    20180.4,
+    20176.0,
+    20173.0,
+    20213.6,
+    20204.4,
+    20168.6,
+    20156.6,
+    19981.9,
+    19934.9,
+    19847.5,
+    19811.0,
+    19961.5,
+    20098.6,
+    20056.6,
+    20067.3,
+    19881.6,
+    20041.9,
+    19974.1,
+    19824.0,
+    19779.0,
+    20000.2,
+    20050.7,
+    20021.8,
+    19997.1,
+    19695.3,
+    19659.8,
+    19838.5,
+    19565.5,
+    19555.9,
+    19635.8,
+    19831.8,
+    19513.8,
+    19724.4,
+    19754.1,
+    19632.2,
+    19573.4,
+    19700.1,
+    19600.3,
+    19517.5,
+    19426.2,
+    19005.3,
+    19085.3,
+    19299.7,
+    19444.2,
+    19118.0,
+    18928.9,
+    19033.1,
+    19285.8,
+    19210.7,
+    19230.7,
+    19177.7,
+    19326.3,
+    19039.3,
+    19092.4,
+    19323.5,
+    18913.5,
+    18989.8,
+    19033.3,
+    19160.6,
+    18883.5,
+    18857.6,
+    18652.9,
+    18957.8,
+    18807.2,
+    19370.9,
+    19486.0,
+    19369.5,
+    19748.4
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     15,
+     "jun"
+    ],
+    [
+     37,
+     "jul"
+    ],
+    [
+     60,
+     "ago"
+    ],
+    [
+     81,
+     "sep"
+    ],
+    [
+     103,
+     "oct"
+    ],
+    [
+     125,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El Ibex treinta y cinco sube hoy casi un dos por ciento, a media tarde, y lo están tirando los bancos.",
+   "show": "El Ibex 35 sube hoy casi un 2 %, a media tarde, y lo están tirando los bancos.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "EN DIRECTO",
+      "text": "El Ibex 35 sube casi un 2 %"
+     },
+     {
+      "text": "Lo tiran los bancos"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: el Ibex salta hasta casi diecinueve mil setecientos cincuenta puntos, en lo que va de sesión.",
+   "show": "Mira la gráfica: el Ibex salta hasta casi 19.750 puntos, en lo que va de sesión.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.6,
+    "marca": {
+     "dias": 1,
+     "texto": "+2,0 %"
+    }
+   }
+  },
+  {
+   "say": "Santander sube más de un tres por ciento, CaixaBank casi un tres, y BBVA más de un dos y medio.",
+   "show": "Santander sube más de un 3 %, CaixaBank casi un 3 %, y BBVA más de un 2,5 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Bancos del Ibex hoy, a media tarde",
+    "items": [
+     [
+      "Santander",
+      3.4,
+      "+3,4 %",
+      "green"
+     ],
+     [
+      "CaixaBank",
+      2.8,
+      "+2,8 %",
+      "green"
+     ],
+     [
+      "BBVA",
+      2.6,
+      "+2,6 %",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Y en el lado contrario, Repsol cae más de un uno por ciento, con el petróleo a la baja.",
+   "show": "Y en el lado contrario, Repsol cae más de un 1 %, con el petróleo a la baja.",
+   "v": {
+    "type": "cifra",
+    "value": -1.3,
+    "dec": 1,
+    "suffix": " %",
+    "label": "Repsol hoy, con el petróleo a la baja",
+    "color": "red"
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿seguirán los bancos tirando del Ibex?",
+   "show": "La gran pregunta: ¿seguirán los bancos tirando del Ibex?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Seguirán tirando los bancos?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://es.investing.com/news/stock-market-news/banca-y-energia-disparan-al-ibex-35-el-indice-europeo-que-mas-sube-3918292",
+  "https://capital.es/economia/mercados-e-inversion/el-ibex-35-repunta-un-143-tras-una-apertura-plana-y-supera-los-19-600-puntos/233613",
+  "https://www.democrata.es/economia/el-ibex-35-toma-impulso-a-media-sesion-y-rebasa-los-19-600-puntos-tras-un-inicio-apatico/",
+  "Yahoo Finance (cotizaciones intradía via make_reel precios, 9-nov-2026 ~17:15 Madrid)"
+ ],
+ "caption": "Ibex 35 hoy: sube casi un 2 % y lo tiran los bancos 📈\n\n👉 A media tarde, el Ibex 35 sube casi un 2 % y roza los 19.750 puntos\n👉 Santander (+3,4 %), CaixaBank (+2,8 %) y BBVA (+2,6 %) lideran las subidas de la banca\n👉 Repsol cae más de un 1 % con el petróleo a la baja\n\n¿Crees que los bancos seguirán tirando del Ibex? Cuéntanoslo 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nDatos a media sesión, provisionales. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #bancos #santander",
+ "alt": "Reel sobre la bolsa española de hoy: el Ibex 35 sube casi un 2 % a media tarde, con Santander, CaixaBank y BBVA al frente y Repsol a la baja."
+}
