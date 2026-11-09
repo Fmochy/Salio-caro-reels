@@ -202,5 +202,15 @@
   "slug": "2026-11-08-burbuja-puntocom",
   "gancho": "Nasdaq, marzo de 2000: -77,9 % y tardó 15 años en volver",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-09",
+  "empresa": "Bolsa española (Ibex 35, covid 2020)",
+  "caso": "12-mar-2020: el Ibex 35 cae un 14,06 % y cierra en 6.390,9 (peor día de su historia); marzo 2020 -22,21 % (peor mes)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-09-manana-ibex-covid",
+  "gancho": "Ibex 35, 12 de marzo de 2020: -14,06 %, su peor día de la historia",
+  "formula": "1 Confesión de coste"
  }
 ]

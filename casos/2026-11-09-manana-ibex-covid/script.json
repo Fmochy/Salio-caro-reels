@@ -1,0 +1,171 @@
+{
+ "formato": "terminal",
+ "slug": "ibex-covid",
+ "company": "Ibex 35",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Ibex 35, 12 de marzo de 2020",
+  "big": "-14,06 %",
+  "bottom": "su peor día de la historia",
+  "color": "red",
+  "photo": "img/bolsa1.jpg"
+ },
+ "ticker": [
+  [
+   "IBEX 12-mar-2020",
+   -14.06
+  ],
+  [
+   "IBEX 9-mar-2020",
+   -7.96
+  ],
+  [
+   "IBEX feb-mar 2020",
+   -36.6
+  ],
+  [
+   "IBEX marzo 2020",
+   -22.21
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "feb-mar 2020 · cierre diario",
+   "pre": "",
+   "close": [
+    9404.7,
+    9562.9,
+    9717.8,
+    9811.3,
+    9811.0,
+    9816.0,
+    9882.6,
+    9940.4,
+    9909.8,
+    9956.8,
+    10022.2,
+    10005.8,
+    10083.6,
+    9931.0,
+    9886.2,
+    9483.5,
+    9250.8,
+    9316.8,
+    8985.9,
+    8723.2,
+    8741.5,
+    8811.6,
+    8910.0,
+    8683.0,
+    8375.6,
+    7708.7,
+    7461.5,
+    7436.4,
+    6390.9
+   ],
+   "labels": [
+    [
+     0,
+     "feb"
+    ],
+    [
+     20,
+     "mar"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El doce de marzo de dos mil veinte, el Ibex treinta y cinco vivió el peor día de su historia: se hundió un catorce por ciento.",
+   "show": "El 12 de marzo de 2020, el Ibex 35 vivió el peor día de su historia: se hundió un 14 %.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa1.jpg",
+    "heads": [
+     {
+      "text": "El Ibex vive su peor día"
+     },
+     {
+      "text": "Cierra en 6.391 puntos"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: el Ibex rozaba los diez mil puntos, y ese jueves se desplomó de golpe.",
+   "show": "Mira la gráfica: el Ibex rozaba los 10.000 puntos, y ese jueves se desplomó de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.7,
+    "marca": {
+     "dias": 1,
+     "texto": "-14,06 %"
+    }
+   }
+  },
+  {
+   "say": "En apenas tres semanas pasó de unos diez mil cien puntos a seis mil trescientos noventa y uno.",
+   "show": "En apenas 3 semanas pasó de unos 10.100 puntos a 6.391.",
+   "v": {
+    "type": "barras",
+    "titulo": "Ibex 35 · cierre",
+    "items": [
+     [
+      "Feb 2020",
+      10100,
+      "unos 10.100",
+      "dim"
+     ],
+     [
+      "12 mar 2020",
+      6391,
+      "6.391",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Marzo de dos mil veinte fue su peor mes: perdió más de un veintidós por ciento.",
+   "show": "Marzo de 2020 fue su peor mes: perdió más de un 22 %.",
+   "v": {
+    "type": "cifra",
+    "value": 22.21,
+    "dec": 2,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "Ibex 35 · marzo 2020, peor mes",
+    "color": "red"
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿qué habrías hecho tú aquel jueves?",
+   "show": "La gran pregunta: ¿qué habrías hecho tú aquel jueves?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa1.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Qué habrías hecho tú?"
+     }
+    ]
+   }
+  }
+ ],
+ "sources": [
+  "https://www.idealista.com/news/node/780765",
+  "https://www.bolsamania.com/noticias_amp/mercados/ibex-plummets-than-5-engangers-7000-waiting-ecb--7380388.html",
+  "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/los-mayores-desplomes-historicos-de-la-bolsa-n-552159",
+  "https://www.publico.es/economia/ibex-acaba-marzo-mayor-caida-historia-mes-mas-22.html",
+  "https://rtvc.es/la-bolsa-espanola-acaba-marzo-con-la-mayor-caida-mensual-de-su-historia/",
+  "Yahoo Finance ^IBEX"
+ ],
+ "caption": "Ibex 35: el 12 de marzo de 2020 vivió el peor día de su historia, con una caída del 14,06 % 📉\n\n👉 Ese jueves, tras la decepción del BCE ante el coronavirus, el Ibex 35 cerró en unos 6.390 puntos\n👉 Tres días antes, el lunes 9 de marzo, ya había perdido casi un 8 %\n👉 Marzo de 2020 fue el peor mes de su historia: -22,21 %\n\n¿Qué habrías hecho tú aquel día: vender, esperar o comprar? Cuéntamelo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #covid19 #historiadelabolsa",
+ "alt": "Reel sobre el peor día del Ibex 35: el 12 de marzo de 2020 cayó un 14,06 % y cerró en unos 6.390 puntos, y marzo fue su peor mes con un 22 % menos. Historia de la bolsa española explicada en 30 segundos."
+}
