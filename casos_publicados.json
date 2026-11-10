@@ -222,5 +222,15 @@
   "slug": "2026-11-09-ibex-bancos",
   "gancho": "Ibex 35 hoy: +2 %, lo tiran los bancos",
   "formula": "23 La estadística"
+ },
+ {
+  "fecha": "2026-11-10",
+  "empresa": "Bolsa española (Ibex 35, burbuja puntocom)",
+  "caso": "6-mar-2000: Ibex 35 cierra en 12.816,8 (máximo); 9-oct-2002: 5.364,5 (-58,1 %)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-10-manana-ibex-puntocom",
+  "gancho": "Ibex 35, marzo de 2000: -58,1 % en solo tres años",
+  "formula": "1 Confesión de coste"
  }
 ]
