@@ -1341,7 +1341,7 @@ class Terminal:
                 d.polygon(poly, fill=col if on else None, outline=col); d.line(poly + [poly[0]], fill=col, width=6)
             else:
                 s = p; d.ellipse((cx - 22 * s, cy - 44 * s, cx + 22 * s, cy), outline=col, width=6, fill=col if on else None)
-                d.arc((cx - 44 * s, cy + 2, cx + 44 * s, cy + 80 * s), 180, 360, fill=col, width=6)
+                d.arc((cx - 44 * s, cy + 2, cx + 44 * s, max(cy + 3, cy + 80 * s)), 180, 360, fill=col, width=6)
             d.text((cx + 130, cy), label, font=F(FB, 66), fill=col if on else TXT, anchor="lm")
             if on and t < at + 0.8:
                 q = (t - at - 0.35) / 0.45
