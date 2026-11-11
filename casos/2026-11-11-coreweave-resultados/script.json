@@ -1,0 +1,308 @@
+{
+ "formato": "terminal",
+ "slug": "coreweave-resultados",
+ "company": "CoreWeave",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "CoreWeave hoy en bolsa",
+  "big": "+23 %",
+  "bottom": "tras caer un 61 %",
+  "color": "green"
+ },
+ "ticker": [
+  [
+   "CRWV",
+   23.7
+  ],
+  [
+   "NASDAQ",
+   1.7
+  ],
+  [
+   "S&P 500",
+   1.1
+  ],
+  [
+   "DOW",
+   -0.1
+  ],
+  [
+   "NVDA",
+   4.0
+  ],
+  [
+   "NBIS",
+   17.0
+  ],
+  [
+   "MU",
+   12.7
+  ],
+  [
+   "IBEX 35",
+   0.1
+  ]
+ ],
+ "series": {
+  "crwv": {
+   "name": "CoreWeave (CRWV)",
+   "sub": "6 meses · hoy provisional",
+   "pre": "$",
+   "close": [
+    114.7,
+    107.75,
+    111.31,
+    114.21,
+    107.3,
+    103.77,
+    99.81,
+    101.28,
+    107.58,
+    105.49,
+    105.89,
+    104.27,
+    106.86,
+    109.53,
+    124.82,
+    119.27,
+    110.93,
+    108.03,
+    100.39,
+    102.37,
+    98.45,
+    95.61,
+    95.74,
+    100.55,
+    106.71,
+    117.03,
+    115.21,
+    117.95,
+    111.29,
+    105.72,
+    100.88,
+    98.76,
+    96.58,
+    95.51,
+    99.54,
+    85.68,
+    81.75,
+    86.46,
+    83.53,
+    90.0,
+    89.7,
+    88.88,
+    83.31,
+    79.94,
+    77.12,
+    72.91,
+    73.21,
+    73.06,
+    79.58,
+    82.64,
+    81.1,
+    71.88,
+    70.79,
+    67.3,
+    60.82,
+    73.9,
+    71.77,
+    85.76,
+    91.9,
+    89.89,
+    85.33,
+    90.67,
+    88.19,
+    90.32,
+    107.73,
+    106.29,
+    105.26,
+    106.0,
+    93.17,
+    90.87,
+    89.76,
+    87.85,
+    86.25,
+    88.04,
+    88.01,
+    86.8,
+    84.23,
+    84.89,
+    81.85,
+    80.93,
+    84.56,
+    89.36,
+    99.83,
+    94.94,
+    89.12,
+    88.99,
+    82.98,
+    80.92,
+    83.35,
+    79.88,
+    81.36,
+    85.43,
+    86.76,
+    86.9,
+    90.13,
+    87.59,
+    85.07,
+    85.93,
+    87.12,
+    88.57,
+    89.62,
+    87.39,
+    91.72,
+    88.45,
+    81.58,
+    82.08,
+    80.26,
+    77.81,
+    65.78,
+    69.69,
+    61.39,
+    61.12,
+    62.13,
+    61.82,
+    55.6,
+    54.24,
+    55.19,
+    59.57,
+    63.93,
+    60.74,
+    54.87,
+    50.15,
+    53.74,
+    48.42,
+    43.66,
+    46.4,
+    48.98,
+    48.73,
+    60.26
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     14,
+     "jun"
+    ],
+    [
+     35,
+     "jul"
+    ],
+    [
+     57,
+     "ago"
+    ],
+    [
+     78,
+     "sep"
+    ],
+    [
+     99,
+     "oct"
+    ],
+    [
+     121,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "CoreWeave, la nube de la inteligencia artificial, se dispara hoy en bolsa más de un veinte por ciento.",
+   "show": "CoreWeave, la nube de la inteligencia artificial, se dispara hoy en bolsa más de un 20 %.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "EN DIRECTO",
+      "text": "CoreWeave se dispara en bolsa"
+     },
+     {
+      "text": "Sube más de un 20 % hoy"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: desde junio se había hundido un sesenta y uno por ciento, y hoy rebota de golpe.",
+   "show": "Mira la gráfica: desde junio se había hundido un 61 %, y hoy rebota de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "crwv",
+    "titulo": "CoreWeave (CRWV)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 1,
+     "texto": "+23 %"
+    }
+   }
+  },
+  {
+   "say": "Y es que ingresó tres mil seiscientos sesenta millones de dólares en tres meses, casi el triple que hace un año.",
+   "show": "Y es que ingresó 3.660 millones de dólares en 3 meses, casi el triple que hace un año.",
+   "v": {
+    "type": "cifra",
+    "value": 3660,
+    "dec": 0,
+    "suffix": " M$",
+    "label": "ingresos del 3.er trimestre",
+    "color": "green"
+   }
+  },
+  {
+   "say": "Y tira de otros valores de la inteligencia artificial: Nebius sube un diecisiete por ciento y Micron casi un trece.",
+   "show": "Y tira de otros valores de la inteligencia artificial: Nebius sube un 17 % y Micron casi un 13 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Valores de IA hoy, a media sesión",
+    "items": [
+     [
+      "CoreWeave",
+      23.7,
+      "+23,7 %",
+      "green"
+     ],
+     [
+      "Nebius",
+      17.0,
+      "+17,0 %",
+      "green"
+     ],
+     [
+      "Micron",
+      12.7,
+      "+12,7 %",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿es un rebote de un día, o vuelve la fiebre de la inteligencia artificial?",
+   "show": "La gran pregunta: ¿es un rebote de un día, o vuelve la fiebre de la inteligencia artificial?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Rebote de un día o algo más?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://www.cnbc.com/2026/11/11/stocks-moving-the-most-today-live-updates.html",
+  "https://www.stocktitan.net/articles/stock-market-today-live-november-11-2026",
+  "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html",
+  "Yahoo Finance (cotizaciones intradía via make_reel precios, 11-nov-2026 ~17:15 Madrid)"
+ ],
+ "caption": "CoreWeave se dispara hoy en bolsa: sube más de un 20 % tras sus resultados 📈\n\n👉 La nube de la inteligencia artificial ingresó 3.660 millones de dólares en el tercer trimestre, frente a unos 1.370 millones hace un año\n👉 Sube su previsión de ingresos de 2026 hasta 13.000-13.300 millones\n👉 Venía de caer un 61 % desde su máximo de junio, y hoy arrastra a Nebius y Micron\n\n¿Crees que es un rebote de un día o vuelve la fiebre de la IA? Cuéntanoslo 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCifras a media sesión de hoy, 11 de noviembre, y provisionales. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #coreweave #nasdaq #inteligenciaartificial",
+ "alt": "Reel sobre CoreWeave en bolsa hoy: la nube de la inteligencia artificial sube más de un 20 % a media sesión tras ingresar 3.660 millones en el tercer trimestre, después de caer un 61 % desde junio. Bolsa explicada en 30 segundos."
+}
