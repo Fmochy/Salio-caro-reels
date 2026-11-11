@@ -1,0 +1,20 @@
+[
+ {
+  "file": "File:Sede de inditex arteixo.jpg",
+  "dest": "sede.jpg",
+  "author": "Nemigo",
+  "license": "Public domain"
+ },
+ {
+  "file": "File:Zara (Princesa 58, Madrid) 01.jpg",
+  "dest": "zara.jpg",
+  "author": "Luis García (Zaqarbal)",
+  "license": "CC BY-SA 3.0 es"
+ },
+ {
+  "file": "File:Palacio de la Bolsa de Madrid (España) 01.jpg",
+  "dest": "bolsa1.jpg",
+  "author": "Luis García (Zaqarbal)",
+  "license": "CC BY-SA 3.0"
+ }
+]

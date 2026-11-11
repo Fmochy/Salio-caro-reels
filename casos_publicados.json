@@ -232,5 +232,15 @@
   "slug": "2026-11-10-manana-ibex-puntocom",
   "gancho": "Ibex 35, marzo de 2000: -58,1 % en solo tres años",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-11",
+  "empresa": "Inditex (Zara)",
+  "caso": "OPV del 23-may-2001 a 14,70 € (+22,45 % el primer día); ajustado al split 5x1 de 2014 equivale a 2,94 €; cierre del 10-nov-2026 en 59,66 € (x20, +1.929 % sin dividendos) frente a +107 % del Ibex 35",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-11-manana-inditex-opv",
+  "gancho": "Inditex desde su OPV: x20 sin contar dividendos",
+  "formula": "25 El resultado ajeno"
  }
 ]
