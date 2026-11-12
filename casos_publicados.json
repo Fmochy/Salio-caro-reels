@@ -262,5 +262,15 @@
   "slug": "2026-11-12-manana-nvidia-deepseek",
   "gancho": "Nvidia perdió casi 600.000 millones de dólares en bolsa en un solo día.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-12",
+  "empresa": "Nvidia (dimisión de Jensen Huang)",
+  "caso": "12-nov-2026: Jensen Huang dimite como CEO de Nvidia con efecto inmediato tras 33 años; Colette Kress CEO interina; la acción llega a caer más de un 13 % al abrir y a media sesión pierde ~4 % (166,99 $); -30 % desde el máximo de cierre de 239,24 $ del 6-oct (actualidad, 19:30)",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-12-nvidia-huang-dimite",
+  "gancho": "Jensen Huang deja Nvidia: -13 % su acción, al abrir hoy",
+  "formula": "23 La estadística"
  }
 ]

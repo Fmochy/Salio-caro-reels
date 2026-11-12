@@ -1,0 +1,299 @@
+{
+ "formato": "terminal",
+ "slug": "nvidia-huang-dimite",
+ "company": "Nvidia",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Jensen Huang deja Nvidia",
+  "big": "-13 %",
+  "bottom": "su acción, al abrir hoy",
+  "color": "red"
+ },
+ "ticker": [
+  [
+   "NVDA",
+   -3.9
+  ],
+  [
+   "NASDAQ",
+   0.4
+  ],
+  [
+   "S&P 500",
+   0.4
+  ],
+  [
+   "DOW",
+   0.5
+  ],
+  [
+   "AVGO",
+   6.1
+  ],
+  [
+   "AMD",
+   2.0
+  ],
+  [
+   "CRWV",
+   -4.1
+  ],
+  [
+   "IBEX 35",
+   -0.1
+  ]
+ ],
+ "series": {
+  "nvda": {
+   "name": "Nvidia (NVDA)",
+   "sub": "6 meses · hoy provisional",
+   "pre": "$",
+   "close": [
+    220.78,
+    225.83,
+    235.74,
+    225.32,
+    222.32,
+    220.61,
+    223.47,
+    219.51,
+    215.33,
+    214.86,
+    212.6,
+    214.25,
+    211.14,
+    224.36,
+    222.82,
+    214.75,
+    218.66,
+    205.1,
+    208.64,
+    208.19,
+    200.42,
+    204.87,
+    205.19,
+    212.45,
+    207.41,
+    204.65,
+    210.69,
+    208.65,
+    200.04,
+    199.0,
+    195.74,
+    192.53,
+    194.97,
+    200.09,
+    197.58,
+    194.83,
+    195.55,
+    196.93,
+    204.12,
+    202.78,
+    210.96,
+    203.53,
+    211.8,
+    212.5,
+    207.4,
+    202.81,
+    203.28,
+    207.29,
+    212.06,
+    208.76,
+    206.84,
+    196.51,
+    197.01,
+    190.01,
+    195.04,
+    200.75,
+    206.64,
+    211.94,
+    219.22,
+    218.99,
+    223.96,
+    217.55,
+    217.5,
+    224.09,
+    225.3,
+    225.16,
+    225.01,
+    219.74,
+    217.56,
+    216.85,
+    214.72,
+    208.48,
+    213.05,
+    209.66,
+    227.98,
+    217.55,
+    220.78,
+    217.44,
+    224.41,
+    228.45,
+    230.36,
+    225.73,
+    223.67,
+    218.36,
+    218.29,
+    210.96,
+    212.17,
+    213.9,
+    219.34,
+    222.27,
+    227.38,
+    228.87,
+    225.51,
+    224.58,
+    225.07,
+    228.86,
+    227.21,
+    228.38,
+    230.86,
+    233.95,
+    238.9,
+    239.24,
+    237.47,
+    230.48,
+    229.28,
+    226.32,
+    228.52,
+    221.3,
+    217.23,
+    214.13,
+    217.09,
+    216.47,
+    221.97,
+    212.21,
+    210.96,
+    216.0,
+    217.94,
+    215.38,
+    213.66,
+    204.64,
+    202.06,
+    206.69,
+    200.13,
+    181.6,
+    186.64,
+    178.67,
+    168.89,
+    173.73,
+    166.99
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     13,
+     "jun"
+    ],
+    [
+     34,
+     "jul"
+    ],
+    [
+     56,
+     "ago"
+    ],
+    [
+     77,
+     "sep"
+    ],
+    [
+     98,
+     "oct"
+    ],
+    [
+     120,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Jensen Huang deja Nvidia: el fundador dimite hoy como consejero delegado, con efecto inmediato, tras treinta y tres años.",
+   "show": "Jensen Huang deja Nvidia: el fundador dimite hoy como consejero delegado, con efecto inmediato, tras 33 años.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "ÚLTIMA HORA",
+      "text": "Jensen Huang dimite en Nvidia"
+     },
+     {
+      "text": "Efecto inmediato, tras 33 años"
+     }
+    ]
+   }
+  },
+  {
+   "say": "La acción llegó a caer más de un trece por ciento al abrir, y a esta hora pierde en torno a un cuatro.",
+   "show": "La acción llegó a caer más de un 13 % al abrir, y a esta hora pierde en torno a un 4 %.",
+   "v": {
+    "type": "cifra",
+    "value": 13,
+    "dec": 0,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "Nvidia, al abrir la sesión",
+    "color": "red"
+   }
+  },
+  {
+   "say": "Mira la gráfica: desde su máximo de octubre ya acumula una caída de un treinta por ciento.",
+   "show": "Mira la gráfica: desde su máximo de octubre ya acumula una caída de un 30 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "nvda",
+    "titulo": "Nvidia (NVDA)",
+    "draw": 0.6,
+    "marca": {
+     "dias": 27,
+     "texto": "-30 %"
+    }
+   }
+  },
+  {
+   "say": "Al mando se queda, de forma interina, su directora financiera, Colette Kress.",
+   "show": "Al mando se queda, de forma interina, su directora financiera, Colette Kress.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "RELEVO",
+      "text": "Colette Kress, CEO interina"
+     },
+     {
+      "text": "Hasta que haya sucesor"
+     }
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿puede Nvidia seguir igual sin su fundador?",
+   "show": "La gran pregunta: ¿puede Nvidia seguir igual sin su fundador?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Nvidia sin su fundador?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+  "https://www.cnbc.com/2026/11/12/nvidia-jensen-huang-ceo-live-updates.html",
+  "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-12-sp-500-nasdaq-dow-nvidia-invest-110027430.html",
+  "https://finance.yahoo.com/technology/live/nvidia-live-updates-jensen-huang-resigns-cfo-colette-kress-to-serve-as-interim-ceo-140341430.html",
+  "https://eurasiabusinessnews.com/2026/11/12/stock-market-today-november-12-2026-nvidia-stock-tumbles-after-jensen-huang-exit-ai-shares-face-leadership-shock/",
+  "Yahoo Finance (cotizaciones intradía via make_reel precios, 12-nov-2026 ~17:13 Madrid)"
+ ],
+ "caption": "Jensen Huang dimite como CEO de Nvidia: la acción llegó a caer más de un 13 % al abrir 📉\n\n👉 El cofundador deja Nvidia hoy con efecto inmediato, tras 33 años al frente\n👉 La acción llegó a hundirse más de un 13 % en la apertura y a media sesión pierde en torno a un 4 %\n👉 Desde su máximo del 6 de octubre (239 dólares) ya cae un 30 %. Su directora financiera, Colette Kress, será CEO interina\n\n¿Puede Nvidia seguir igual sin su fundador? Cuéntanoslo 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCifras a media sesión de hoy, 12 de noviembre, y provisionales. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #nvidia #jensenhuang #inteligenciaartificial",
+ "alt": "Reel sobre la dimisión de Jensen Huang como CEO de Nvidia: la acción llegó a caer más de un 13 % al abrir y acumula un 30 % de caída desde octubre; Colette Kress será CEO interina. Bolsa explicada en 30 segundos."
+}
