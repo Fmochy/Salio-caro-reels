@@ -1,0 +1,272 @@
+{
+ "formato": "terminal",
+ "slug": "nvidia-deepseek",
+ "company": "Nvidia",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Nvidia perdió casi",
+  "big": "600.000 M$",
+  "bottom": "en un solo día",
+  "color": "red",
+  "photo": "img/huang.jpg"
+ },
+ "ticker": [
+  [
+   "NVDA",
+   -16.97
+  ],
+  [
+   "AVGO",
+   -17.4
+  ],
+  [
+   "TSM",
+   -13.33
+  ],
+  [
+   "NASDAQ",
+   -3.07
+  ],
+  [
+   "S&P 500",
+   -1.46
+  ],
+  [
+   "DOW",
+   0.65
+  ],
+  [
+   "AAPL",
+   3.18
+  ]
+ ],
+ "series": {
+  "nvda": {
+   "name": "Nvidia (NVDA)",
+   "sub": "cierre diario",
+   "pre": "$",
+   "close": [
+    108.0,
+    106.21,
+    107.21,
+    102.83,
+    106.47,
+    108.1,
+    116.91,
+    119.14,
+    119.1,
+    116.78,
+    115.59,
+    113.37,
+    117.87,
+    116.0,
+    116.26,
+    120.87,
+    123.51,
+    124.04,
+    121.4,
+    121.44,
+    117.0,
+    118.85,
+    122.85,
+    124.92,
+    127.72,
+    132.89,
+    132.65,
+    134.81,
+    134.8,
+    138.07,
+    131.6,
+    135.72,
+    136.93,
+    138.0,
+    143.71,
+    143.59,
+    139.56,
+    140.41,
+    141.54,
+    140.52,
+    141.25,
+    139.34,
+    132.76,
+    135.4,
+    136.05,
+    139.91,
+    145.61,
+    148.88,
+    147.63,
+    145.26,
+    148.29,
+    146.27,
+    146.76,
+    141.98,
+    140.15,
+    147.01,
+    145.89,
+    146.67,
+    141.95,
+    136.02,
+    136.92,
+    135.34,
+    138.25,
+    138.63,
+    140.26,
+    145.14,
+    145.06,
+    142.44,
+    138.81,
+    135.07,
+    139.31,
+    137.34,
+    134.25,
+    132.0,
+    130.39,
+    128.91,
+    130.68,
+    134.7,
+    139.67,
+    140.22,
+    139.93,
+    137.01,
+    137.49,
+    134.29,
+    138.31,
+    144.47,
+    149.43,
+    140.14,
+    140.11,
+    135.91,
+    133.23,
+    131.76,
+    136.24,
+    133.57,
+    137.71,
+    140.83,
+    147.07,
+    147.22,
+    142.62,
+    118.42
+   ],
+   "labels": [
+    [
+     0,
+     "sep 24"
+    ],
+    [
+     20,
+     "oct 24"
+    ],
+    [
+     43,
+     "nov 24"
+    ],
+    [
+     63,
+     "dic 24"
+    ],
+    [
+     84,
+     "ene 25"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Nvidia perdió casi seiscientos mil millones de dólares en bolsa en un solo día.",
+   "show": "Nvidia perdió casi 600.000 millones de dólares en bolsa en un solo día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/sede.jpg",
+    "heads": [
+     {
+      "tag": "27 ENERO 2025",
+      "text": "Nvidia se hunde en bolsa"
+     },
+     {
+      "tag": "HISTORIA",
+      "text": "Casi 600.000 M$ en un día"
+     }
+    ]
+   }
+  },
+  {
+   "say": "¿Y sabes quién la tumbó? DeepSeek, una empresa china que decía haber entrenado su IA por menos de seis millones.",
+   "show": "¿Y sabes quién la tumbó? DeepSeek, una empresa china que decía haber entrenado su IA por menos de 6 millones.",
+   "v": {
+    "type": "cifra",
+    "value": 5.6,
+    "dec": 1,
+    "suffix": " M$",
+    "label": "lo que DeepSeek dijo que costó su IA",
+    "color": "amber",
+    "photo": "img/logo.jpg",
+    "name": "Nvidia · Santa Clara"
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía de máximos, y ese lunes se desplomó casi un diecisiete por ciento.",
+   "show": "Mira la gráfica: venía de máximos, y ese lunes se desplomó casi un 17 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "nvda",
+    "titulo": "Nvidia (NVDA)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 1,
+     "texto": "-17,0 %"
+    }
+   }
+  },
+  {
+   "say": "Es más del doble de su anterior récord, de septiembre de dos mil veinticuatro.",
+   "show": "Es más del doble de su anterior récord, de septiembre de 2024.",
+   "v": {
+    "type": "barras",
+    "titulo": "Lo que perdió Nvidia en un día",
+    "items": [
+     [
+      "Nvidia · sep 2024",
+      279,
+      "279.000 M$",
+      "dim"
+     ],
+     [
+      "Nvidia · 27 ene 2025",
+      589,
+      "589.000 M$",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿hace falta gastar tanto en chips para tener buena IA?",
+   "show": "La gran pregunta: ¿hace falta gastar tanto en chips para tener buena IA?",
+   "v": {
+    "type": "titular",
+    "photo": "img/huang.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Tantos chips para la IA?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Nvidia y DeepSeek: el día que Nvidia perdió casi 600.000 millones de dólares en bolsa 📉\n\n👉 El 27 de enero de 2025 la acción de Nvidia cayó casi un 17 %, de 142,62 a 118,42 dólares\n👉 Perdió entre 589.000 y 593.000 millones de valor, la mayor caída de una empresa en un día en la historia de Wall Street\n👉 Más del doble de su anterior récord: 279.000 millones en septiembre de 2024\n\nEl motivo: la china DeepSeek aseguró haber entrenado su modelo de IA por unos 5,6 millones de dólares, y el mercado dudó de que hiciera falta gastar tanto en chips.\n\n¿Crees que la IA necesita de verdad tantos chips? Cuéntamelo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #nvidia #deepseek #inteligenciaartificial",
+ "alt": "Reel sobre la caída de Nvidia en bolsa por DeepSeek: el 27 de enero de 2025 su acción cayó casi un 17 % y perdió casi 600.000 millones de dólares, la mayor caída de una empresa en un día. Historia de la bolsa explicada en 30 segundos.",
+ "sources": [
+  "https://www.bloomberg.com/news/articles/2025-01-27/asml-sinks-as-china-ai-startup-triggers-panic-in-tech-stocks",
+  "https://gulftoday.ae/news/2025/01/28/deepseeks-ai-model-jolts-global-tech-firms-as-nvidia-loses-nearly-600b-in-market-cap",
+  "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-loses-usd589-billion-in-market-cap-broad-stock-plunge-triggered-by-deepseek-ai-release",
+  "https://www.aol.com/nvidia-chip-stocks-plummet-amid-135105850.html",
+  "https://www.dawn.com/news/1888233",
+  "https://www.noticiasrcn.com/economia/la-irrupcion-de-la-ia-china-deepseek-en-el-mercado-hizo-perder-usd-600-000-millones-a-nvidia-847319",
+  "https://www.understandingai.org/p/i-dont-believe-deepseek-crashed-nvidias",
+  "https://finance.yahoo.com/quote/NVDA/history/"
+ ]
+}
