@@ -282,5 +282,15 @@
   "slug": "2026-11-13-manana-grifols-gotham",
   "gancho": "Un solo informe hundió a Grifols un 26 % en bolsa en un día.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-13",
+  "empresa": "Acciona",
+  "caso": "13-nov-2026: Acciona cae un 7,34 % (de 220,6 a 204,4 €) y Acciona Energía un 7 %, peores del Ibex, tras avisar a la CNMV de que no alcanzará su objetivo de 2.000 M€ en desinversiones en 2026; el Ibex sube un 0,3 % y vuelve a los 20.000 puntos (actualidad, 19:30)",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-13-acciona-desinversiones",
+  "gancho": "Acciona se hunde hoy: -7,3 %, la que más cae del Ibex",
+  "formula": "23 La estadística"
  }
 ]

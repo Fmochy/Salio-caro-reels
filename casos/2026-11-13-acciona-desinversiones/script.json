@@ -1,0 +1,323 @@
+{
+ "formato": "terminal",
+ "slug": "acciona-desinversiones",
+ "company": "Acciona",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Acciona se hunde hoy",
+  "big": "-7,3 %",
+  "bottom": "la que más cae del Ibex",
+  "color": "red",
+  "photo": "img/sede.jpg"
+ },
+ "portada": {
+  "titulo": "Acciona se hunde en bolsa hoy",
+  "big": "-7,3 %",
+  "sub": "no vende los 2.000 M€ prometidos",
+  "photo": "img/entrecanales.jpg",
+  "color": "red"
+ },
+ "ticker": [
+  [
+   "ANA",
+   -7.3
+  ],
+  [
+   "ANE",
+   -7.0
+  ],
+  [
+   "IBEX 35",
+   0.3
+  ],
+  [
+   "DAX",
+   -0.1
+  ],
+  [
+   "S&P 500",
+   -0.8
+  ],
+  [
+   "NASDAQ",
+   -1.5
+  ],
+  [
+   "NVDA",
+   -3.6
+  ]
+ ],
+ "series": {
+  "ana": {
+   "name": "Acciona (ANA)",
+   "sub": "6 meses · cierre diario",
+   "pre": "€",
+   "close": [
+    258.2,
+    260.8,
+    252.6,
+    259.2,
+    251.0,
+    249.6,
+    249.6,
+    254.4,
+    256.8,
+    258.8,
+    251.0,
+    250.8,
+    246.8,
+    244.2,
+    247.4,
+    245.8,
+    243.6,
+    246.2,
+    243.0,
+    241.4,
+    233.6,
+    235.2,
+    259.6,
+    252.6,
+    251.8,
+    263.2,
+    266.8,
+    281.2,
+    284.4,
+    278.6,
+    272.0,
+    267.4,
+    269.4,
+    273.0,
+    277.2,
+    272.6,
+    268.6,
+    273.4,
+    266.4,
+    252.4,
+    243.2,
+    250.6,
+    250.2,
+    249.2,
+    251.4,
+    249.6,
+    248.0,
+    244.8,
+    248.2,
+    252.4,
+    252.8,
+    246.6,
+    247.6,
+    242.6,
+    237.8,
+    243.0,
+    252.2,
+    238.6,
+    231.2,
+    214.6,
+    209.0,
+    213.0,
+    213.0,
+    208.8,
+    211.6,
+    215.0,
+    210.6,
+    209.6,
+    210.6,
+    210.4,
+    209.8,
+    210.4,
+    209.8,
+    209.8,
+    213.4,
+    210.4,
+    211.8,
+    212.0,
+    209.6,
+    204.0,
+    199.5,
+    203.2,
+    203.2,
+    209.2,
+    215.0,
+    209.8,
+    207.6,
+    208.2,
+    196.4,
+    202.0,
+    206.4,
+    208.2,
+    208.2,
+    214.6,
+    218.6,
+    213.0,
+    210.0,
+    213.8,
+    213.6,
+    211.0,
+    212.8,
+    211.6,
+    213.6,
+    209.4,
+    209.6,
+    211.6,
+    209.4,
+    211.4,
+    215.6,
+    214.6,
+    210.8,
+    208.6,
+    214.8,
+    210.0,
+    209.4,
+    210.8,
+    206.2,
+    205.4,
+    209.6,
+    217.0,
+    205.0,
+    206.8,
+    203.6,
+    208.4,
+    210.6,
+    213.2,
+    214.4,
+    218.0,
+    221.8,
+    217.0,
+    220.6,
+    220.6,
+    204.4
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     13,
+     "jun"
+    ],
+    [
+     35,
+     "jul"
+    ],
+    [
+     58,
+     "ago"
+    ],
+    [
+     79,
+     "sep"
+    ],
+    [
+     101,
+     "oct"
+    ],
+    [
+     123,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Acciona se hunde hoy en bolsa: cae más de un siete por ciento, y es la que más baja del Ibex.",
+   "show": "Acciona se hunde hoy en bolsa: cae más de un 7 %, y es la que más baja del Ibex.",
+   "v": {
+    "type": "titular",
+    "photo": "img/sede.jpg",
+    "heads": [
+     {
+      "tag": "ÚLTIMA HORA",
+      "text": "Acciona se desploma en bolsa"
+     },
+     {
+      "text": "La que más cae del Ibex 35"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía de subir, y hoy se deja un siete coma tres por ciento, hasta los doscientos cuatro euros.",
+   "show": "Mira la gráfica: venía de subir, y hoy se deja un 7,3 %, hasta los 204 euros.",
+   "v": {
+    "type": "grafica",
+    "serie": "ana",
+    "titulo": "Acciona (ANA)",
+    "draw": 0.6,
+    "marca": {
+     "dias": 1,
+     "texto": "-7,3 %"
+    }
+   }
+  },
+  {
+   "say": "Ayer avisó a la CNMV de que este año no llegará a los dos mil millones en venta de activos que se había marcado.",
+   "show": "Ayer avisó a la CNMV de que este año no llegará a los 2.000 millones en venta de activos que se había marcado.",
+   "v": {
+    "type": "cifra",
+    "value": 2000,
+    "dec": 0,
+    "suffix": " M€",
+    "label": "en ventas de activos que no llegarán en 2026",
+    "color": "amber",
+    "photo": "img/entrecanales.jpg",
+    "name": "José Manuel Entrecanales · presidente"
+   }
+  },
+  {
+   "say": "Su filial de renovables también cae un siete por ciento, mientras el Ibex sube y vuelve a los veinte mil puntos.",
+   "show": "Su filial de renovables también cae un 7 %, mientras el Ibex sube y vuelve a los 20.000 puntos.",
+   "v": {
+    "type": "barras",
+    "titulo": "Hoy en la bolsa española",
+    "items": [
+     [
+      "Ibex 35",
+      0.3,
+      "+0,3 %",
+      "green"
+     ],
+     [
+      "Acciona Energía",
+      7.0,
+      "-7,0 %",
+      "red"
+     ],
+     [
+      "Acciona",
+      7.3,
+      "-7,3 %",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿encontrará comprador para sus renovables?",
+   "show": "La gran pregunta: ¿encontrará comprador para sus renovables?",
+   "v": {
+    "type": "titular",
+    "photo": "img/entrecanales.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Comprador para sus renovables?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://www.bolsamania.com/noticias/mercados-ultima-hora/ibex-35-acciona-energia--754-y-acciona--734-son-los-valores-mas-bajistas--24168594.html",
+  "https://es.investing.com/news/stock-market-news/acciona-energia-cae-un-726-como-operar-tras-el-desplome-3927435",
+  "https://www.elespanol.com/invertia/mercados/20261113/acciona-sufre-fuerte-rechazo-euros-confluyen-varias-resistencias-dinamicas/1003744456782_0.html",
+  "https://es.benzinga.com/news/spain/indices/ibex-35-20000-acciona-131126",
+  "https://www.eleconomista.es/flash/20261113/",
+  "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html",
+  "Yahoo Finance (cierres vía make_reel precios ANA.MC, ANE.MC, ^IBEX, 13-nov-2026 ~17:35 Madrid)"
+ ],
+ "caption": "Acciona se hunde en bolsa: cae un 7,3 % y es el peor valor del Ibex 35 hoy 📉\n\n👉 Acciona cierra en 204,4 euros (-7,3 %) y su filial Acciona Energía cae un 7 %\n👉 El motivo: avisó a la CNMV de que en 2026 no alcanzará su objetivo de 2.000 millones en venta de activos, por retrasos en varias operaciones\n👉 Mientras, el Ibex 35 sube y vuelve a los 20.000 puntos\n\n¿Encontrará Acciona comprador para sus renovables? Sí o no, en comentarios 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCierres de la bolsa española de hoy, 13 de noviembre. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #acciona #ibex35 #renovables",
+ "alt": "Reel sobre la caída de Acciona en bolsa: el 13 de noviembre de 2026 cae un 7,3 % tras avisar de que no alcanzará los 2.000 millones en venta de activos, mientras el Ibex 35 vuelve a los 20.000 puntos. Bolsa explicada en 30 segundos."
+}
