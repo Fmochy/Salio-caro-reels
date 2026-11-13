@@ -1188,7 +1188,7 @@ class Terminal:
         self.chunks.append(cur)
 
     # ---------- piezas fijas
-    def ticker(self, im, t):
+    def ticker(self, im, t, full=True):
         d = ImageDraw.Draw(im); d.rectangle((0, 0, W, 92), fill=(5, 7, 11, 255)); d.line((0, 92, W, 92), fill=GRIDC, width=2)
         items = self.d.get("ticker", []); f = F(MONO, 34)
         if items:
@@ -1205,6 +1205,7 @@ class Terminal:
                         d.polygon([(x2, 58), (x2 + 22, 58), (x2 + 11, 36)] if chg >= 0 else [(x2, 36), (x2 + 22, 36), (x2 + 11, 58)], fill=col)
                         d.text((x2 + 30, 46), s2, font=f, fill=col, anchor="lm")
                     x += ww
+        if not full: return
         d.rounded_rectangle((W - 270, 116, W - 30, 166), radius=25, fill=(255, 40, 40, 255))
         d.ellipse((W - 250, 133, W - 234, 149), fill=WHITE if int(t * 2) % 2 == 0 else (255, 160, 160))
         d.text((W - 132, 141), "EN DIRECTO" if self.d.get("tipo", "actualidad") == "actualidad" else "HISTORIA", font=F(FX, 28), fill=WHITE, anchor="mm")
@@ -1366,6 +1367,68 @@ class Terminal:
             lay.paste(ph, (390, 1100), m); d.ellipse((382, 1092, 698, 1408), outline=col, width=8)
         return lay
 
+    # ---------- portada diseñada (no es un fotograma): todo lo importante en el recorte 3:4 (y 240-1680)
+    def portada(self):
+        h = dict(self.d.get("hook", {})); h.update(self.d.get("portada", {}))
+        col = {"red": RED, "green": GRN, "amber": AMB}.get(h.get("color", "red"), RED)
+        im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+        # 2) cabecera: marca + etiqueta
+        d = ImageDraw.Draw(im); fb = F(FB, 46); brand = self.d.get("brand", "CERRÓ EN ROJO")
+        d.text((60, 300), brand, font=fb, fill=TXT, anchor="lm"); d.rectangle((60, 330, 60 + d.textlength(brand, font=fb), 338), fill=RED)
+        tag = h.get("tag") or ("HISTORIA" if self.d.get("tipo") == "historia" else "HOY EN BOLSA")
+        ft = F(FX, 34); tw = d.textlength(tag, font=ft)
+        d.rounded_rectangle((W - 60 - tw - 56, 272, W - 60, 328), radius=28, fill=AMB if tag == "HISTORIA" else RED)
+        d.text((W - 60 - tw / 2 - 28, 300), tag, font=ft, fill=(10, 10, 14) if tag == "HISTORIA" else WHITE, anchor="mm")
+        # 3) titular grande (1-3 líneas)
+        words = h.get("titulo", h.get("top", "")).upper().split(); lines, cur = [], ""
+        fs = 118
+        for wd in words:
+            tst = (cur + " " + wd).strip()
+            if d.textlength(tst, font=F(FB, fs)) > 960 and cur: lines.append(cur); cur = wd
+            else: cur = tst
+        lines.append(cur)
+        if len(lines) > 3: fs = 92
+        fl = F(FB, fs); yy = 470
+        for ln in lines[:3]:
+            fl2 = fit(ln, FB, fs, 960); d.text((540, yy), ln, font=fl2, fill=WHITE, anchor="mm", stroke_width=6, stroke_fill=BG); yy += fs * 1.02
+        # 4) cifra gigante con brillo y subrayado
+        big = h.get("big", "").replace(" %", "%"); fbig = fit(big, MONO, 280, 1000); cy = yy + 150
+        glow(im, lambda dd, c: dd.text((540, cy), big, font=fbig, fill=c, anchor="mm", stroke_width=4, stroke_fill=BG), col, 34, 0.85)
+        d = ImageDraw.Draw(im); sub = h.get("sub", h.get("bottom", ""))
+        if sub:
+            fsb = fit(sub.upper(), FX, 58, 900); sw = d.textlength(sub.upper(), font=fsb); sy = cy + fbig.size * 0.62 + 30
+            d.rounded_rectangle((540 - sw / 2 - 30, sy - 44, 540 + sw / 2 + 30, sy + 44), radius=14, fill=AMB)
+            d.text((540, sy), sub.upper(), font=fsb, fill=(10, 10, 14), anchor="mm")
+        ctop = int((sy + 110) if sub else (cy + fbig.size * 0.6 + 60))
+        lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        sk = h.get("serie") or next((l["v"]["serie"] for l in self.L if l.get("v", {}).get("type") == "grafica"), None)
+        if sk and sk in self.series:
+            ys = np.array(self.series[sk]["close"], float); n = len(ys)
+            if n > 300: ys = ys[np.linspace(0, n - 1, 300).astype(int)]; n = 300
+            lo, hi = ys.min(), ys.max(); y0, y1 = ctop, 1560
+            pts = [(-20 + 1120 * i / (n - 1), y1 - (y1 - y0) * (v - lo) / max(1e-9, hi - lo)) for i, v in enumerate(ys)]
+            ccol = col
+            area = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ImageDraw.Draw(area).polygon(pts + [(1100, H), (-20, H)], fill=ccol + (46,))
+            fade = Image.new("L", (1, H), 0)
+            for yy in range(H): fade.putpixel((0, yy), int(255 * cl((H - yy) / 500)))
+            area.putalpha(Image.composite(area.getchannel("A"), Image.new("L", (W, H), 0), fade.resize((W, H))))
+            lay.alpha_composite(area); glow(lay, lambda dd, c: dd.line(pts, fill=c, width=9, joint="curve"), ccol, 20, 0.9)
+        base = self.bg.copy(); base.alpha_composite(lay); base.alpha_composite(im); im = base
+        # 5) foto en círculo (si la hay), abajo a la derecha sobre la gráfica
+        ph = h.get("photo")
+        if ph and os.path.exists(os.path.join(self.folder, ph)):
+            top = int(max(1190, (sy + 80) if sub else 1190)); s = max(260, min(400, 1560 - top)); p = self.photo(ph, (s, s)); m = Image.new("L", (s, s), 0); ImageDraw.Draw(m).ellipse((0, 0, s - 1, s - 1), fill=255)
+            px, py = W - s - 70, top
+            sh = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ImageDraw.Draw(sh).ellipse((px - 10, py + 10, px + s + 20, py + s + 30), fill=(0, 0, 0, 170))
+            im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(18))); im.paste(p, (px, py), m)
+            d = ImageDraw.Draw(im); d.ellipse((px - 9, py - 9, px + s + 9, py + s + 9), outline=col, width=12)
+        # 6) pie: firma de la cuenta
+        d = ImageDraw.Draw(im); hd = "@" + self.d.get("handle", "cerro.en.rojo"); fh = F(FB, 44); hw = d.textlength(hd, font=fh)
+        x0 = 60 if ph else 540 - hw / 2 - 34
+        d.rounded_rectangle((x0, 1580, x0 + hw + 68, 1660), radius=40, fill=RED); d.text((x0 + 34, 1620), hd, font=fh, fill=WHITE, anchor="lm")
+        self.ticker(im, 0.0, full=False)
+        return im.convert("RGB")
+
     def render(self, t):
         i = max(k for k, l in enumerate(self.L) if l["start"] - 0.15 <= t or k == 0); l = self.L[i]
         end = self.L[i + 1]["start"] if i + 1 < len(self.L) else self.total; dur = max(0.4, end - l["start"]); lt = max(0.0, t - l["start"])
@@ -1382,8 +1445,18 @@ class Terminal:
         d = ImageDraw.Draw(im); d.rectangle((0, H - 12, int(W * t / self.total), H), fill=RED)
         return im.convert("RGB")
 
+def portada(folder, data=None):
+    """Guarda <carpeta>/portada.jpg (1080x1920, calidad 92) y portada.png. No necesita voz."""
+    data = data or json.load(open(os.path.join(folder, "script.json")))
+    for i, l in enumerate(data["lines"]): l.setdefault("start", float(i)); l.setdefault("end", i + 0.9)
+    im = Terminal(data, len(data["lines"]), folder).portada()
+    im.save(os.path.join(folder, "portada.png")); im.save(os.path.join(folder, "portada.jpg"), quality=92)
+    return os.path.join(folder, "portada.jpg")
+
 def main():
-    folder = sys.argv[1]; data = json.load(open(os.path.join(folder, "script.json")))
+    folder = sys.argv[1]
+    if "--portada" in sys.argv: print("OK", portada(folder)); return
+    data = json.load(open(os.path.join(folder, "script.json")))
     L = data["lines"]; say = data.get("follow_say", "Sígueme, dale a like y guarda el vídeo.")
     L.append({"say": say, "show": say, "type": "follow"})
     import soundfile as sf
@@ -1406,7 +1479,7 @@ def main():
                           "-map", "0:v", "-map", "[a]", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
                           "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
     for fr in range(int(total * FPS)): p.stdin.write(v.render(fr / FPS).tobytes())
-    p.stdin.close(); p.wait(); print("OK", out)
+    p.stdin.close(); p.wait(); portada(folder, data); print("OK", out)
 
 '''
 

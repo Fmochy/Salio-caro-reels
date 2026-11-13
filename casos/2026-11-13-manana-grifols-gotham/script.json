@@ -1,0 +1,261 @@
+{
+ "formato": "terminal",
+ "slug": "grifols-gotham",
+ "company": "Grifols",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Un informe hundió a Grifols",
+  "big": "-26%",
+  "bottom": "en un solo día",
+  "color": "red",
+  "photo": "img/productos.jpg"
+ },
+ "portada": {
+  "titulo": "Grifols, hundida por un informe",
+  "big": "-26%",
+  "sub": "en un solo día",
+  "photo": "img/productos.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "GRF",
+   -25.91
+  ],
+  [
+   "IBEX 35",
+   -1.46
+  ],
+  [
+   "SAN",
+   -1.02
+  ],
+  [
+   "ITX",
+   -0.68
+  ],
+  [
+   "S&P 500",
+   -0.15
+  ],
+  [
+   "NASDAQ",
+   0.09
+  ]
+ ],
+ "series": {
+  "grf": {
+   "name": "Grifols (GRF)",
+   "sub": "oct 2023 - ene 2024 · cierre diario",
+   "pre": "",
+   "close": [
+    12.12,
+    11.6,
+    11.45,
+    11.79,
+    11.89,
+    11.63,
+    12.14,
+    12.04,
+    11.94,
+    11.72,
+    11.73,
+    11.6,
+    11.3,
+    10.72,
+    10.44,
+    10.28,
+    10.4,
+    10.06,
+    10.03,
+    10.14,
+    10.27,
+    10.59,
+    10.52,
+    11.87,
+    11.64,
+    11.77,
+    11.81,
+    12.06,
+    12.12,
+    11.53,
+    11.65,
+    12.27,
+    12.73,
+    12.71,
+    12.66,
+    12.72,
+    12.74,
+    12.71,
+    12.86,
+    13.09,
+    13.11,
+    12.89,
+    12.66,
+    12.97,
+    12.96,
+    13.21,
+    13.3,
+    13.94,
+    13.74,
+    14.19,
+    14.06,
+    13.92,
+    13.82,
+    14.23,
+    13.98,
+    13.84,
+    14.39,
+    14.52,
+    14.35,
+    14.28,
+    14.18,
+    14.23,
+    15.45,
+    14.86,
+    14.46,
+    14.94,
+    14.57,
+    14.24,
+    10.55,
+    11.81,
+    9.9,
+    8.87
+   ],
+   "labels": [
+    [
+     0,
+     "oct 23"
+    ],
+    [
+     22,
+     "nov 23"
+    ],
+    [
+     44,
+     "dic 23"
+    ],
+    [
+     63,
+     "ene 24"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Un solo informe hundió a Grifols un veintiséis por ciento en bolsa en un día.",
+   "show": "Un solo informe hundió a Grifols un 26 % en bolsa en un día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "9 ENERO 2024",
+      "text": "Grifols se desploma en bolsa"
+     },
+     {
+      "tag": "HISTORIA",
+      "text": "-26 % en una sola sesión"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Lo firmaba Gotham City, un fondo bajista, el mismo que destapó el caso Gowex.",
+   "show": "Lo firmaba Gotham City, un fondo bajista, el mismo que destapó el caso Gowex.",
+   "v": {
+    "type": "titular",
+    "photo": "img/productos.jpg",
+    "heads": [
+     {
+      "tag": "QUIÉN",
+      "text": "Gotham City, un fondo bajista"
+     },
+     {
+      "tag": "2014",
+      "text": "El que destapó Gowex"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Acusaba a Grifols de maquillar su deuda, y la empresa lo negó todo. ¿Y sabes qué hizo la bolsa?",
+   "show": "Acusaba a Grifols de maquillar su deuda, y la empresa lo negó todo. ¿Y sabes qué hizo la bolsa?",
+   "v": {
+    "type": "titular",
+    "photo": "img/borsa.jpg",
+    "heads": [
+     {
+      "tag": "EL INFORME",
+      "text": "Acusa: deuda maquillada"
+     },
+     {
+      "tag": "GRIFOLS",
+      "text": "Lo niega y va a los tribunales"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: en cuatro sesiones la acción ya se dejaba casi un treinta y ocho por ciento.",
+   "show": "Mira la gráfica: en 4 sesiones la acción ya se dejaba casi un 38 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "grf",
+    "titulo": "Grifols (GRF)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 4,
+     "texto": "-37,7 %"
+    }
+   }
+  },
+  {
+   "say": "Y en marzo tocó mínimos desde dos mil doce: más de la mitad de su valor, fuera en dos meses.",
+   "show": "Y en marzo tocó mínimos desde 2012: más de la mitad de su valor, fuera en 2 meses.",
+   "v": {
+    "type": "cifra",
+    "value": 51.6,
+    "dec": 1,
+    "prefix": "-",
+    "suffix": "%",
+    "label": "del 8 de enero al 6 de marzo de 2024",
+    "color": "red",
+    "photo": "img/borsa.jpg",
+    "name": "Grifols · Ibex 35"
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿te fiarías de un informe de alguien que gana si la acción cae?",
+   "show": "La gran pregunta: ¿te fiarías de un informe de alguien que gana si la acción cae?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Te fías de un bajista?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Grifols y Gotham City: el día que un informe hundió a Grifols un 26 % en bolsa 📉\n\n👉 El 9 de enero de 2024 el fondo bajista Gotham City, el que destapó el caso Gowex en 2014, acusó a Grifols de maquillar su deuda y su ebitda\n👉 Grifols lo negó y anunció acciones legales, pero la acción cerró ese día con una caída del 25,9 %, hasta 10,55 euros\n👉 En cuatro sesiones perdió casi un 38 % y el 6 de marzo cerró en 6,90 euros, mínimos desde 2012: más de la mitad de su valor en dos meses\n\nUna de las mayores caídas de un valor del Ibex 35 en un día, y un caso clásico de cómo un fondo bajista puede mover la bolsa española.\n\n¿Te fiarías de un informe de alguien que gana si la acción cae? Sí o no, en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #grifols #ibex35 #gothamcity",
+ "alt": "Reel sobre la caída de Grifols en bolsa por el informe de Gotham City: el 9 de enero de 2024 su acción se hundió un 26 % en un día y en dos meses perdió más de la mitad de su valor. Historia de la bolsa española explicada en 30 segundos.",
+ "sources": [
+  "https://theobjective.com/economia/2025-01-09/grifols-caida-bolsa-aniversario-ataque-gotham/",
+  "https://www.ultimahora.es/noticias/comunidades/2024/01/09/2082683/grifols-desploma-tras-informe-gotham-city-research-firma-destapo-gowex.html",
+  "https://finance.yahoo.com/news/spains-grifols-slumps-short-seller-100010633.html",
+  "https://finance.yahoo.com/news/grifols-shares-suffer-worst-week-171634462.html",
+  "https://m.uk.investing.com/news/stock-market-news/grifols-shares-drop-15-after-new-gotham-city-research-report-3367648?ampMode=1",
+  "https://www.noticiasdenavarra.com/economia/2024/03/06/grifols-desploma-13-acciones-marcan-7962163.amp.html",
+  "https://www.xataka.com/empresas-y-economia/firma-bajista-que-tumbo-a-gowex-ataca-a-empresa-espanola-grifols-anticipa-su-hundimiento",
+  "https://theobjective.com/economia/2024-01-09/fondo-gowex-grifols-manipular-deuda/",
+  "https://kuwaittimes.com/article/9935/business/spains-grifols-to-sue-fund-that-questioned-its-financial-reporting/amp",
+  "https://finance.yahoo.com/quote/GRF.MC/history/"
+ ]
+}

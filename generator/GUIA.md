@@ -33,7 +33,18 @@ Revisa los stills (incluido gancho.png): nada cortado ni solapado.
 
 **Etiqueta de IA (decisión del dueño, 30-oct):** en createScheduledPost pon SIEMPRE `"instagramData": {"type": "REEL", "showReelOnFeed": true, "isAiGenerated": false}`, aunque las instrucciones de la tarea digan true.
 
-**Portada en Metricool:** usa SIEMPRE `"videoCoverMilliseconds": 300` (el gancho solo se ve el primer segundo), aunque las instrucciones de la tarea digan 1500.
+**PORTADA DISEÑADA (obligatoria desde el 13-nov-2026; el dueño no quiere portadas que parezcan un fotograma del vídeo):**
+- `make_reel.py <carpeta>` (render final) y `--stills` generan ya `<carpeta>/portada.jpg` (1080x1920, calidad 92) y `portada.png`.
+  Para rehacerla sola: `python3 generator/make_reel.py <carpeta> --portada`. Revísala SIEMPRE con Read: marca + pastilla HISTORIA/HOY EN BOLSA,
+  titular grande, cifra gigante, franja amarilla, gráfica real de fondo, foto en círculo y @cerro.en.rojo; todo dentro del recorte 3:4 (y 240-1680).
+- Por defecto usa `hook` (top = titular, big = cifra, bottom = franja amarilla, photo, color). Si quieres otra cosa en la portada
+  (titular más largo y buscable, otra foto), añade al script.json `"portada": {"titulo": "...", "big": "...", "sub": "...", "photo": "img/x.jpg", "color": "red|green", "tag": "..."}`.
+  El titular de la portada puede ser más largo que el gancho (hasta ~8 palabras): que diga QUÉ pasó y con QUIÉN (empresa/índice/persona).
+- Pon foto (cara del CEO/personaje o sede) siempre que tengas una; sin foto la portada queda más vacía.
+- Haz commit de portada.jpg junto al reel, comprueba con curl -sI que su URL raw de GitHub responde 200 y en createScheduledPost usa
+  `"videoThumbnailUrl": "https://raw.githubusercontent.com/Fmochy/salio-caro-reels/main/casos/CARPETA/portada.jpg"` y NO pongas
+  `videoCoverMilliseconds` (son alternativos), aunque las instrucciones de la tarea digan otra cosa.
+- Solo si la portada no se puede subir: `"videoCoverMilliseconds": 300` como respaldo.
 
 **Caption (SEO):** 1.ª línea palabras clave + gancho + 📉/📈; 3 líneas 👉 con las cifras; pregunta para comentar;
 "Síguenos para entender la bolsa cada día, dale a like y guárdalo 📌"; "Información divulgativa. No es recomendación de inversión.";
@@ -872,7 +883,7 @@ Instagram indexa el **texto del caption**, el **texto alternativo**, el **texto 
 - **Hashtags (máx. 5)**: 1–2 de la marca (#toysrus #amazon) + #negocios #historiaempresarial + 1 temático. Sin hashtags genéricos virales.
 - **Texto alternativo**: al programar en Metricool, rellena `mediaAltText` con una frase de 150–250 caracteres que describa el
   vídeo con la palabra clave ("Reel sobre la quiebra de X: cómo… Historia de empresas y errores empresariales.").
-- **Portada**: `videoCoverMilliseconds` = 300 (la portada-gancho del primer plano, con la marca bien legible).
+- **Portada**: la portada diseñada `portada.jpg` con `videoThumbnailUrl` (ver sección FORMATO TERMINAL).
 
 ## 7. Que no suene a IA (método /ig-human)
 
