@@ -1,0 +1,274 @@
+{
+ "formato": "terminal",
+ "slug": "dia-desplome",
+ "company": "DIA",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Supermercados DIA perdió",
+  "big": "-42 %",
+  "bottom": "en un solo día",
+  "color": "red",
+  "photo": "img/dia.jpg"
+ },
+ "portada": {
+  "titulo": "El día que DIA se hundió en bolsa",
+  "big": "-42 %",
+  "sub": "en un solo día",
+  "photo": "img/dia.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "DIA",
+   -42.2
+  ],
+  [
+   "IBEX 35",
+   0.24
+  ],
+  [
+   "ITX",
+   0.7
+  ],
+  [
+   "S&P 500",
+   -0.59
+  ],
+  [
+   "DOW",
+   -0.35
+  ],
+  [
+   "NASDAQ",
+   -0.88
+  ]
+ ],
+ "series": {
+  "dia": {
+   "name": "DIA (índice)",
+   "sub": "12-oct-2018 = 100 · cierre diario",
+   "pre": "",
+   "close": [
+    135.3,
+    138.6,
+    138.6,
+    139.7,
+    140.6,
+    140.8,
+    142.8,
+    138.2,
+    135.4,
+    115.6,
+    112.8,
+    110.2,
+    112.7,
+    110.4,
+    110.7,
+    111.5,
+    111.8,
+    109.1,
+    120.6,
+    109.3,
+    107.8,
+    100.8,
+    98.6,
+    97.0,
+    113.7,
+    114.1,
+    107.2,
+    108.5,
+    106.2,
+    107.6,
+    108.1,
+    104.4,
+    102.6,
+    103.4,
+    105.5,
+    106.1,
+    106.9,
+    108.1,
+    107.2,
+    112.4,
+    117.8,
+    119.4,
+    118.0,
+    113.1,
+    107.7,
+    107.0,
+    106.1,
+    101.2,
+    100.1,
+    97.5,
+    99.6,
+    98.4,
+    99.2,
+    98.2,
+    101.1,
+    104.8,
+    104.6,
+    105.7,
+    104.8,
+    105.5,
+    102.2,
+    103.5,
+    104.0,
+    105.3,
+    104.5,
+    105.0,
+    106.7,
+    105.1,
+    105.3,
+    104.1,
+    103.5,
+    102.4,
+    100.1,
+    100.0,
+    57.8,
+    52.7,
+    44.8,
+    47.2,
+    46.4,
+    35.0
+   ],
+   "labels": [
+    [
+     0,
+     "jul"
+    ],
+    [
+     22,
+     "ago"
+    ],
+    [
+     45,
+     "sep"
+    ],
+    [
+     64,
+     "oct"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Supermercados DIA se hundió un cuarenta y dos por ciento en bolsa en un solo día.",
+   "show": "Supermercados DIA se hundió un 42 % en bolsa en un solo día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/dia.jpg",
+    "heads": [
+     {
+      "tag": "15 OCTUBRE 2018",
+      "text": "DIA se desploma en bolsa"
+     },
+     {
+      "tag": "HISTORIA",
+      "text": "-42 % en una sola sesión"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Rebajó sus previsiones, suspendió el dividendo y dimitió su presidenta, todo el mismo día.",
+   "show": "Rebajó sus previsiones, suspendió el dividendo y dimitió su presidenta, todo el mismo día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/tienda.jpg",
+    "heads": [
+     {
+      "tag": "PREVISIONES",
+      "text": "Recorta su beneficio previsto"
+     },
+     {
+      "tag": "DIVIDENDO",
+      "text": "Suspendido para 2019"
+     },
+     {
+      "tag": "PRESIDENTA",
+      "text": "Dimite Ana María Llopis"
+     }
+    ]
+   }
+  },
+  {
+   "say": "¿Y sabes qué pasó una semana después? Rehízo sus cuentas y cayó otro veinticuatro por ciento.",
+   "show": "¿Y sabes qué pasó una semana después? Rehízo sus cuentas y cayó otro 24 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Dos lunes negros de DIA",
+    "items": [
+     [
+      "15 oct 2018",
+      42,
+      "-42 %",
+      "red"
+     ],
+     [
+      "22 oct 2018",
+      24.5,
+      "-24,5 %",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: en solo seis sesiones, la acción perdió casi dos tercios de su valor.",
+   "show": "Mira la gráfica: en solo 6 sesiones, la acción perdió casi dos tercios de su valor.",
+   "v": {
+    "type": "grafica",
+    "serie": "dia",
+    "titulo": "DIA en bolsa",
+    "draw": 0.65,
+    "marca": {
+     "dias": 6,
+     "texto": "-65 %"
+    }
+   }
+  },
+  {
+   "say": "De uno con ochenta y seis euros a sesenta y seis céntimos por acción.",
+   "show": "De 1,86 euros a 0,66 euros por acción.",
+   "v": {
+    "type": "cifra",
+    "value": 0.66,
+    "dec": 2,
+    "suffix": " €",
+    "label": "por acción el 22-oct-2018 (antes, 1,86 €)",
+    "color": "red",
+    "photo": "img/parque.jpg",
+    "name": "DIA · Ibex 35"
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿tú habrías vendido el primer día, o habrías aguantado?",
+   "show": "La gran pregunta: ¿tú habrías vendido el primer día, o habrías aguantado?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Vender o aguantar?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Supermercados DIA se hundió un 42 % en bolsa en un solo día: el desplome de octubre de 2018 📉\n\n👉 El 15 de octubre de 2018 DIA rebajó su previsión de ebitda a 350-400 millones (568 millones en 2017), suspendió el dividendo de 2019 y aceptó la dimisión de su presidenta, Ana María Llopis\n👉 La acción cayó un 42 % ese día, de 1,86 a 1,08 euros\n👉 El 22 de octubre rehízo sus cuentas de 2017 y cayó otro 24,5 %, hasta 0,66 euros: casi dos tercios menos en seis sesiones\n\nUna de las peores semanas que ha vivido un valor del Ibex 35 y un caso clásico de la historia de la bolsa española.\n\n¿Tú habrías vendido el primer día o habrías aguantado? Cuéntalo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #dia #ibex35 #supermercados",
+ "alt": "Reel sobre el desplome de Supermercados DIA en bolsa: el 15 de octubre de 2018 su acción se hundió un 42 % en un día y en seis sesiones perdió casi dos tercios de su valor, de 1,86 a 0,66 euros. Historia de la bolsa española explicada en 30 segundos.",
+ "sources": [
+  "https://www.merca2.es/2018/10/29/dia-ibex-caidas-87977/",
+  "https://www.euribor.com.es/2018/10/16/dia-junta-todos-los-males-en-una-sesion-y-se-desploma-mas-de-un-40/",
+  "https://www.bolsamania.com/noticias_amp/empresas/llopis-dimite-como-presidenta-dia-pleno-desplome-valor--3537717.html",
+  "https://www.bolsamania.com/noticias_amp/mercados/ibex-if-it-drops-8800-situation-become-more-complicated--3536870.html",
+  "https://www.alimarket.es/alimentacion/noticia/286509/dia-rebaja-sus-beneficios-y-suspende-el-pago-de-dividendos",
+  "https://www.merca2.es/2018/10/22/dia-oficial-caos-cuentas-86989/",
+  "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/dia-se-acerca-a-minimos-con-una-nueva-caida-en-n-412907",
+  "https://finance.yahoo.com/quote/DIA.MC/history/"
+ ]
+}

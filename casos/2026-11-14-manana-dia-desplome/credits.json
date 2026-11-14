@@ -1,0 +1,26 @@
+[
+ {
+  "file": "File:DIA Supermarket.jpg",
+  "dest": "dia.jpg",
+  "author": "Marina Zárate GR",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Bolsa de Madrid.jpg",
+  "dest": "bolsa.jpg",
+  "author": "Fernando",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Interior del Palacio de la Bolsa, Madrid, España, 2017 29.jpg",
+  "dest": "parque.jpg",
+  "author": "Benjamín Núñez González",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Dia intérieur.JPG",
+  "dest": "tienda.jpg",
+  "author": "Pierre Rudloff",
+  "license": "Public domain"
+ }
+]
