@@ -302,5 +302,14 @@
   "slug": "2026-11-14-manana-dia-desplome",
   "gancho": "Supermercados DIA se hundió un 42 % en bolsa en un solo día.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-14",
+  "empresa": "Bolsa española (Ibex 35)",
+  "caso": "Semana al 13-nov-2026: el Ibex 35 cierra en 20.020,1 (+3,36 % semanal, +7,3 % en dos semanas, +15,7 % en el año); Repsol +3,31 % el viernes con el petróleo; S&P 500 +2,5 % y Nasdaq +2,3 % en la semana (actualidad de fin de semana, 19:30)",
+  "formato": "reel",
+  "slug": "2026-11-14-ibex-20000-semana",
+  "gancho": "El Ibex 35 recupera los 20.000: +3,4 % en una semana",
+  "formula": "23 La estadística"
  }
 ]

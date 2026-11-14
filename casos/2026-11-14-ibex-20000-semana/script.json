@@ -1,0 +1,331 @@
+{
+ "formato": "terminal",
+ "slug": "ibex-20000-semana",
+ "company": "Ibex 35",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "El Ibex 35 recupera",
+  "big": "20.000",
+  "bottom": "+3,4 % en una semana",
+  "color": "green",
+  "photo": "img/bolsa.jpg"
+ },
+ "portada": {
+  "titulo": "El Ibex 35 recupera los 20.000 puntos",
+  "big": "+3,36 %",
+  "sub": "en una semana, con Repsol al frente",
+  "photo": "img/bolsa.jpg",
+  "color": "green",
+  "tag": "LA SEMANA EN BOLSA"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   0.3
+  ],
+  [
+   "REPSOL",
+   3.3
+  ],
+  [
+   "REDEIA",
+   2.9
+  ],
+  [
+   "ACCIONA",
+   -8.0
+  ],
+  [
+   "DAX",
+   -0.1
+  ],
+  [
+   "S&P 500",
+   -0.4
+  ],
+  [
+   "NASDAQ",
+   -0.9
+  ],
+  [
+   "DOW",
+   0.1
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "6 meses · cierre diario",
+   "pre": "",
+   "close": [
+    17654.9,
+    17809.2,
+    17622.7,
+    17755.1,
+    17670.1,
+    18051.7,
+    17975.2,
+    17985.3,
+    18387.4,
+    18290.9,
+    18380.9,
+    18279.3,
+    18362.9,
+    18184.9,
+    18272.0,
+    18176.0,
+    18276.0,
+    18344.9,
+    18223.1,
+    18174.7,
+    18142.7,
+    18290.1,
+    18764.4,
+    19032.0,
+    19163.6,
+    19421.9,
+    19404.1,
+    19347.4,
+    19542.3,
+    19476.5,
+    19389.5,
+    19513.6,
+    19425.3,
+    19387.4,
+    19471.9,
+    19406.6,
+    19671.8,
+    19852.4,
+    19683.8,
+    19640.2,
+    19104.3,
+    19322.8,
+    19384.7,
+    19335.7,
+    19356.6,
+    19275.5,
+    19304.1,
+    19216.9,
+    19206.9,
+    19379.8,
+    19571.3,
+    19267.0,
+    19585.4,
+    19741.3,
+    19727.0,
+    19412.7,
+    19757.7,
+    19782.9,
+    19982.6,
+    20023.6,
+    20057.0,
+    20180.4,
+    20176.0,
+    20173.0,
+    20213.6,
+    20204.4,
+    20168.6,
+    20156.6,
+    19981.9,
+    19934.9,
+    19847.5,
+    19811.0,
+    19961.5,
+    20098.6,
+    20056.6,
+    20067.3,
+    19881.6,
+    20041.9,
+    19974.1,
+    19824.0,
+    19779.0,
+    20000.2,
+    20050.7,
+    20021.8,
+    19997.1,
+    19695.3,
+    19659.8,
+    19838.5,
+    19565.5,
+    19555.9,
+    19635.8,
+    19831.8,
+    19513.8,
+    19724.4,
+    19754.1,
+    19632.2,
+    19573.4,
+    19700.1,
+    19600.3,
+    19517.5,
+    19426.2,
+    19005.3,
+    19085.3,
+    19299.7,
+    19444.2,
+    19118.0,
+    18928.9,
+    19033.1,
+    19285.8,
+    19210.7,
+    19230.7,
+    19177.7,
+    19326.3,
+    19039.3,
+    19092.4,
+    19323.5,
+    18913.5,
+    18989.8,
+    19033.3,
+    19160.6,
+    18883.5,
+    18857.6,
+    18652.9,
+    18957.8,
+    18807.2,
+    19370.9,
+    19486.0,
+    19369.5,
+    19742.5,
+    19936.4,
+    20027.9,
+    19965.5,
+    20020.1
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     13,
+     "jun"
+    ],
+    [
+     35,
+     "jul"
+    ],
+    [
+     58,
+     "ago"
+    ],
+    [
+     79,
+     "sep"
+    ],
+    [
+     101,
+     "oct"
+    ],
+    [
+     123,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El Ibex 35 ha vuelto a los veinte mil puntos: sube un tres coma cuatro por ciento en la semana.",
+   "show": "El Ibex 35 ha vuelto a los 20.000 puntos: sube un 3,4 % en la semana.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA SEMANA EN BOLSA",
+      "text": "El Ibex 35 recupera los 20.000"
+     },
+     {
+      "tag": "CIERRE DEL VIERNES",
+      "text": "+3,36 % en la semana"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: en solo dos semanas ha subido más de un siete por ciento.",
+   "show": "Mira la gráfica: en solo 2 semanas ha subido más de un 7 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.65,
+    "marca": {
+     "dias": 10,
+     "texto": "+7,3 %"
+    }
+   }
+  },
+  {
+   "say": "Lo empuja Repsol, que el viernes subió más de un tres por ciento con el petróleo.",
+   "show": "Lo empuja Repsol, que el viernes subió más de un 3 % con el petróleo.",
+   "v": {
+    "type": "cifra",
+    "value": 3.3,
+    "dec": 1,
+    "prefix": "+",
+    "suffix": " %",
+    "label": "Repsol, el viernes 13",
+    "color": "green",
+    "photo": "img/repsol.jpg",
+    "name": "Repsol · sede en Madrid"
+   }
+  },
+  {
+   "say": "Y le gana a Wall Street: el S&P quinientos sube un dos y medio por ciento.",
+   "show": "Y le gana a Wall Street: el S&P 500 sube un 2,5 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Subida de la semana",
+    "items": [
+     [
+      "Ibex 35",
+      3.36,
+      "+3,36 %",
+      "green"
+     ],
+     [
+      "S&P 500",
+      2.5,
+      "+2,5 %",
+      "dim"
+     ],
+     [
+      "Nasdaq",
+      2.27,
+      "+2,3 %",
+      "dim"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "En el año ya gana casi un dieciséis por ciento. ¿Aguantará los veinte mil?",
+   "show": "En el año ya gana casi un 16 %. ¿Aguantará los 20.000?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Aguantará los 20.000 puntos?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "23 La estadística",
+ "sources": [
+  "https://www.eldiariodemadrid.es/articulo/economia/ibex-35-subida-semanal-supera-20000-puntos-noviembre-2026/20261113190626146884.html",
+  "https://www.elboletin.com/el-ibex-35-gana-un-336-en-la-semana-y-recupera-los-20-000-puntos-pese-a-la-crisis-de-nvidia/",
+  "https://www.merca2.es/2026/11/13/ibex-35-recupera-20000-puntos-2-2504666/",
+  "https://www.infobae.com/espana/agencias/2026/11/13/el-ibex-35-sube-un-027-y-cierra-en-20000-puntos-en-una-sesion-marcada-por-la-cautela/",
+  "https://www.xtb.com/es/analisis-de-mercado/las-acciones-de-repsol-suben-por-el-repunte-del-petroleo-estas-son-las-claves",
+  "https://www.marketscreener.com/quote/stock/REPSOL-S-A-75044/",
+  "https://news.ifyouspent.com/en/news/week-in-markets-november-2-6-2026",
+  "Yahoo Finance (cierres vía make_reel precios ^IBEX, REP.MC, ^GSPC, ^IXIC, ^DJI, ^GDAXI, 13-nov-2026)"
+ ],
+ "caption": "Ibex 35 hoy: la bolsa española recupera los 20.000 puntos y sube un 3,36 % en la semana 📈\n\n👉 El Ibex 35 cerró el viernes 13 de noviembre en 20.020,1 puntos: +3,36 % en la semana y más de un 7 % en dos semanas\n👉 Repsol tiró del índice con el rebote del petróleo: +3,3 % el viernes, y en 2026 casi ha duplicado su valor\n👉 La bolsa española le ganó a Wall Street en la semana: el S&P 500 subió un 2,5 % y el Nasdaq un 2,3 %. En el año, el Ibex ya gana un 15,7 %\n\n¿Crees que el Ibex aguantará por encima de los 20.000? Sí o no, en comentarios 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCierres del viernes 13 de noviembre de 2026. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #repsol #bolsaespañola",
+ "alt": "Reel sobre el Ibex 35 esta semana: la bolsa española recupera los 20.000 puntos y sube un 3,36 % en la semana del 13 de noviembre de 2026, con Repsol al frente y por delante de Wall Street. Bolsa explicada en 30 segundos."
+}
