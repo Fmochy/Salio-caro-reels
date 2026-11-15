@@ -321,5 +321,15 @@
   "slug": "2026-11-15-manana-telefonica-2000",
   "gancho": "En el año 2000, Telefónica valía 106.000 millones en bolsa. Hoy, unos 20.000.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-15",
+  "empresa": "GameStop (Reddit / WallStreetBets)",
+  "caso": "Enero de 2021: GameStop sube más de un 1.600 % en el año hasta el 29-ene (cierre 325 $; 347,51 $ el 27-ene, +135 % ese día) impulsada por pequeños inversores de Reddit; Melvin Capital pierde un 53 % en enero; del 27-ene al 4-feb la acción cae un 84,6 %",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-15-gamestop-2021",
+  "gancho": "GameStop subió más de un 1.600 % en bolsa en un solo mes",
+  "formula": "23 La estadística"
  }
 ]

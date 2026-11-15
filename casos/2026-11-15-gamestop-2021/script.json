@@ -1,0 +1,209 @@
+{
+ "formato": "terminal",
+ "slug": "gamestop-2021",
+ "company": "GameStop",
+ "tipo": "historia",
+ "hook_formula": "23 La estadística",
+ "hook": {
+  "top": "GameStop, enero de 2021",
+  "big": "+1.600 %",
+  "bottom": "en un solo mes",
+  "color": "green",
+  "photo": "img/nyse.jpg"
+ },
+ "portada": {
+  "titulo": "GameStop y Reddit en 2021",
+  "big": "+1.600 %",
+  "sub": "y luego se hundió un 80 %",
+  "photo": "img/nyse.jpg",
+  "color": "green",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "GME",
+   134.9
+  ],
+  [
+   "AMC",
+   301.2
+  ],
+  [
+   "BB",
+   32.7
+  ],
+  [
+   "S&P 500",
+   -2.57
+  ],
+  [
+   "DOW",
+   -2.05
+  ],
+  [
+   "NASDAQ",
+   -2.61
+  ]
+ ],
+ "series": {
+  "gme": {
+   "name": "GameStop (índice)",
+   "sub": "31-dic-2020 = 100 · cierre diario",
+   "pre": "",
+   "close": [
+    83.9,
+    87.9,
+    85.6,
+    89.6,
+    86.8,
+    90.0,
+    72.4,
+    74.9,
+    70.7,
+    67.5,
+    73.5,
+    73.5,
+    78.8,
+    83.0,
+    82.4,
+    103.2,
+    109.1,
+    107.0,
+    111.5,
+    102.8,
+    102.3,
+    100.0,
+    91.5,
+    92.1,
+    97.5,
+    96.0,
+    93.8,
+    105.9,
+    105.9,
+    166.7,
+    211.9,
+    188.5,
+    208.9,
+    207.6,
+    228.5,
+    345.0,
+    407.6,
+    785.4,
+    1844.6,
+    1027.6,
+    1725.1,
+    1194.3,
+    477.7,
+    490.4,
+    284.1
+   ],
+   "labels": [
+    [
+     0,
+     "dic"
+    ],
+    [
+     22,
+     "ene"
+    ],
+    [
+     41,
+     "feb"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "GameStop, una cadena de tiendas de videojuegos, subió más de un mil seiscientos por ciento en bolsa en un solo mes.",
+   "show": "GameStop, una cadena de tiendas de videojuegos, subió más de un 1.600 % en bolsa en un solo mes.",
+   "v": {
+    "type": "titular",
+    "photo": "img/nyse.jpg",
+    "heads": [
+     {
+      "tag": "ENERO 2021",
+      "text": "GameStop se dispara en bolsa"
+     },
+     {
+      "tag": "HISTORIA",
+      "text": "+1.600 % en un solo mes"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Miles de pequeños inversores de Reddit se pusieron a comprar a la vez, contra los fondos que apostaban a que caería.",
+   "show": "Miles de pequeños inversores de Reddit se pusieron a comprar a la vez, contra los fondos que apostaban a que caería.",
+   "v": {
+    "type": "titular",
+    "photo": "img/nyse2.jpg",
+    "heads": [
+     {
+      "tag": "REDDIT",
+      "text": "Los pequeños inversores compran"
+     },
+     {
+      "tag": "FONDOS",
+      "text": "Apostaban a que caería"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Uno de esos fondos, Melvin Capital, perdió un cincuenta y tres por ciento solo en enero.",
+   "show": "Uno de esos fondos, Melvin Capital, perdió un 53 % solo en enero.",
+   "v": {
+    "type": "cifra",
+    "value": 53,
+    "dec": 0,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "Melvin Capital en enero de 2021",
+    "color": "red"
+   }
+  },
+  {
+   "say": "¿Y sabes qué pasó después? Mira la gráfica: en poco más de una semana, la acción perdió más de un ochenta por ciento.",
+   "show": "¿Y sabes qué pasó después? Mira la gráfica: en poco más de una semana, la acción perdió más de un 80 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "gme",
+    "titulo": "GameStop (GME)",
+    "draw": 0.6,
+    "marca": {
+     "dias": 6,
+     "texto": "-84,6 %"
+    }
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿tú habrías comprado en plena euforia?",
+   "show": "La gran pregunta: ¿tú habrías comprado en plena euforia?",
+   "v": {
+    "type": "titular",
+    "photo": "img/nyse.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Comprar en plena euforia?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "GameStop y Reddit: la tienda de videojuegos que subió más de un 1.600 % en bolsa en un mes 📈\n\n👉 En enero de 2021, miles de pequeños inversores del foro WallStreetBets de Reddit se pusieron a comprar acciones de GameStop a la vez\n👉 El 27 de enero la acción subió un 135 % en un día y cerró en 347,51 dólares; cerró enero en 325, con una subida de más del 1.600 % en el año\n👉 Melvin Capital, uno de los fondos que apostaban a la baja, perdió un 53 % en enero\n👉 Después llegó el desplome: en poco más de una semana la acción perdió más de un 80 %\n\nLa historia de GameStop es uno de los episodios más locos de la historia de la bolsa y el ejemplo clásico de 'short squeeze'.\n\n¿Tú habrías comprado en plena euforia? Cuéntalo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #gamestop #reddit #acciones",
+ "alt": "Reel sobre GameStop y Reddit en enero de 2021: la acción de la tienda de videojuegos subió más de un 1.600 % en un mes, el fondo Melvin Capital perdió un 53 % y luego la acción se hundió más de un 80 %. Historia de la bolsa explicada en 30 segundos.",
+ "sources": [
+  "https://www.bloomberg.com/news/articles/2021-01-29/historic-week-for-gamestop-ends-with-400-rally-as-shorts-yield",
+  "https://www.bnnbloomberg.ca/1.1554626",
+  "https://www.dakotanewsnow.com/2021/01/27/in-battle-over-gamestop-stocks-two-big-players-flinch/",
+  "https://www.bloomberg.com/news/articles/2021-01-31/melvin-lost-53-in-january-hurt-by-gamestop-other-bets-dj",
+  "https://foxbusiness.com/markets/melvin-capital-hedge-fund-that-bet-against-gamestop-lost-53-in-january",
+  "https://kutv.com/news/nation-world/gamestops-stupefying-stock-rise-doesnt-hide-its-reality",
+  "https://news.bloomberglaw.com/securities-law/gamestops-rally-pauses-as-trading-platforms-bar-purchases-1",
+  "https://www.axios.com/2021/02/25/gamestop-stock-surge",
+  "https://finance.yahoo.com/quote/GME/history/"
+ ]
+}
