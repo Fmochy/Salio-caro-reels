@@ -1,0 +1,245 @@
+{
+ "formato": "terminal",
+ "slug": "repsol-ypf",
+ "company": "Repsol",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Repsol pidió por YPF",
+  "big": "10.500 M$",
+  "bottom": "y cobró menos de la mitad",
+  "color": "red",
+  "photo": "img/torre.jpg"
+ },
+ "portada": {
+  "titulo": "Argentina expropia YPF a Repsol",
+  "big": "-19,7 %",
+  "sub": "en una semana · abril 2012",
+  "photo": "img/campus.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "REP",
+   -6.1
+  ],
+  [
+   "IBEX 35",
+   2.3
+  ],
+  [
+   "DAX",
+   2.7
+  ],
+  [
+   "S&P 500",
+   1.6
+  ],
+  [
+   "DOW",
+   1.5
+  ],
+  [
+   "SAN",
+   3.7
+  ],
+  [
+   "BBVA",
+   3.9
+  ],
+  [
+   "TEF",
+   2.9
+  ]
+ ],
+ "series": {
+  "rep": {
+   "name": "Repsol (REP)",
+   "sub": "3 meses · cierre diario",
+   "pre": "€",
+   "close": [
+    22.04,
+    21.9,
+    21.56,
+    21.9,
+    21.85,
+    21.51,
+    21.0,
+    20.89,
+    21.09,
+    21.15,
+    20.28,
+    20.58,
+    20.68,
+    21.12,
+    20.9,
+    21.01,
+    20.94,
+    20.67,
+    20.47,
+    20.69,
+    20.98,
+    20.88,
+    20.88,
+    20.45,
+    20.63,
+    20.73,
+    20.56,
+    19.57,
+    20.11,
+    20.41,
+    19.94,
+    19.39,
+    19.34,
+    19.67,
+    19.55,
+    19.18,
+    19.5,
+    18.98,
+    19.18,
+    18.84,
+    19.02,
+    19.27,
+    20.1,
+    19.62,
+    19.24,
+    19.03,
+    18.97,
+    18.31,
+    18.78,
+    18.81,
+    18.8,
+    18.26,
+    18.0,
+    18.08,
+    17.92,
+    18.12,
+    17.96,
+    17.47,
+    17.48,
+    16.42,
+    15.4,
+    14.66,
+    14.92,
+    14.03
+   ],
+   "labels": [
+    [
+     0,
+     "ene"
+    ],
+    [
+     7,
+     "feb"
+    ],
+    [
+     28,
+     "mar"
+    ],
+    [
+     50,
+     "abr"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Repsol pidió diez mil quinientos millones de dólares por YPF, y acabó cobrando menos de la mitad.",
+   "show": "Repsol pidió 10.500 millones de dólares por YPF, y acabó cobrando menos de la mitad.",
+   "v": {
+    "type": "titular",
+    "photo": "img/torre.jpg",
+    "heads": [
+     {
+      "tag": "ABRIL 2012",
+      "text": "Argentina le quita YPF a Repsol"
+     },
+     {
+      "tag": "RECLAMA",
+      "text": "10.500 millones de dólares"
+     }
+    ]
+   }
+  },
+  {
+   "say": "En abril de dos mil doce, Argentina le expropió el cincuenta y uno por ciento de la petrolera.",
+   "show": "En abril de 2012, Argentina le expropió el 51 % de la petrolera.",
+   "v": {
+    "type": "cifra",
+    "value": 51,
+    "dec": 0,
+    "suffix": " %",
+    "label": "de YPF, expropiado por Argentina",
+    "color": "red",
+    "photo": "img/campus.jpg",
+    "name": "Repsol · Madrid"
+   }
+  },
+  {
+   "say": "Mira la gráfica: al día siguiente Repsol cayó un seis por ciento, y casi un veinte en una semana.",
+   "show": "Mira la gráfica: al día siguiente Repsol cayó un 6 %, y casi un 20 % en una semana.",
+   "v": {
+    "type": "grafica",
+    "serie": "rep",
+    "titulo": "Repsol (REP)",
+    "draw": 0.6,
+    "marca": {
+     "dias": 5,
+     "texto": "-19,7 %"
+    }
+   }
+  },
+  {
+   "say": "Dos años después aceptó cinco mil millones, y encima en bonos argentinos.",
+   "show": "Dos años después aceptó 5.000 millones, y encima en bonos argentinos.",
+   "v": {
+    "type": "barras",
+    "titulo": "YPF: lo que pidió y lo que cobró",
+    "items": [
+     [
+      "Pedía · 2012",
+      10.5,
+      "10.500 M$",
+      "dim"
+     ],
+     [
+      "Cobró · 2014",
+      5.0,
+      "5.000 M$",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿le compensó a Repsol apostar tanto por Argentina?",
+   "show": "La gran pregunta: ¿le compensó a Repsol apostar tanto por Argentina?",
+   "v": {
+    "type": "titular",
+    "photo": "img/brufau.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Le compensó apostar por Argentina?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Repsol e YPF: cuando Argentina expropió la petrolera y Repsol se hundió casi un 20 % en bolsa en una semana 📉\n\n👉 El 16 de abril de 2012, el Gobierno de Cristina Fernández de Kirchner anunció la expropiación del 51 % de YPF, que Repsol controlaba con un 57 %\n👉 Al día siguiente Repsol cayó un 6 % en la Bolsa de Madrid (16,42 euros) mientras el Ibex 35 subía un 2,3 %, y en una semana perdió un 19,7 %\n👉 Repsol valoró su parte en 10.500 millones de dólares; en 2014 aceptó una compensación de 5.000 millones en bonos argentinos\n\nUna de las grandes historias de la bolsa española y del Ibex 35.\n\n¿Crees que a Repsol le compensó apostar tanto por Argentina? Cuéntalo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #repsol #ypf #ibex35",
+ "alt": "Reel sobre Repsol e YPF: en abril de 2012 Argentina expropió el 51 % de YPF, Repsol cayó un 6 % en bolsa al día siguiente y casi un 20 % en una semana, y en 2014 cobró 5.000 millones en bonos. Historia de la bolsa española explicada en 30 segundos.",
+ "sources": [
+  "https://www.foxnews.com/world/repsol-shares-plummet-on-news-of-argentinas-plans-to-nationalize-company",
+  "https://www.aljazeera.com/news/americas/2012/04/201241710754580873.html",
+  "https://www.legaltoday.com/rincon-de-reuters/repsol-abre-con-fuerte-baja-en-bolsa-tras-la-expropiacion-de-ypf-2012-04-17/",
+  "https://www.iese.edu/es/insight/articulos/expropiacion-ypf-argentina/",
+  "https://www.theclinic.cl/2012/04/17/repsol-cifro-en-us-10-500-millones-su-participacion-en-ypf/",
+  "https://www.diariodecuyo.com.ar/noticias/repsol-reclama-us10-500-millones-803829.html",
+  "https://www.elmostrador.cl/mercados/destacados-mercado/2014/02/25/repsol-aprobo-el-acuerdo-argentina-le-pagara-5-000-millones-de-dolares-por-la-expropiacion-de-ypf/",
+  "https://www.publico.es/actualidad/repsol-acepta-acuerdo-cierra-litigio-argentina-ypf.html",
+  "https://finance.yahoo.com/quote/REP.MC/history/"
+ ]
+}
