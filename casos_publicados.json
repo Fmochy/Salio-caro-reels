@@ -341,5 +341,15 @@
   "slug": "2026-11-18-manana-repsol-ypf",
   "gancho": "Repsol pidió 10.500 millones de dólares por YPF, y acabó cobrando menos de la mitad.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-18",
+  "empresa": "Bolsa española (Ibex 35 / Repsol)",
+  "caso": "18-nov-2026: el Ibex 35 cae un 1,1 % hasta unos 19.400 puntos, tercera caída seguida: -3,1 % y más de 600 puntos desde el cierre del viernes 13 (20.020,1); Repsol -5,8 % (peor del Ibex) por la caída del gasóleo y los márgenes de refino; Telefónica -2 % (actualidad, 19:30)",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-18-ibex-pierde-20000",
+  "gancho": "El Ibex 35 pierde -3,1 % en solo tres sesiones",
+  "formula": "1 Confesión de coste"
  }
 ]

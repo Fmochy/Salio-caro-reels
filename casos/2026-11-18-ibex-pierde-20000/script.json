@@ -1,0 +1,329 @@
+{
+ "formato": "terminal",
+ "slug": "ibex-pierde-20000",
+ "company": "Ibex 35",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "El Ibex 35 pierde",
+  "big": "-3,1 %",
+  "bottom": "en solo tres sesiones",
+  "color": "red",
+  "photo": "img/bolsa.jpg"
+ },
+ "portada": {
+  "titulo": "El Ibex 35 se aleja de los 20.000 puntos",
+  "big": "-3,1 %",
+  "sub": "en 3 días, con Repsol hundida",
+  "photo": "img/repsol.jpg",
+  "color": "red",
+  "tag": "HOY EN BOLSA"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   -1.1
+  ],
+  [
+   "REPSOL",
+   -5.8
+  ],
+  [
+   "TELEFÓNICA",
+   -2.0
+  ],
+  [
+   "BBVA",
+   -1.5
+  ],
+  [
+   "SANTANDER",
+   -1.5
+  ],
+  [
+   "DAX",
+   -1.1
+  ],
+  [
+   "DOW",
+   -1.2
+  ],
+  [
+   "S&P 500",
+   -0.6
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "6 meses · cierre diario",
+   "pre": "",
+   "close": [
+    17755.1,
+    17670.1,
+    18051.7,
+    17975.2,
+    17985.3,
+    18387.4,
+    18290.9,
+    18380.9,
+    18279.3,
+    18362.9,
+    18184.9,
+    18272.0,
+    18176.0,
+    18276.0,
+    18344.9,
+    18223.1,
+    18174.7,
+    18142.7,
+    18290.1,
+    18764.4,
+    19032.0,
+    19163.6,
+    19421.9,
+    19404.1,
+    19347.4,
+    19542.3,
+    19476.5,
+    19389.5,
+    19513.6,
+    19425.3,
+    19387.4,
+    19471.9,
+    19406.6,
+    19671.8,
+    19852.4,
+    19683.8,
+    19640.2,
+    19104.3,
+    19322.8,
+    19384.7,
+    19335.7,
+    19356.6,
+    19275.5,
+    19304.1,
+    19216.9,
+    19206.9,
+    19379.8,
+    19571.3,
+    19267.0,
+    19585.4,
+    19741.3,
+    19727.0,
+    19412.7,
+    19757.7,
+    19782.9,
+    19982.6,
+    20023.6,
+    20057.0,
+    20180.4,
+    20176.0,
+    20173.0,
+    20213.6,
+    20204.4,
+    20168.6,
+    20156.6,
+    19981.9,
+    19934.9,
+    19847.5,
+    19811.0,
+    19961.5,
+    20098.6,
+    20056.6,
+    20067.3,
+    19881.6,
+    20041.9,
+    19974.1,
+    19824.0,
+    19779.0,
+    20000.2,
+    20050.7,
+    20021.8,
+    19997.1,
+    19695.3,
+    19659.8,
+    19838.5,
+    19565.5,
+    19555.9,
+    19635.8,
+    19831.8,
+    19513.8,
+    19724.4,
+    19754.1,
+    19632.2,
+    19573.4,
+    19700.1,
+    19600.3,
+    19517.5,
+    19426.2,
+    19005.3,
+    19085.3,
+    19299.7,
+    19444.2,
+    19118.0,
+    18928.9,
+    19033.1,
+    19285.8,
+    19210.7,
+    19230.7,
+    19177.7,
+    19326.3,
+    19039.3,
+    19092.4,
+    19323.5,
+    18913.5,
+    18989.8,
+    19033.3,
+    19160.6,
+    18883.5,
+    18857.6,
+    18652.9,
+    18957.8,
+    18807.2,
+    19370.9,
+    19486.0,
+    19369.5,
+    19742.5,
+    19936.4,
+    20027.9,
+    19965.5,
+    20020.1,
+    19946.6,
+    19625.3,
+    19401.3
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     10,
+     "jun"
+    ],
+    [
+     32,
+     "jul"
+    ],
+    [
+     55,
+     "ago"
+    ],
+    [
+     76,
+     "sep"
+    ],
+    [
+     98,
+     "oct"
+    ],
+    [
+     120,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El Ibex 35 se aleja de los veinte mil puntos: pierde más de seiscientos en solo tres sesiones.",
+   "show": "El Ibex 35 se aleja de los 20.000 puntos: pierde más de 600 en solo 3 sesiones.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "ÚLTIMA HORA",
+      "text": "El Ibex 35 cae por tercer día"
+     },
+     {
+      "text": "Pierde más de 600 puntos"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: el viernes cerraba en veinte mil, y hoy acaba en unos diecinueve mil cuatrocientos.",
+   "show": "Mira la gráfica: el viernes cerraba en 20.000, y hoy acaba en unos 19.400.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.6,
+    "marca": {
+     "dias": 3,
+     "texto": "-3,1 %"
+    }
+   }
+  },
+  {
+   "say": "Lo hunde Repsol, que hoy cae casi un seis por ciento, la que más baja del Ibex.",
+   "show": "Lo hunde Repsol, que hoy cae casi un 6 %, la que más baja del Ibex.",
+   "v": {
+    "type": "cifra",
+    "value": 5.8,
+    "dec": 1,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "Repsol, hoy en bolsa",
+    "color": "red",
+    "photo": "img/repsol.jpg",
+    "name": "Repsol · sede en Madrid"
+   }
+  },
+  {
+   "say": "Pesa el gasóleo, que se abarata, y con él lo que gana refinando. Telefónica también cae un dos por ciento.",
+   "show": "Pesa el gasóleo, que se abarata, y con él lo que gana refinando. Telefónica también cae un 2 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Hoy en la bolsa española",
+    "items": [
+     [
+      "Ibex 35",
+      1.1,
+      "-1,1 %",
+      "dim"
+     ],
+     [
+      "Telefónica",
+      2.0,
+      "-2,0 %",
+      "red"
+     ],
+     [
+      "Repsol",
+      5.8,
+      "-5,8 %",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La semana pasada lo empujaba Repsol, y hoy lo arrastra. ¿Volverá a los veinte mil antes de fin de año?",
+   "show": "La semana pasada lo empujaba Repsol, y hoy lo arrastra. ¿Volverá a los 20.000 antes de fin de año?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Volverá a los 20.000 puntos?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "1 Confesión de coste",
+ "sources": [
+  "https://www.bolsamania.com/indice/IBEX-35",
+  "https://www.bolsamania.com/noticias/mercados-ultima-hora/repsol--381-telefonica--207-y-acciona-energia--176-los-peores-valores-del-ibex-ahora--24216724.html",
+  "https://www.xtb.com/es/analisis-de-mercado/acciones-repsol-lideran-caidas-ibex-35-que-ocurre",
+  "https://es.benzinga.com/news/spain/stocks/repsol-acciones-caida-ibex-35-margenes-refino-181126",
+  "https://www.fxstreet.es/news/el-ibex-35-pierde-mas-de-250-puntos-arrastrado-por-repsol-y-telefonica-202611181406",
+  "https://www.elespanol.com/invertia/mercados/20261118/invertir-bolsa-hoy-valores-aprovechar-reconquista-puntos/1003744462319_0.html",
+  "Yahoo Finance (cierres vía make_reel precios ^IBEX, REP.MC, TEF.MC, BBVA.MC, SAN.MC, ^GDAXI; EE. UU. intradía; 18-nov-2026 ~17:40 Madrid)"
+ ],
+ "caption": "Ibex 35 hoy: la bolsa española se aleja de los 20.000 puntos y pierde un 3,1 % en tres sesiones 📉\n\n👉 El Ibex 35 cierra el miércoles 18 de noviembre en unos 19.400 puntos (-1,1 %), tercera caída seguida: más de 600 puntos menos que el viernes (20.020)\n👉 Repsol se hunde casi un 6 % y es el peor valor del Ibex, con el gasóleo y los márgenes de refino a la baja\n👉 Telefónica cae un 2 %, y BBVA y Santander alrededor de un 1,5 %\n\n¿Volverá el Ibex a los 20.000 antes de fin de año? Sí o no, en comentarios 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCierres de la bolsa española de hoy, 18 de noviembre. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #repsol #bolsaespañola",
+ "alt": "Reel sobre la caída del Ibex 35: el 18 de noviembre de 2026 la bolsa española cierra en unos 19.400 puntos, pierde un 3,1 % en tres sesiones y se aleja de los 20.000, con Repsol cayendo casi un 6 %. Bolsa explicada en 30 segundos."
+}
