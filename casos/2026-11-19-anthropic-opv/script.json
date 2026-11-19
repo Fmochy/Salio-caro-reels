@@ -1,0 +1,323 @@
+{
+ "formato": "terminal",
+ "slug": "anthropic-opv",
+ "company": "Anthropic",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "Anthropic sale a bolsa",
+  "big": "81.300 M$",
+  "bottom": "la mayor OPV de la historia",
+  "color": "green",
+  "photo": "img/amodei.jpg"
+ },
+ "portada": {
+  "titulo": "Anthropic sale a bolsa con récord",
+  "big": "81.300 M$",
+  "sub": "a 83 $ por acción, hoy en el Nasdaq",
+  "photo": "img/amodei.jpg",
+  "color": "green",
+  "tag": "HOY EN BOLSA"
+ },
+ "hook_formula": "26 El superlativo",
+ "ticker": [
+  [
+   "NASDAQ",
+   0.2
+  ],
+  [
+   "S&P 500",
+   -0.3
+  ],
+  [
+   "DOW",
+   -1.0
+  ],
+  [
+   "NVDA",
+   1.1
+  ],
+  [
+   "IBEX 35",
+   -0.7
+  ],
+  [
+   "GRENERGY",
+   -10.2
+  ],
+  [
+   "SOLARIA",
+   -7.0
+  ],
+  [
+   "ORO",
+   -1.8
+  ]
+ ],
+ "series": {
+  "nvda": {
+   "name": "Nvidia (NVDA)",
+   "sub": "6 meses · cierre diario",
+   "pre": "$",
+   "close": [
+    220.61,
+    223.47,
+    219.51,
+    215.33,
+    214.86,
+    212.6,
+    214.25,
+    211.14,
+    224.36,
+    222.82,
+    214.75,
+    218.66,
+    205.1,
+    208.64,
+    208.19,
+    200.42,
+    204.87,
+    205.19,
+    212.45,
+    207.41,
+    204.65,
+    210.69,
+    208.65,
+    200.04,
+    199.0,
+    195.74,
+    192.53,
+    194.97,
+    200.09,
+    197.58,
+    194.83,
+    195.55,
+    196.93,
+    204.12,
+    202.78,
+    210.96,
+    203.53,
+    211.8,
+    212.5,
+    207.4,
+    202.81,
+    203.28,
+    207.29,
+    212.06,
+    208.76,
+    206.84,
+    196.51,
+    197.01,
+    190.01,
+    195.04,
+    200.75,
+    206.64,
+    211.94,
+    219.22,
+    218.99,
+    223.96,
+    217.55,
+    217.5,
+    224.09,
+    225.3,
+    225.16,
+    225.01,
+    219.74,
+    217.56,
+    216.85,
+    214.72,
+    208.48,
+    213.05,
+    209.66,
+    227.98,
+    217.55,
+    220.78,
+    217.44,
+    224.41,
+    228.45,
+    230.36,
+    225.73,
+    223.67,
+    218.36,
+    218.29,
+    210.96,
+    212.17,
+    213.9,
+    219.34,
+    222.27,
+    227.38,
+    228.87,
+    225.51,
+    224.58,
+    225.07,
+    228.86,
+    227.21,
+    228.38,
+    230.86,
+    233.95,
+    238.9,
+    239.24,
+    237.47,
+    230.48,
+    229.28,
+    226.32,
+    228.52,
+    221.3,
+    217.23,
+    214.13,
+    217.09,
+    216.47,
+    221.97,
+    212.21,
+    210.96,
+    216.0,
+    217.94,
+    215.38,
+    213.66,
+    204.64,
+    202.06,
+    206.69,
+    200.13,
+    181.6,
+    186.64,
+    178.67,
+    168.89,
+    173.73,
+    166.19,
+    162.85,
+    156.14,
+    155.46,
+    150.96
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     8,
+     "jun"
+    ],
+    [
+     29,
+     "jul"
+    ],
+    [
+     51,
+     "ago"
+    ],
+    [
+     72,
+     "sep"
+    ],
+    [
+     93,
+     "oct"
+    ],
+    [
+     115,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Anthropic, la empresa de la inteligencia artificial Claude, sale hoy a bolsa con la mayor salida de la historia.",
+   "show": "Anthropic, la empresa de la inteligencia artificial Claude, sale hoy a bolsa con la mayor salida de la historia.",
+   "v": {
+    "type": "titular",
+    "photo": "img/nasdaq.jpg",
+    "heads": [
+     {
+      "tag": "HOY EN BOLSA",
+      "text": "Anthropic debuta en el Nasdaq"
+     },
+     {
+      "text": "La mayor salida a bolsa de la historia"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Capta ochenta y un mil trescientos millones de dólares, a ochenta y tres dólares por acción.",
+   "show": "Capta 81.300 millones de dólares, a 83 dólares por acción.",
+   "v": {
+    "type": "cifra",
+    "value": 81300,
+    "dec": 0,
+    "suffix": " M$",
+    "label": "captados en su salida a bolsa",
+    "color": "green",
+    "photo": "img/amodei.jpg",
+    "name": "Dario Amodei · CEO"
+   }
+  },
+  {
+   "say": "Supera a SpaceX, que captó setenta y cinco mil millones en junio, y triplica a Saudi Aramco.",
+   "show": "Supera a SpaceX, que captó 75.000 millones en junio, y triplica a Saudi Aramco.",
+   "v": {
+    "type": "barras",
+    "titulo": "Mayores salidas a bolsa (M$)",
+    "items": [
+     [
+      "Anthropic · hoy",
+      81.3,
+      "81.300 M$",
+      "green"
+     ],
+     [
+      "SpaceX · jun 2026",
+      75,
+      "75.000 M$",
+      "dim"
+     ],
+     [
+      "Saudi Aramco · 2019",
+      25.6,
+      "25.600 M$",
+      "dim"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Y llega con la inteligencia artificial en duda: Nvidia ha caído casi un treinta y siete por ciento desde octubre.",
+   "show": "Y llega con la inteligencia artificial en duda: Nvidia ha caído casi un 37 % desde octubre.",
+   "v": {
+    "type": "grafica",
+    "serie": "nvda",
+    "titulo": "Nvidia (NVDA)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 31,
+     "texto": "-36,9 %"
+    }
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿aguantará la euforia por la inteligencia artificial?",
+   "show": "La gran pregunta: ¿aguantará la euforia por la inteligencia artificial?",
+   "v": {
+    "type": "titular",
+    "photo": "img/amodei.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Aguantará la euforia por la IA?"
+     }
+    ]
+   }
+  }
+ ],
+ "caption": "Anthropic sale a bolsa: la mayor salida a bolsa de la historia, con 81.300 millones de dólares 📈\n\n👉 La empresa de la inteligencia artificial Claude fijó el precio en 83 dólares por acción, por encima de la horquilla de 70 a 78, y debuta hoy en el Nasdaq con el código ANT.\n\n👉 Vende 980 millones de acciones y la valoran en torno a 1,5 billones de dólares. Supera los 75.000 millones de SpaceX en junio y más que triplica los 25.600 millones de Saudi Aramco en 2019.\n\n👉 Llega con la inteligencia artificial en duda en bolsa: Nvidia ha caído casi un 37 % desde su máximo de octubre.\n\n¿Crees que la euforia por la IA en bolsa va a durar? Sí o no 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #anthropic #nasdaq #inteligenciaartificial",
+ "alt": "Reel sobre la salida a bolsa de Anthropic, la empresa de la IA Claude: el 19 de noviembre de 2026 debuta en el Nasdaq tras captar 81.300 millones de dólares a 83 dólares por acción, la mayor salida a bolsa de la historia. Bolsa explicada en 30 segundos.",
+ "sources": [
+  "https://www.cbsnews.com/news/anthropic-ipo-nasdaq-debut-claude-ai/",
+  "https://finance.yahoo.com/technology/live/anthropic-ipo-live-company-said-to-price-stock-at-83-begin-trading-thursday-212656452.html",
+  "https://www.npr.org/2026/11/18/nx-s1-6046212/anthropic-record-ipo-price",
+  "https://www.cnn.com/2026/11/18/investing/anthropic-ipo-price-stock",
+  "https://www.thestar.com.my/business/business-news/2026/09/29/from-spacex-to-saudi-aramco-world039s-biggest-ipos-as-anthropic039s-blockbuster-listing-looms",
+  "https://es.investing.com/news/stock-market-news/la-bolsa-hoy-ibex-35-euro-dolar-anthropic-fed-y-oro-3935428",
+  "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=6mo&interval=1d"
+ ]
+}
