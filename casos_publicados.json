@@ -351,5 +351,15 @@
   "slug": "2026-11-18-ibex-pierde-20000",
   "gancho": "El Ibex 35 pierde -3,1 % en solo tres sesiones",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-19",
+  "empresa": "Bolsa española (Ibex 35, Brexit)",
+  "caso": "24-jun-2016: tras el referéndum del Brexit el Ibex 35 cae un 12,35 % (7.787,7), su peor día hasta el covid; el FTSE 100 cae un 3,15 % y el DAX un 6,8 %; Santander -19,9 %, IAG -26,9 %",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-19-manana-brexit-ibex",
+  "gancho": "Londres votó el Brexit / -12,35 % / y se hundió Madrid",
+  "formula": "1 Confesión de coste"
  }
 ]

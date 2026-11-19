@@ -1,0 +1,247 @@
+{
+ "formato": "terminal",
+ "slug": "brexit-ibex",
+ "company": "Ibex 35 (Brexit)",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Londres votó el Brexit",
+  "big": "-12,35 %",
+  "bottom": "y se hundió Madrid",
+  "color": "red",
+  "photo": "img/bigben.jpg"
+ },
+ "portada": {
+  "titulo": "Brexit: el peor día del Ibex 35",
+  "big": "-12,35 %",
+  "sub": "24 de junio de 2016",
+  "photo": "img/bigben.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   -12.35
+  ],
+  [
+   "FTSE 100",
+   -3.15
+  ],
+  [
+   "DAX",
+   -6.82
+  ],
+  [
+   "S&P 500",
+   -3.59
+  ],
+  [
+   "DOW",
+   -3.39
+  ],
+  [
+   "SAN",
+   -19.88
+  ],
+  [
+   "BBVA",
+   -16.17
+  ],
+  [
+   "IAG",
+   -26.86
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "3 meses · cierre diario",
+   "pre": "",
+   "close": [
+    8808.3,
+    8870.2,
+    8723.1,
+    8602.3,
+    8597.5,
+    8387.7,
+    8398.6,
+    8292.9,
+    8427.6,
+    8497.6,
+    8546.3,
+    8820.7,
+    8861.5,
+    8850.9,
+    8881.6,
+    8971.3,
+    9147.2,
+    9197.2,
+    9232.8,
+    9140.0,
+    9283.0,
+    9332.6,
+    9269.0,
+    9025.7,
+    9022.1,
+    8764.9,
+    8654.3,
+    8689.4,
+    8702.1,
+    8660.8,
+    8775.2,
+    8663.9,
+    8663.1,
+    8721.5,
+    8682.1,
+    8698.7,
+    8775.1,
+    8674.7,
+    8771.2,
+    8714.0,
+    8918.1,
+    9125.0,
+    9079.2,
+    9107.3,
+    9116.9,
+    9034.0,
+    8916.9,
+    8957.9,
+    8801.6,
+    8823.5,
+    8894.5,
+    8831.4,
+    8769.5,
+    8490.5,
+    8303.8,
+    8126.7,
+    8250.8,
+    8199.9,
+    8362.0,
+    8647.1,
+    8667.3,
+    8702.0,
+    8885.3,
+    7787.7
+   ],
+   "labels": [
+    [
+     3,
+     "abr"
+    ],
+    [
+     24,
+     "may"
+    ],
+    [
+     46,
+     "jun"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El Brexit se votó en Londres, pero la bolsa que más se hundió fue la de Madrid.",
+   "show": "El Brexit se votó en Londres, pero la bolsa que más se hundió fue la de Madrid.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bigben.jpg",
+    "heads": [
+     {
+      "tag": "24 JUNIO 2016",
+      "text": "Reino Unido vota salir de la UE"
+     },
+     {
+      "tag": "MADRID",
+      "text": "El Ibex 35 se desploma"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: el Ibex treinta y cinco cayó un doce coma treinta y cinco por ciento en un solo día, el peor de su historia hasta entonces.",
+   "show": "Mira la gráfica: el Ibex 35 cayó un 12,35 % en un solo día, el peor de su historia hasta entonces.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.6,
+    "marca": {
+     "dias": 1,
+     "texto": "-12,35 %"
+    }
+   }
+  },
+  {
+   "say": "¿Y Londres? Solo un tres por ciento, cuatro veces menos que Madrid.",
+   "show": "¿Y Londres? Solo un 3 %, cuatro veces menos que Madrid.",
+   "v": {
+    "type": "barras",
+    "titulo": "Caída del 24 de junio de 2016",
+    "items": [
+     [
+      "Madrid · Ibex 35",
+      12.35,
+      "-12,35 %",
+      "red"
+     ],
+     [
+      "Fráncfort · DAX",
+      6.82,
+      "-6,8 %",
+      "dim"
+     ],
+     [
+      "Londres · FTSE 100",
+      3.15,
+      "-3,2 %",
+      "dim"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Lo pagaron los más expuestos a Reino Unido: Santander perdió casi un veinte por ciento, e IAG, la dueña de Iberia, casi un veintisiete.",
+   "show": "Lo pagaron los más expuestos a Reino Unido: Santander perdió casi un 20 %, e IAG, la dueña de Iberia, casi un 27 %.",
+   "v": {
+    "type": "cifra",
+    "value": 19.9,
+    "dec": 1,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "Santander, en una sola sesión",
+    "color": "red",
+    "photo": "img/santander.jpg",
+    "name": "Banco Santander"
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿por qué pagó Madrid el Brexit de Londres?",
+   "show": "La gran pregunta: ¿por qué pagó Madrid el Brexit de Londres?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa2.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Por qué pagó Madrid el Brexit?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Brexit y el Ibex 35: el 24 de junio de 2016 la bolsa española vivió el peor día de su historia hasta entonces 📉\n\n👉 Tras el referéndum del Brexit, el Ibex 35 cayó un 12,35 % y cerró en 7.787,7 puntos\n👉 La Bolsa de Londres cayó en torno a un 3 % (FTSE 100 -3,15 %), unas cuatro veces menos que Madrid\n👉 Santander se dejó un 19,9 % e IAG, la dueña de Iberia y British Airways, un 26,9 %\n👉 El récord solo lo superó el covid: -14,06 % el 12 de marzo de 2020\n\nUna de las grandes historias de la bolsa española: el día que el Brexit hundió al Ibex 35.\n\n¿Por qué crees que Madrid cayó más que Londres? Cuéntalo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #brexit #santander",
+ "alt": "Reel sobre el Brexit y el Ibex 35: el 24 de junio de 2016 la bolsa española cayó un 12,35 %, su peor día hasta entonces, cuatro veces más que Londres, con Santander casi -20 % e IAG casi -27 %. Historia de la bolsa explicada en 30 segundos.",
+ "sources": [
+  "https://www.vilaweb.cat/noticies/la-borsa-espanyola-pateix-la-davallada-mes-gran-de-la-historia-arran-del-brexit/",
+  "https://es.euronews.com/2016/06/24/las-bolsas-europeas-se-hunden-con-madrid-en-cabeza-con-mas-del-12-por-ciento",
+  "https://www.larepublica.co/globoeconomia/el-ibex-lidero-la-caida-de-bolsas-luego-del-brexit-2393186",
+  "https://es.statista.com/estadisticas/572950/caida-de-las-bolsas-en-el-mundo-tras-el-resultado-del-brexit",
+  "https://www.estrategiasdeinversion.com/analisis/bolsa-y-mercados/informes/1267",
+  "https://wolfstreet.com/?p=24763",
+  "https://finance.yahoo.com/quote/%5EIBEX/history/",
+  "https://finance.yahoo.com/quote/%5EFTSE/history/"
+ ]
+}

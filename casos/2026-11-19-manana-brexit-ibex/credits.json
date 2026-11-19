@@ -1,0 +1,20 @@
+[
+ {
+  "file": "File:Big Ben at sunset - 2014-10-27 17-30.jpg",
+  "dest": "bigben.jpg",
+  "author": "Colin",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Palacio de la Bolsa de Madrid (España) 01.jpg",
+  "dest": "bolsa2.jpg",
+  "author": "Luis García (Zaqarbal)",
+  "license": "CC BY-SA 3.0"
+ },
+ {
+  "file": "File:Banco Santander Ciudad Universitaria.jpg",
+  "dest": "santander.jpg",
+  "author": "Preyes",
+  "license": "CC BY-SA 4.0"
+ }
+]
