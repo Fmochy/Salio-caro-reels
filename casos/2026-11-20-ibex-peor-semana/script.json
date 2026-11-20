@@ -1,0 +1,321 @@
+{
+ "formato": "terminal",
+ "slug": "ibex-peor-semana",
+ "company": "Ibex 35",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "El Ibex 35 pierde",
+  "big": "-5,8 %",
+  "bottom": "en una sola semana",
+  "color": "red",
+  "photo": "img/bolsa.jpg"
+ },
+ "portada": {
+  "titulo": "El Ibex 35 cae por debajo de los 19.000 puntos",
+  "big": "-5,8 %",
+  "sub": "en una semana, cinco caídas seguidas",
+  "photo": "img/bolsa.jpg",
+  "color": "red",
+  "tag": "HOY EN BOLSA"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   -1.7
+  ],
+  [
+   "ARCELORMITTAL",
+   -5.8
+  ],
+  [
+   "BBVA",
+   -3.0
+  ],
+  [
+   "SANTANDER",
+   -2.5
+  ],
+  [
+   "DAX",
+   -2.4
+  ],
+  [
+   "EURO STOXX 50",
+   -2.6
+  ],
+  [
+   "NASDAQ",
+   -2.1
+  ],
+  [
+   "S&P 500",
+   -1.0
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "6 meses · cierre diario",
+   "pre": "",
+   "close": [
+    18051.7,
+    17975.2,
+    17985.3,
+    18387.4,
+    18290.9,
+    18380.9,
+    18279.3,
+    18362.9,
+    18184.9,
+    18272.0,
+    18176.0,
+    18276.0,
+    18344.9,
+    18223.1,
+    18174.7,
+    18142.7,
+    18290.1,
+    18764.4,
+    19032.0,
+    19163.6,
+    19421.9,
+    19404.1,
+    19347.4,
+    19542.3,
+    19476.5,
+    19389.5,
+    19513.6,
+    19425.3,
+    19387.4,
+    19471.9,
+    19406.6,
+    19671.8,
+    19852.4,
+    19683.8,
+    19640.2,
+    19104.3,
+    19322.8,
+    19384.7,
+    19335.7,
+    19356.6,
+    19275.5,
+    19304.1,
+    19216.9,
+    19206.9,
+    19379.8,
+    19571.3,
+    19267.0,
+    19585.4,
+    19741.3,
+    19727.0,
+    19412.7,
+    19757.7,
+    19782.9,
+    19982.6,
+    20023.6,
+    20057.0,
+    20180.4,
+    20176.0,
+    20173.0,
+    20213.6,
+    20204.4,
+    20168.6,
+    20156.6,
+    19981.9,
+    19934.9,
+    19847.5,
+    19811.0,
+    19961.5,
+    20098.6,
+    20056.6,
+    20067.3,
+    19881.6,
+    20041.9,
+    19974.1,
+    19824.0,
+    19779.0,
+    20000.2,
+    20050.7,
+    20021.8,
+    19997.1,
+    19695.3,
+    19659.8,
+    19838.5,
+    19565.5,
+    19555.9,
+    19635.8,
+    19831.8,
+    19513.8,
+    19724.4,
+    19754.1,
+    19632.2,
+    19573.4,
+    19700.1,
+    19600.3,
+    19517.5,
+    19426.2,
+    19005.3,
+    19085.3,
+    19299.7,
+    19444.2,
+    19118.0,
+    18928.9,
+    19033.1,
+    19285.8,
+    19210.7,
+    19230.7,
+    19177.7,
+    19326.3,
+    19039.3,
+    19092.4,
+    19323.5,
+    18913.5,
+    18989.8,
+    19033.3,
+    19160.6,
+    18883.5,
+    18857.6,
+    18652.9,
+    18957.8,
+    18807.2,
+    19370.9,
+    19486.0,
+    19369.5,
+    19742.5,
+    19936.4,
+    20027.9,
+    19965.5,
+    20020.1,
+    19946.6,
+    19625.3,
+    19373.3,
+    19186.2,
+    18873.6
+   ],
+   "labels": [
+    [
+     0,
+     "may"
+    ],
+    [
+     8,
+     "jun"
+    ],
+    [
+     30,
+     "jul"
+    ],
+    [
+     53,
+     "ago"
+    ],
+    [
+     74,
+     "sep"
+    ],
+    [
+     96,
+     "oct"
+    ],
+    [
+     118,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El Ibex 35 se deja un cinco coma siete por ciento en una semana, y cae por debajo de los diecinueve mil puntos.",
+   "show": "El Ibex 35 se deja un 5,8 % en una semana, y cae por debajo de los 19.000 puntos.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "ÚLTIMA HORA",
+      "text": "El Ibex 35 pierde los 19.000 puntos"
+     },
+     {
+      "text": "Cae un 5,8 % en la semana"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: cinco caídas seguidas, de los veinte mil del viernes pasado a menos de diecinueve mil.",
+   "show": "Mira la gráfica: 5 caídas seguidas, de los 20.000 del viernes pasado a menos de 19.000.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.6,
+    "marca": {
+     "dias": 5,
+     "texto": "-5,8 %"
+    }
+   }
+  },
+  {
+   "say": "Hoy lo hunde ArcelorMittal, que cae un cinco coma nueve por ciento, la peor del Ibex.",
+   "show": "Hoy lo hunde ArcelorMittal, que cae un 5,8 %, la peor del Ibex.",
+   "v": {
+    "type": "cifra",
+    "value": 5.8,
+    "dec": 1,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "ArcelorMittal, hoy en bolsa",
+    "color": "red",
+    "photo": "img/arcelor.jpg",
+    "name": "ArcelorMittal · Gijón"
+   }
+  },
+  {
+   "say": "Y no es solo Madrid: el DAX alemán cae un siete por ciento en la semana, con la huida de las tecnológicas.",
+   "show": "Y no es solo Madrid: el DAX alemán cae un 7,0 % en la semana, con la huida de las tecnológicas.",
+   "v": {
+    "type": "barras",
+    "titulo": "Caída en la semana",
+    "items": [
+     [
+      "Ibex 35",
+      5.8,
+      "-5,8 %",
+      "red"
+     ],
+     [
+      "Euro Stoxx 50",
+      6.8,
+      "-6,8 %",
+      "dim"
+     ],
+     [
+      "DAX",
+      7.0,
+      "-7,0 %",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿es solo un susto, o el principio de algo más gordo?",
+   "show": "La gran pregunta: ¿es solo un susto, o el principio de algo más gordo?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Susto o algo más gordo?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "1 Confesión de coste",
+ "sources": [],
+ "caption": "x",
+ "alt": "x"
+}
