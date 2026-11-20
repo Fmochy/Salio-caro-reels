@@ -381,5 +381,15 @@
   "slug": "manana-pescanova-bolsa",
   "gancho": "Pescanova en bolsa: -66 % en menos de dos semanas",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-20",
+  "empresa": "Bolsa española (Ibex 35 / ArcelorMittal)",
+  "caso": "Semana al 20-nov-2026: el Ibex 35 cae un 5,7 % (de 20.020,1 a unos 18.890) con cinco caídas seguidas y pierde los 19.000 puntos; hoy -1,6 % con ArcelorMittal -5,6 % (peor del Ibex), Acerinox -4,1 %, BBVA -3,2 %; DAX -7,1 % y Euro Stoxx 50 -6,8 % en la semana por la venta de tecnológicas (actualidad, 19:30)",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-20-ibex-peor-semana",
+  "gancho": "El Ibex 35 pierde -5,7 % en una sola semana",
+  "formula": "1 Confesión de coste"
  }
 ]

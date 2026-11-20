@@ -5,15 +5,15 @@
  "tipo": "actualidad",
  "hook": {
   "top": "El Ibex 35 pierde",
-  "big": "-5,8 %",
+  "big": "-5,7 %",
   "bottom": "en una sola semana",
   "color": "red",
   "photo": "img/bolsa.jpg"
  },
  "portada": {
-  "titulo": "El Ibex 35 cae por debajo de los 19.000 puntos",
-  "big": "-5,8 %",
-  "sub": "en una semana, cinco caídas seguidas",
+  "titulo": "El Ibex 35 se hunde en la semana",
+  "big": "-5,7 %",
+  "sub": "cinco caídas seguidas, bajo los 19.000",
   "photo": "img/bolsa.jpg",
   "color": "red",
   "tag": "HOY EN BOLSA"
@@ -21,35 +21,35 @@
  "ticker": [
   [
    "IBEX 35",
-   -1.7
+   -1.6
   ],
   [
-   "ARCELORMITTAL",
-   -5.8
+   "ARCELOR",
+   -5.6
   ],
   [
    "BBVA",
-   -3.0
+   -3.2
   ],
   [
    "SANTANDER",
-   -2.5
-  ],
-  [
-   "DAX",
    -2.4
   ],
   [
-   "EURO STOXX 50",
+   "DAX",
+   -2.5
+  ],
+  [
+   "STOXX 50",
    -2.6
   ],
   [
    "NASDAQ",
-   -2.1
+   -3.2
   ],
   [
    "S&P 500",
-   -1.0
+   -1.9
   ]
  ],
  "series": {
@@ -190,7 +190,7 @@
     19625.3,
     19373.3,
     19186.2,
-    18873.6
+    18885.9
    ],
    "labels": [
     [
@@ -227,7 +227,7 @@
  "lines": [
   {
    "say": "El Ibex 35 se deja un cinco coma siete por ciento en una semana, y cae por debajo de los diecinueve mil puntos.",
-   "show": "El Ibex 35 se deja un 5,8 % en una semana, y cae por debajo de los 19.000 puntos.",
+   "show": "El Ibex 35 se deja un 5,7 % en una semana, y cae por debajo de los 19.000 puntos.",
    "v": {
     "type": "titular",
     "photo": "img/bolsa.jpg",
@@ -237,7 +237,7 @@
       "text": "El Ibex 35 pierde los 19.000 puntos"
      },
      {
-      "text": "Cae un 5,8 % en la semana"
+      "text": "-5,7 % en la semana"
      }
     ]
    }
@@ -252,16 +252,16 @@
     "draw": 0.6,
     "marca": {
      "dias": 5,
-     "texto": "-5,8 %"
+     "texto": "-5,7 %"
     }
    }
   },
   {
-   "say": "Hoy lo hunde ArcelorMittal, que cae un cinco coma nueve por ciento, la peor del Ibex.",
-   "show": "Hoy lo hunde ArcelorMittal, que cae un 5,8 %, la peor del Ibex.",
+   "say": "Hoy lo hunde ArcelorMittal, que cae un cinco coma seis por ciento, la peor del Ibex.",
+   "show": "Hoy lo hunde ArcelorMittal, que cae un 5,6 %, la peor del Ibex.",
    "v": {
     "type": "cifra",
-    "value": 5.8,
+    "value": 5.6,
     "dec": 1,
     "prefix": "-",
     "suffix": " %",
@@ -272,16 +272,16 @@
    }
   },
   {
-   "say": "Y no es solo Madrid: el DAX alemán cae un siete por ciento en la semana, con la huida de las tecnológicas.",
-   "show": "Y no es solo Madrid: el DAX alemán cae un 7,0 % en la semana, con la huida de las tecnológicas.",
+   "say": "Y no es solo Madrid: el DAX alemán cae un siete coma uno por ciento en la semana, con la huida de las tecnológicas.",
+   "show": "Y no es solo Madrid: el DAX alemán cae un 7,1 % en la semana, con la huida de las tecnológicas.",
    "v": {
     "type": "barras",
     "titulo": "Caída en la semana",
     "items": [
      [
       "Ibex 35",
-      5.8,
-      "-5,8 %",
+      5.7,
+      "-5,7 %",
       "red"
      ],
      [
@@ -292,8 +292,8 @@
      ],
      [
       "DAX",
-      7.0,
-      "-7,0 %",
+      7.1,
+      "-7,1 %",
       "red"
      ]
     ]
@@ -315,7 +315,15 @@
   }
  ],
  "hook_formula": "1 Confesión de coste",
- "sources": [],
- "caption": "x",
- "alt": "x"
+ "sources": [
+  "https://www.bolsamania.com/",
+  "https://www.bolsamania.com/noticias/mercados-ultima-hora/ibex-35-arcelormittal--449-y-acerinox--303-son-los-valores-mas-bajistas--24245912.html",
+  "https://www.fxstreet.es/news/el-ibex-35-pierde-mas-de-300-puntos-arrastrado-por-arcelormittal-y-acerinox-202611201504",
+  "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/el-ibex-35-cae-por-debajo-de-los-19000-puntos-n-972027",
+  "https://www.eleconomista.es/mercados-cotizaciones/noticias/14029369/11/26/el-desanimo-por-el-desplome-tecnologico-precipita-a-la-bolsa-global-mas-de-un-5-en-la-semana.html",
+  "https://www.democrata.es/economia/el-ibex-35-defiende-los-20-000-puntos-tras-avanzar-un-3-36-en-una-semana-dominada-por-nvidia-y-los-resultados/",
+  "Yahoo Finance (^IBEX, MTS.MC, ACX.MC, BBVA.MC, SAN.MC, ^GDAXI, ^STOXX50E; EE. UU. intradía; 20-nov-2026 ~17:45 Madrid)"
+ ],
+ "caption": "Ibex 35 hoy: la bolsa española cae por debajo de los 19.000 puntos y se deja un 5,7 % en una semana 📉\n\n👉 El Ibex 35 cierra el viernes 20 de noviembre en torno a los 18.900 puntos (-1,6 % hoy), quinta caída seguida: el viernes pasado cerró en 20.020\n👉 ArcelorMittal es el peor valor del Ibex hoy (-5,6 %), seguida de Acerinox (-4,1 %); BBVA cae un 3,2 % y Santander un 2,3 %\n👉 No es solo España: en la semana el DAX alemán cae un 7,1 % y el Euro Stoxx 50 un 6,8 %, con la venta masiva de tecnológicas\n\n¿Es solo un susto o el principio de algo más gordo? Cuéntalo en comentarios 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCierres de la bolsa española y europea de hoy, 20 de noviembre (provisionales). Información divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #bolsaespañola #arcelormittal",
+ "alt": "Reel sobre la caída del Ibex 35: el 20 de noviembre de 2026 la bolsa española cae por debajo de los 19.000 puntos y se deja un 5,7 % en una semana, con cinco caídas seguidas y ArcelorMittal como peor valor. Bolsa explicada en 30 segundos."
 }
