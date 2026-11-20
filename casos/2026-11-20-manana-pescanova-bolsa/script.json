@@ -1,0 +1,251 @@
+{
+ "formato": "terminal",
+ "slug": "manana-pescanova-bolsa",
+ "company": "Pescanova",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Pescanova en bolsa",
+  "big": "-66 %",
+  "bottom": "en menos de dos semanas",
+  "color": "red",
+  "photo": "img/vigo.jpg"
+ },
+ "portada": {
+  "titulo": "Pescanova se hundió en bolsa en 2013",
+  "big": "-66 %",
+  "sub": "y la bolsa la congeló 4 años",
+  "photo": "img/vigo.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "PESCANOVA",
+   -60.0
+  ],
+  [
+   "IBEX 35",
+   0.72
+  ],
+  [
+   "DAX",
+   -0.21
+  ],
+  [
+   "S&P 500",
+   0.46
+  ],
+  [
+   "DOW",
+   0.27
+  ],
+  [
+   "TELEFÓNICA",
+   2.97
+  ],
+  [
+   "SANTANDER",
+   0.4
+  ]
+ ],
+ "series": {
+  "pva": {
+   "name": "Pescanova (PVA)",
+   "sub": "cierre diario",
+   "pre": "",
+   "close": [
+    13.66,
+    13.76,
+    13.6,
+    13.64,
+    13.59,
+    13.59,
+    13.86,
+    13.73,
+    13.74,
+    13.7,
+    14.1,
+    13.77,
+    13.85,
+    13.85,
+    13.89,
+    13.95,
+    14.14,
+    13.88,
+    14.01,
+    14.3,
+    15.15,
+    15.18,
+    15.07,
+    15.05,
+    15.65,
+    15.45,
+    15.4,
+    15.15,
+    15.0,
+    14.5,
+    14.84,
+    15.59,
+    15.74,
+    16.4,
+    16.8,
+    16.55,
+    16.7,
+    16.46,
+    16.7,
+    16.75,
+    16.48,
+    16.4,
+    16.28,
+    16.35,
+    16.5,
+    17.1,
+    17.4,
+    17.27,
+    17.5,
+    17.78,
+    17.43,
+    17.53,
+    17.3,
+    17.73,
+    17.99,
+    17.85,
+    17.0,
+    17.09,
+    16.77,
+    16.64,
+    17.4,
+    6.96,
+    6.3,
+    8.17,
+    9.9,
+    8.87,
+    7.32,
+    5.91
+   ],
+   "labels": [
+    [
+     0,
+     "dic"
+    ],
+    [
+     19,
+     "ene"
+    ],
+    [
+     41,
+     "feb"
+    ],
+    [
+     61,
+     "mar"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Pescanova, la de las varitas de pescado, perdió dos tercios de su valor en bolsa en menos de dos semanas.",
+   "show": "Pescanova, la de las varitas de pescado, perdió dos tercios de su valor en bolsa en menos de dos semanas.",
+   "v": {
+    "type": "titular",
+    "photo": "img/vigo.jpg",
+    "heads": [
+     {
+      "tag": "MARZO 2013",
+      "text": "Pescanova se hunde en bolsa"
+     },
+     {
+      "tag": "VIGO",
+      "text": "No presenta sus cuentas de 2012"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: no presentó sus cuentas, pidió el preconcurso y se desplomó un sesenta por ciento de golpe.",
+   "show": "Mira la gráfica: no presentó sus cuentas, pidió el preconcurso y se desplomó un 60 % de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "pva",
+    "titulo": "Pescanova (PVA)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 7,
+     "texto": "-66 %"
+    }
+   }
+  },
+  {
+   "say": "¿Sabes cuánta deuda tenía de verdad? Más de tres mil millones de euros.",
+   "show": "¿Sabes cuánta deuda tenía de verdad? Más de 3.000 millones de euros.",
+   "v": {
+    "type": "cifra",
+    "value": 3000,
+    "dec": 0,
+    "prefix": "+",
+    "suffix": " M€",
+    "label": "de deuda al estallar el caso",
+    "color": "red",
+    "photo": "img/chapela.jpg",
+    "name": "Pescanova · Chapela"
+   }
+  },
+  {
+   "say": "La bolsa la congeló cuatro años, y al volver en dos mil diecisiete se hundió otro noventa por ciento.",
+   "show": "La bolsa la congeló 4 años, y al volver en 2017 se hundió otro 90 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Precio de la acción de Pescanova",
+    "items": [
+     [
+      "Febrero 2013",
+      17.4,
+      "17,40 €",
+      "dim"
+     ],
+     [
+      "Suspensión · mar 2013",
+      5.91,
+      "5,91 €",
+      "amber"
+     ],
+     [
+      "Vuelta · jun 2017",
+      0.6,
+      "0,60 €",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿cómo nadie lo vio venir?",
+   "show": "La gran pregunta: ¿cómo nadie lo vio venir?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Cómo nadie lo vio venir?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Pescanova en bolsa: el desplome de 2013 que hundió su acción un 66 % en menos de dos semanas 📉\n\n👉 El 28 de febrero de 2013 cotizaba a 17,40 euros; al día siguiente pidió el preconcurso tras no formular las cuentas de 2012\n👉 El 4 de marzo se desplomó un 60 % (6,96 euros) y el 12 de marzo la CNMV suspendió su cotización a 5,91 euros\n👉 Su deuda superaba los 3.000 millones de euros\n👉 Volvió a cotizar el 7 de junio de 2017 y se hundió cerca de un 90 % en la apertura\n\nUna de las grandes historias de la bolsa española: la caída de Pescanova, el gigante gallego del pescado congelado.\n\n¿Tenías acciones de Pescanova o conocías a alguien que las tuviera? Cuéntalo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #pescanova #ibex35 #bolsaespañola",
+ "alt": "Reel sobre el desplome de Pescanova en bolsa: en marzo de 2013 su acción cayó un 66 % en menos de dos semanas, de 17,40 a 5,91 euros, la CNMV la suspendió con más de 3.000 millones de deuda y al volver en 2017 se hundió un 90 %. Historia de la bolsa española.",
+ "sources": [
+  "https://www.libertaddigital.com/libremercado/2013-03-04/pescanova-se-desploma-un-60-por-ciento-en-su-regreso-al-mercado-1276483930/",
+  "https://en.mercopress.com/2013/03/05/pescanova-with-serious-financial-problems-shares-down-60-in-monday-trading",
+  "https://valenciaplaza.com/pescanova-vuelve-a-cotizar-en-bolsa-mas-de-cuatro-anos-despues",
+  "https://alicanteplaza.es/alicanteplaza/EradeesperarPescanovavuelveacotizarenbolsaconundesplomedel90",
+  "https://diariodeavisos.elespanol.com/2017/06/la-vieja-pescanova-regresa-bolsa-desplome-cercano-al-90/",
+  "https://www.libertaddigital.com/libremercado/2013-04-30/la-deuda-de-pescanova-asciende-a-3-000-millones-1276488890/",
+  "https://www.eldiario.es/economia/pescanova_1_3512964.html",
+  "https://finance.yahoo.com/quote/PVA.MC/history/"
+ ]
+}
