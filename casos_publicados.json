@@ -401,5 +401,15 @@
   "slug": "2026-11-21-manana-meta-record",
   "gancho": "Más de 230.000 millones de dólares: eso perdió en bolsa Meta, la dueña de tu Instagram, en un solo día",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-21",
+  "empresa": "Wall Street (Nasdaq / Nvidia)",
+  "caso": "Semana al 20-nov-2026: el Nasdaq cae un 10,0 % (de 25.136,27 a 22.617,73), su peor semana desde marzo de 2020, con -5,3 % el viernes; Nvidia -14,0 % el viernes (125,53 $) y -22,9 % en la semana; S&P 500 -8,6 % (corrección), Ibex 35 -5,7 % (fin de semana, 19:30)",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-21-nasdaq-peor-semana",
+  "gancho": "El Nasdaq pierde -10 % en una sola semana",
+  "formula": "1 Confesión de coste"
  }
 ]

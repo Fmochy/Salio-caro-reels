@@ -1,0 +1,315 @@
+{
+ "formato": "terminal",
+ "slug": "nasdaq-peor-semana",
+ "company": "Nasdaq",
+ "tipo": "actualidad",
+ "hook": {
+  "top": "El Nasdaq pierde",
+  "big": "-10 %",
+  "bottom": "en una sola semana",
+  "color": "red",
+  "photo": "img/nasdaq.jpg"
+ },
+ "portada": {
+  "titulo": "Wall Street: el Nasdaq se hunde",
+  "big": "-10 %",
+  "sub": "en una semana, lo peor desde el covid",
+  "photo": "img/nasdaq.jpg",
+  "color": "red",
+  "tag": "HOY EN BOLSA"
+ },
+ "ticker": [
+  [
+   "NASDAQ",
+   -5.3
+  ],
+  [
+   "NVDA",
+   -14.0
+  ],
+  [
+   "S&P 500",
+   -3.7
+  ],
+  [
+   "DOW",
+   -1.9
+  ],
+  [
+   "ANTHROPIC",
+   -8.5
+  ],
+  [
+   "DAX",
+   -2.6
+  ],
+  [
+   "IBEX 35",
+   -1.6
+  ]
+ ],
+ "series": {
+  "nasdaq": {
+   "name": "Nasdaq Composite",
+   "sub": "6 meses · cierre diario",
+   "pre": "",
+   "close": [
+    26293.1,
+    26343.97,
+    26656.18,
+    26674.73,
+    26917.47,
+    26972.62,
+    27086.81,
+    27093.9,
+    26853.98,
+    26830.96,
+    25709.43,
+    25929.66,
+    25678.82,
+    25169.5,
+    25809.66,
+    25888.84,
+    26683.94,
+    26376.34,
+    26021.66,
+    26517.93,
+    26166.6,
+    25587.04,
+    25476.64,
+    25358.6,
+    25297.62,
+    25820.14,
+    26213.72,
+    26040.03,
+    25832.67,
+    26121.16,
+    25818.69,
+    25870.65,
+    26206.89,
+    26281.61,
+    25873.18,
+    26107.01,
+    26269.23,
+    25881.95,
+    25520.24,
+    25508.07,
+    25837.21,
+    25690.9,
+    25137.69,
+    24975.82,
+    24932.08,
+    24876.91,
+    24442.94,
+    25122.18,
+    25373.85,
+    25913.9,
+    26584.99,
+    26363.44,
+    26348.35,
+    26690.62,
+    26605.36,
+    26445.45,
+    26588.49,
+    26803.03,
+    26729.16,
+    26644.91,
+    26289.71,
+    26331.09,
+    26067.17,
+    26180.46,
+    25980.19,
+    26151.3,
+    26130.2,
+    26541.35,
+    26402.42,
+    26370.89,
+    26099.77,
+    26217.83,
+    26584.06,
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57,
+    25978.43,
+    26418.3,
+    26522.54,
+    27122.09,
+    27244.28,
+    26936.04,
+    26939.37,
+    27068.72,
+    26820.38,
+    26797.54,
+    26861.06,
+    26871.6,
+    27190.86,
+    27477.31,
+    27599.79,
+    27538.69,
+    27193.34,
+    27366.17,
+    27245.9,
+    27204.38,
+    26692.87,
+    26713.03,
+    26140.03,
+    26430.89,
+    26424.82,
+    26702.86,
+    26008.86,
+    25955.34,
+    26169.38,
+    26477.81,
+    26549.85,
+    26184.72,
+    25437.0,
+    25164.31,
+    25372.01,
+    25736.51,
+    24315.0,
+    24579.43,
+    25253.14,
+    25065.87,
+    25466.19,
+    25366.09,
+    25136.27,
+    24509.76,
+    24328.38,
+    24429.88,
+    23879.2,
+    22617.73
+   ],
+   "labels": [
+    [
+     6,
+     "jun"
+    ],
+    [
+     27,
+     "jul"
+    ],
+    [
+     49,
+     "ago"
+    ],
+    [
+     70,
+     "sep"
+    ],
+    [
+     91,
+     "oct"
+    ],
+    [
+     113,
+     "nov"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El Nasdaq se deja un diez por ciento en una semana, su peor semana desde el covid, en marzo de dos mil veinte.",
+   "show": "El Nasdaq se deja un 10 % en una semana, su peor semana desde el covid, en marzo de 2020.",
+   "v": {
+    "type": "titular",
+    "photo": "img/nasdaq.jpg",
+    "heads": [
+     {
+      "tag": "ÚLTIMA HORA",
+      "text": "Wall Street cierra su peor semana"
+     },
+     {
+      "text": "Nasdaq: -10 % en cinco días"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: solo el viernes cayó un cinco coma tres por ciento, y ya está un dieciocho por ciento por debajo de su máximo.",
+   "show": "Mira la gráfica: solo el viernes cayó un 5,3 %, y ya está un 18 % por debajo de su máximo.",
+   "v": {
+    "type": "grafica",
+    "serie": "nasdaq",
+    "titulo": "Nasdaq Composite",
+    "draw": 0.6,
+    "marca": {
+     "dias": 5,
+     "texto": "-10 %"
+    }
+   }
+  },
+  {
+   "say": "Lo arrastra Nvidia, que el viernes se hundió un catorce por ciento, su peor día desde enero de dos mil veinticinco.",
+   "show": "Lo arrastra Nvidia, que el viernes se hundió un 14 %, su peor día desde enero de 2025.",
+   "v": {
+    "type": "cifra",
+    "value": 14.0,
+    "dec": 0,
+    "prefix": "-",
+    "suffix": " %",
+    "label": "Nvidia, el viernes en bolsa",
+    "color": "red",
+    "photo": "img/nvidia.jpg",
+    "name": "Nvidia · Santa Clara"
+   }
+  },
+  {
+   "say": "Y el golpe llega a todas partes: el S&P quinientos cae un ocho coma seis por ciento, y el Ibex, un cinco coma siete.",
+   "show": "Y el golpe llega a todas partes: el S&P 500 cae un 8,6 %, y el Ibex, un 5,7 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Caída en la semana",
+    "items": [
+     [
+      "Nasdaq",
+      10.0,
+      "-10 %",
+      "red"
+     ],
+     [
+      "S&P 500",
+      8.6,
+      "-8,6 %",
+      "dim"
+     ],
+     [
+      "Ibex 35",
+      5.7,
+      "-5,7 %",
+      "amber"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿se está desinflando la fiesta de la inteligencia artificial?",
+   "show": "La gran pregunta: ¿se está desinflando la fiesta de la inteligencia artificial?",
+   "v": {
+    "type": "titular",
+    "photo": "img/nyse.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Se acaba la fiesta de la IA?"
+     }
+    ]
+   }
+  }
+ ],
+ "hook_formula": "1 Confesión de coste",
+ "sources": [
+  "https://www.marketscreener.com/news/nasdaq-has-its-worst-week-since-2020-dow-s-p-500-in-correction-ce785ed3dc80f620",
+  "https://www.bloomberglinea.com/mercados/nvidia-se-desploma-en-wall-street-sus-acciones-caen-hasta-12-tras-informe-sobre-investigacion-de-la-sec/",
+  "https://www.mibolsillo.com/noticias/wall-street-hoy-20-de-noviembre-nasdaq-se-desploma-5.28-y-nvidia-cae-14-en-viernes-negro-de-ia-20261120-0046.html",
+  "https://investinglive.com/stocks/nasdaq-100-posts-worst-week-since-march-2020/",
+  "https://www.fxleaders.com/news/2026/11/21/nasdaq-100-suffers-worst-week-since-2020-as-nvidia-plunges-14-on-regulatory-probe/",
+  "Yahoo Finance vía make_reel.py precios (^IXIC, ^GSPC, ^DJI, ^IBEX, ^GDAXI, NVDA, ANT; cierres 13 y 20-nov-2026)"
+ ],
+ "caption": "Wall Street se hunde: el Nasdaq pierde un 10 % en una semana, su peor semana desde marzo de 2020 📉\n\n👉 El Nasdaq cerró el viernes 20 de noviembre en 22.617,73 puntos: -5,3 % en el día y un 10 % menos que el viernes anterior. Ya está un 18 % por debajo de su máximo de octubre\n👉 Nvidia se desplomó un 14 % el viernes, hasta 125,53 dólares, su peor día desde enero de 2025, y se deja casi un 23 % en la semana\n👉 El S&P 500 cae un 8,6 % en la semana y entra en corrección; la bolsa española también sufre: el Ibex 35 pierde un 5,7 %\n\n¿Se está desinflando la fiesta de la inteligencia artificial en bolsa? Sí o no, en comentarios 👇\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\n\nCierres del viernes 20 de noviembre de 2026. Información divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #nasdaq #nvidia #inteligenciaartificial",
+ "alt": "Reel sobre la peor semana del Nasdaq desde marzo de 2020: del 16 al 20 de noviembre de 2026 cae un 10 %, Nvidia se hunde un 14 % el viernes y el S&P 500 entra en corrección. Bolsa explicada en 30 segundos."
+}
