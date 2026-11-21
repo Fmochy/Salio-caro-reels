@@ -1,0 +1,20 @@
+[
+ {
+  "file": "File:Mark Zuckerberg F8 2018 Keynote (cropped).jpg",
+  "dest": "zuck.jpg",
+  "author": "Anthony Quintano",
+  "license": "CC BY 2.0"
+ },
+ {
+  "file": "File:Meta Headquarters Sign.jpg",
+  "dest": "sede.jpg",
+  "author": "Nokia621",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:New York Stock Exchange August 2017 02.jpg",
+  "dest": "nyse.jpg",
+  "author": "Arild Vågen",
+  "license": "CC BY-SA 4.0"
+ }
+]

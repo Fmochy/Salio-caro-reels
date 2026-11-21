@@ -1,0 +1,326 @@
+{
+ "formato": "terminal",
+ "slug": "manana-meta-record",
+ "company": "Meta",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "La dueña de tu Instagram",
+  "big": "-230.000 M$",
+  "bottom": "en un solo día",
+  "color": "red",
+  "photo": "img/zuck.jpg"
+ },
+ "portada": {
+  "titulo": "Meta perdió 230.000 M$ en un día",
+  "big": "-26 %",
+  "sub": "el 3 de febrero de 2022",
+  "photo": "img/zuck.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "META",
+   -26.39
+  ],
+  [
+   "SNAP",
+   -23.6
+  ],
+  [
+   "NASDAQ",
+   -3.74
+  ],
+  [
+   "S&P 500",
+   -2.44
+  ],
+  [
+   "DOW",
+   -1.45
+  ],
+  [
+   "AMZN",
+   -7.81
+  ],
+  [
+   "PINS",
+   -10.32
+  ]
+ ],
+ "series": {
+  "meta": {
+   "name": "Meta (META)",
+   "sub": "cierre diario",
+   "pre": "$",
+   "close": [
+    351.95,
+    351.24,
+    358.92,
+    362.97,
+    363.51,
+    361.61,
+    361.13,
+    359.96,
+    362.65,
+    363.18,
+    366.56,
+    358.45,
+    355.45,
+    355.12,
+    359.37,
+    363.35,
+    365.51,
+    368.39,
+    364.38,
+    372.63,
+    380.66,
+    379.38,
+    382.05,
+    375.28,
+    376.26,
+    382.18,
+    377.57,
+    378.0,
+    378.69,
+    376.51,
+    376.53,
+    373.92,
+    373.06,
+    364.72,
+    355.7,
+    357.48,
+    343.21,
+    345.96,
+    352.96,
+    353.58,
+    340.65,
+    339.61,
+    339.39,
+    343.01,
+    326.23,
+    332.96,
+    333.64,
+    329.22,
+    330.05,
+    325.45,
+    323.77,
+    324.54,
+    328.53,
+    324.76,
+    335.34,
+    339.99,
+    340.78,
+    341.88,
+    324.61,
+    328.69,
+    315.81,
+    312.22,
+    316.92,
+    323.57,
+    329.98,
+    328.08,
+    331.62,
+    335.85,
+    341.13,
+    338.62,
+    335.37,
+    327.64,
+    327.74,
+    340.89,
+    347.56,
+    342.96,
+    340.77,
+    338.69,
+    345.3,
+    341.01,
+    337.25,
+    341.06,
+    333.12,
+    338.03,
+    324.46,
+    310.6,
+    310.39,
+    306.84,
+    317.87,
+    322.81,
+    330.56,
+    329.82,
+    329.75,
+    334.49,
+    333.74,
+    341.66,
+    334.9,
+    333.79,
+    325.45,
+    334.2,
+    330.45,
+    335.24,
+    346.18,
+    346.22,
+    342.94,
+    344.36,
+    336.35,
+    338.54,
+    336.53,
+    324.17,
+    332.46,
+    331.79,
+    328.07,
+    334.37,
+    333.26,
+    326.48,
+    331.9,
+    318.15,
+    319.59,
+    316.56,
+    303.17,
+    308.71,
+    300.15,
+    294.63,
+    294.64,
+    301.71,
+    313.26,
+    319.0,
+    323.0,
+    237.76
+   ],
+   "labels": [
+    [
+     0,
+     "ago"
+    ],
+    [
+     22,
+     "sep"
+    ],
+    [
+     43,
+     "oct"
+    ],
+    [
+     64,
+     "nov"
+    ],
+    [
+     85,
+     "dic"
+    ],
+    [
+     107,
+     "ene"
+    ],
+    [
+     127,
+     "feb"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Más de doscientos treinta mil millones de dólares: eso perdió en bolsa Meta, la dueña de tu Instagram, en un solo día.",
+   "show": "Más de 230.000 millones de dólares: eso perdió en bolsa Meta, la dueña de tu Instagram, en un solo día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/sede.jpg",
+    "heads": [
+     {
+      "tag": "3 FEB 2022",
+      "text": "Meta se hunde en Wall Street"
+     },
+     {
+      "tag": "RÉCORD",
+      "text": "Pierde más de 230.000 M$ en un día"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: el tres de febrero de dos mil veintidós su acción se desplomó un veintiséis por ciento.",
+   "show": "Mira la gráfica: el 3 de febrero de 2022 su acción se desplomó un 26 %.",
+   "v": {
+    "type": "grafica",
+    "serie": "meta",
+    "titulo": "Meta (META)",
+    "draw": 0.6,
+    "marca": {
+     "dias": 1,
+     "texto": "-26 %"
+    }
+   }
+  },
+  {
+   "say": "¿Sabes por qué? Por primera vez en su historia, Facebook perdió usuarios diarios.",
+   "show": "¿Sabes por qué? Por primera vez en su historia, Facebook perdió usuarios diarios.",
+   "v": {
+    "type": "cifra",
+    "value": 1929,
+    "dec": 0,
+    "suffix": " M",
+    "label": "usuarios diarios (antes, 1.930 M)",
+    "color": "red",
+    "photo": "img/zuck.jpg",
+    "name": "Mark Zuckerberg · CEO"
+   }
+  },
+  {
+   "say": "Y no tocó fondo ahí: en noviembre bajó de noventa dólares, un setenta y siete por ciento menos que en su máximo.",
+   "show": "Y no tocó fondo ahí: en noviembre bajó de 90 dólares, un 77 % menos que en su máximo.",
+   "v": {
+    "type": "barras",
+    "titulo": "Acción de Meta (cierre)",
+    "items": [
+     [
+      "Máximo · sep 2021",
+      382.18,
+      "382 $",
+      "dim"
+     ],
+     [
+      "3 feb 2022",
+      237.76,
+      "238 $",
+      "amber"
+     ],
+     [
+      "Mínimo · nov 2022",
+      88.91,
+      "89 $",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿tú habrías aguantado?",
+   "show": "La gran pregunta: ¿tú habrías aguantado?",
+   "v": {
+    "type": "titular",
+    "photo": "img/nyse.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Tú habrías aguantado?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Meta en bolsa: el día que la dueña de Facebook e Instagram perdió más de 230.000 millones de dólares 📉\n\n👉 El 3 de febrero de 2022 la acción de Meta se desplomó un 26,4 %, de 323 a 237,76 dólares: la mayor pérdida de valor en un día de una empresa estadounidense hasta entonces\n👉 El motivo: Facebook perdió usuarios diarios por primera vez en su historia (de 1.930 a 1.929 millones) y Meta dio una previsión de ingresos floja\n👉 No tocó fondo ahí: el 3 de noviembre de 2022 cerró en 88,91 dólares, un 77 % menos que su máximo de 2021\n\nUna de las grandes historias de Wall Street y de la bolsa tecnológica.\n\n¿Tú habrías aguantado las acciones? Sí o no, en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #wallstreet #meta #facebook #instagram",
+ "alt": "Reel sobre la caída récord de Meta en bolsa: el 3 de febrero de 2022 la dueña de Facebook e Instagram se hundió un 26 % y perdió más de 230.000 millones de dólares en un día, tras perder usuarios diarios por primera vez. Historia de la bolsa explicada en 30 segundos.",
+ "sources": [
+  "https://www.cbsnews.com/news/stock-market-down-meta-facebook-earnings",
+  "https://www.npr.org/2022/02/03/1077820355/facebooks-transition-to-metaverse-has-eaten-into-the-social-media-giants-profits",
+  "https://www.bloomberg.com/news/articles/2022-02-03/meta-set-for-200-billion-wipeout-among-worst-in-market-history",
+  "https://amp.cnn.com/cnn/2022/02/03/tech/meta-facebook-market-cap-decline",
+  "https://www.euronews.com/2022/02/03/meta-platforms-stocks",
+  "https://www.fox6now.com/news/facebooks-daily-active-users-fall-for-1st-time-in-its-history",
+  "https://www.techspot.com/news/93244-facebook-shares-plunge-20-after-daily-user-numbers.html",
+  "https://www.asiae.co.kr/en/article/2022110419580821193",
+  "https://techcrunch.com/2022/10/27/meta-stock-yikes",
+  "https://finance.yahoo.com/quote/META/history/"
+ ]
+}
