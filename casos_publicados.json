@@ -411,5 +411,15 @@
   "slug": "2026-11-21-nasdaq-peor-semana",
   "gancho": "El Nasdaq pierde -10 % en una sola semana",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-22",
+  "empresa": "Bolsa española (Ibex 35, rescate del euro 2010)",
+  "caso": "10-may-2010: el Ibex 35 sube un 14,43 % (1.305,8 puntos, hasta 10.351,9), su mayor subida de la historia, tras el fondo de rescate de 750.000 M€ de la UE y el FMI; venía de -13,78 % en la semana (peor desde oct-2008); Santander y BBVA más de +20 %; el 11-may -3,32 % y el 14-may -6,64 % (9.314,7)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "manana-ibex-mayo-2010",
+  "gancho": "El 10 de mayo de 2010, el Ibex 35 subió un 14,4 % en un solo día.",
+  "formula": "26 El superlativo"
  }
 ]

@@ -1,0 +1,252 @@
+{
+ "formato": "terminal",
+ "slug": "manana-ibex-mayo-2010",
+ "company": "Ibex 35",
+ "tipo": "historia",
+ "hook_formula": "26 El superlativo",
+ "hook": {
+  "top": "El Ibex 35 en un día",
+  "big": "+14,43 %",
+  "bottom": "la mayor de su historia",
+  "color": "green",
+  "photo": "img/bolsa2.jpg"
+ },
+ "portada": {
+  "titulo": "La mayor subida del Ibex 35",
+  "big": "+14,43 %",
+  "sub": "10 de mayo de 2010",
+  "photo": "img/bolsa2.jpg",
+  "color": "green",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "IBEX 35",
+   14.43
+  ],
+  [
+   "SANTANDER",
+   23.2
+  ],
+  [
+   "BBVA",
+   22.0
+  ],
+  [
+   "FTSE MIB",
+   11.28
+  ],
+  [
+   "CAC 40",
+   9.66
+  ],
+  [
+   "DAX",
+   5.3
+  ],
+  [
+   "S&P 500",
+   4.4
+  ],
+  [
+   "DOW",
+   3.9
+  ]
+ ],
+ "series": {
+  "ibex": {
+   "name": "Ibex 35",
+   "sub": "feb-may 2010 · cierre diario",
+   "pre": "",
+   "close": [
+    10103.3,
+    10206.3,
+    10275.4,
+    10455.0,
+    10281.7,
+    10224.9,
+    10293.6,
+    10393.9,
+    10498.6,
+    10574.2,
+    10676.7,
+    10570.5,
+    10312.9,
+    10254.0,
+    10126.2,
+    10333.6,
+    10434.9,
+    10521.5,
+    10664.5,
+    10745.3,
+    11019.8,
+    11078.3,
+    11002.8,
+    11121.0,
+    11045.4,
+    11077.0,
+    10957.8,
+    11059.3,
+    11166.8,
+    11073.5,
+    10990.8,
+    10861.9,
+    10996.2,
+    10866.3,
+    11091.4,
+    11071.1,
+    11091.0,
+    10980.7,
+    10871.3,
+    11067.9,
+    11160.6,
+    11191.3,
+    11076.3,
+    11394.2,
+    11460.8,
+    11461.0,
+    11503.7,
+    11523.5,
+    11259.7,
+    11199.5,
+    11305.6,
+    11064.7,
+    10821.9,
+    10918.2,
+    10939.3,
+    10480.9,
+    10167.0,
+    10441.0,
+    10492.2,
+    10422.8,
+    9859.1,
+    9635.2,
+    9352.6,
+    9046.1,
+    10351.9
+   ],
+   "labels": [
+    [
+     0,
+     "feb"
+    ],
+    [
+     16,
+     "mar"
+    ],
+    [
+     39,
+     "abr"
+    ],
+    [
+     59,
+     "may"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El diez de mayo de dos mil diez, el Ibex treinta y cinco subió un catorce coma cuatro por ciento en un solo día.",
+   "show": "El 10 de mayo de 2010, el Ibex 35 subió un 14,4 % en un solo día.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa2.jpg",
+    "heads": [
+     {
+      "tag": "MAYO 2010",
+      "text": "El Ibex vive su mayor subida"
+     },
+     {
+      "tag": "BOLSA DE MADRID",
+      "text": "+14,43 % en una sesión"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: venía de perder casi un catorce por ciento en una semana, por miedo a la crisis griega, y rebotó de golpe.",
+   "show": "Mira la gráfica: venía de perder casi un 14 % en una semana, por miedo a la crisis griega, y rebotó de golpe.",
+   "v": {
+    "type": "grafica",
+    "serie": "ibex",
+    "titulo": "Ibex 35",
+    "draw": 0.65,
+    "marca": {
+     "dias": 1,
+     "texto": "+14,4 %"
+    }
+   }
+  },
+  {
+   "say": "¿Sabes qué lo disparó? Un rescate de Europa y el FMI de setecientos cincuenta mil millones de euros.",
+   "show": "¿Sabes qué lo disparó? Un rescate de Europa y el FMI de 750.000 millones de euros.",
+   "v": {
+    "type": "cifra",
+    "value": 750000,
+    "dec": 0,
+    "suffix": " M€",
+    "label": "fondo de rescate del euro",
+    "color": "amber",
+    "photo": "img/berlaymont.jpg",
+    "name": "UE + FMI · mayo 2010"
+   }
+  },
+  {
+   "say": "Santander y BBVA subieron más de un veinte por ciento, pero el viernes el Ibex se hundió otro seis coma seis por ciento.",
+   "show": "Santander y BBVA subieron más de un 20 %, pero el viernes el Ibex se hundió otro 6,6 %.",
+   "v": {
+    "type": "barras",
+    "titulo": "Ibex 35, semana del 10 de mayo de 2010",
+    "items": [
+     [
+      "Lunes 10",
+      14.43,
+      "+14,43 %",
+      "green"
+     ],
+     [
+      "Martes 11",
+      3.32,
+      "-3,32 %",
+      "red"
+     ],
+     [
+      "Viernes 14",
+      6.64,
+      "-6,64 %",
+      "red"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿te fiarías de un rebote así?",
+   "show": "La gran pregunta: ¿te fiarías de un rebote así?",
+   "v": {
+    "type": "titular",
+    "photo": "img/bolsa2.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Te fiarías de un rebote así?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Ibex 35, mayo de 2010: la mayor subida de la historia de la bolsa española, un 14,43 % en un solo día 📈\n\n👉 El lunes 10 de mayo de 2010 el Ibex 35 subió 1.305,8 puntos, un 14,43 %, hasta 10.351,9 puntos, tras el fondo de rescate de 750.000 millones de euros de la UE y el FMI\n👉 Venía de su peor semana desde octubre de 2008: un 13,78 % de caída por el miedo al contagio de la crisis griega\n👉 Santander y BBVA subieron más de un 20 % ese día, pero la euforia duró poco: el martes el Ibex cayó un 3,32 % y el viernes 14 se hundió un 6,64 %, hasta 9.314,7 puntos\n\nUna de las grandes historias de la bolsa española y de la crisis del euro: el rebote récord del Ibex 35.\n\n¿Te fiarías de un rebote así? Sí o no, en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #ibex35 #bolsaespañola #crisisdeleuro",
+ "alt": "Reel sobre la mayor subida de la historia del Ibex 35: el 10 de mayo de 2010 la bolsa española subió un 14,43 % en un día tras el rescate europeo de 750.000 millones, y el viernes siguiente cayó un 6,64 %. Historia de la bolsa explicada en 30 segundos.",
+ "sources": [
+  "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/el-ibex-se-anota-la-mayor-subida-de-su-historia-n-119894",
+  "https://www.ultimahora.es/noticias/nacional/2010/05/11/9863/euforia-en-la-bolsa-espanola-tras-el-plan-de-rescate-del-euro.html",
+  "https://www.idealista.com/news/node/191302",
+  "https://www.ultimahora.es/noticias/nacional/2010/05/11/9902/la-bolsa-cae-un-3-3-por-ciento-tras-la-euforia-de-ayer.html",
+  "https://www.estrategiasdeinversion.com/actualidad/noticias/bolsa-espana/el-ibex-cierra-la-peor-semana-desde-octubre-de-n-119767",
+  "https://www.notife.com/espana-finalizo-la-peor-semana-tras-caida-de-lehman-brothers",
+  "https://www.investmentnews.com/industry-news/european-shares-us-futures-soar-on-eu-rescue-package/29005",
+  "https://naciodigital.cat/economia/parquet-mes-negre-que-vermell.html",
+  "https://finance.yahoo.com/quote/%5EIBEX/history/"
+ ]
+}
