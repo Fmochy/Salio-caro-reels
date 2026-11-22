@@ -421,5 +421,15 @@
   "slug": "manana-ibex-mayo-2010",
   "gancho": "El 10 de mayo de 2010, el Ibex 35 subió un 14,4 % en un solo día.",
   "formula": "26 El superlativo"
+ },
+ {
+  "fecha": "2026-11-22",
+  "empresa": "Endesa (guerra de OPAs)",
+  "caso": "5-sep-2005: Gas Natural lanza OPA a 21,30 € (Endesa cerraba a 18,56 € el 2-sep); E.ON ofrece 27,50 € (feb-2006), 35 € y hasta 40 € (mar-2007) y fracasa con el 6,01 %; Enel y Acciona lanzan OPA a 41,30 € (40,16 € tras dividendo) y logran el 92 % (oct-2007); la acción sube un 114,5 % (18,56 a 39,81 €, cierres semanales) frente a +46,8 % del Ibex; en 2009 Enel compra el 25,01 % de Acciona por 11.107 M€ y controla el 92 %",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-22-endesa-guerra-opas",
+  "gancho": "Endesa en bolsa, 2005-2007: +114 % por una guerra de OPAs",
+  "formula": "1 Confesión de coste"
  }
 ]

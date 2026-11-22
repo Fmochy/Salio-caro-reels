@@ -1,0 +1,343 @@
+{
+ "formato": "terminal",
+ "slug": "endesa-guerra-opas",
+ "company": "Endesa",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "Endesa en bolsa, 2005-2007",
+  "big": "+114 %",
+  "bottom": "por una guerra de OPAs",
+  "color": "green"
+ },
+ "portada": {
+  "titulo": "La guerra de OPAs por Endesa",
+  "big": "+114 %",
+  "sub": "2005-2007: de 18,56 a casi 40 €",
+  "color": "green",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "ENDESA 2005-07",
+   114.5
+  ],
+  [
+   "IBEX 35 2005-07",
+   46.8
+  ],
+  [
+   "ENDESA SEMANA OPA GAS NATURAL",
+   9.6
+  ],
+  [
+   "ENDESA SEMANA OPA E.ON",
+   13.5
+  ]
+ ],
+ "series": {
+  "endesa": {
+   "name": "Endesa (ELE)",
+   "sub": "2004-2007 · cierre semanal",
+   "pre": "",
+   "close": [
+    15.34,
+    15.6,
+    15.89,
+    16.0,
+    15.28,
+    15.39,
+    15.34,
+    14.98,
+    15.12,
+    14.8,
+    14.57,
+    14.87,
+    15.25,
+    15.54,
+    15.47,
+    15.68,
+    15.4,
+    15.58,
+    15.61,
+    15.46,
+    15.57,
+    15.91,
+    16.38,
+    16.43,
+    16.52,
+    16.34,
+    16.35,
+    16.55,
+    16.65,
+    17.19,
+    17.29,
+    16.74,
+    16.96,
+    16.88,
+    17.27,
+    17.83,
+    18.05,
+    17.72,
+    16.93,
+    17.32,
+    17.13,
+    17.37,
+    17.45,
+    17.42,
+    17.2,
+    16.98,
+    16.8,
+    16.88,
+    17.19,
+    17.44,
+    17.58,
+    17.61,
+    17.86,
+    18.07,
+    18.18,
+    18.62,
+    19.03,
+    18.41,
+    18.41,
+    18.63,
+    18.47,
+    18.24,
+    18.5,
+    18.37,
+    17.96,
+    18.56,
+    20.35,
+    21.24,
+    21.66,
+    22.27,
+    21.65,
+    21.52,
+    20.87,
+    20.2,
+    20.42,
+    20.98,
+    21.64,
+    21.93,
+    22.09,
+    21.47,
+    21.75,
+    22.35,
+    22.22,
+    21.9,
+    22.18,
+    23.25,
+    23.56,
+    24.89,
+    24.21,
+    24.98,
+    28.35,
+    27.5,
+    27.75,
+    27.5,
+    27.34,
+    26.64,
+    26.71,
+    26.7,
+    26.85,
+    26.32,
+    26.86,
+    26.42,
+    26.1,
+    26.39,
+    26.08,
+    26.19,
+    25.9,
+    26.96,
+    27.19,
+    24.95,
+    24.02,
+    24.11,
+    26.85,
+    26.66,
+    26.55,
+    26.76,
+    26.92,
+    27.31,
+    28.35,
+    28.7,
+    29.32,
+    33.55,
+    33.9,
+    34.06,
+    34.27,
+    34.5,
+    35.33,
+    35.55,
+    36.0,
+    35.67,
+    35.0,
+    35.48,
+    35.37,
+    35.3,
+    35.83,
+    35.3,
+    36.79,
+    37.87,
+    38.69,
+    39.04,
+    38.01,
+    38.15,
+    38.32,
+    38.5,
+    38.7,
+    38.31,
+    38.65,
+    40.48,
+    40.16,
+    40.58,
+    40.35,
+    40.3,
+    40.34,
+    40.2,
+    40.19,
+    40.05,
+    40.01,
+    39.92,
+    39.97,
+    40.05,
+    40.21,
+    39.3,
+    39.3,
+    39.3,
+    39.45,
+    39.54,
+    39.39,
+    39.54,
+    39.83,
+    39.89,
+    39.87,
+    40.0,
+    39.93,
+    40.09,
+    39.81
+   ],
+   "labels": [
+    [
+     0,
+     "2004"
+    ],
+    [
+     31,
+     "2005"
+    ],
+    [
+     83,
+     "2006"
+    ],
+    [
+     136,
+     "2007"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Por Endesa se acabó pagando más del doble de lo que valía en bolsa, tras una guerra de OPAs de dos años.",
+   "show": "Por Endesa se acabó pagando más del doble de lo que valía en bolsa, tras una guerra de OPAs de dos años.",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "HISTORIA · 2005",
+      "text": "Arranca la guerra por Endesa"
+     },
+     {
+      "tag": "BOLSA DE MADRID",
+      "text": "Su acción más que se duplica"
+     }
+    ]
+   }
+  },
+  {
+   "say": "En septiembre de dos mil cinco cotizaba a dieciocho euros y medio, y Gas Natural ofreció veintiuno con treinta.",
+   "show": "En septiembre de 2005 cotizaba a 18,5 euros, y Gas Natural ofreció 21,30.",
+   "v": {
+    "type": "cifra",
+    "value": 21.3,
+    "dec": 2,
+    "suffix": " €",
+    "label": "por acción, oferta de Gas Natural",
+    "color": "amber"
+   }
+  },
+  {
+   "say": "Mira la gráfica: luego entraron la alemana E.ON, Acciona y la italiana Enel, y el precio no paró de subir.",
+   "show": "Mira la gráfica: luego entraron la alemana E.ON, Acciona y la italiana Enel, y el precio no paró de subir.",
+   "v": {
+    "type": "grafica",
+    "serie": "endesa",
+    "titulo": "Endesa (ELE)",
+    "draw": 0.7,
+    "marca": {
+     "dias": 109,
+     "texto": "+114 %"
+    }
+   }
+  },
+  {
+   "say": "¿Sabes quién ganó? E.ON llegó a cuarenta euros, pero Enel y Acciona ofrecieron cuarenta y uno con treinta.",
+   "show": "¿Sabes quién ganó? E.ON llegó a 40 euros, pero Enel y Acciona ofrecieron 41,30.",
+   "v": {
+    "type": "barras",
+    "titulo": "Ofertas por acción de Endesa",
+    "items": [
+     [
+      "Gas Natural · 2005",
+      21.3,
+      "21,30 €",
+      "dim"
+     ],
+     [
+      "E.ON · 2007",
+      40.0,
+      "40,00 €",
+      "dim"
+     ],
+     [
+      "Enel y Acciona · 2007",
+      41.3,
+      "41,30 €",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "Y en dos mil nueve, Enel se quedó con el noventa y dos por ciento. ¿Quién ganó de verdad esa guerra?",
+   "show": "Y en 2009, Enel se quedó con el 92 %. ¿Quién ganó de verdad esa guerra?",
+   "v": {
+    "type": "titular",
+    "heads": [
+     {
+      "tag": "2009",
+      "text": "Enel controla el 92 % de Endesa"
+     },
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Quién ganó de verdad?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Guerra de OPAs por Endesa: su acción subió más de un 114 % en dos años 📈\n\n👉 Sept. 2005: Endesa cotiza a 18,56 € y Gas Natural lanza una OPA a 21,30 € por acción.\n👉 2006-2007: entra la alemana E.ON, que sube su oferta hasta 40 €, y Acciona y la italiana Enel compran paquetes de Endesa.\n👉 Abril 2007: Enel y Acciona lanzan su OPA a 41,30 € (40,16 € tras el dividendo) y logran el 92 % del capital. En 2009 Enel compra el 25 % de Acciona y se queda con el 92 %.\n\nLa mayor batalla bursátil de la historia de la bolsa española acabó con la eléctrica en manos italianas. ¿Quién crees que ganó esa guerra? Te leo en comentarios.\n\nSíguenos para entender la bolsa cada día, dale a like y guárdalo 📌\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #endesa #ibex35 #opa",
+ "alt": "Reel sobre la guerra de OPAs por Endesa (2005-2007): Gas Natural, E.ON, Enel y Acciona; la acción de Endesa sube un 114 % y Enel acaba con el 92 %. Historia de la bolsa española.",
+ "sources": [
+  "https://www.libertaddigital.com/economia/cronologia-una-puja-que-ha-durado-dos-anos-1276314772/",
+  "https://www.cnmv.es/portal/Consultas/folletos/opa?numreg=302",
+  "https://www.cnmv.es/portal/Consultas/folletos/opa?numreg=329",
+  "https://www.cnbc.com/id/21146803",
+  "https://corporate.enel.it/content/dam/enel-com/pressrelease/porting_pressrelease/1594978-1_PDF-1.pdf",
+  "https://corporate.enel.it/en/media/press/d/2009/02/enel-agreement-reached-with-acciona-for-the-acquisition-of-2501-of-endesa-",
+  "https://www.khl.com/news/acciona-to-sell-endesa-stake-for-11-1-billion/1031624.article",
+  "https://finance.yahoo.com/quote/ELE.MC/history"
+ ]
+}
