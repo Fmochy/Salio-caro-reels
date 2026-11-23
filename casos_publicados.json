@@ -431,5 +431,15 @@
   "slug": "2026-11-22-endesa-guerra-opas",
   "gancho": "Endesa en bolsa, 2005-2007: +114 % por una guerra de OPAs",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-23",
+  "empresa": "Solaria",
+  "caso": "Debut en bolsa el 19-jun-2007 (cierre 11,90 €, +25 %); máximo de cierre 24,00 € el 8-nov-2007; con la crisis y los recortes a las primas solares cae a 0,30 € el 31-may-2012 (-98,8 %); entra en el Ibex 35 el 19-oct-2020 y el 7-ene-2021 cierra en 30,94 € (+9,6 % ese día), x103 desde el mínimo",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "manana-solaria-bolsa",
+  "gancho": "Solaria se hundió un 98 % en bolsa, y luego multiplicó su precio por 100.",
+  "formula": "1 Confesión de coste"
  }
 ]
