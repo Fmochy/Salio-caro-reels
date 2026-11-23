@@ -901,17 +901,18 @@ Antes de generar, repasa `say`, `show` y `caption`:
 ## 8. Aprendizajes de la cuenta (lo actualiza la auditoría semanal; tiene prioridad sobre las reglas generales)
 
 <!-- APRENDIZAJES:INICIO -->
-Auditoría 09-11-2026 · 29 reels (12-oct a 8-nov; mediana 115 visualizaciones). Casi todos se quedan en 100–130: solo 3 rompen el techo.
-- Top: Ibex 35 2007 4,3× (499 vis., 52 % pasa de 3 s), aeropuerto de Castellón 1,9× y Spanair 1,4× (57 %). Los tres son ESPAÑOLES.
-  Prioriza casos y cifras de España (Ibex, bancos, empresas y obras españolas) en las dos franjas; Wall Street/Japón se quedan en ~1×.
-- Fórmula: "1 Confesión de coste" con caída en % y años en recuperarse (Ibex, Nasdaq 2000) es lo que mejor retiene (44–52 %).
-  "23 La estadística" de actualidad (4 reels) da 0,96–1,10× y 27–39 % de retención: úsala solo si el dato es muy fuerte o toca España.
-- Gancho: cifra + lugar conocido en la portada; el top 3 retiene 37–57 % más de 3 s frente a 25–31 % de los flojos. Evita ganchos sin cifra.
-- Peores (0–0,2×): Qwikster, Blockbuster, Google Glass, Fire Phone, Fagor e IVA Brasil. No publiques dos reels con <3 h de
-  diferencia y no dejes reels fuera de la cola de Metricool/registro: canibalizan alcance y la auditoría no puede emparejarlos.
-- Compartidos ≈ 0 (1 en 29 reels) y la cuenta tiene 4 seguidores con ~110 de alcance por reel: el freno es perfil/llamada,
-  no el gancho. Cierra con un dato "para mandar a alguien que invierte" y pide UNA acción (comentar sí/no o seguir), no tres.
-- Sigue rellenando gancho y formula en casos_publicados.json, también en los reels de las 11:30.
+Auditoría 23-11-2026 · 40 reels en Metricool (26-oct a 20-nov; mediana 125 vis.). El 80 % se queda en 100–145; solo 5 pasan de 2×.
+- Top: S&P 500 2008 7,4× (933 vis.), Nasdaq puntocom 7,1× (887) e Ibex 2007 6,1× (764); después Pescanova 4,5× e Ibex puntocom 2,1×.
+  Todos son "1 Confesión de coste" de HISTORIA: máximo → caída en % → "y tardó N años en volver". Esta plantilla es la prioridad nº 1.
+- Lo que gana no es "España" sino un crac grande y conocido con cifra brutal (-55 % o más) y años de recuperación. DIA, Grifols,
+  Repsol e Inditex (españoles) se quedan en 1,0×; Nikkei y Crac del 29 en 0,9×: evita cracs demasiado lejanos o ajenos.
+- Actualidad "hoy" (fórmula 23 La estadística, 15 reels): mediana 0,92×, 61–74 % se salta el reel en 3 s frente a 48–54 % del top.
+  En la franja de 19:30 usa actualidad solo si el movimiento es histórico (≥10 % en un índice o récord); si no, otro caso de historia.
+- Peores: Fagor 0,17×, Anthropic OPV 0,31× (26 El superlativo, 2,9 s vistos) y CoreWeave 0,64×. Top = 10–13 s vistos; abre con la cifra de caída.
+- Compartidos = 1 en 40 reels y guardados casi 0; ~2.600 vis. del 7-8 nov solo dieron +3 seguidores (8 en total). Problema de perfil/llamada:
+  cambia el cierre a UNA sola petición ("Sigue a @cerro.en.rojo: un crac de la bolsa cada día") y quita "dale a like y guárdalo".
+- Desde el 14-nov los reels salen a horas irregulares (07:40–17:05) y faltan en Metricool Telefónica, Brexit, Meta, Endesa y Solaria:
+  comprueba que cada reel queda programado a 11:30/19:30 y que su fecha en casos_publicados.json coincide con la real.
 <!-- APRENDIZAJES:FIN -->
 
 ## 9. Ejemplo antiguo de tarjetas (NO lo imites en longitud ni formato: manda la sección 3c)
