@@ -441,5 +441,15 @@
   "slug": "manana-solaria-bolsa",
   "gancho": "Solaria se hundió un 98 % en bolsa, y luego multiplicó su precio por 100.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-23",
+  "empresa": "Amazon (burbuja puntocom)",
+  "caso": "10-dic-1999: Amazon cierra en 106,69 $ (máximo; Bezos persona del año de Time ese mes); 28-sep-2001 cierra en 5,97 $ (-94,4 %); no supera el máximo hasta el 23-oct-2009 (118,49 $, +27 % ese día tras resultados), casi 10 años después; Nasdaq -58,6 % en el mismo periodo",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-23-amazon-puntocom",
+  "gancho": "Amazon llegó a perder un 94 % en bolsa, y tardó casi 10 años en recuperarse.",
+  "formula": "1 Confesión de coste"
  }
 ]
