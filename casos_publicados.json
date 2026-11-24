@@ -461,5 +461,15 @@
   "slug": "manana-bitcoin-ftx",
   "gancho": "Bitcoin se hundió casi un 77 %, y tardó más de 2 años en volver.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-24",
+  "empresa": "Cisco (burbuja puntocom)",
+  "caso": "27-mar-2000: Cisco cierra en 80,06 $ y vale unos 555.000 M$, la empresa más valiosa del mundo por delante de Microsoft; 8-oct-2002 cierra en 8,60 $ (-89,3 %); no supera aquel cierre hasta el 10-dic-2025 (80,25 $), más de 25 años después",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-24-cisco-puntocom",
+  "gancho": "Cisco llegó a perder casi un 90 % en bolsa, y tardó más de 25 años en recuperarse.",
+  "formula": "1 Confesión de coste"
  }
 ]
