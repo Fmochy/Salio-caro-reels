@@ -451,5 +451,15 @@
   "slug": "2026-11-23-amazon-puntocom",
   "gancho": "Amazon llegó a perder un 94 % en bolsa, y tardó casi 10 años en recuperarse.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-24",
+  "empresa": "Bitcoin (FTX)",
+  "caso": "8-nov-2021: bitcoin cierra en 67.567 $ (máximo); 8 y 9-nov-2022, con la quiebra de FTX (Sam Bankman-Fried), cae un 22,9 % en dos días; mínimo de cierre 15.787 $ el 21-nov-2022 (-76,6 %); no vuelve a cerrar por encima hasta el 4-mar-2024 (68.330 $)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "manana-bitcoin-ftx",
+  "gancho": "Bitcoin se hundió casi un 77 %, y tardó más de 2 años en volver.",
+  "formula": "1 Confesión de coste"
  }
 ]
