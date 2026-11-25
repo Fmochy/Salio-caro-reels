@@ -1,0 +1,205 @@
+{
+ "formato": "terminal",
+ "slug": "manana-petroleo-negativo",
+ "company": "Petróleo (WTI)",
+ "tipo": "historia",
+ "hook_formula": "1 Confesión de coste",
+ "hook": {
+  "top": "El petróleo de Texas",
+  "big": "-37,63 $",
+  "bottom": "te pagaban por llevártelo",
+  "color": "red",
+  "photo": "img/bomba.jpg"
+ },
+ "portada": {
+  "titulo": "El petróleo valió menos que nada",
+  "big": "-37,63 $",
+  "sub": "20 de abril de 2020",
+  "photo": "img/bomba.jpg",
+  "color": "red",
+  "tag": "HISTORIA"
+ },
+ "ticker": [
+  [
+   "WTI 20-4-20",
+   -306.0
+  ],
+  [
+   "S&P 500",
+   -1.8
+  ],
+  [
+   "DOW",
+   -2.4
+  ],
+  [
+   "NASDAQ",
+   -1.0
+  ],
+  [
+   "IBEX 35",
+   -0.6
+  ],
+  [
+   "EXXON",
+   -4.7
+  ]
+ ],
+ "series": {
+  "wti": {
+   "name": "Petróleo de Texas (WTI)",
+   "sub": "cierre diario",
+   "pre": "",
+   "close": [
+    46.75,
+    47.18,
+    46.78,
+    45.9,
+    41.28,
+    31.13,
+    34.36,
+    32.98,
+    31.5,
+    31.73,
+    28.7,
+    26.95,
+    20.37,
+    25.22,
+    22.43,
+    23.36,
+    24.01,
+    24.49,
+    22.6,
+    21.51,
+    20.09,
+    20.48,
+    20.31,
+    25.32,
+    28.34,
+    26.08,
+    23.63,
+    25.09,
+    22.76,
+    22.41,
+    20.11,
+    19.87,
+    19.87,
+    18.27,
+    -37.63
+   ],
+   "labels": [
+    [
+     0,
+     "mar"
+    ],
+    [
+     22,
+     "abr"
+    ]
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "El veinte de abril de dos mil veinte, el barril de petróleo de Texas llegó a valer menos treinta y siete dólares.",
+   "show": "El 20 de abril de 2020, el barril de petróleo de Texas llegó a valer -37 dólares.",
+   "v": {
+    "type": "titular",
+    "photo": "img/bomba.jpg",
+    "heads": [
+     {
+      "tag": "HISTORIA · PETRÓLEO",
+      "text": "El petróleo cae bajo cero"
+     },
+     {
+      "tag": "20 DE ABRIL DE 2020",
+      "text": "Te pagaban por llevártelo"
+     }
+    ]
+   }
+  },
+  {
+   "say": "Mira la gráfica: a principios de marzo aún valía casi cuarenta y siete dólares, y en un solo día se hundió casi cincuenta y seis.",
+   "show": "Mira la gráfica: a principios de marzo aún valía casi 47 dólares, y en un solo día se hundió casi 56.",
+   "v": {
+    "type": "grafica",
+    "serie": "wti",
+    "titulo": "Petróleo de Texas (WTI)",
+    "draw": 0.65,
+    "marca": {
+     "dias": 1,
+     "texto": "-55,90 $"
+    }
+   }
+  },
+  {
+   "say": "¿Sabes por qué? Con el covid nadie gastaba gasolina, y ya no quedaba sitio para guardar tanto barril.",
+   "show": "¿Sabes por qué? Con el covid nadie gastaba gasolina, y ya no quedaba sitio para guardar tanto barril.",
+   "v": {
+    "type": "cifra",
+    "value": 37.63,
+    "dec": 2,
+    "prefix": "-",
+    "suffix": " $",
+    "label": "por barril, cierre del 20-abr-2020",
+    "color": "red",
+    "photo": "img/tanques.jpg",
+    "name": "Depósitos llenos"
+   }
+  },
+  {
+   "say": "Era la primera vez en la historia, y al día siguiente ya volvía a valer diez dólares.",
+   "show": "Era la primera vez en la historia, y al día siguiente ya volvía a valer 10 dólares.",
+   "v": {
+    "type": "barras",
+    "titulo": "Petróleo de Texas, cierre por barril",
+    "items": [
+     [
+      "Viernes 17 abr",
+      18.27,
+      "18,27 $",
+      "dim"
+     ],
+     [
+      "Lunes 20 abr",
+      0,
+      "-37,63 $",
+      "red"
+     ],
+     [
+      "Martes 21 abr",
+      10.01,
+      "10,01 $",
+      "green"
+     ]
+    ]
+   }
+  },
+  {
+   "say": "La gran pregunta: ¿puede volver a pasar algo así?",
+   "show": "La gran pregunta: ¿puede volver a pasar algo así?",
+   "v": {
+    "type": "titular",
+    "photo": "img/pozo.jpg",
+    "heads": [
+     {
+      "tag": "LA GRAN PREGUNTA",
+      "text": "¿Puede volver a pasar?"
+     }
+    ],
+    "texto": "No es recomendación de inversión"
+   }
+  }
+ ],
+ "caption": "Petróleo en negativo: el 20 de abril de 2020 el barril de Texas llegó a valer -37,63 dólares 📉\n\n👉 El contrato de mayo del petróleo de Texas (WTI) cerró en -37,63 dólares por barril: cayó casi 56 dólares en un día, desde 18,27\n👉 Fue la primera vez en la historia que cerraba en negativo: quien tenía los barriles pagaba para que se los quitaran\n👉 El motivo: con el covid se desplomó el consumo y los depósitos de Cushing (Oklahoma) se estaban llenando justo antes del vencimiento del contrato\n👉 Al día siguiente ya volvía a valer 10,01 dólares\n\nUno de los días más locos de la historia de los mercados y del precio del petróleo.\n\n¿Crees que puede volver a pasar algo así? Cuéntamelo en comentarios.\n\nSigue a @cerro.en.rojo: un crac de la bolsa cada día\nInformación divulgativa. No es recomendación de inversión.\n\n#bolsa #inversion #petroleo #wti #materiasprimas",
+ "alt": "Reel sobre el día que el petróleo valió menos que nada: el 20 de abril de 2020 el barril de petróleo de Texas (WTI) cerró en -37,63 dólares, por primera vez en negativo, con el covid y los depósitos llenos. Historia de los mercados explicada en 30 segundos.",
+ "sources": [
+  "https://www.spglobal.com/platts/en/market-insights/latest-news/oil/042020-oil-futures-nymex-wti-falls-below-5b-to-all-time-record-low",
+  "https://www.everycrsreport.com/reports/IN11354.html",
+  "https://www.eia.gov/todayinenergy/detail.php?id=43495",
+  "https://www.aljazeera.com/ajimpact/crash-crude-futures-turn-negative-time-history-200420183431731.html",
+  "https://www.npr.org/2020/04/21/839749962/record-oil-price-drops-send-stock-markets-diving-too",
+  "https://www.foxbusiness.com/markets/us-stocks-april-20-2020",
+  "https://finance.yahoo.com/quote/CL%3DF/history/"
+ ]
+}
