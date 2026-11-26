@@ -501,5 +501,14 @@
   "slug": "2026-11-26-manana-nokia-bolsa",
   "gancho": "Nokia llegó a perder más de un 97 % en bolsa, y todavía no ha vuelto.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-26",
+  "empresa": "Citigroup (crisis de 2008)",
+  "caso": "27-dic-2006: Citigroup cierra en 56,41 $ (máximo); 5-mar-2009 cierra en 1,02 $ tras bajar de 1 $ (-98,2 %); rescate TARP de 45.000 M$; hoy (contrasplit 1x10 de 2011) ~113 $ frente a 564 $: casi -80 %",
+  "formato": "reel",
+  "slug": "2026-11-26-citigroup-2008",
+  "gancho": "Citigroup, uno de los gigantes de Wall Street, se hundió un 98 % en bolsa, y 20 años después no ha vuelto.",
+  "formula": "1 Confesión de coste"
  }
 ]
