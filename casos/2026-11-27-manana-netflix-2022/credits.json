@@ -1,0 +1,26 @@
+[
+ {
+  "file": "File:100 Winchester Circle (cropped).jpg",
+  "dest": "sede.jpg",
+  "author": "Coolcaesar",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Netflix headquarters.jpg",
+  "dest": "sede2.jpg",
+  "author": "Coolcaesar at English Wikipedia",
+  "license": "CC BY-SA 3.0"
+ },
+ {
+  "file": "File:Reed Hastings (CEO und Co-Founder Netflix) auf der MCB15.jpg",
+  "dest": "hastings.jpg",
+  "author": "Mondileinchen",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "File:Reed Hastings, Web 2.0 Conference.jpg",
+  "dest": "hastings2.jpg",
+  "author": "",
+  "license": "CC BY 2.0"
+ }
+]
