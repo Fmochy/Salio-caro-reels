@@ -520,5 +520,15 @@
   "slug": "2026-11-27-manana-netflix-2022",
   "gancho": "Netflix llegó a perder un 76 % en bolsa, y tardó casi 3 años en volver.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-27",
+  "empresa": "Bolsa alemana (DAX, burbuja puntocom)",
+  "caso": "7-mar-2000: el DAX cierra en 8.064,97 (máximo); 12-mar-2003: 2.202,96 (-72,7 %); no vuelve a cerrar por encima hasta jun-2007 (8.090,49 el 20-jun; récord 8.105,69 el 16-jul); mismo periodo Nasdaq -73,6 %, Ibex -57,0 %",
+  "formato": "reel",
+  "franja": "19:30",
+  "slug": "2026-11-27-dax-puntocom",
+  "gancho": "La bolsa alemana, el DAX, llegó a perder un 72,7 %, y tardó más de 7 años en volver.",
+  "formula": "1 Confesión de coste"
  }
 ]
