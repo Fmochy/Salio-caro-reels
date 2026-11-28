@@ -1,0 +1,26 @@
+[
+ {
+  "file": "File:Elon Musk (12270805983).jpg",
+  "dest": "musk.jpg",
+  "author": "Tesla Owners Club Belgium",
+  "license": "CC BY 2.0"
+ },
+ {
+  "file": "File:Elon Musk April 2022.jpg",
+  "dest": "musk2.jpg",
+  "author": "Courtesy Photo",
+  "license": "Public domain"
+ },
+ {
+  "file": "File:Tesla Factory, Fremont (CA, USA) (8763129679).jpg",
+  "dest": "fabrica.jpg",
+  "author": "Maurizio Pesce",
+  "license": "CC BY 2.0"
+ },
+ {
+  "file": "File:Tesla Store in Berlin, outside.jpg",
+  "dest": "tienda.jpg",
+  "author": "F.Blaubiget",
+  "license": "CC BY-SA 4.0"
+ }
+]

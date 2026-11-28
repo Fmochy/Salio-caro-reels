@@ -530,5 +530,15 @@
   "slug": "2026-11-27-dax-puntocom",
   "gancho": "La bolsa alemana, el DAX, llegó a perder un 72,7 %, y tardó más de 7 años en volver.",
   "formula": "1 Confesión de coste"
+ },
+ {
+  "fecha": "2026-11-28",
+  "empresa": "Tesla",
+  "caso": "4-nov-2021: Tesla cierra en 409,97 $ (máximo, tras superar el billón de valor); 2022, con Musk comprando Twitter y vendiendo acciones, su peor año (-65 %); 3-ene-2023 cae un 12,2 % hasta 108,10 $ (-73,6 %); no supera el récord hasta el 11-dic-2024 (424,77 $)",
+  "formato": "reel",
+  "franja": "11:30",
+  "slug": "2026-11-28-manana-tesla-2022",
+  "gancho": "Tesla llegó a perder un 74 % en bolsa, y tardó más de 3 años en volver.",
+  "formula": "1 Confesión de coste"
  }
 ]
